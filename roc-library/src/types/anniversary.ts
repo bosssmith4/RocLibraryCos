@@ -19,6 +19,8 @@ export interface AnniversaryInfoEntry {
   tagline?: string;
   /** the Chapter's picture is not revealed yet, so a "?" box stands in */
   mystery?: boolean;
+  /** a picture of the Chapter's key reward; when set it replaces the "?" box and the town emblem */
+  art?: { src: string; alt: string };
 }
 
 /** A section of the 5th Anniversary page that explains part of the event. */
@@ -84,7 +86,15 @@ export interface ChapterQuest {
   /** short label of what kind of quest it is, e.g. "สังหาร" */
   kind: string;
   intro?: string;
+  /** what the character needs before it can accept the quest, e.g. "LV 99+" */
+  requirements?: string[];
+  /** where to go and whom to talk to, in order; a coordinate in the text becomes a link */
+  steps?: string[];
   tasks: QuestTask[];
+  /** the correct answers of a quiz Chapter, in the order the questions come */
+  quizAnswers?: string[];
+  /** what the quest gives; items are shown like the rewards of the World Quest */
+  rewards?: QuestTask[];
   /** the closing instruction, e.g. to report back */
   outro?: string;
   notes?: string[];
@@ -107,4 +117,23 @@ export interface RecurringQuestGroup {
   title: string;
   note?: string;
   quests: RecurringQuest[];
+}
+
+/** One job-change stop: the class to become, where the NPC stands. */
+export interface JobChangeStop {
+  job: string;
+  place: string;
+}
+
+/** Facts of the Story Quest that cut across Chapters, shown under the map. */
+export interface StoryGuide {
+  /** the event period, written out for the page */
+  period: string;
+  /** things to know before starting, e.g. the Marin form */
+  notes: string[];
+  /** steps after Chapter II: Hi Novice, then Hi Class */
+  hiNovice: JobChangeStop[];
+  hiClass: string[];
+  /** equipment sets given by the Chapters and what they cost to improve */
+  equipment: { name: string; from: string; detail: string }[];
 }

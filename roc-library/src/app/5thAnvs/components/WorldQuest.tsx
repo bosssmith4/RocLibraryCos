@@ -15,7 +15,7 @@ function StepTitle({ n, title, subtitle }: { n: string; title: string; subtitle:
     <div className="flex items-center gap-3">
       <span
         aria-hidden
-        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-success text-xl font-black text-success-content"
+        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-(--anv-orange) text-xl font-black text-(--anv-ink)"
       >
         {n}
       </span>
@@ -88,7 +88,7 @@ export default function WorldQuest({ group }: { group: RecurringQuestGroup }) {
           })}
         </ul>
       ) : (
-        group.note && <p className="rounded-xl bg-warning/20 px-3 py-2 text-sm">{group.note}</p>
+        group.note && <p className="rounded-xl bg-(--anv-orange)/15 px-3 py-2 text-sm">{group.note}</p>
       )}
 
       <section aria-label={nameOf(hunt.title)} className="space-y-4">
@@ -118,7 +118,7 @@ export default function WorldQuest({ group }: { group: RecurringQuestGroup }) {
         {hunt.notes && (
           <ul className="flex flex-wrap items-center gap-2">
             {hunt.notes.map((note) => (
-              <li key={note} className="flex items-center gap-2 rounded-full bg-warning/25 px-3 py-1 text-sm font-bold">
+              <li key={note} className="flex items-center gap-2 rounded-full bg-(--anv-orange)/20 px-3 py-1 text-sm font-bold">
                 <Clock aria-hidden className="h-4 w-4 shrink-0" />
                 {note}
               </li>
@@ -140,7 +140,7 @@ export default function WorldQuest({ group }: { group: RecurringQuestGroup }) {
             </ul>
           </div>
           {event.notes && (
-            <div className="space-y-2 rounded-2xl bg-success/15 p-3">
+            <div className="space-y-2 rounded-2xl bg-(--anv-orange)/10 p-3">
               <p className="flex items-center gap-2 text-sm font-black">
                 <Users aria-hidden className="h-4 w-4" />
                 ยอดสะสมของทั้งเซิร์ฟเวอร์

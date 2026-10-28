@@ -3,7 +3,8 @@ import { useEffect, useRef, useState } from "react";
 import { Check, Copy, MapPin, X } from "lucide-react";
 import type { AnniversaryInfoEntry, ChapterQuest } from "@/types/anniversary";
 import { splitCoordinates, type MapCoordinate } from "@/utils/mapCoordinate";
-import CoordinateLink, { CoordinateGroupLink } from "./CoordinateLink";
+import CoordinateLink, { CoordinateGroupLink, CoordinateText } from "./CoordinateLink";
+import { RewardBox } from "./QuestParts";
 import QuestTaskRow from "./QuestTaskRow";
 
 /** A map coordinate: press it to see the map with a pin on the spot, or press the small button to copy it. */
@@ -90,16 +91,16 @@ export default function QuestModal({
         <div className="flex items-start gap-4">
           <span
             aria-hidden
-            className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full border-4 border-base-100 text-sm font-black text-white shadow-md"
+            className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-4 border-base-100 text-xl font-black text-white shadow-md"
             style={{ backgroundColor: color }}
           >
             {entry.numeral}
           </span>
           <div className="min-w-0 flex-1 space-y-1">
-            <p className="text-base font-black tracking-wide text-(--anv-orange)">
+            <p className="text-lg font-black tracking-wide text-(--anv-orange)">
               {quest.town} · {quest.kind}
             </p>
-            <h2 id="quest-title" className="text-lg font-black leading-snug">
+            <h2 id="quest-title" className="text-2xl font-black leading-tight sm:text-3xl">
               {quest.gameTitle}
             </h2>
           </div>
@@ -116,11 +117,63 @@ export default function QuestModal({
 
         {quest.intro && <p className="text-base-content/80">{quest.intro}</p>}
 
+        {quest.requirements && (
+          <div className="space-y-1.5">
+            <p className="text-base font-black">เงื่อนไขรับเควส</p>
+            <ul className="flex flex-wrap gap-2">
+              {quest.requirements.map((r) => (
+                <li key={r} className="flex items-center gap-1.5 rounded-full border-2 border-(--anv-orange) bg-(--anv-orange)/15 px-3.5 py-1.5 text-base font-black">
+                  <Check aria-hidden className="h-5 w-5 text-(--anv-orange)" />
+                  {r}
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+
+        {quest.steps && (
+          <div className="space-y-1.5">
+            <p className="text-sm font-black">ขั้นตอน</p>
+            <ol className="space-y-2 text-sm">
+              {quest.steps.map((step, i) => (
+                <li key={step} className="flex items-start gap-2.5">
+                  <span aria-hidden className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full text-xs font-black text-white" style={{ backgroundColor: color }}>
+                    {i + 1}
+                  </span>
+                  <span className="pt-0.5">
+                    <CoordinateText text={step} />
+                  </span>
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
+
         <ul className="grid gap-2 sm:grid-cols-2">
           {quest.tasks.map((task) => (
             <QuestTaskRow key={task.label} task={task} />
           ))}
         </ul>
+
+        {quest.quizAnswers && (
+          <div className="space-y-2">
+            <p className="text-base font-black">เฉลยคำตอบ</p>
+            <ol className="grid gap-2 sm:grid-cols-2">
+              {quest.quizAnswers.map((answer, i) => (
+                <li
+                  key={answer}
+                  className="flex items-center gap-3 rounded-xl border-2 border-success bg-success/10 px-3 py-2"
+                >
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-success text-sm font-black text-success-content">
+                    {i + 1}
+                  </span>
+                  <span className="flex-1 font-black">{answer}</span>
+                  <Check aria-label="คำตอบที่ถูก" className="h-6 w-6 shrink-0 text-success" strokeWidth={3} />
+                </li>
+              ))}
+            </ol>
+          </div>
+        )}
 
         {quest.coordinates && (
           <div className="space-y-2">
@@ -143,6 +196,8 @@ export default function QuestModal({
             </ul>
           </div>
         )}
+
+        {quest.rewards && <RewardBox compact title="รางวัลเมื่อเควสสำเร็จ" tasks={quest.rewards} />}
 
         {quest.outro && <p className="font-bold">{quest.outro}</p>}
         {quest.notes?.map((note) => (

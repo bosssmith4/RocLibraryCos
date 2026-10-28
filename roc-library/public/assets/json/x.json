@@ -1,20 +1,468 @@
 {
-    "108285": {
-        "unidentifiedDisplayName": "Libra Scroll",
-        "unidentifiedResourceName": "천칭자리스크롤",
+    "108385": {
+        "unidentifiedDisplayName": "5th Anniversary Card Album",
+        "unidentifiedResourceName": "황금인장카드",
         "unidentifiedDescriptionName": [
-            "คัมภีร์ลึกลับที่บันทึกพลังของกลุ่มดาว Libra ผู้พิทักษ์แห่งความสมบูรณ์แบบ ว่ากันว่าผู้ที่สามารถครอบครองมันได้ จะได้รับพรจากดวงดาวและเข้าใกล้โชคชะตาที่ถูกซ่อนเอาไว้"
+            "อัลบั้มการ์ดที่จัดทำขึ้น เพื่อเฉลิมฉลอง ครบรอบ 5 ปี Ragnarok Online Classic",
+            "ผู้เล่นสามารถกดเพื่อลุ้นรับการ์ด MVP จำนวน 1 ใบ"
         ],
-        "identifiedDisplayName": "Libra Scroll",
-        "identifiedResourceName": "천칭자리스크롤",
+        "identifiedDisplayName": "5th Anniversary Card Album",
+        "identifiedResourceName": "황금인장카드",
         "identifiedDescriptionName": [
-            "คัมภีร์ลึกลับที่บันทึกพลังของกลุ่มดาว Libra ผู้พิทักษ์แห่งความสมบูรณ์แบบ ว่ากันว่าผู้ที่สามารถครอบครองมันได้ จะได้รับพรจากดวงดาวและเข้าใกล้โชคชะตาที่ถูกซ่อนเอาไว้",
-            "^ff0000หากเปิดใช้งานหลังวันที่ 21 ตุลาคม 2569 หลังปิดปรับปรุงประจำสัปดาห์จะไม่ได้รับ Libra Coin ",
+            "อัลบั้มการ์ดที่จัดทำขึ้น เพื่อเฉลิมฉลอง ครบรอบ 5 ปี Ragnarok Online Classic",
+            "ผู้เล่นสามารถกดเพื่อลุ้นรับการ์ด MVP จำนวน 1 ใบ",
+            "น้ำหนัก : 1"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "5979": {
+        "unidentifiedDisplayName": "Ribbon",
+        "unidentifiedResourceName": "리본",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Costume Fluttering Angel's Wing",
+        "identifiedResourceName": "C흩날리는천사의날개",
+        "identifiedDescriptionName": [
+            "ปีกคอสตูมที่พลิ้วไหวไปตามสายลม",
+            "ราวกับสามารถได้ยินพรจากพระเจ้าผ่านปีกที่โบกสะบัด",
+            "",
+            "ประเภท : Costume พลังป้องกัน : 0",
+            "ตำแหน่ง : Lower น้ำหนัก : 0",
+            "เลเวลที่ต้องการ : 1",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": true
+    },
+    "480991": {
+        "unidentifiedDisplayName": "Muffler",
+        "unidentifiedResourceName": "머플러",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Angel Ribbon Wing",
+        "identifiedResourceName": "AngelRibbonWing",
+        "identifiedDescriptionName": [
+            "เสื้อคลุมสำหรับชุดที่ตัดเย็บจากขนเทวดาสีขาว",
+            "มันออกแบบอย่างวิจิตรให้ดูราวกับมีโบว์ผูกประดับอยู่",
+            "",
+            "ATK +1, MATK +1 ต่อทุกการเพิ่มขึ้นของ 1 Base Lv",
+            "เมื่ออัพเกรดถึงขั้น 7, ATK +10% , MATK +10% ",
+            "เมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางกายภาพและเวทมนตร์ต่อศัตรูทุกขนาด 15%",
+            "เมื่ออัพเกรดถึงขั้น 11, เพิกเฉยต่อพลังป้องกันทางกายภาพ/เวทมนตร์ของมอนสเตอร์ประเภท Angel , Demon 30%",
+            "",
+            "เมื่อสวมใส่ร่วมกับ [Heaven and Earth Collapse]",
+            "ลดความเสียหายที่ได้รับจากผู้เล่นลง 5%,",
+            "ลดความเสียหายที่ได้รับจากการโจมตีธาตุ Holy และ Poison ลง 5%",
+            "",
+            "ประเภท : Garment  พลังป้องกัน : 10",
+            "น้ำหนัก : 10",
+            "เลเวลที่ต้องการ : 1",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 1,
+        "ClassNum": 42,
+        "costume": false
+    },
+    "410752": {
+        "unidentifiedDisplayName": "Ribbon",
+        "unidentifiedResourceName": "리본",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Cherub Coronet",
+        "identifiedResourceName": "GorgonCoronet",
+        "identifiedDescriptionName": [
+            "มงกุฎสวยงามเพื่อบูชาทูตสวรรค์ผู้สง่างาม",
+            "STR + 5 , INT + 5",
+            "ATK + 60 , MATK + 60",
+            "ต้านทานสถานะ Bleeding และ Confusion + 100%",
+            "เมื่อค่า STR หรือ DEX พื้นฐานรวมกันตั้งแต่ 120 ขึ้นไป",
+            "ATK เพิ่มขึ้นอีก + 100,",
+            "ความเสียหายกายภาพที่สร้างต่อมอนสเตอร์ประเภท Boss + 15%",
+            "เมื่อค่า VIT หรือ INT พื้นฐานรวมกันตั้งแต่ 120 ขึ้นไป",
+            "MATK เพิ่มขึ้นอีก + 100,",
+            "ประสิทธิภาพการฮีลเพิ่มขึ้นอีก + 50%,",
+            "ปริมาณ HP ที่ได้รับจากการฮีลเพิ่มขึ้นอีก + 30%,",
+            "ความเสียหายเวทย์มนต์ที่สร้างต่อมอนสเตอร์ประเภท Boss + 15%",
+            "ประเภท : Headgear พลังป้องกัน : 0",
+            "ตำแหน่ง : Middle น้ำหนัก : 100",
+            "เลเวลที่ต้องการ : 100",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 0,
+        "ClassNum": 2250,
+        "costume": false
+    },
+    "32219": {
+        "unidentifiedDisplayName": "Ring",
+        "unidentifiedResourceName": "링",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Astraea Ring",
+        "identifiedResourceName": "윈드링",
+        "identifiedDescriptionName": [
+            "แหวนที่กล่าวกันว่าเป็นผู้มีตระกูลสูงส่งจากต่างแดน",
+            "All State + 1.",
+            "สามารถใช้งานสกิล Suffragium Lv.3 ได้",
+            "ดาเมจทางกายภาพและทางเวทมนตร์ที่สร้างต่อศัตรูประเภทบอสเพิ่ม 5%",
+            "ทุกๆการอัพเกรด 1 ขั้น MHP เพิ่มขึ้น 1%,ผลของการ Heal รุนแรงขึ้น 2%",
+            "เมื่ออัพเกรดขั้น 7  ลดความเสียหายทางกายภาพระยะไกล 5%",
+            "เมื่ออัพเกรดขั้น 9  Max HP +1000 , Max SP + 300",
+            "",
+            "เมื่อสวมใส่กับ [High Priest Card] หรือ [Sealed High Priest Card], การร่าย Auto Spell Assumption จะไม่แสดงผล",
+            "เปลี่ยนธาตุของเสื้อเกราะให้เป็นธาตุ Ghost",
+            "เพิ่มดาเมจทางเวทย์/กายภาพที่สร้างต่อมอนสเตอร์ประเภทบอสขึ้นอีก 20%",
+            "เมื่อสวมใส่กับ [Astraea Shoes], ลดดีเลย์หลังใช้สกิล 5%, MaxHP+8%, MaxSP+8%",
+            "",
+            "ประเภท : Accessory  พลังป้องกัน : 0",
+            "น้ำหนัก : 10",
+            "เลเวลที่ต้องการ : 100",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 1,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "400075": {
+        "unidentifiedDisplayName": "Hairband",
+        "unidentifiedResourceName": "머리띠",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Astraea Helm",
+        "identifiedResourceName": "레긴레이브의날개",
+        "identifiedDescriptionName": [
+            "MaxHP+10%",
+            "เมื่ออัพเกรดขั้น 7, MaxHP เพิ่มอีก +10%",
+            "เมื่ออัพเกรดขั้น 9, ดาเมจทางเวทย์/กายภาพที่ได้รับจากศัตรูทุกธาตุลดลง 5%",
+            "เมื่ออัพเกรดขั้น 10, ดาเมจทางเวทย์/กายภาพที่ได้รับจากศัตรูทุกขนาดลดลง 5%",
+            "เมื่ออัพเกรดขั้น 11, ดาเมจทางเวทย์/กายภาพที่ได้รับจากศัตรูทุกประเภทลดลง 5%",
+            "เมื่ออัพเกรดขั้น 12 ดาเมจทางเวทย์/กายภาพที่ได้รับจากศัตรูทุกเผ่าลดลง 5%",
+            "",
+            "เมื่อสวมใส่กับ [Astraea Shoes]",
+            "การร่ายแบบคงตัวลดลง 0.5 วินาที, Perfect Dodge +10",
+            "",
+            "เมื่อสวมใส่กับ [Astraea Armor]",
+            "มีโอกาส 5% ที่จะได้รับผลของ [Muscle Fool] เมื่อโดนโจมตีทางกายภาพ",
+            "เพิ่มผลของ Heal + 20%",
+            "",
+            "เมื่อสวมใส่กับ [Astraea Manteau]",
+            "ดาเมจจากการโจมตีทางกายภาพระยะไกลที่ได้รับลดลง 15%",
+            "ดาเมจทางเวทย์/กายภาพที่ได้รับจากศัตรูทุกธาตุลดลง 5%",
+            "",
+            "เมื่อสวมใส่กับ [Astraea Ring]",
+            "All State+3，",
+            "ดีเลย์หลังใช้สกิลลดลง 7%",
+            "ทุก ๆ การอัพเกรดหมวก 1 ขั้น DEF +50",
+            "",
+            "เมื่อสวมใส่ครบทุกชิ้นข้างต้น：",
+            "หากสวมใส่โดยอาชีพ High Priest ขึ้นไปและผลรวมขั้นอัพเกรดตั้งแต่ 48 ขึ้นไป, จะสามารถใช้สกิล [Enegy Coat] ได้",
+            "ประเภท : Headgear พลังป้องกัน : 0",
+            "ตำแหน่ง : Upper น้ำหนัก : 20",
+            "เลเวลที่ต้องการ : 100",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 1,
+        "ClassNum": 468,
+        "costume": false
+    },
+    "15367": {
+        "unidentifiedDisplayName": "Silk Robe",
+        "unidentifiedResourceName": "실버로브",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Astraea Armor",
+        "identifiedResourceName": "디바로브",
+        "identifiedDescriptionName": [
+            "ชุดเกราะที่กล่าวกันว่าเป็นผู้มีตระกูลสูงส่งจากต่างแดน",
+            "เมื่อสวมใส่กับ [Evil Druid Card],",
+            "[Astraea Armor] ทุกๆ 2 ขั้นอัพเกรด, MaxHP+3%(สูงสุดถึงขั้น 14).",
+            "เมื่อสวมใส่กับ [High Priest Card],",
+            "[Astraea Armor] มีขั้นอัพเกรดตั้งแต่ +10 ขึ้นไป เพิ่ม % MaxHP เท่ากับ (ขั้นอัพเกรด-5)*(ขั้นอัพเกรด-5) (สูงสุดถึง +14)",
+            "เมื่อสวมใส่กับ [Sealed High Priest Card],",
+            "[Astraea Armor] มีขั้นอัพเกรดตั้งแต่ +10 ขึ้นไป เพิ่ม % MaxHP เท่ากับ (ขั้นอัพเกรด-6)*(ขั้นอัพเกรด-6) (สูงสุดถึง +14)",
+            "เมื่อสวมใส่กับ [Astraea Shoes], [Astraea Manteau],",
+            "All state+3, MaxHP+15%.",
+            "ทนทานต่อการโจมตีทางกายภาพของศัตรูขนาดกลาง +5%.",
+            "เมื่อผลรวมขึ้นอัพเกรดตั้งแต่ 45 ขึ้นไป, จะไม่ติดสถานะ Frozen",
+            "ประเภท : Armor พลังป้องกัน : 80",
+            "น้ำหนัก : 50",
+            "เลเวลที่ต้องการ : 94",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 1,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "22167": {
+        "unidentifiedDisplayName": "Shoes",
+        "unidentifiedResourceName": "슈즈",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Astraea Shoes",
+        "identifiedResourceName": "디바슈즈",
+        "identifiedDescriptionName": [
+            "รองเท้าที่ลือกันว่าผู้สูงศักดิ์ของประเทศที่ห่างไกลสวมใส่",
+            "All state + 1",
+            "เมื่ออัปเกรดถึงขั้น 10",
+            "เมื่อ Base STR ตั้งแต่ 100 ขึ้นไป, เพิ่ม MHP+5%, MSP+5% (เมื่อ Base STR 120, เพิ่มอีกอย่างละ 2%),",
+            "เมื่อ Base INT ตั้งแต่ 100 ขึ้นไป, ลด Fixed Cast Time 30% (เมื่อ Base INT 120, ลดอีก 0.5 วินาที),",
+            "เมื่อ Base VIT ตั้งแต่ 100 ขึ้นไป, เพิ่มความต้านทานทางกายภาพจากการโจมตีของมอนสเตอร์ขนาดกลาง 10% (เมื่อ Base VIT 120, เพิ่มความต้านทานทางกายภาพจากการโจมตีของมอนสเตอร์ขนาดกลางอีก 5%),",
+            "เมื่อ Base AGI ตั้งแต่ 100 ขึ้นไป, ASPD +8% (เมื่อ Base AGI 120, ASPD +1 เพิ่มเติม),",
+            "เมื่อ Base DEX ตั้งแต่ 100 ขึ้นไป, ลด Delay หลังใช้สกิล 3% (เมื่อ Base DEX 120, ลดอีก 2%),",
+            "เมื่อ Base LUK ตั้งแต่ 100 ขึ้นไป, Cri +5 (เมื่อ Base LUK 120, Cri +2, Perfect Dodge +1)",
+            "",
+            "รองเท้าสามารถทำ Enchant กับ NPC Inception Boot ได้",
+            "ประเภท : Shoes พลังป้องกัน : 0",
+            "น้ำหนัก : 25",
+            "เลเวลที่ต้องการ : 100",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 1,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "20905": {
+        "unidentifiedDisplayName": "Garment",
+        "unidentifiedResourceName": "후드",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Astrea Manteau",
+        "identifiedResourceName": "디바망토",
+        "identifiedDescriptionName": [
+            "ผ้าคลุมที่ลือกันว่าผู้สูงศักดิ์ของประเทศที่ห่างไกลสวมใส่",
+            "MHP, MSP +5%",
+            "INT +2, VIT +2, DEX +2",
+            "เมื่ออัปเกรดถึงขั้น 12, ASPD +2",
+            "เมื่อสวมใส่ร่วมกับ Astraea Shoes,",
+            "All State +1",
+            "ลดความเสียหายต่อศัตรูทุกเผ่า +10%",
+            "MHP, MSP +5%",
+            "ประเภท : Garment พลังป้องกัน : 15",
+            "น้ำหนัก : 40 ",
+            "เลเวลที่ต้องการ : 1 ",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 1,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "410249": {
+        "unidentifiedDisplayName": "Smile",
+        "unidentifiedResourceName": "스마일",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Odin Mask",
+        "identifiedResourceName": "오딘마스크",
+        "identifiedDescriptionName": [
+            "หน้ากากที่ Odin เคยสวมใส่ระหว่างการต่อสู้อันดุเดือดระหว่างเหล่าทวยเทพและมนุษย์",
+            "ขณะสวมใส่ จะได้รับพลังจาก Odin ทำให้ได้รับผลดังต่อไปนี้",
+            "เพิ่มดาเมจที่ทำต่อมอนสเตอร์ Boss 3%",
+            "เพิ่ม DEF เท่ากับ Base STR",
+            "เมื่อโจมตีทางกายภาพ มีโอกาส 1% ที่จะฟื้นฟู HP 1% ของพลังโจมตี, โอกาสฟื้นฟูเพิ่มขึ้นเท่ากับ Base VIT",
+            "เพิ่ม Flee เท่ากับ Base AGI",
+            "เพิ่ม MDEF เท่ากับ Base INT",
+            "เพิ่ม HIT เท่ากับ Base DEX",
+            "เพิ่มความต้านทานสถานะที่ผิดปกติ (Poison, Curse, Silence, Confuse, Blind) โดยมีอัตราเท่ากับ Base LUK",
+            "",
+            "",
+            "",
+            "ประเภท : Headgear พลังป้องกัน : 1",
+            "ตำแหน่ง : Middle น้ำหนัก : 10",
+            "เลเวลที่ต้องการ : 20",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 0,
+        "ClassNum": 480,
+        "costume": false
+    },
+    "107490": {
+        "unidentifiedDisplayName": "2nd Class Shadow Random Box",
+        "unidentifiedResourceName": "쉐도우큐브",
+        "unidentifiedDescriptionName": [
+            "กล่องสุ่มเมื่อเปิดออกจะได้รับอุปกรณ์ Shadow Equipment อาชีพคลาส 2",
+            "",
+            "[สุ่มรับไอเท็ม 1 ชิ้น]",
+            "Knight Shoes",
+            "Crusader Shoes",
+            "Blacksmith Shoes",
+            "Alchemist Shoes",
+            "Priest Shoes",
+            "Monk Shoes",
+            "Assassin Shoes",
+            "Rogue Shoes",
+            "Wizard Shoes",
+            "Sage Shoes",
+            "Hunter Shoes",
+            "Bard Shoes",
+            "Dancer Shoes",
+            "Knight Armor",
+            "Crusader Armor",
+            "Blacksmith Armor",
+            "Alchemist Armor",
+            "Priest Armor",
+            "Monk Armor",
+            "Assassin Armor",
+            "Rogue Armor",
+            "Wizard Armor",
+            "Sage Armor",
+            "Hunter Armor",
+            "Bard Armor",
+            "Dancer Armor"
+        ],
+        "identifiedDisplayName": "2nd Class Shadow Random Box",
+        "identifiedResourceName": "쉐도우큐브",
+        "identifiedDescriptionName": [
+            "กล่องสุ่มเมื่อเปิดออกจะได้รับอุปกรณ์ Shadow Equipment อาชีพคลาส 2",
+            "",
+            "[สุ่มรับไอเท็ม 1 ชิ้น]",
+            "Knight Shoes",
+            "Crusader Shoes",
+            "Blacksmith Shoes",
+            "Alchemist Shoes",
+            "Priest Shoes",
+            "Monk Shoes",
+            "Assassin Shoes",
+            "Rogue Shoes",
+            "Wizard Shoes",
+            "Sage Shoes",
+            "Hunter Shoes",
+            "Bard Shoes",
+            "Dancer Shoes",
+            "Knight Armor",
+            "Crusader Armor",
+            "Blacksmith Armor",
+            "Alchemist Armor",
+            "Priest Armor",
+            "Monk Armor",
+            "Assassin Armor",
+            "Rogue Armor",
+            "Wizard Armor",
+            "Sage Armor",
+            "Hunter Armor",
+            "Bard Armor",
+            "Dancer Armor",
+            "น้ำหนัก : 1"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "107489": {
+        "unidentifiedDisplayName": "1st Class Shadow Random Box",
+        "unidentifiedResourceName": "화려한상자",
+        "unidentifiedDescriptionName": [
+            "กล่องสุ่มเมื่อเปิดออกจะได้รับอุปกรณ์ Shadow Equipment อาชีพคลาส1",
+            "",
+            "[สุ่มรับไอเท็ม 1 ชิ้น]",
+            "Swordman Earring",
+            "Merchant Earring",
+            "Acolyte Earring",
+            "Magician Earring",
+            "Swordman Pendant",
+            "Merchant Pendant",
+            "Acolyte Pendant",
+            "Thief Pendant",
+            "Magician Pendant",
+            "Archer Pendant",
+            "Thief Earring",
+            "Archer Earring"
+        ],
+        "identifiedDisplayName": "1st Class Shadow Random Box",
+        "identifiedResourceName": "화려한상자",
+        "identifiedDescriptionName": [
+            "กล่องสุ่มเมื่อเปิดออกจะได้รับอุปกรณ์ Shadow Equipment อาชีพคลาส1",
+            "",
+            "[สุ่มรับไอเท็ม 1 ชิ้น]",
+            "Swordman Earring",
+            "Merchant Earring",
+            "Acolyte Earring",
+            "Magician Earring",
+            "Swordman Pendant",
+            "Merchant Pendant",
+            "Acolyte Pendant",
+            "Thief Pendant",
+            "Magician Pendant",
+            "Archer Pendant",
+            "Thief Earring",
+            "Archer Earring",
+            "น้ำหนัก : 1"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "108409": {
+        "unidentifiedDisplayName": "5th Anniversary Scroll",
+        "unidentifiedResourceName": "기도스크롤",
+        "unidentifiedDescriptionName": [
+            "คัมภีร์ที่ระลึกวันครบรอบ 5 ปี Ragnarok Classic ที่จัดทำขึ้นเพื่อเป็นการเฉลิมฉลอง ให้กับนักผจญภัยผู้กล้าที่ต่อสู้ฝ่าฟันมาตลอด 5 ปีแห่งการเดินทาง",
+            "^ff0000คำเตือน! หากเปิดใช้งานหลังวันที่ 25 พฤศจิกายน 2569 หลังปิดปรับปรุงประจำสัปดาห์ จะไม่ได้รับ 5th Anniversary Coin"
+        ],
+        "identifiedDisplayName": "5th Anniversary Scroll",
+        "identifiedResourceName": "기도스크롤",
+        "identifiedDescriptionName": [
+            "คัมภีร์ที่ระลึกวันครบรอบ 5 ปี Ragnarok Classic ที่จัดทำขึ้นเพื่อเป็นการเฉลิมฉลอง ให้กับนักผจญภัยผู้กล้าที่ต่อสู้ฝ่าฟันมาตลอด 5 ปีแห่งการเดินทาง",
+            "^ff0000คำเตือน! หากเปิดใช้งานหลังวันที่ 25 พฤศจิกายน 2569 หลังปิดปรับปรุงประจำสัปดาห์ จะไม่ได้รับ 5th Anniversary Coin",
             "",
             "น้ำหนัก : 1"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
+    },
+    "14536": {
+        "unidentifiedDisplayName": "Abrasive",
+        "unidentifiedResourceName": "그린에일",
+        "unidentifiedDescriptionName": [
+            "น้ำยาเพิ่มความคมให้กับอาวุธ",
+            "เพิ่ม Critical Rate 30 เป็นเวลา 5 นาที",
+            "เมื่อผู้ใช้อยู่ในสถานะที่ไม่สามารถต่อสู้ได้ ผลของ item นี้จะหมดลง",
+            "^ffffff_",
+            "น้ำหนัก : 1"
+        ],
+        "identifiedDisplayName": "Abrasive",
+        "identifiedResourceName": "그린에일",
+        "identifiedDescriptionName": [
+            "น้ำยาเพิ่มความคมให้กับอาวุธ",
+            "เพิ่ม Critical Rate 30 เป็นเวลา 5 นาที",
+            "เมื่อผู้ใช้อยู่ในสถานะที่ไม่สามารถต่อสู้ได้ ผลของ item นี้จะหมดลง",
+            "^ffffff_",
+            "น้ำหนัก : 1"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0
+    },
+    "9894": {
+        "unidentifiedDisplayName": "[Scroll] Adrenaline  Lv.5 Scroll",
+        "unidentifiedResourceName": "불의주문서",
+        "unidentifiedDescriptionName": [
+            "Scroll ที่บันทึกวิธีการใช้ Adrenaline Rush เอาไว้ สามารถใช้สกิล Adrenaline Rush Level 5 ได้",
+            "ระวัง! - ไม่สามารถใช้ไอเทมได้ขณะร่ายสกิล",
+            "ระวัง! - หากผู้ใช้ไม่ได้สวมใส่ Mace หรือ Axe Scroll จะหายไปโดยไม่เกิด Effect ใดๆ",
+            "^ffffff_",
+            "น้ำหนัก : 1"
+        ],
+        "identifiedDisplayName": "[Scroll] Adrenaline  Lv.5 Scroll",
+        "identifiedResourceName": "불의주문서",
+        "identifiedDescriptionName": [
+            "Scroll ที่บันทึกวิธีการใช้ Adrenaline Rush เอาไว้ สามารถใช้สกิล Adrenaline Rush Level 5 ได้",
+            "ระวัง! - ไม่สามารถใช้ไอเทมได้ขณะร่ายสกิล",
+            "ระวัง! - หากผู้ใช้ไม่ได้สวมใส่ Mace หรือ Axe Scroll จะหายไปโดยไม่เกิด Effect ใดๆ",
+            "^ffffff_",
+            "น้ำหนัก : 1"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0
     }
 }

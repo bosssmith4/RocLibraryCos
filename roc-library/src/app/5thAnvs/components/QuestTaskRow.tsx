@@ -51,7 +51,7 @@ function Picture({
  * pixel is flooded from every edge and made transparent; the item itself keeps its colours.
  * A missing file shows `fallback`; while it works, the same-sized slot stays blank.
  */
-function CutoutPicture({
+export function CutoutPicture({
   src,
   className,
   fallback,
@@ -140,10 +140,13 @@ function CutoutPicture({
 export default function QuestTaskRow({
   task,
   largeMonster = false,
+  compact = false,
 }: {
   task: QuestTask;
   /** show the monster picture bigger (the World Quest) */
   largeMonster?: boolean;
+  /** a small, quiet row: for a list the player only glances at, such as rewards */
+  compact?: boolean;
 }) {
   const { Icon, label } = KINDS[task.kind];
   const itemFirst = task.kind === "collect" || task.kind === "reward";
@@ -164,6 +167,37 @@ export default function QuestTaskRow({
         fallback={fallback}
       />
     );
+
+  if (compact) {
+    return (
+      <li className="flex items-center gap-2 rounded-xl bg-base-100 px-2.5 py-1.5">
+        {task.itemImageId !== undefined ? (
+          <CutoutPicture
+            src={`/assets/images/anvs/items/${task.itemImageId}.bmp`}
+            className="h-8 w-8 shrink-0 object-contain"
+            fallback={<Icon aria-hidden className="h-5 w-5 shrink-0 text-base-content/60" />}
+          />
+        ) : (
+          <Icon aria-hidden className="h-5 w-5 shrink-0 text-base-content/60" />
+        )}
+        <p className="min-w-0 text-sm leading-snug">
+          <span className="sr-only">{label}: </span>
+          <span className="font-bold">{task.label}</span>
+          {task.count !== undefined && (
+            <span className="ml-1.5 font-black text-base-content/70">
+              ×{task.count}
+              {task.unit ? ` ${task.unit}` : ""}
+            </span>
+          )}
+          {task.via && (
+            <span className="block text-xs text-base-content/60">
+              <CoordinateText text={task.via} />
+            </span>
+          )}
+        </p>
+      </li>
+    );
+  }
 
   return (
     <li className="flex items-center gap-3 rounded-2xl bg-base-200 p-3">

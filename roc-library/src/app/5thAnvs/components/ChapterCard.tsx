@@ -18,8 +18,8 @@ export default function ChapterCard({
       <span className="flex h-20 w-20 shrink-0 items-center justify-center rounded-2xl bg-linear-to-br from-(--anv-orange) to-(--anv-cream)">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src={`${ART}/${entry.mystery ? "mystery" : "castle"}.svg`}
-          alt={entry.mystery ? "ยังไม่เปิดเผย" : ""}
+          src={entry.art?.src ?? `${ART}/${entry.mystery ? "mystery" : "castle"}.svg`}
+          alt={entry.art?.alt ?? (entry.mystery ? "ยังไม่เปิดเผย" : "")}
           className="h-14 w-14 object-contain drop-shadow"
         />
       </span>

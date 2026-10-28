@@ -19,6 +19,13 @@ export function deathService(): RateSource {
         DateTo: new Date("2026-05-27T06:00:00+07:00"),
         description: "Sun Moon Event ลด Death Penalty 100%",
       },
+      {
+        name: "5th Anniversary Boost Death -50%",
+        ratePercent: -50,
+        DateFrom: new Date("2026-10-28T06:00:00+07:00"),
+        DateTo: new Date("2027-01-13T05:59:00+07:00"),
+        description: "5th Anniversary Boost: ลดการสูญเสีย EXP เมื่อตัวละครตาย 50% (Additional)",
+      },
     ],
   };
 }

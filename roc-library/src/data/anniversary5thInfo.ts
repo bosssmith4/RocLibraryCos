@@ -28,7 +28,7 @@ export const ANNIVERSARY_INFO_SECTIONS: AnniversaryInfoSection[] = [
         heading: "รากฐานแห่งอณาจักร",
         detail: ["พลังหาใช่ความแกร่งที่แท้ ความเข้าใจคือบ่อเกิด ปกป้องและหวงแหน"],
         tagline: "จะนำพาสู่พลังที่แท้จริง",
-        mystery: true,
+        art: { src: "/assets/images/anvs/chapters/probation-set.svg", alt: "Probation Set" },
       },
       {
         title: "Alberta",
@@ -37,7 +37,7 @@ export const ANNIVERSARY_INFO_SECTIONS: AnniversaryInfoSection[] = [
         heading: "เปิดเส้นทางการค้า",
         detail: ["การค้าถูกตัดขาด เชื่อมเส้นทางกลับเข้าหา มุ่งคุ้มกันและฟื้นฟู"],
         tagline: "ความมั่งคั่งจึงหวนคืน",
-        mystery: true,
+        art: { src: "/assets/images/anvs/chapters/noblesse-set.svg", alt: "Noblesse Set" },
       },
       {
         title: "Geffen",
@@ -46,7 +46,7 @@ export const ANNIVERSARY_INFO_SECTIONS: AnniversaryInfoSection[] = [
         heading: "บททดสอบแห่งพลัง",
         detail: ["ควบคุมพลังด้วยปัญญา เมื่อมันถูกจำกัด ทุกการตัดสินใจจึงสำคัญ"],
         tagline: "เมืองแห่งการทดสอบ",
-        mystery: true,
+        art: { src: "/assets/images/anvs/chapters/ring-5th.svg", alt: "5th Anniversary Ring [1]" },
       },
       {
         title: "Morroc",

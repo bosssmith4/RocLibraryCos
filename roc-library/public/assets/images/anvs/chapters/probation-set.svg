@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Probation Set: ชุดอุปกรณ์พื้นฐานที่ทุกอาชีพใช้ได้">
+  <path d="M64 8 108 24v38c0 28-18 48-44 58C38 110 20 90 20 62V24Z" fill="#c98a4b" stroke="#3a1400" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M64 18 98 30v32c0 22-14 38-34 46C44 100 30 84 30 62V30Z" fill="#f0d29c" stroke="#3a1400" stroke-width="3" stroke-linejoin="round"/>
+  <path d="M64 34l7.5 15.2 16.8 2.4-12.2 11.8 2.9 16.7L64 71.2l-15 8.9 2.9-16.7-12.2-11.8 16.8-2.4Z" fill="#fd6c01" stroke="#3a1400" stroke-width="3.5" stroke-linejoin="round"/>
+  <rect x="78" y="86" width="42" height="26" rx="13" fill="#3a1400"/>
+  <text x="99" y="105" text-anchor="middle" font-family="sans-serif" font-weight="900" font-size="17" fill="#f0d29c">+7</text>
+</svg>

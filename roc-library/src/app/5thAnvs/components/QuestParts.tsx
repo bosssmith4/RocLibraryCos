@@ -9,21 +9,30 @@ export function RewardBox({
   title,
   tasks,
   wide = false,
+  compact = false,
 }: {
   title: string;
   tasks: QuestTask[];
   /** lay the rewards out in two columns when there is room */
   wide?: boolean;
+  /** small rows on a plain surface, for rewards the player only glances at */
+  compact?: boolean;
 }) {
   return (
-    <div className="space-y-2 rounded-2xl border-2 border-(--anv-orange) bg-(--anv-orange)/10 p-3">
-      <p className="flex items-center gap-2 text-sm font-black">
+    <div
+      className={
+        compact
+          ? "space-y-2 rounded-2xl bg-base-200 p-3"
+          : "space-y-2 rounded-2xl border-2 border-(--anv-orange) bg-(--anv-orange)/10 p-3"
+      }
+    >
+      <p className={`flex items-center gap-2 font-black ${compact ? "text-xs text-base-content/70" : "text-sm"}`}>
         <Gift aria-hidden className="h-4 w-4 text-(--anv-orange)" />
         {title}
       </p>
-      <ul className={wide ? "grid gap-2 md:grid-cols-2" : "space-y-2"}>
+      <ul className={compact || wide ? "grid gap-1.5 sm:grid-cols-2" : "space-y-2"}>
         {tasks.map((task) => (
-          <QuestTaskRow key={task.label} task={task} />
+          <QuestTaskRow key={task.label} task={task} compact={compact} />
         ))}
       </ul>
     </div>

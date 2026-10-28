@@ -18,6 +18,13 @@ export function expService(): RateSource {
         DateTo: new Date("2026-06-04T06:00:00+07:00"),
         description: "Exp Up หยุดยาวนี้พรี่มีคูณ 100%",
       },
+      {
+        name: "5th Anniversary Boost EXP +125%",
+        ratePercent: 125,
+        DateFrom: new Date("2026-10-28T06:00:00+07:00"),
+        DateTo: new Date("2027-01-13T05:59:00+07:00"),
+        description: "5th Anniversary Boost: EXP Bonus +125% (Additional)",
+      },
     ],
   };
 }

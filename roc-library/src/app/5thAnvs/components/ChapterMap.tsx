@@ -64,6 +64,7 @@ export default function ChapterMap() {
                 town={entry.title}
                 numeral={entry.numeral ?? String(region.index + 1)}
                 mystery={!!entry.mystery}
+                art={entry.art?.src}
                 active={active === region.index}
                 delay={region.index * 0.08}
                 onEnter={() => {
@@ -137,6 +138,8 @@ interface RegionShapeProps {
   town: string;
   numeral: string;
   mystery: boolean;
+  /** picture of the Chapter's key reward, drawn in place of the emblem */
+  art?: string;
   active: boolean;
   delay: number;
   onEnter: () => void;
@@ -151,6 +154,7 @@ function RegionShape({
   town,
   numeral,
   mystery,
+  art,
   active,
   delay,
   onEnter,
@@ -214,7 +218,7 @@ function RegionShape({
         >
           {numeral}
         </text>
-        <ChapterEmblem town={town} mystery={mystery} x={cx} y={cy - 18} />
+        <ChapterEmblem town={town} mystery={mystery} art={art} x={cx} y={cy - 18} />
         <g className="hidden sm:inline">
           {active && (
             // the name turns into a cream tag with the region's own colour, darkened, so it stands out

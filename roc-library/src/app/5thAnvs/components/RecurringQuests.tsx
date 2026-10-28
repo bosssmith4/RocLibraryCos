@@ -9,9 +9,9 @@ const ART = "/assets/images/anvs/landing";
 
 /** Band colour and picture of each group. */
 const GROUP_STYLES = {
-  daily: { band: "bg-warning text-warning-content", art: "sun.svg" },
-  weekly: { band: "bg-info text-info-content", art: "calendar.svg" },
-  world: { band: "bg-success text-success-content", art: "globe.svg" },
+  daily: { band: "bg-(--anv-orange) text-(--anv-ink)", art: "sun.svg" },
+  weekly: { band: "bg-(--anv-cream) text-(--anv-ink)", art: "calendar.svg" },
+  world: { band: "bg-(--anv-ink) text-(--anv-cream)", art: "globe.svg" },
 } as const;
 
 function GroupCard({ group }: { group: RecurringQuestGroup }) {
@@ -28,13 +28,13 @@ function GroupCard({ group }: { group: RecurringQuestGroup }) {
           <WorldQuest group={group} />
         ) : (
           <>
-            {group.note && <p className="rounded-xl bg-warning/20 px-3 py-2 text-sm">{group.note}</p>}
+            {group.note && <p className="rounded-xl bg-(--anv-orange)/15 px-3 py-2 text-sm">{group.note}</p>}
             {group.quests.length === 0 ? (
               <p className="text-sm text-base-content/70">กำลังรวบรวมข้อมูล</p>
             ) : (
               group.quests.map((quest) => (
                 <div key={quest.title} className="space-y-2">
-                  <p className="text-xs font-black uppercase tracking-widest text-(--anv-orange)">{quest.title}</p>
+                  <p className="text-sm font-black uppercase tracking-widest text-(--anv-orange)">{quest.title}</p>
                   <ul className="space-y-2">
                     {quest.tasks
                       .filter((task) => task.kind !== "reward")
@@ -49,7 +49,7 @@ function GroupCard({ group }: { group: RecurringQuestGroup }) {
                     />
                   )}
                   {quest.notes?.map((note) => (
-                    <p key={note} className="rounded-xl bg-warning/20 px-3 py-2 text-sm">
+                    <p key={note} className="rounded-xl bg-(--anv-orange)/15 px-3 py-2 text-sm">
                       {note}
                     </p>
                   ))}

@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Noblesse Set: ชุดอุปกรณ์ระดับสูงกว่า Probation">
+  <path d="M30 56 14 112h100L98 56Z" fill="#7c1d6f" stroke="#3a1400" stroke-width="6" stroke-linejoin="round"/>
+  <path d="M42 62 32 106h64L86 62Z" fill="#a8329a"/>
+  <path d="M20 52 28 28l24 22 12-30 12 30 24-22 8 24Z" fill="#f4c542" stroke="#3a1400" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="20" y="50" width="88" height="14" rx="3" fill="#f4c542" stroke="#3a1400" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="64" cy="57" r="6" fill="#ef4444" stroke="#3a1400" stroke-width="3"/>
+  <circle cx="38" cy="57" r="4" fill="#3b82f6" stroke="#3a1400" stroke-width="2.5"/>
+  <circle cx="90" cy="57" r="4" fill="#16a34a" stroke="#3a1400" stroke-width="2.5"/>
+  <path d="M64 74l5 10 11 1.6-8 7.8 1.9 11L64 99l-9.9 5.4 1.9-11-8-7.8 11-1.6Z" fill="#f0d29c" stroke="#3a1400" stroke-width="3" stroke-linejoin="round"/>
+</svg>

@@ -34,14 +34,20 @@ const GLYPHS: Record<string, ReactNode> = {
 export default function ChapterEmblem({
   town,
   mystery,
+  art,
   x,
   y,
 }: {
   town: string;
   mystery: boolean;
+  /** a picture of the key reward; drawn instead of the emblem or the "?" */
+  art?: string;
   x: number;
   y: number;
 }) {
+  if (art) {
+    return <image href={art} x={x - 52} y={y - 56} width={104} height={104} preserveAspectRatio="xMidYMid meet" />;
+  }
   if (mystery) {
     return (
       <text
