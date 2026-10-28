@@ -147,11 +147,16 @@ const THAI_STAMP = new Intl.DateTimeFormat("sv-SE", {
 
 /** One row of the issue log, in the same columns as the desktop tool's issued_keys.csv. */
 export function logRow(issued: IssuedKey, days: number | undefined) {
+  return buildLogRow(issued.issuedAt * 1000, issued.machineId, issued.name, days ? String(days) : "permanent");
+}
+
+/** Builds a log row from stored values, so rows read back from the Key record match fresh ones. */
+export function buildLogRow(issuedAtMs: number, machineId: string, name: string, days: string) {
   return {
-    date: THAI_STAMP.format(new Date(issued.issuedAt * 1000)),
-    machineId: issued.machineId,
+    date: THAI_STAMP.format(new Date(issuedAtMs)),
+    machineId,
     // A comma in the name would shift the columns.
-    name: issued.name.replaceAll(",", " "),
-    days: days ? String(days) : "permanent",
+    name: name.replaceAll(",", " "),
+    days,
   };
 }
