@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@next/third-parties": "^16.0.10",
+    "@supabase/supabase-js": "^2.118.0",
     "framer-motion": "^12.34.3",
     "html-to-image": "^1.11.13",
     "leaflet": "^1.9.4",
