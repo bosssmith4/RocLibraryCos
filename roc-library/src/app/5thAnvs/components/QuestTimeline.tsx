@@ -1,5 +1,7 @@
 import { CHAPTER_QUESTS } from "@/data/anniversary5thQuests";
 
+import { CutoutPicture } from "./QuestTaskRow";
+
 const ART = "/assets/images/anvs";
 
 interface Stop {
@@ -52,12 +54,15 @@ const STOPS: Stop[] = [
 /** The four things to do, in order, as a short timeline above the map. */
 export default function QuestTimeline() {
   return (
-    <nav aria-label="สรุปภารกิจ">
+    <nav aria-label="สรุปภารกิจ" className="space-y-3">
+      <p className="text-center text-lg font-black">
+        <span className="rounded-full bg-(--anv-ink) px-4 py-1 text-(--anv-cream)">ทำตามลำดับนี้</span>
+      </p>
       <ol className="relative grid gap-4 sm:grid-cols-4 sm:gap-3">
         {/* the line the stops hang on: down the left on phones, across the top from sm */}
         <span
           aria-hidden
-          className="absolute bottom-6 left-5 top-6 w-1 rounded-full bg-(--anv-orange)/40 sm:bottom-auto sm:left-6 sm:right-6 sm:top-5 sm:h-1 sm:w-auto"
+          className="absolute bottom-6 left-8 top-6 w-1.5 rounded-full bg-(--anv-orange)/50 sm:bottom-auto sm:left-6 sm:right-6 sm:top-9 sm:h-1.5 sm:w-auto"
         />
         {STOPS.map((stop) => (
           <li key={stop.title} className="relative">
@@ -67,13 +72,22 @@ export default function QuestTimeline() {
             >
               <span
                 aria-hidden
-                className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-4 border-base-100 bg-(--anv-orange) text-lg font-black text-(--anv-ink) shadow-md"
+                className="relative flex shrink-0 flex-col items-center justify-center self-start rounded-2xl border-4 border-base-100 bg-(--anv-orange) px-3 py-1 text-(--anv-ink) shadow-md"
               >
-                {stop.step}
+                <span className="text-[0.7rem] font-black uppercase leading-none tracking-widest">Step</span>
+                <span className="text-3xl font-black leading-none">{stop.step}</span>
               </span>
               <span className="flex min-w-0 flex-1 items-center gap-3 rounded-2xl bg-base-100 p-3 shadow transition-shadow group-hover:shadow-lg sm:flex-col sm:items-start">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={stop.picture} alt="" aria-hidden className="h-12 w-12 shrink-0 object-contain" />
+                {stop.picture.endsWith(".bmp") ? (
+                  <CutoutPicture
+                    src={stop.picture}
+                    className="h-14 w-14 shrink-0 object-contain"
+                    fallback={null}
+                  />
+                ) : (
+                  // eslint-disable-next-line @next/next/no-img-element
+                  <img src={stop.picture} alt="" aria-hidden className="h-14 w-14 shrink-0 object-contain" />
+                )}
                 <span className="min-w-0 space-y-0.5">
                   <span className="block font-black leading-tight">{stop.title}</span>
                   <span className="block text-sm font-bold leading-snug">{stop.what}</span>
