@@ -99,11 +99,13 @@ function ExportableItem({
 
         await Promise.all([document.fonts.ready, waitForImages(node)]);
 
-        const dataUrl = await htmlToImage.toPng(node, {
+        const options = {
           backgroundColor: "transparent",
           pixelRatio: window.innerWidth < 768 ? 2 : 3,
-          cacheBust: true,
-        });
+        };
+        // Safari draws the pictures only from the second render on; the first one is thrown away.
+        await htmlToImage.toPng(node, options).catch(() => undefined);
+        const dataUrl = await htmlToImage.toPng(node, options);
         const blob = await (await fetch(dataUrl)).blob();
         const file = new File([blob], `item-${patchKey}.png`, {
           type: "image/png",
