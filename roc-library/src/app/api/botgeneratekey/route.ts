@@ -1,4 +1,6 @@
 import { createHash, timingSafeEqual } from "node:crypto";
+import { readFileSync } from "node:fs";
+import path from "node:path";
 import { NextResponse } from "next/server";
 import {
   checkInput,
@@ -7,13 +9,27 @@ import {
   logRow,
   parsePrivateKey,
 } from "@/utils/botLicense";
+import { keyRecordConfigured, saveKey } from "@/utils/keyRecord";
+import { isSignedIn, makeSession, SESSION_COOKIE, SESSION_SECONDS } from "@/utils/botSession";
 
 /**
  * Issues a botRedm licence key. The private key lives only in this server's environment
- * (BOT_LICENSE_PRIVATE_KEY) and the caller must send the admin password
- * (BOT_KEYGEN_ADMIN_PASSWORD). To move to Supabase Auth later, replace `isAdmin` below.
+ * (BOT_LICENSE_PRIVATE_KEY). The caller signs in once with the admin password
+ * (BOT_KEYGEN_ADMIN_PASSWORD, action "login"), which sets a 3-hour cookie; issuing needs that cookie.
+ * To move to Supabase Auth later, replace `isAdmin` and `isSignedIn`.
  */
 export const dynamic = "force-dynamic";
+
+/** BOT_LICENSE_PRIVATE_KEY wins; otherwise the key is read from environment/license_private.key (local use). */
+function readPrivateKeyText() {
+  const fromEnv = process.env.BOT_LICENSE_PRIVATE_KEY?.trim();
+  if (fromEnv) return fromEnv;
+  try {
+    return readFileSync(path.join(process.cwd(), "environment", "license_private.key"), "utf8").trim();
+  } catch {
+    return "";
+  }
+}
 
 const MAX_FAILURES = 5;
 const LOCK_MS = 15 * 60 * 1000;
@@ -56,8 +72,8 @@ function isAdmin(sent: unknown, expected: string) {
 
 export async function POST(request: Request) {
   const adminPassword = process.env.BOT_KEYGEN_ADMIN_PASSWORD;
-  const privateKeyText = process.env.BOT_LICENSE_PRIVATE_KEY;
-  if (!adminPassword || !privateKeyText) {
+  const privateKeyText = readPrivateKeyText();
+  if (!adminPassword || !privateKeyText || !keyRecordConfigured()) {
     return json({ message: "ระบบออกคีย์ยังไม่ได้ตั้งค่าบนเซิร์ฟเวอร์" }, 503);
   }
 
@@ -73,11 +89,30 @@ export async function POST(request: Request) {
     return json({ message: "ข้อมูลที่ส่งมาไม่ถูกต้อง" }, 400);
   }
 
-  if (!isAdmin(body.password, adminPassword)) {
-    noteFailure(address);
-    return json({ message: "รหัสผ่านไม่ถูกต้อง" }, 401);
+  if (body.action === "logout") {
+    const res = json({ ok: true });
+    res.cookies.delete(SESSION_COOKIE);
+    return res;
   }
-  failures.delete(address);
+
+  if (body.action === "login") {
+    if (!isAdmin(body.password, adminPassword)) {
+      noteFailure(address);
+      return json({ message: "รหัสผ่านไม่ถูกต้อง" }, 401);
+    }
+    failures.delete(address);
+    const res = json({ ok: true });
+    res.cookies.set(SESSION_COOKIE, makeSession(adminPassword), {
+      httpOnly: true,
+      sameSite: "strict",
+      secure: process.env.NODE_ENV === "production",
+      path: "/",
+      maxAge: SESSION_SECONDS,
+    });
+    return res;
+  }
+
+  if (!(await isSignedIn())) return json({ message: "หมดเวลาเข้าสู่ระบบ กรุณาใส่รหัสผ่านใหม่" }, 401);
 
   const input = checkInput(body);
   if (!input.ok) return json({ message: input.message }, 400);
@@ -93,6 +128,11 @@ export async function POST(request: Request) {
   // Check the key just made before handing it out.
   if (!keyIsSigned(issued.key, privateKey)) {
     return json({ message: "สร้างคีย์ไม่สำเร็จ กรุณาลองอีกครั้ง" }, 500);
+  }
+
+  // The Key record comes first: a key that was not saved is not handed out.
+  if (!(await saveKey(issued, input.days))) {
+    return json({ message: "บันทึกลงฐานข้อมูลไม่สำเร็จ จึงยังไม่ออกคีย์ กรุณาลองสร้างใหม่อีกครั้ง" }, 502);
   }
 
   return json({
