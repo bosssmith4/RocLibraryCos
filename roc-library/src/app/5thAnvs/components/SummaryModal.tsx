@@ -1,4 +1,5 @@
 import type { PatchItemsDto } from "@/types/patch";
+import WorldFruitInfo from "./WorldFruitInfo";
 import {
   EXCHANGE_COST,
   WORLD_FRUIT_PER_TICKET,
@@ -99,7 +100,10 @@ export default function SummaryModal({
             <dd className="font-bold">{fmt(total * EXCHANGE_COST.gachaTickets)} ใบ</dd>
           </div>
           <div className="flex justify-between text-sm text-base-content/70">
-            <dt>คิดเป็น World Fruit (1 Ticket = {fmt(WORLD_FRUIT_PER_TICKET)})</dt>
+            <dt className="flex items-center gap-1.5">
+              คิดเป็น World Fruit (1 Ticket = {fmt(WORLD_FRUIT_PER_TICKET)})
+              <WorldFruitInfo variant="chip" />
+            </dt>
             <dd className="font-bold">
               {fmt(total * EXCHANGE_COST.gachaTickets * WORLD_FRUIT_PER_TICKET)} ชิ้น
             </dd>

@@ -1,4 +1,5 @@
 import { EXCHANGE_COST, WORLD_FRUIT_PER_TICKET } from "@/services/anniversary/anniversaryService";
+import WorldFruitInfo from "./WorldFruitInfo";
 
 interface SelectionSummaryProps {
   /** how many different rewards are picked */
@@ -33,6 +34,7 @@ export default function SelectionSummary({ kinds, count, onOpen, onClear }: Sele
           <span className="text-sm font-bold opacity-80">
             = {(tickets * WORLD_FRUIT_PER_TICKET).toLocaleString("en-US")} World Fruit
           </span>
+          <WorldFruitInfo variant="chip" />
         </span>
         <span className="flex items-center gap-2 rounded-full bg-warning py-1 pl-2 pr-4 text-lg font-black text-warning-content">
           {/* eslint-disable-next-line @next/next/no-img-element */}

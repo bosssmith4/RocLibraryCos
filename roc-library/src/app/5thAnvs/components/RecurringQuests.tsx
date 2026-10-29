@@ -1,5 +1,6 @@
 import { RECURRING_QUESTS } from "@/data/anniversary5thQuests";
 import type { RecurringQuestGroup } from "@/types/anniversary";
+import ChapterRef from "./ChapterRef";
 import { RewardBox } from "./QuestParts";
 import QuestTaskRow from "./QuestTaskRow";
 import SectionHeading from "./SectionHeading";
@@ -28,7 +29,14 @@ function GroupCard({ group }: { group: RecurringQuestGroup }) {
           <WorldQuest group={group} />
         ) : (
           <>
-            {group.note && <p className="rounded-xl bg-(--anv-orange)/15 px-3 py-2 text-sm">{group.note}</p>}
+            {group.requiresChapter && (
+              <p className="flex flex-wrap items-center gap-2 text-sm font-black">
+                ต้องผ่านเควส
+                <ChapterRef n={group.requiresChapter} />
+                ก่อนรับภารกิจ
+              </p>
+            )}
+            {group.note && <p className="rounded-xl bg-base-200 px-3 py-2 text-sm">{group.note}</p>}
             {group.quests.length === 0 ? (
               <p className="text-sm text-base-content/70">กำลังรวบรวมข้อมูล</p>
             ) : (
@@ -56,6 +64,13 @@ function GroupCard({ group }: { group: RecurringQuestGroup }) {
                 </div>
               ))
             )}
+            {group.rewards && (
+              <RewardBox
+                compact
+                title={`ของรางวัล${group.rewardNote ? ` · ${group.rewardNote}` : ""}`}
+                tasks={group.rewards}
+              />
+            )}
           </>
         )}
       </div>
@@ -68,10 +83,7 @@ export default function RecurringQuests({ index }: { index: string }) {
   const regular = RECURRING_QUESTS.filter((g) => g.id !== "world");
   const world = RECURRING_QUESTS.find((g) => g.id === "world");
   return (
-    <section
-      aria-labelledby="recurring-title"
-      className="space-y-5 rounded-3xl bg-(--anv-orange)/10 p-5 sm:p-8"
-    >
+    <section aria-labelledby="recurring-title" className="space-y-5">
       <SectionHeading index={index} title="Quest · Daily / Weekly / World" id="recurring-title" />
       <div className="grid gap-4 lg:grid-cols-2 lg:items-start">
         {regular.map((group) => (

@@ -3,6 +3,8 @@ import { useEffect, useState, type ReactNode } from "react";
 import { CircleHelp, Gift, MapPin, Package, Swords } from "lucide-react";
 import type { QuestTask, QuestTaskKind } from "@/types/anniversary";
 import { CoordinateText } from "./CoordinateLink";
+import ExchangeTag from "./ExchangeTag";
+import TradeTag from "./TradeTag";
 
 const KINDS: Record<QuestTaskKind, { Icon: typeof Swords; label: string }> = {
   kill: { Icon: Swords, label: "สังหาร" },
@@ -141,19 +143,22 @@ export default function QuestTaskRow({
   task,
   largeMonster = false,
   compact = false,
+  stacked = false,
 }: {
   task: QuestTask;
   /** show the monster picture bigger (the World Quest) */
   largeMonster?: boolean;
   /** a small, quiet row: for a list the player only glances at, such as rewards */
   compact?: boolean;
+  /** a tall card: pictures on top, then the name and count; for a short row of goals */
+  stacked?: boolean;
 }) {
   const { Icon, label } = KINDS[task.kind];
   const itemFirst = task.kind === "collect" || task.kind === "reward";
   // a collected item and a reward both show the item first
   const kindIcon = (className: string) => (
     <span
-      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-(--anv-orange) text-(--anv-ink) ${className}`}
+      className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full border-2 border-(--anv-ink)/30 bg-base-100 text-(--anv-ink) ${className}`}
     >
       <Icon aria-hidden className="h-5 w-5" />
     </span>
@@ -168,33 +173,86 @@ export default function QuestTaskRow({
       />
     );
 
+  if (stacked) {
+    const monsterBox = task.monsterId !== undefined && (
+      <Picture
+        src={`/assets/images/monsterDb/${task.monsterId}.gif`}
+        className="h-14 w-14 shrink-0 object-contain"
+        fallback={null}
+      />
+    );
+    const itemBox =
+      task.itemImageId !== undefined ? (
+        <CutoutPicture
+          src={`/assets/images/anvs/items/${task.itemImageId}.bmp`}
+          className="h-14 w-14 shrink-0 object-contain drop-shadow"
+          fallback={null}
+        />
+      ) : null;
+    return (
+      <li className="flex flex-col items-center gap-2 rounded-xl border-2 border-base-300 bg-base-100 p-3 text-center">
+        <span className="flex min-h-14 items-center justify-center gap-2">
+          {itemBox}
+          {monsterBox}
+          {!itemBox && !monsterBox && kindIcon("")}
+        </span>
+        <p className="font-black leading-snug">
+          <span className="sr-only">{label}: </span>
+          {task.label}
+        </p>
+        {task.count !== undefined && (
+          <span className="rounded-full bg-(--anv-ink) px-3 py-0.5 text-base font-black text-(--anv-cream)">
+            ×{task.count}
+            {task.unit ? ` ${task.unit}` : ""}
+          </span>
+        )}
+        {task.via && (
+          <p className="text-sm leading-snug text-base-content/70">
+            <CoordinateText text={task.via} />
+          </p>
+        )}
+      </li>
+    );
+  }
+
   if (compact) {
     return (
-      <li className="flex items-center gap-2 rounded-xl bg-base-100 px-2.5 py-1.5">
-        {task.itemImageId !== undefined ? (
-          <CutoutPicture
-            src={`/assets/images/anvs/items/${task.itemImageId}.bmp`}
-            className="h-8 w-8 shrink-0 object-contain"
-            fallback={<Icon aria-hidden className="h-5 w-5 shrink-0 text-base-content/60" />}
-          />
-        ) : (
-          <Icon aria-hidden className="h-5 w-5 shrink-0 text-base-content/60" />
+      <li
+        className={`flex flex-col gap-2 rounded-xl bg-base-100 p-2 shadow-sm ring-1 ring-(--anv-cream) ${task.exchange || task.tradable ? "sm:col-span-2" : ""}`}
+      >
+        <div className="flex items-center gap-3">
+          <span className="relative flex h-14 w-14 shrink-0 items-center justify-center rounded-lg bg-(--anv-cream)/40">
+            {task.itemImageId !== undefined ? (
+              <CutoutPicture
+                src={`/assets/images/anvs/items/${task.itemImageId}.bmp`}
+                className="h-12 w-12 object-contain"
+                fallback={<Icon aria-hidden className="h-6 w-6 text-(--anv-ink)/60" />}
+              />
+            ) : (
+              <Icon aria-hidden className="h-6 w-6 text-(--anv-ink)/60" />
+            )}
+            {task.count !== undefined && (
+              <span className="absolute -bottom-1.5 -right-1.5 rounded-full bg-(--anv-ink) px-1.5 py-0.5 text-xs font-black leading-none text-(--anv-cream)">
+                ×{task.count}
+              </span>
+            )}
+          </span>
+          <p className="min-w-0 leading-snug">
+            <span className="sr-only">{label}: </span>
+            <span className="block font-black">{task.label}</span>
+            {task.via && (
+              <span className="block text-sm text-base-content/70">
+                <CoordinateText text={task.via} />
+              </span>
+            )}
+          </p>
+        </div>
+        {(task.tradable || task.exchange) && (
+          <div className="flex flex-wrap items-center gap-1.5">
+            {task.tradable && <TradeTag />}
+            {task.exchange && <ExchangeTag exchange={task.exchange} />}
+          </div>
         )}
-        <p className="min-w-0 text-sm leading-snug">
-          <span className="sr-only">{label}: </span>
-          <span className="font-bold">{task.label}</span>
-          {task.count !== undefined && (
-            <span className="ml-1.5 font-black text-base-content/70">
-              ×{task.count}
-              {task.unit ? ` ${task.unit}` : ""}
-            </span>
-          )}
-          {task.via && (
-            <span className="block text-xs text-base-content/60">
-              <CoordinateText text={task.via} />
-            </span>
-          )}
-        </p>
       </li>
     );
   }
@@ -235,7 +293,7 @@ export default function QuestTaskRow({
             {task.badges.map((badge) => (
               <span
                 key={badge}
-                className="rounded-full bg-(--anv-orange) px-3 py-0.5 text-sm font-black text-(--anv-ink)"
+                className="rounded-full border-2 border-(--anv-ink)/30 bg-base-100 px-3 py-0.5 text-sm font-black"
               >
                 {badge}
               </span>

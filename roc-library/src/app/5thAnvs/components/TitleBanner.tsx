@@ -1,3 +1,6 @@
+import { CalendarDays } from "lucide-react";
+import { STORY_GUIDE } from "@/data/anniversary5thGuide";
+
 const ART = "/assets/images/anvs/landing";
 
 /** Props floating around the title: [file, position/size classes, seconds of delay]. */
@@ -36,6 +39,10 @@ export default function TitleBanner() {
           Anniversary
         </span>
       </h1>
+      <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-(--anv-ink) px-4 py-1.5 text-base font-black text-(--anv-cream)">
+        <CalendarDays aria-hidden className="h-5 w-5" />
+        {STORY_GUIDE.period}
+      </p>
       <p className="mt-2 text-base-content/70">
         <span className="block font-bold">Chapter 6 เมือง</span>
         <span className="block text-sm">ชี้ที่เมืองเพื่อดูเนื้อเรื่อง · คลิกเพื่อดูภารกิจ</span>

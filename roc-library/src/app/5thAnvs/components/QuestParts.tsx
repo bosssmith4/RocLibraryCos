@@ -1,39 +1,49 @@
-import { Gift } from "lucide-react";
+import { Gift, LockOpen } from "lucide-react";
 import type { InfoPanel, QuestTask } from "@/types/anniversary";
+import ChapterRef, { chapterNumberIn } from "./ChapterRef";
 import QuestTaskRow from "./QuestTaskRow";
 
 export const fmt = (n: number) => n.toLocaleString("en-US");
 
-/** The rewards of a quest, in a box that says so, so they are never mistaken for the steps. */
+/**
+ * The rewards of a quest: a warm cream block with a ribbon, apart from the quest rows (which are
+ * cool grey), each reward a slot with its count on the icon, like in the game.
+ */
 export function RewardBox({
   title,
   tasks,
-  wide = false,
-  compact = false,
 }: {
   title: string;
   tasks: QuestTask[];
-  /** lay the rewards out in two columns when there is room */
+  /** kept so callers can ask for a wide layout; the slots always wrap by themselves */
   wide?: boolean;
-  /** small rows on a plain surface, for rewards the player only glances at */
+  /** kept for callers that ask for the small look; every box now uses slots */
   compact?: boolean;
 }) {
   return (
-    <div
-      className={
-        compact
-          ? "space-y-2 rounded-2xl bg-base-200 p-3"
-          : "space-y-2 rounded-2xl border-2 border-(--anv-orange) bg-(--anv-orange)/10 p-3"
-      }
-    >
-      <p className={`flex items-center gap-2 font-black ${compact ? "text-xs text-base-content/70" : "text-sm"}`}>
-        <Gift aria-hidden className="h-4 w-4 text-(--anv-orange)" />
+    <div className="space-y-2.5 rounded-2xl border-2 border-(--anv-cream) bg-(--anv-cream)/25 p-3">
+      <p className="flex w-fit items-center gap-2 rounded-full bg-(--anv-ink) py-1 pl-3 pr-4 text-sm font-black text-(--anv-cream)">
+        <Gift aria-hidden className="h-4 w-4" />
         {title}
       </p>
-      <ul className={compact || wide ? "grid gap-1.5 sm:grid-cols-2" : "space-y-2"}>
-        {tasks.map((task) => (
-          <QuestTaskRow key={task.label} task={task} compact={compact} />
-        ))}
+      <ul className="grid gap-3 sm:grid-cols-[repeat(auto-fill,minmax(11rem,1fr))]">
+        {tasks.map((task) => {
+          const unlocks = task.label.startsWith("ปลดล็อก") ? chapterNumberIn(task.label) : null;
+          if (!unlocks) return <QuestTaskRow key={task.label} task={task} compact />;
+          return (
+            <li
+              key={task.label}
+              className="flex flex-wrap items-center gap-x-2 gap-y-1 rounded-xl bg-base-100 p-2 shadow-sm ring-1 ring-(--anv-cream) sm:col-span-full"
+            >
+              <span className="flex items-center gap-1.5 font-black">
+                <LockOpen aria-hidden className="h-5 w-5 text-(--anv-ink)/60" />
+                ปลดล็อก
+              </span>
+              <ChapterRef n={unlocks} />
+              {task.via && <span className="text-sm text-base-content/70">{task.via}</span>}
+            </li>
+          );
+        })}
       </ul>
     </div>
   );
@@ -42,12 +52,12 @@ export function RewardBox({
 /** A small box of facts: one line for each thing given, and label/value lines. */
 export function Panel({ panel }: { panel: InfoPanel }) {
   return (
-    <div className="space-y-2 rounded-2xl border-2 border-(--anv-orange)/40 p-3">
+    <div className="space-y-2 rounded-2xl border-2 border-base-300 p-3">
       <p className="font-black">{panel.title}</p>
       {panel.chips && (
-        <ul className="space-y-1.5">
+        <ul className="flex flex-wrap gap-2">
           {panel.chips.map((chip) => (
-            <li key={chip} className="rounded-xl bg-(--anv-orange)/15 px-4 py-1.5 font-bold">
+            <li key={chip} className="rounded-full bg-(--anv-cream)/40 px-3.5 py-1 text-sm font-bold">
               {chip}
             </li>
           ))}
