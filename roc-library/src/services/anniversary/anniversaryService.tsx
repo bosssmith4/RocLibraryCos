@@ -19,7 +19,7 @@ export const ANNIVERSARY_SERVERS: {
 export const EXCHANGE_COST = { gachaTickets: 1, zeny: 1_000_000 };
 
 /** One [NFS] Gacha Ticket is worth this many World Fruit. */
-export const WORLD_FRUIT_PER_TICKET = 1_200;
+export { WORLD_FRUIT_PER_TICKET } from "@/data/anniversary5thGuide";
 
 export const REWARD_TYPES: { id: AnniversaryRewardType; name: string }[] = [
   { id: "headGear", name: "Header Gear" },
