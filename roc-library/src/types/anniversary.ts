@@ -135,6 +135,8 @@ export interface RecurringQuestGroup {
   quests: RecurringQuest[];
   /** what each finished quest of the group gives, shown once under the quests */
   rewards?: QuestTask[];
+  /** where the NPC who gives the quests stands, e.g. "prt_q 156 195"; a coordinate becomes a map link */
+  acceptAt?: string;
   /** the Chapter (1 to 6) that must be finished before the quests can be taken */
   requiresChapter?: number;
   /** how often the rewards come, e.g. "ได้รับ 1 ครั้ง ต่อเควส" */
