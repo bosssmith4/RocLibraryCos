@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="Chapter VI Prontera: จุดสิ้นสุดของจุดเริ่มต้น">
+  <path d="M40 74C20 70 8 56 6 36c14 4 24 8 34 20Z" fill="#fff6e5" stroke="#3a1400" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M88 74c20-4 32-18 34-38-14 4-24 8-34 20Z" fill="#fff6e5" stroke="#3a1400" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M30 96 36 44l22 22 6-34 6 34 22-22 6 52Z" fill="#f4c542" stroke="#3a1400" stroke-width="6" stroke-linejoin="round"/>
+  <rect x="30" y="92" width="68" height="16" rx="3" fill="#f4c542" stroke="#3a1400" stroke-width="6" stroke-linejoin="round"/>
+  <circle cx="64" cy="100" r="5" fill="#ef4444" stroke="#3a1400" stroke-width="3"/>
+  <circle cx="44" cy="100" r="3.5" fill="#3b82f6" stroke="#3a1400" stroke-width="2.5"/>
+  <circle cx="84" cy="100" r="3.5" fill="#16a34a" stroke="#3a1400" stroke-width="2.5"/>
+</svg>
