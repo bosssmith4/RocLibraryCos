@@ -6,6 +6,11 @@ import type { ChapterQuest, QuestTask, RecurringQuestGroup } from "@/types/anniv
  */
 const WORLD_FRUIT: QuestTask = { kind: "reward", label: "World Fruit", count: 100, unit: "ชิ้น", itemImageId: 6435 };
 
+const DAILY_WEEKLY_REWARDS: QuestTask[] = [
+  { kind: "reward", label: "World Fruit", count: 20, itemImageId: 6435 },
+  { kind: "reward", label: "Jam Pancake", count: 20, itemImageId: 592 },
+];
+
 export const CHAPTER_QUESTS: ChapterQuest[] = [
   {
     town: "Izlude",
@@ -153,7 +158,10 @@ export const RECURRING_QUESTS: RecurringQuestGroup[] = [
   {
     id: "daily",
     title: "Daily Quest",
-    note: "เมื่อรายงานสำเร็จแล้ว ต้องรอ 1 วัน",
+    note: "เควสที่ได้เป็นแบบสุ่ม · เมื่อรายงานสำเร็จแล้ว ต้องรอ 1 วัน",
+    requiresChapter: 3,
+    rewards: DAILY_WEEKLY_REWARDS,
+    rewardNote: "ส่งเควสสำเร็จ · ได้รับ 1 ครั้ง ต่อเควส",
     quests: [
       {
         title: "Daily 1",
@@ -172,6 +180,10 @@ export const RECURRING_QUESTS: RecurringQuestGroup[] = [
   {
     id: "weekly",
     title: "Weekly Quest",
+    note: "ทำได้ครบ 3 เควส · รวม World Fruit 60 ต่อสัปดาห์",
+    requiresChapter: 4,
+    rewards: DAILY_WEEKLY_REWARDS,
+    rewardNote: "ส่งเควสสำเร็จ · ได้รับ 1 ครั้ง ต่อเควส",
     quests: [
       {
         title: "Weekly 1",
@@ -194,6 +206,7 @@ export const RECURRING_QUESTS: RecurringQuestGroup[] = [
     id: "world",
     title: "World Quest",
     note: "กิจกรรมทั้งเซิร์ฟเวอร์ · 28 ต.ค. 2026 – 13 ม.ค. 2027 · ต้องผ่าน Chapter V - Break your limits (Morroc) ก่อนรับภารกิจ",
+    requiresChapter: 5,
     quests: [
       {
         title: "1 · Dragon Cataclysm (Special Quest)",
@@ -215,6 +228,8 @@ export const RECURRING_QUESTS: RecurringQuestGroup[] = [
             unit: "ชิ้น",
             itemImageId: 6914,
             via: "ใช้แลกรางวัลพิเศษของกิจกรรมครบรอบ 5 ปี (ถูกลบเมื่อจบกิจกรรม)",
+            exchange: { label: "World Fruit", rate: "1 : 1", itemImageId: 6435 },
+            tradable: true,
           },
           {
             kind: "reward",

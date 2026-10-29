@@ -20,6 +20,7 @@ export const ANNIVERSARY_INFO_SECTIONS: AnniversaryInfoSection[] = [
         heading: "การจุติใหม่",
         detail: ["ตื่นขึ้นโดยไร้ความทรงจำ พลังลึกลับยังหลับไหล ปลุกตื่นได้จากการเดินทาง"],
         tagline: "มุ่งไปอย่างก้าวกระโดด",
+        logo: { src: "/assets/images/anvs/chapters/logo-izlude.svg", alt: "Chapter I Izlude" },
       },
       {
         title: "Payon",
@@ -28,6 +29,7 @@ export const ANNIVERSARY_INFO_SECTIONS: AnniversaryInfoSection[] = [
         heading: "รากฐานแห่งอณาจักร",
         detail: ["พลังหาใช่ความแกร่งที่แท้ ความเข้าใจคือบ่อเกิด ปกป้องและหวงแหน"],
         tagline: "จะนำพาสู่พลังที่แท้จริง",
+        logo: { src: "/assets/images/anvs/chapters/probation-set.svg", alt: "Probation Set" },
         art: { src: "/assets/images/anvs/chapters/probation-set.svg", alt: "Probation Set" },
       },
       {
@@ -37,6 +39,7 @@ export const ANNIVERSARY_INFO_SECTIONS: AnniversaryInfoSection[] = [
         heading: "เปิดเส้นทางการค้า",
         detail: ["การค้าถูกตัดขาด เชื่อมเส้นทางกลับเข้าหา มุ่งคุ้มกันและฟื้นฟู"],
         tagline: "ความมั่งคั่งจึงหวนคืน",
+        logo: { src: "/assets/images/anvs/chapters/noblesse-set.svg", alt: "Noblesse Set" },
         art: { src: "/assets/images/anvs/chapters/noblesse-set.svg", alt: "Noblesse Set" },
       },
       {
@@ -46,6 +49,7 @@ export const ANNIVERSARY_INFO_SECTIONS: AnniversaryInfoSection[] = [
         heading: "บททดสอบแห่งพลัง",
         detail: ["ควบคุมพลังด้วยปัญญา เมื่อมันถูกจำกัด ทุกการตัดสินใจจึงสำคัญ"],
         tagline: "เมืองแห่งการทดสอบ",
+        logo: { src: "/assets/images/anvs/chapters/ring-5th.svg", alt: "5th Anniversary Ring [1]" },
         art: { src: "/assets/images/anvs/chapters/ring-5th.svg", alt: "5th Anniversary Ring [1]" },
       },
       {
@@ -55,6 +59,7 @@ export const ANNIVERSARY_INFO_SECTIONS: AnniversaryInfoSection[] = [
         heading: "ทลายขีดจำกัด",
         detail: ["วิกฤตเกิดทุกทิศทาง ได้เวลา สิ่งที่หลับไหลตื่น ขีดจำกัดถูกปลดออก"],
         tagline: "ปลุกพลัง ขั้นสมบูรณ์ !",
+        logo: { src: "/assets/images/anvs/chapters/logo-morroc.svg", alt: "Chapter V Morroc" },
       },
       {
         title: "Prontera",
@@ -63,6 +68,7 @@ export const ANNIVERSARY_INFO_SECTIONS: AnniversaryInfoSection[] = [
         heading: "จุดสิ้นสุดของจุดเริ่มต้น",
         detail: ["ถูกต้อนรับในฐานะผู้กล้า ช่วงเวลาแห่งการเฉลิมฉลอง หากแต่ มิใช่ตอนจบแท้จริง"],
         tagline: "ภัยครั้งใหม่กำลังก่อตัว",
+        logo: { src: "/assets/images/anvs/chapters/logo-prontera.svg", alt: "Chapter VI Prontera" },
       },
     ],
   },
