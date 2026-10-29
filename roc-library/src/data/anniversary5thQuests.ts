@@ -181,7 +181,7 @@ export const RECURRING_QUESTS: RecurringQuestGroup[] = [
     id: "weekly",
     title: "Weekly Quest",
     note: "ทำได้ครบ 3 เควส · รวม World Fruit 60 ต่อสัปดาห์",
-    requiresChapter: 4,
+    requiresChapter: 5,
     rewards: DAILY_WEEKLY_REWARDS,
     rewardNote: "ส่งเควสสำเร็จ · ได้รับ 1 ครั้ง ต่อเควส",
     quests: [

@@ -128,7 +128,7 @@ export const WORLD_FRUIT_PLAN = {
       perClaim: 20,
       how: "3 เควส × 20 ชิ้น × สัปดาห์ละครั้ง",
       itemImageId: 6435,
-      requiresChapter: 4,
+      requiresChapter: 5,
     },
     {
       id: "dragon",

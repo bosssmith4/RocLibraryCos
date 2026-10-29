@@ -183,7 +183,7 @@ export default function QuestTimeline() {
               <Loop>สัปดาห์ละครั้ง · CD 7 วัน</Loop>
               <ResetAt />
             </span>
-            <Needs chapter={4} />
+            <Needs chapter={5} />
             <span className="block text-sm text-base-content/70">
               เช่น ทำวันพฤหัส ทำได้อีกพฤหัสสัปดาห์หน้าตอน 04:00
             </span>
