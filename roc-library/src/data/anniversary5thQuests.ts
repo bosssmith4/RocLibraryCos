@@ -160,6 +160,7 @@ export const RECURRING_QUESTS: RecurringQuestGroup[] = [
     title: "Daily Quest",
     note: "เควสที่ได้เป็นแบบสุ่ม · เมื่อรายงานสำเร็จแล้ว ต้องรอ 1 วัน",
     requiresChapter: 3,
+    acceptAt: "prt_q 156 195",
     rewards: DAILY_WEEKLY_REWARDS,
     rewardNote: "ส่งเควสสำเร็จ · ได้รับ 1 ครั้ง ต่อเควส",
     quests: [
@@ -182,6 +183,7 @@ export const RECURRING_QUESTS: RecurringQuestGroup[] = [
     title: "Weekly Quest",
     note: "ทำได้ครบ 3 เควส · รวม World Fruit 60 ต่อสัปดาห์",
     requiresChapter: 5,
+    acceptAt: "prt_q 156 195",
     rewards: DAILY_WEEKLY_REWARDS,
     rewardNote: "ส่งเควสสำเร็จ · ได้รับ 1 ครั้ง ต่อเควส",
     quests: [

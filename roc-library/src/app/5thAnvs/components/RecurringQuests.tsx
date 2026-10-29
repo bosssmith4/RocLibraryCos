@@ -1,6 +1,7 @@
 import { RECURRING_QUESTS } from "@/data/anniversary5thQuests";
 import type { RecurringQuestGroup } from "@/types/anniversary";
 import ChapterRef from "./ChapterRef";
+import { CoordinateText } from "./CoordinateLink";
 import { RewardBox } from "./QuestParts";
 import QuestTaskRow from "./QuestTaskRow";
 import SectionHeading from "./SectionHeading";
@@ -34,6 +35,14 @@ function GroupCard({ group }: { group: RecurringQuestGroup }) {
                 ต้องผ่านเควส
                 <ChapterRef n={group.requiresChapter} />
                 ก่อนรับภารกิจ
+              </p>
+            )}
+            {group.acceptAt && (
+              <p className="flex flex-wrap items-center gap-2 text-sm font-black">
+                รับเควสที่ NPC
+                <span className="rounded-full bg-base-200 px-3 py-1 font-bold">
+                  Invaded Prontera · <CoordinateText text={group.acceptAt} />
+                </span>
               </p>
             )}
             {group.note && <p className="rounded-xl bg-base-200 px-3 py-2 text-sm">{group.note}</p>}
