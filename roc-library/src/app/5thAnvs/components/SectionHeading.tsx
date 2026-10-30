@@ -15,7 +15,7 @@ export default function SectionHeading({
           {index}
         </span>
       )}
-      <h2 id={id} className="text-2xl font-extrabold">
+      <h2 id={id} className="scroll-mt-40 text-2xl font-extrabold">
         {title}
       </h2>
     </div>

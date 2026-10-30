@@ -7,9 +7,7 @@ import { parseRsw } from "@/utils/rswParser";
 import { createMapScene, type ColorMode, type MapScene } from "./mapScene";
 
 interface MapViewerProps {
-  /** Folder under public/assets/map/ that holds the map's files. */
-  folder: string;
-  /** File name shared by the map's .gnd and .gat files, without extension. */
+  /** Name of the map's files in public/assets/map/ (.gnd, .gat and .rsw), without extension. */
   name: string;
   title: string;
   /**
@@ -44,7 +42,6 @@ async function fetchBuffer(url: string): Promise<ArrayBuffer> {
 }
 
 export default function MapViewer({
-  folder,
   name,
   title,
   embedded = false,
@@ -76,7 +73,7 @@ export default function MapViewer({
     if (!container) return;
     let cancelled = false;
     let observer: ResizeObserver | null = null;
-    const base = `/assets/map/${folder}`;
+    const base = "/assets/map";
 
     (async () => {
       try {
@@ -127,7 +124,7 @@ export default function MapViewer({
       sceneRef.current?.dispose();
       sceneRef.current = null;
     };
-  }, [folder, name, embedded]);
+  }, [name, embedded]);
 
   const changeMode = (next: ColorMode) => {
     setMode(next);

@@ -4,6 +4,8 @@ import QuestTimeline from "./components/QuestTimeline";
 import RecurringQuests from "./components/RecurringQuests";
 import RewardsTeaser from "./components/RewardsTeaser";
 import SectionHeading from "./components/SectionHeading";
+import SectionNav from "./components/SectionNav";
+import WarpPortals from "./components/WarpPortals";
 import StoryGuide from "./components/StoryGuide";
 import TitleBanner from "./components/TitleBanner";
 import WorldFruitPlan from "./components/WorldFruitPlan";
@@ -16,6 +18,7 @@ export default function FifthAnniversaryPage() {
   return (
     <main className="anvs mx-auto max-w-5xl space-y-16 px-4 py-6 sm:px-6">
       <TitleBanner />
+      <SectionNav />
       <QuestTimeline />
       <section aria-labelledby="map-title" className="space-y-5">
         <SectionHeading index="01" title="แผนที่ Chapter" id="map-title" />
@@ -26,6 +29,7 @@ export default function FifthAnniversaryPage() {
       <StoryGuide index="03" />
       <RewardsTeaser index="04" />
       <WorldFruitPlan index="05" />
+      <WarpPortals index="06" />
     </main>
   );
 }

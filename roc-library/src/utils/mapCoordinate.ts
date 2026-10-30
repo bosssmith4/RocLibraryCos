@@ -5,9 +5,16 @@ export interface MapCoordinate {
   y: number;
 }
 
-/** The maps a coordinate can open: the name to show and the folder holding its files under /assets/map. */
-export const MAPS: Record<string, { name: string; folder: string }> = {
-  prt_q: { name: "Invaded Prontera", folder: "prt_q" },
+/** The maps a coordinate can open: the name to show. The key is also the name of the map's files in /assets/map. */
+export const MAPS: Record<string, { name: string }> = {
+  prt_q: { name: "Invaded Prontera" },
+  // the six towns' Warp Portals
+  izlude: { name: "Izlude" },
+  payon: { name: "Payon" },
+  alberta: { name: "Alberta" },
+  geffen: { name: "Geffen" },
+  morocc: { name: "Morroc" },
+  prontera: { name: "Prontera" },
 };
 
 /** Matches "prt_q 156 188": a known map name followed by two numbers. */

@@ -3,6 +3,7 @@ import type { ReactNode } from "react";
 import { CHAPTER_QUESTS } from "@/data/anniversary5thQuests";
 import { CutoutPicture } from "./QuestTaskRow";
 import { REGION_COLORS } from "./chapterMapLayout";
+import JumpLink from "./JumpLink";
 
 const ART = "/assets/images/anvs";
 const NUMERALS = ["I", "II", "III", "IV", "V", "VI"];
@@ -15,18 +16,19 @@ function StepCard({
   label,
   title,
   picture,
-  href,
+  target,
   children,
 }: {
   label: string;
   title: string;
   picture: ReactNode;
-  href: string;
+  /** id of the section or card the step jumps to */
+  target: string;
   children: ReactNode;
 }) {
   return (
-    <a
-      href={href}
+    <JumpLink
+      id={target}
       className="group flex h-full flex-col gap-2 rounded-2xl border-2 border-(--anv-orange) bg-base-100 p-3 shadow transition-shadow hover:shadow-lg focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-(--anv-orange)"
     >
       <span className="w-fit rounded-full bg-(--anv-orange) px-3 py-0.5 text-sm font-black uppercase tracking-wide text-(--anv-ink)">
@@ -39,7 +41,7 @@ function StepCard({
           {children}
         </span>
       </span>
-    </a>
+    </JumpLink>
   );
 }
 
@@ -104,7 +106,7 @@ export default function QuestTimeline() {
           <StepCard
             label="Step 1"
             title="เกิดใหม่เป็น Novice"
-            href="#map-title"
+            target="map-title"
             picture={
               // eslint-disable-next-line @next/next/no-img-element
               <img src={`${ART}/chapters/novice.svg`} alt="" aria-hidden className="h-16 w-16 object-contain" />
@@ -121,7 +123,7 @@ export default function QuestTimeline() {
           <StepCard
             label="Step 2"
             title="รับ Quest Chapter"
-            href="#map-title"
+            target="map-title"
             picture={
               // eslint-disable-next-line @next/next/no-img-element
               <img src={`${ART}/landing/castle.svg`} alt="" aria-hidden className="h-14 w-14 object-contain" />
@@ -158,7 +160,7 @@ export default function QuestTimeline() {
           <StepCard
             label="3.1 Daily"
             title="Daily Quest"
-            href="#recurring-title"
+            target="quest-daily"
             picture={
               <CutoutPicture src={`${ART}/items/25254.bmp`} className="h-14 w-14 object-contain" fallback={null} />
             }
@@ -174,7 +176,7 @@ export default function QuestTimeline() {
           <StepCard
             label="3.2 Weekly"
             title="Weekly Quest"
-            href="#recurring-title"
+            target="quest-weekly"
             picture={
               <CutoutPicture src={`${ART}/items/105675.bmp`} className="h-14 w-14 object-contain" fallback={null} />
             }
@@ -192,7 +194,7 @@ export default function QuestTimeline() {
           <StepCard
             label="3.3 Dragon"
             title="Dragon Cataclysm"
-            href="#recurring-title"
+            target="quest-world"
             picture={
               // eslint-disable-next-line @next/next/no-img-element
               <img src="/assets/images/monsterDb/1720.gif" alt="" aria-hidden className="h-14 w-14 object-contain" />

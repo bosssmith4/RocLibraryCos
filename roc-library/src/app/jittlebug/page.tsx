@@ -5,7 +5,7 @@ import DungeonGuide from "./components/DungeonGuide";
 export default function JittlebugPage() {
   return (
     <>
-      <MapViewer folder="jittlebug" name="1@jtb" title="Jittlebug" />
+      <MapViewer name="1@jtb" title="Jittlebug" />
       <DungeonGuide guide={jittlebugGuide} />
     </>
   );

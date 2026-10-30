@@ -131,7 +131,6 @@ export default function MapLocationModal({
           {map ? (
             <MapViewer
               embedded
-              folder={map.folder}
               name={first.map}
               title={map.name}
               markers={markers}
