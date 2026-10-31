@@ -2,7 +2,7 @@ import ChapterMap from "./components/ChapterMap";
 import JourneyStrip from "./components/JourneyStrip";
 import QuestTimeline from "./components/QuestTimeline";
 import RecurringQuests from "./components/RecurringQuests";
-import RewardsTeaser from "./components/RewardsTeaser";
+import RewardExchange from "./components/RewardExchange";
 import SectionHeading from "./components/SectionHeading";
 import SourceRef from "./components/SourceRef";
 import SectionNav from "./components/SectionNav";
@@ -32,7 +32,7 @@ export default function FifthAnniversaryPage() {
       </section>
       <RecurringQuests index="02" />
       <StoryGuide index="03" />
-      <RewardsTeaser index="04" />
+      <RewardExchange index="04" />
       <WorldFruitPlan index="05" />
       <WarpPortals index="06" />
     </main>

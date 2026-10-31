@@ -7,7 +7,7 @@ const SECTIONS = [
   { index: "01", title: "แผนที่ Chapter", id: "map-title" },
   { index: "02", title: "Quest ทำซ้ำ", id: "recurring-title" },
   { index: "03", title: "ข้อควรรู้", id: "story-guide-title" },
-  { index: "04", title: "Rewards", id: "rewards-teaser-title" },
+  { index: "04", title: "Reward & Exchange", id: "rewards-teaser-title" },
   { index: "05", title: "World Fruit", id: "fruit-plan-title" },
   { index: "06", title: "จุดวาร์ป", id: "warp-title" },
 ];

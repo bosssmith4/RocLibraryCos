@@ -78,3 +78,28 @@ export function useAnniversaryRewards(server: AnniversaryServer) {
   const error = errors[server] ?? null;
   return { items: items ?? {}, loading: !items && !error, error };
 }
+
+/** Where the pictures of the Guarantee machine's items are: /assets/images/anvs/guarantee/<item id>.bmp */
+export const guaranteeImage = (id: string | number) => `/assets/images/anvs/guarantee/${id}.bmp`;
+
+/** Loads the items that the Guarantee machine's keys can be traded for, once: [item id] → item. */
+export function useGuaranteeItems() {
+  const [items, setItems] = useState<Record<string, PatchItemsDto> | null>(null);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    let cancelled = false;
+    fetch("/assets/json/guarantee_anvs.json")
+      .then((res) => {
+        if (!res.ok) throw new Error("Failed to load JSON");
+        return res.json();
+      })
+      .then((data: Record<string, PatchItemsDto>) => !cancelled && setItems(data))
+      .catch((err) => !cancelled && setError(err.message));
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  return { items: items ?? {}, loading: !items && !error, error };
+}

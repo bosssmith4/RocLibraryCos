@@ -353,3 +353,54 @@ export function drawCharacter(
     }
   }
 }
+
+/** The area, in sprite pixels around the origin, that any frame of one action of a lone sprite paints. */
+export function measureSprite(asset: SpriteAsset, action: number): Bounds | null {
+  let bounds: Bounds | null = null
+  for (const { layers } of asset.act.actions[action]?.frames ?? []) {
+    for (const layer of layers) {
+      const frame = layerFrame(asset, layer)
+      const box = frame && opaqueBox(frame)
+      if (!frame || !box) continue
+
+      const left = box.x0 - Math.floor(frame.width / 2)
+      const right = box.x1 - Math.floor(frame.width / 2)
+      const top = box.y0 - Math.floor(frame.height / 2)
+      const bottom = box.y1 - Math.floor(frame.height / 2)
+      const [a, b] = layer.mirror ? [-right, -left] : [left, right]
+
+      const minX = layer.x + a * layer.scaleX
+      const maxX = layer.x + b * layer.scaleX
+      const minY = layer.y + top * layer.scaleY
+      const maxY = layer.y + bottom * layer.scaleY
+      bounds = bounds
+        ? {
+            minX: Math.min(bounds.minX, minX),
+            minY: Math.min(bounds.minY, minY),
+            maxX: Math.max(bounds.maxX, maxX),
+            maxY: Math.max(bounds.maxY, maxY),
+          }
+        : { minX, minY, maxX, maxY }
+    }
+  }
+  return bounds
+}
+
+/** Draws one frame of one action of a lone sprite (an object, not a character). */
+export function drawSpriteAction(
+  ctx: CanvasRenderingContext2D,
+  asset: SpriteAsset,
+  action: number,
+  frame: number,
+  originX: number,
+  originY: number,
+  scale: number,
+) {
+  ctx.clearRect(0, 0, ctx.canvas.width, ctx.canvas.height)
+  ctx.imageSmoothingEnabled = false
+  const frames = asset.act.actions[action]?.frames
+  if (!frames?.length) return
+  for (const layer of frames[frame % frames.length].layers) {
+    drawLayer(ctx, asset, layer, originX, originY, 0, 0, scale)
+  }
+}
