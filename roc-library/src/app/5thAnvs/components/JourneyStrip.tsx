@@ -4,6 +4,7 @@ import { CHAPTER_QUESTS } from "@/data/anniversary5thQuests";
 import { ANNIVERSARY_INFO_SECTIONS } from "@/data/anniversary5thInfo";
 import type { ChapterQuest } from "@/types/anniversary";
 import { REGION_COLORS } from "./chapterMapLayout";
+import RequirementText from "./RequirementText";
 
 const chapters = ANNIVERSARY_INFO_SECTIONS.find((s) => s.id === "chapters")?.entries ?? [];
 
@@ -66,7 +67,7 @@ export default function JourneyStrip() {
               {quest.requirements?.[0] && (
                 <span className="text-sm leading-snug">
                   <span className="font-black">ต้อง </span>
-                  {quest.requirements[0]}
+                  <RequirementText text={quest.requirements[0]} />
                 </span>
               )}
               {prizes.length > 0 && (

@@ -6,6 +6,7 @@ import { splitCoordinates, type MapCoordinate } from "@/utils/mapCoordinate";
 import CoordinateLink, { CoordinateGroupLink, CoordinateText } from "./CoordinateLink";
 import ChapterRef, { chapterNumberIn } from "./ChapterRef";
 import { RewardBox } from "./QuestParts";
+import RequirementText from "./RequirementText";
 import QuestTaskRow from "./QuestTaskRow";
 
 /** A map coordinate: press it to see the map with a pin on the spot, or press the small button to copy it. */
@@ -162,15 +163,48 @@ export default function QuestModal({
               <ul className="grid gap-x-6 gap-y-1.5 rounded-xl bg-base-200 p-3 sm:grid-cols-2">
                 {quest.requirements.map((r) => {
                   const chapter = /^จบ Chapter/.test(r) ? chapterNumberIn(r) : null;
+                  // "A หรือ B": two ways to qualify, laid out as two boxes across the full width
+                  const options = r.split(" หรือ ");
+                  if (options.length > 1) {
+                    return (
+                      <li key={r} className="flex items-start gap-2 font-bold leading-snug sm:col-span-2">
+                        <Check aria-hidden className="mt-2.5 h-5 w-5 shrink-0 text-success" strokeWidth={3} />
+                        <div className="grid min-w-0 flex-1 items-stretch gap-2 sm:grid-cols-[1fr_auto_1fr]">
+                          {options.flatMap((option, i) => [
+                            i > 0 && (
+                              <span
+                                key={`or-${i}`}
+                                className="self-center justify-self-center rounded-full bg-base-100 px-3 py-0.5 text-sm font-black text-base-content/70"
+                              >
+                                หรือ
+                              </span>
+                            ),
+                            <span key={option} className="rounded-lg bg-base-100 px-3 py-2">
+                              <RequirementText text={option} warningOnOwnLine />
+                            </span>,
+                          ])}
+                        </div>
+                      </li>
+                    );
+                  }
+                  // "X ...": who cannot take the quest; the red cross icon stands for the "X", so it is not repeated in the text
+                  const forbidden = r.startsWith("X ");
+                  const text = forbidden ? r.slice(2) : r;
                   return (
                     <li key={r} className="flex items-start gap-2 font-bold leading-snug">
-                      <Check aria-hidden className="mt-1 h-5 w-5 shrink-0 text-success" strokeWidth={3} />
+                      {forbidden ? (
+                        <X aria-hidden className="mt-1 h-5 w-5 shrink-0 text-error" strokeWidth={3} />
+                      ) : (
+                        <Check aria-hidden className="mt-1 h-5 w-5 shrink-0 text-success" strokeWidth={3} />
+                      )}
                       {chapter ? (
                         <span className="flex flex-wrap items-center gap-2">
                           จบ <ChapterRef n={chapter} showTown={false} /> แล้ว
                         </span>
                       ) : (
-                        r
+                        <span className={forbidden ? "text-error" : undefined}>
+                          <RequirementText text={text} />
+                        </span>
                       )}
                     </li>
                   );

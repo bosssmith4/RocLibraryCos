@@ -3,6 +3,7 @@ import { AlertTriangle } from "lucide-react";
 import { STORY_GUIDE } from "@/data/anniversary5thGuide";
 import { CoordinateText } from "./CoordinateLink";
 import SectionHeading from "./SectionHeading";
+import SourceRef from "./SourceRef";
 
 const OFFICIAL = "https://roc.gnjoy.in.th/event/all-server-5th-anniversary-story-quest/";
 
@@ -85,6 +86,7 @@ export default function StoryGuide({ index }: { index: string }) {
           </p>
         </Table>
       </div>
+      <SourceRef href="https://roc.gnjoy.in.th/event/world-event-five/" title="World Event Five" />
     </section>
   );
 }

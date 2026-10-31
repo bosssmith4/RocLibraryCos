@@ -5,6 +5,7 @@ import { CoordinateText } from "./CoordinateLink";
 import { RewardBox } from "./QuestParts";
 import QuestTaskRow from "./QuestTaskRow";
 import SectionHeading from "./SectionHeading";
+import SourceRef from "./SourceRef";
 import WorldQuest from "./WorldQuest";
 
 const ART = "/assets/images/anvs/landing";
@@ -100,6 +101,10 @@ export default function RecurringQuests({ index }: { index: string }) {
         ))}
       </div>
       {world && <GroupCard group={world} />}
+      <SourceRef
+        href="https://roc.gnjoy.in.th/event/all-server-5th-anniversary-daily-weekly-quest/"
+        title="5th Anniversary Daily / Weekly Quest"
+      />
     </section>
   );
 }

@@ -12,6 +12,7 @@ import { coordinateText, type MapCoordinate } from "@/utils/mapCoordinate";
 import { REGION_COLORS } from "./chapterMapLayout";
 import MapLocationModal from "./MapLocationModal";
 import SectionHeading from "./SectionHeading";
+import SourceRef from "./SourceRef";
 
 /** The official page the Warp rules and the town coordinates come from. */
 const SOURCE = "https://roc.gnjoy.in.th/event/the-rise-of-awake-novice/";
@@ -134,12 +135,7 @@ export default function WarpPortals({ index }: { index: string }) {
         ))}
       </div>
 
-      <p className="text-sm text-base-content/70">
-        ที่มา:{" "}
-        <a href={SOURCE} target="_blank" rel="noreferrer" className="underline">
-          roc.gnjoy.in.th · The Rise of Awake Novice
-        </a>
-      </p>
+      <SourceRef href={SOURCE} title="The Rise of Awake Novice" />
 
       {open && <MapLocationModal coordinates={[open]} onClose={() => setOpen(null)} />}
     </section>

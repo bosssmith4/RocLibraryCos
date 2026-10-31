@@ -4,6 +4,7 @@ import QuestTimeline from "./components/QuestTimeline";
 import RecurringQuests from "./components/RecurringQuests";
 import RewardsTeaser from "./components/RewardsTeaser";
 import SectionHeading from "./components/SectionHeading";
+import SourceRef from "./components/SourceRef";
 import SectionNav from "./components/SectionNav";
 import WarpPortals from "./components/WarpPortals";
 import StoryGuide from "./components/StoryGuide";
@@ -24,6 +25,10 @@ export default function FifthAnniversaryPage() {
         <SectionHeading index="01" title="แผนที่ Chapter" id="map-title" />
         <ChapterMap />
         <JourneyStrip />
+        <SourceRef
+          href="https://roc.gnjoy.in.th/event/all-server-5th-anniversary-story-quest/"
+          title="5th Anniversary Story Quest"
+        />
       </section>
       <RecurringQuests index="02" />
       <StoryGuide index="03" />
