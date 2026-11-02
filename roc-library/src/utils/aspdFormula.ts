@@ -17,17 +17,19 @@ export function calculateJobWeaponBase(jobBaseASPD: number, weaponFactor: number
   return jobBaseASPD + weaponFactor;
 }
 
+/** Scales the stat term down for a heavy job + weapon; 0.96 at most, and not rounded. */
 export function calculateAspdPenalty(jobWeaponBase: number) {
-  const penalty = 1 - ((jobWeaponBase - 144) / 50);
-  return roundDown(Math.min(0.96, penalty), 2);
+  return jobWeaponBase > 145 ? 1 - ((jobWeaponBase - 144) / 50) : 0.96;
 }
 
+/** The AGI correction; AGI of 205 or more needs none. */
 export function calculateAspdCorrection(agi: number) {
+  if (agi >= 205) return 0;
   return roundUp((Math.sqrt(205) - Math.sqrt(Math.max(0, agi))) / 7.15, 3);
 }
 
 export function calculateStatTerm(agi: number, dex: number) {
-  return Math.sqrt(Math.max(0, agi) * 9.999 + Math.max(0, dex) * 0.19212);
+  return Math.sqrt(Math.max(0, agi) * 9.9987 + Math.max(0, dex) * 0.1922);
 }
 
 export function calculateBaseCase(
@@ -41,11 +43,11 @@ export function calculateBaseCase(
 }
 
 export function calculateBaseASPD(baseCase: number, totalModifier: number) {
-  return roundDown(200 - (200 - baseCase) * (1 - totalModifier), 2);
+  return roundDown(200 - (200 - baseCase) * (1 - totalModifier), 3);
 }
 
 export function calculateEquipContribution(baseASPD: number, equipMod: number) {
-  return roundDown((195 - baseASPD) * equipMod, 1);
+  return roundDown((195 - baseASPD) * equipMod, 2);
 }
 
 export function calculateFinalRaw(baseASPD: number, equipContrib: number, flatASPD: number) {
@@ -160,4 +162,13 @@ export function stepsToASPD(
   }
 
   return { agiNeeded, dexNeeded };
+}
+/**
+ * Attacks per second for a Final ASPD before the class cap. The cap itself is 190 for Class 1-2 (5 a second)
+ * and 193 for Extended and Awakened (counted as 7 a second).
+ */
+export function attacksPerSecond(finalRaw: number, maxASPD: number) {
+  if (finalRaw >= 193) return 7;
+  if (Math.min(finalRaw, maxASPD) === 190) return 5;
+  return 50 / (200 - Math.floor(finalRaw));
 }
