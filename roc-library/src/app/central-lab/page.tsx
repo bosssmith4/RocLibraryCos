@@ -1,14 +1,13 @@
 "use client";
-import { useMemo, useState, useRef, useEffect } from "react";
+import { useState, useRef, useEffect } from "react";
 import EventModal from "./cenlab-modal";
 import MonsterTablePage from "./monster-lab";
-import SwitchOnPage from "./switch-on";
-import { Pause, Play, RotateCcw, Timer } from "lucide-react";
+import LightCodePanel, { CodeReadout } from "./switch-on";
+import StageTimers from "./stage-timers";
+import { getThaiDateParts } from "@/utils/timezoneUtils";
 
-interface CalendarEvent {
+export interface CalendarEvent {
   event_date: string;
-  event_title: string;
-  event_theme: string;
   event_binary: string;
   event_code: string;
 }
@@ -17,85 +16,31 @@ type TabType = "daily" | "calendar" | "monster";
 
 // Navbar (4rem) + sticky tab bar + breathing room; mirrored by scroll-mt-28 on sections.
 const SECTION_LINE_OFFSET = 112;
-const DAYS_OF_WEEK = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-const MONTH_NAMES = [
-  "January", "February", "March", "April", "May", "June",
-  "July", "August", "September", "October", "November", "December",
-];
+const DAYS_OF_WEEK = ["อา", "จ", "อ", "พ", "พฤ", "ศ", "ส"];
 const TABS: TabType[] = ["daily", "calendar", "monster"];
+const DATE_CHECK_MS = 30 * 1000;
+
+const buildEvent = (year: number, month: number, day: number): CalendarEvent => {
+  const code = (day + (month + 1)) * 5;
+  const base2 = code.toString(2).padStart(8, "0");
+  return {
+    event_date: new Date(year, month, day).toISOString(),
+    event_binary: base2.slice(0, 4) + " " + base2.slice(4),
+    event_code: code.toString(),
+  };
+};
 
 export default function CentralLabPage() {
-  const today = new Date();
-  const [DateNow] = useState(today.getDate());
-  const [month] = useState(today.getMonth());
-  const [year] = useState(today.getFullYear());
+  // The code follows the date in Thailand, whatever the visitor's clock says.
+  const [thaiDate, setThaiDate] = useState(() => getThaiDateParts(new Date()));
+  const { year, day: today } = thaiDate;
+  const month = thaiDate.month - 1;
   const [selectedEvent, setSelectedEvent] = useState<CalendarEvent | null>(null);
-  const [selectedEventNow] = useState<CalendarEvent | null>(
-    (() => {
-      const code = (DateNow + (month + 1)) * 5;
-      const base2 = code.toString(2).padStart(8, "0");
-      const spaced = base2.slice(0, 4) + " " + base2.slice(4);
-      const accessCode = code.toString();
-      return {
-        event_date: new Date(year, month, DateNow).toISOString(),
-        event_title: `${spaced}<div class="text-lg text-base-content/80">${accessCode}</div>`,
-        event_theme: "bg-accent text-accent-content",
-        event_binary: spaced,
-        event_code: accessCode,
-      };
-    })()
-  );
   const [activeTab, setActiveTab] = useState<TabType>("daily");
 
   const dailyRef = useRef<HTMLDivElement>(null);
   const calendarRef = useRef<HTMLDivElement>(null);
   const monsterRef = useRef<HTMLDivElement>(null);
-
-  const daysInMonth = useMemo(
-    () => new Date(year, month + 1, 0).getDate(),
-    [year, month],
-  );
-  
-  const firstDayOfMonth = useMemo(
-    () => new Date(year, month).getDay(),
-    [year, month],
-  );
-  
-  const blankDays = useMemo(
-    () => Array.from({ length: firstDayOfMonth }, (_, i) => i + 1),
-    [firstDayOfMonth],
-  );
-  
-  const noOfDays = useMemo(
-    () => Array.from({ length: daysInMonth }, (_, i) => i + 1),
-    [daysInMonth],
-  );
-
-  const events: CalendarEvent[] = useMemo(() => {
-    return noOfDays.map((day) => {
-      const code = (day + (month + 1)) * 5;
-      const base2 = code.toString(2).padStart(8, "0");
-      const spaced = base2.slice(0, 4) + " " + base2.slice(4);
-      const accessCode = code.toString();
-      return {
-        event_date: new Date(year, month, day).toISOString(),
-        event_title: `${spaced}<div class="text-lg text-base-content/80">${accessCode}</div>`,
-        event_theme: "bg-accent text-accent-content",
-        event_binary: spaced,
-        event_code: accessCode,
-      };
-    });
-  }, [noOfDays, year, month]);
-
-  const isToday = (date: number) => {
-    const d = new Date(year, month, date);
-    return today.toDateString() === d.toDateString();
-  };
-
-  const getEventsForDate = (date: number) => {
-    const d = new Date(year, month, date).toDateString();
-    return events.filter((ev) => new Date(ev.event_date).toDateString() === d);
-  };
 
   const getRefByTab = (tab: TabType) => {
     const refMap: Record<TabType, React.RefObject<HTMLDivElement>> = {
@@ -144,35 +89,47 @@ export default function CentralLabPage() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // A page left open past 00:00 in Thailand moves on to the new day's code.
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const next = getThaiDateParts(new Date());
+      setThaiDate((prev) =>
+        prev.year === next.year && prev.month === next.month && prev.day === next.day
+          ? prev
+          : next,
+      );
+    }, DATE_CHECK_MS);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="antialiased sans-serif">
       {/* Navigation Tabs */}
       <TabNavigation activeTab={activeTab} onTabClick={handleScrollTo} />
 
-      {/* Daily Code Section */}
-      <section ref={dailyRef} className="scroll-mt-28 mb-8 sm:mb-12 container mx-auto px-2 sm:px-4 pt-8 sm:pt-10">
-        <DailySection selectedEvent={selectedEventNow} />
-      </section>
+      <div className="mx-auto max-w-7xl space-y-12 px-4 py-6 sm:px-6 sm:py-8">
+        {/* Daily Code Section */}
+        <section ref={dailyRef} className="scroll-mt-28 space-y-10">
+          <DailySection year={year} month={month} day={today} />
+          <StageTimers />
+        </section>
 
-      {/* Calendar Section */}
-      <section ref={calendarRef} className="scroll-mt-28 mb-8 sm:mb-12 container mx-auto px-2 sm:px-4 py-2 md:py-8">
-        <CalendarSection
-          month={month}
-          year={year}
-          days={DAYS_OF_WEEK}
-          monthNames={MONTH_NAMES}
-          blankDays={blankDays}
-          noOfDays={noOfDays}
-          isToday={isToday}
-          getEventsForDate={getEventsForDate}
-          onSelectEvent={setSelectedEvent}
-        />
-      </section>
+        {/* Calendar Section */}
+        <section ref={calendarRef} className="scroll-mt-28">
+          <CalendarSection
+            year={year}
+            month={month}
+            today={today}
+            onSelectEvent={setSelectedEvent}
+          />
+        </section>
 
-      {/* Monster Section */}
-      <section ref={monsterRef} className="scroll-mt-28 mb-12 container mx-auto px-2 sm:px-4">
-        <MonsterTablePage />
-      </section>
+        {/* Monster Section */}
+        <section ref={monsterRef} className="scroll-mt-28">
+          <MonsterTablePage />
+        </section>
+      </div>
 
       {/* Event Modal */}
       {selectedEvent && (
@@ -217,352 +174,151 @@ function TabNavigation({ activeTab, onTabClick }: TabNavigationProps) {
 }
 
 interface DailySectionProps {
-  selectedEvent: CalendarEvent | null;
+  year: number;
+  month: number;
+  day: number;
 }
 
-function DailySection({ selectedEvent }: DailySectionProps) {
-  const initialTimes = [
-    { id: 1, minutes: 2, seconds: 30, label: "Stage 1", initialMinutes: 2, initialSeconds: 30 },
-    { id: 2, minutes: 1, seconds: 20, label: "Stage 2", initialMinutes: 1, initialSeconds: 20 },
-    { id: 3, minutes: 2, seconds: 40, label: "Stage 3", initialMinutes: 2, initialSeconds: 40 },
-  ];
-
-  const [times, setTimes] = useState(initialTimes);
-  const [runningTimers, setRunningTimers] = useState<boolean[]>([false, false, false]);
-  const [alarmPlayed, setAlarmPlayed] = useState<boolean[]>([false, false, false]);
-
-  const playAlarmSound = async () => {
-    for (let i = 0; i < 3; i++) {
-      const audio = new Audio("/assets/sound/beep.mp3");
-      audio.volume = 0.8;
-      await new Promise((resolve) => {
-        audio.play();
-        audio.onended = () => resolve(null);
-      });
-      await new Promise((resolve) => setTimeout(resolve, 300));
-    }
-  };
-
-  const toggleTimer = (id: number) => {
-    const index = id - 1;
-    setRunningTimers((prev) => {
-      const newRunning = [...prev];
-      newRunning[index] = !newRunning[index];
-      return newRunning;
-    });
-  };
-
-  const resetTimer = (id: number) => {
-    const index = id - 1;
-    setTimes((prev) =>
-      prev.map((time, idx) =>
-        idx === index
-          ? { ...time, minutes: time.initialMinutes, seconds: time.initialSeconds }
-          : time
-      )
-    );
-    setRunningTimers((prev) => {
-      const newRunning = [...prev];
-      newRunning[index] = false;
-      return newRunning;
-    });
-    setAlarmPlayed((prev) => {
-      const newAlarmPlayed = [...prev];
-      newAlarmPlayed[index] = false;
-      return newAlarmPlayed;
-    });
-  };
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setTimes((prevTimes) =>
-        prevTimes.map((time, idx) => {
-          if (!runningTimers[idx]) return time;
-
-          let { minutes, seconds } = time;
-          if (seconds > 0) {
-            seconds--;
-          } else if (minutes > 0) {
-            minutes--;
-            seconds = 59;
-          } else {
-            // Timer จบแล้ว ให้หยุดนับต่อ
-            setRunningTimers((prev) => {
-              const newRunning = [...prev];
-              newRunning[idx] = false;
-              return newRunning;
-            });
-            return time;
-          }
-          return { ...time, minutes, seconds };
-        })
-      );
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, [runningTimers]);
-
-  // Check for timer completion and play alarm
-  useEffect(() => {
-    times.forEach((time, idx) => {
-      if (
-        time.minutes === 0 &&
-        time.seconds === 0 &&
-        !alarmPlayed[idx]
-      ) {
-        playAlarmSound();
-        setAlarmPlayed((prev) => {
-          const newAlarmPlayed = [...prev];
-          newAlarmPlayed[idx] = true;
-          return newAlarmPlayed;
-        });
-      }
-    });
-  }, [times, alarmPlayed]);
+function DailySection({ year, month, day }: DailySectionProps) {
+  const event = buildEvent(year, month, day);
 
   return (
-    <div className="space-y-6">
-      {/* Daily Code Header Section */}
-      <div className="card bg-base-100 shadow-lg border border-base-300">
-        <div className="card-body">
-          <h2 className="text-lg sm:text-2xl font-bold mb-3 sm:mb-4 text-primary text-center">
-            Daily Code: {selectedEvent?.event_binary || "---"}
-          </h2>
-          <h3 className="text-lg sm:text-xl font-semibold mb-4 text-base-content text-center">
-            รหัสเข้า Central Laboratory ตามไฟที่เปิดในภาพได้เลยครับ
-          </h3>
-          
-          {/* Switch Image */}
-          <div className="grid grid-cols-9 grid-rows-3 gap-2 rounded-md overflow-hidden mb-4 mx-auto relative w-full max-w-4xl aspect-[9/5]">
-            <div
-              className="absolute inset-0 bg-center bg-cover"
-              style={{
-                backgroundImage: "url('/assets/images/Cenlab/example_switchOn.png')",
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-            ></div>
-            {selectedEvent?.event_binary
-              ? selectedEvent.event_binary.split("").map((bit, idx) => (
-                  <SwitchOnPage key={idx} bit={bit} />
-                ))
-              : null}
-          </div>
-        </div>
-      </div>
+    <div className="space-y-4">
+      <header>
+        <h1 className="text-3xl font-bold text-base-content sm:text-4xl">
+          Central Laboratory
+        </h1>
+        <p className="mt-1 text-sm text-base-content/70 sm:text-base">
+          รหัสวันนี้ {new Date(event.event_date).toLocaleDateString("th-TH", {
+            weekday: "long",
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          })} เปลี่ยนรหัสทุก 00:00 เวลาไทย
+        </p>
+      </header>
 
-      {/* Divider */}
-      <div className="divider my-4"></div>
-
-      {/* Timer Section */}
-      <div className="card bg-base-100 shadow-lg border border-base-300">
-        <div className="card-body">
-          <h2 className="card-title text-lg sm:text-2xl text-primary mb-4 justify-center">
-            <Timer aria-hidden="true" className="h-6 w-6" /> Stage Timers
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            {times.map((time) => (
-              <div
-                key={time.id}
-                className="stat bg-base-200 rounded-lg border border-base-300 p-4"
-              >
-                <div className="stat-title text-center text-base-content font-bold mb-2">
-                  {time.label}
-                </div>
-                <div
-                  className={`stat-value mb-4 text-center font-mono text-3xl sm:text-4xl ${
-                    time.minutes === 0 && time.seconds === 0
-                      ? "text-error"
-                      : "text-base-content"
-                  }`}
-                  role="timer"
-                  aria-label={time.label}
-                >
-                  {String(time.minutes).padStart(2, "0")}:{String(time.seconds).padStart(2, "0")}
-                </div>
-                <div className="stat-desc text-center text-xs mb-4">
-                  {runningTimers[time.id - 1] ? "Running" : "Paused"}
-                </div>
-                {/* Control Buttons */}
-                <div className="flex gap-2 justify-center">
-                  <button
-                    onClick={() => toggleTimer(time.id)}
-                    className={`btn btn-sm gap-1 ${
-                      runningTimers[time.id - 1]
-                        ? "btn-warning"
-                        : "btn-primary"
-                    }`}
-                  >
-                    {runningTimers[time.id - 1] ? (
-                      <><Pause aria-hidden="true" className="h-4 w-4" /> Pause</>
-                    ) : (
-                      <><Play aria-hidden="true" className="h-4 w-4" /> Start</>
-                    )}
-                  </button>
-                  <button
-                    onClick={() => resetTimer(time.id)}
-                    className="btn btn-sm btn-outline gap-1"
-                  >
-                    <RotateCcw aria-hidden="true" className="h-4 w-4" /> Reset
-                  </button>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
+      <div className="grid items-stretch gap-4 lg:grid-cols-[20rem_minmax(0,1fr)]">
+        <CodeReadout code={event.event_code} binary={event.event_binary} />
+        <LightCodePanel binary={event.event_binary} />
       </div>
     </div>
   );
 }
 
 interface CalendarSectionProps {
-  month: number;
   year: number;
-  days: string[];
-  monthNames: string[];
-  blankDays: number[];
-  noOfDays: number[];
-  isToday: (date: number) => boolean;
-  getEventsForDate: (date: number) => CalendarEvent[];
+  month: number;
+  today: number;
   onSelectEvent: (event: CalendarEvent) => void;
 }
 
-function CalendarSection({
-  month,
-  year,
-  days,
-  monthNames,
-  blankDays,
-  noOfDays,
-  isToday,
-  getEventsForDate,
-  onSelectEvent,
-}: CalendarSectionProps) {
-  return (
-    <div className="rounded-xl overflow-hidden bg-base-100 shadow-xl border border-base-300">
-      {/* Header */}
-      <div className="bg-primary text-primary-content py-3 sm:py-6 px-4 sm:px-8">
-        <div className="flex items-center justify-between">
-          <div>
-            <span className="text-2xl sm:text-4xl font-bold">
-              {monthNames[month]}
-            </span>
-            <span className="ml-2 sm:ml-3 text-sm sm:text-lg opacity-80 font-normal">{year}</span>
-          </div>
-        </div>
-      </div>
+function CalendarSection({ year, month, today, onSelectEvent }: CalendarSectionProps) {
+  const blankDays = new Date(year, month).getDay();
+  const daysInMonth = new Date(year, month + 1, 0).getDate();
+  const monthTitle = new Date(year, month).toLocaleDateString("th-TH", {
+    year: "numeric",
+    month: "long",
+  });
 
-      {/* Calendar Grid */}
-      <div className="p-4 md:p-6">
-        <div className="grid grid-cols-7 gap-2 md:gap-3">
-          <CalendarHeader days={days} />
-          <CalendarGrid
-            blankDays={blankDays}
-            noOfDays={noOfDays}
-            isToday={isToday}
-            getEventsForDate={getEventsForDate}
-            onSelectEvent={onSelectEvent}
-          />
-        </div>
+  return (
+    <div className="space-y-4">
+      <header>
+        <h2 className="text-2xl font-bold text-base-content sm:text-3xl">{monthTitle}</h2>
+        <p className="mt-1 text-sm text-base-content/70 sm:text-base">
+          รหัสของทุกวันในเดือนนี้ กดวันที่เพื่อดูไฟในภาพ
+        </p>
+      </header>
+
+      <div className="grid grid-cols-7 gap-1 rounded-box border border-base-300 bg-base-100 p-2 sm:gap-2 sm:p-4">
+        {DAYS_OF_WEEK.map((name) => (
+          <div
+            key={name}
+            className="py-1 text-center text-xs font-semibold text-base-content/70 sm:text-sm"
+          >
+            {name}
+          </div>
+        ))}
+
+        {Array.from({ length: blankDays }, (_, index) => (
+          <div key={`blank-${index}`} />
+        ))}
+
+        {Array.from({ length: daysInMonth }, (_, index) => {
+          const date = index + 1;
+          return (
+            <CalendarDay
+              key={date}
+              date={date}
+              isToday={date === today}
+              isPast={date < today}
+              event={buildEvent(year, month, date)}
+              onSelectEvent={onSelectEvent}
+            />
+          );
+        })}
       </div>
     </div>
-  );
-}
-
-function CalendarHeader({ days }: { days: string[] }) {
-  return (
-    <>
-      {days.map((day) => (
-        <div key={day} className="px-1 sm:px-2 py-2 sm:py-3 text-[10px] sm:text-sm font-bold text-center bg-neutral text-neutral-content uppercase tracking-widest rounded-t-md">
-          {day}
-        </div>
-      ))}
-    </>
-  );
-}
-
-interface CalendarGridProps {
-  blankDays: number[];
-  noOfDays: number[];
-  isToday: (date: number) => boolean;
-  getEventsForDate: (date: number) => CalendarEvent[];
-  onSelectEvent: (event: CalendarEvent) => void;
-}
-
-function CalendarGrid({
-  blankDays,
-  noOfDays,
-  isToday,
-  getEventsForDate,
-  onSelectEvent,
-}: CalendarGridProps) {
-  return (
-    <>
-      {blankDays.map((b) => (
-        <div
-          key={`b${b}`}
-          className="bg-base-200"
-        />
-      ))}
-
-      {noOfDays.map((date) => (
-        <CalendarDay
-          key={date}
-          date={date}
-          isToday={isToday(date)}
-          events={getEventsForDate(date)}
-          onSelectEvent={onSelectEvent}
-        />
-      ))}
-    </>
   );
 }
 
 interface CalendarDayProps {
   date: number;
   isToday: boolean;
-  events: CalendarEvent[];
+  isPast: boolean;
+  event: CalendarEvent;
   onSelectEvent: (event: CalendarEvent) => void;
 }
 
-function CalendarDay({
-  date,
-  isToday: isTodayFlag,
-  events,
-  onSelectEvent,
-}: CalendarDayProps) {
+function CalendarDay({ date, isToday, isPast, event, onSelectEvent }: CalendarDayProps) {
   return (
-    <div
-      className={`min-h-20 sm:min-h-24 md:min-h-32 p-1 sm:p-2 md:p-3 rounded-lg border transition-all ${
-        isTodayFlag ? "bg-primary/10 border-primary/40" : "bg-base-100 border-base-300"
-      }`}
+    <button
+      type="button"
+      onClick={() => onSelectEvent(event)}
+      aria-current={isToday ? "date" : undefined}
+      aria-label={`วันที่ ${date} รหัส ${event.event_code} ไฟ ${event.event_binary}${isToday ? " วันนี้" : ""}`}
+      className={`flex min-h-20 cursor-pointer flex-col justify-between gap-1 rounded-field border p-1 text-left transition-colors hover:border-primary sm:min-h-24 sm:p-2 ${
+        isToday
+          ? "border-2 border-primary bg-primary/10"
+          : "border-base-300"
+      } ${isPast ? "opacity-60 hover:opacity-100" : ""}`}
     >
-      {/* Date Number */}
-      <div
-        className={`inline-flex w-6 h-6 sm:w-8 sm:h-8 items-center justify-center rounded-full text-xs sm:text-sm font-bold mb-1 sm:mb-2 ${
-          isTodayFlag ? "bg-primary text-primary-content" : "bg-base-200 text-base-content"
-        }`}
-      >
-        {date}
-      </div>
+      <span className="flex items-center justify-between gap-1">
+        <span
+          className={`text-xs font-semibold sm:text-sm ${
+            isToday ? "text-primary" : "text-base-content/70"
+          }`}
+        >
+          {date}
+        </span>
+        {isToday && (
+          <span className="hidden text-xs font-bold text-primary sm:inline">วันนี้</span>
+        )}
+      </span>
+      <span className="text-base font-extrabold tabular-nums text-base-content sm:text-2xl">
+        {event.event_code}
+      </span>
+      <LampDots binary={event.event_binary} />
+    </button>
+  );
+}
 
-      {/* Events */}
-      <div className="space-y-0.5 sm:space-y-1">
-        {events.map((event, idx) => (
-          <button
-            key={idx}
-            type="button"
-            onClick={() => onSelectEvent(event)}
-            aria-label={`รหัส ${event.event_binary} วันที่ ${date}`}
-            className={`block w-full cursor-pointer overflow-hidden rounded p-0.5 text-left text-[10px] sm:p-1.5 sm:text-xs ${event.event_theme} transition-transform hover:scale-[1.03] active:scale-95`}
-          >
-            <span className="block truncate">{event.event_binary}</span>
-            <span className="block truncate text-sm font-semibold sm:text-base">
-              {event.event_code}
-            </span>
-          </button>
-        ))}
-      </div>
-    </div>
+/** The day's Light code in miniature: stacked in two rows where the cell is narrow. */
+function LampDots({ binary }: { binary: string }) {
+  return (
+    <span aria-hidden="true" className="flex flex-col gap-0.5 sm:flex-row sm:gap-1.5">
+      {binary.split(" ").map((group, groupIndex) => (
+        <span key={groupIndex} className="flex gap-0.5 sm:gap-1">
+          {group.split("").map((bit, index) => (
+            <span
+              key={index}
+              className={`h-1.5 w-1.5 rounded-full sm:h-2 sm:w-2 ${
+                bit === "1" ? "bg-accent" : "bg-base-content/20"
+              }`}
+            />
+          ))}
+        </span>
+      ))}
+    </span>
   );
 }

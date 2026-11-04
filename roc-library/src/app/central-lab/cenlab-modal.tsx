@@ -1,13 +1,8 @@
 "use client";
-import { useEffect } from "react";
-import SwitchOnPage from "./switch-on";
-
-interface CalendarEvent {
-  event_date: string;
-  event_title: string;
-  event_theme: string;
-  event_binary: string;
-}
+import { useEffect, useRef } from "react";
+import { X } from "lucide-react";
+import LightCodePanel, { CodeReadout } from "./switch-on";
+import type { CalendarEvent } from "./page";
 
 interface EventModalProps {
   event: CalendarEvent;
@@ -15,61 +10,57 @@ interface EventModalProps {
 }
 
 const EventModal: React.FC<EventModalProps> = ({ event, onClose }) => {
+  const closeRef = useRef<HTMLButtonElement>(null);
+
   useEffect(() => {
+    const opener = document.activeElement as HTMLElement | null;
+    closeRef.current?.focus();
+
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "Escape") onClose();
     };
     window.addEventListener("keydown", onKeyDown);
-    return () => window.removeEventListener("keydown", onKeyDown);
+    return () => {
+      window.removeEventListener("keydown", onKeyDown);
+      opener?.focus();
+    };
   }, [onClose]);
-
-  if (!event) return null;
 
   return (
     <div
       role="dialog"
       aria-modal="true"
-      aria-label="Central Lab daily code"
-      className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-neutral/80"
+      aria-labelledby="cenlab-modal-title"
+      onClick={onClose}
+      className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto bg-neutral/80 p-4"
     >
-      <div className="bg-base-100 rounded-lg shadow-lg p-4 sm:p-6 w-full max-h-full overflow-y-auto">
-        <h1 className="font-bold text-3xl text-center text-base-content/70 mb-4">
-          {new Date(event.event_date).toLocaleDateString(undefined, {
-            weekday: "long",
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          })}
-        </h1>
-        <div
-          className="font-semibold mb-2 text-base-content text-3xl text-center mt-10"
-          dangerouslySetInnerHTML={{ __html: event.event_title }}
-        ></div>
-        <div className="grid grid-cols-9 grid-rows-3 gap-2 rounded-md overflow-hidden mb-4 mx-auto relative w-full max-w-4xl aspect-[9/5]">
-          {/* พื้นหลัง */}
-          <div
-            className="absolute inset-0 bg-center bg-cover"
-            style={{
-              backgroundImage:
-                "url('/assets/images/Cenlab/example_switchOn.png')",
-              backgroundSize: "cover",
-              backgroundPosition: "center",
-            }}
-          ></div>
-
-          {/* overlay หลอดไฟ */}
-          {event.event_binary.split("").map((bit, idx) => (
-            <SwitchOnPage key={idx} bit={bit}></SwitchOnPage>
-          ))}
+      <div
+        onClick={(e) => e.stopPropagation()}
+        className="max-h-full w-full max-w-5xl overflow-y-auto rounded-box bg-base-100 p-4 shadow-lg sm:p-6"
+      >
+        <div className="mb-4 flex items-center justify-between gap-3">
+          <h2 id="cenlab-modal-title" className="text-xl font-bold text-base-content sm:text-2xl">
+            {new Date(event.event_date).toLocaleDateString("th-TH", {
+              weekday: "long",
+              year: "numeric",
+              month: "long",
+              day: "numeric",
+            })}
+          </h2>
+          <button
+            ref={closeRef}
+            type="button"
+            onClick={onClose}
+            aria-label="ปิด"
+            className="btn btn-ghost btn-square min-h-11 min-w-11 shrink-0"
+          >
+            <X aria-hidden="true" className="h-5 w-5" />
+          </button>
         </div>
 
-        <div className="text-right ">
-          <button
-            onClick={onClose}
-            className="btn btn-primary"
-          >
-            Close
-          </button>
+        <div className="grid items-stretch gap-4 lg:grid-cols-[20rem_minmax(0,1fr)]">
+          <CodeReadout code={event.event_code} binary={event.event_binary} />
+          <LightCodePanel binary={event.event_binary} />
         </div>
       </div>
     </div>

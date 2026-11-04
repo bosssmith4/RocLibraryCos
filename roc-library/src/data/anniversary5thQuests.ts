@@ -6,8 +6,14 @@ import type { ChapterQuest, QuestTask, RecurringQuestGroup } from "@/types/anniv
  */
 const WORLD_FRUIT: QuestTask = { kind: "reward", label: "World Fruit", count: 100, unit: "ชิ้น", itemImageId: 6435 };
 
-const DAILY_WEEKLY_REWARDS: QuestTask[] = [
+const DAILY_REWARDS: QuestTask[] = [
   { kind: "reward", label: "World Fruit", count: 20, itemImageId: 6435 },
+  { kind: "reward", label: "Jam Pancake", count: 20, itemImageId: 592 },
+];
+
+/** Weekly Quest pays three times the World Fruit from 4 Nov to 2 Dec 2026 (patch of 4 Nov); the rest is unchanged. */
+const WEEKLY_REWARDS: QuestTask[] = [
+  { kind: "reward", label: "World Fruit", count: 60, itemImageId: 6435 },
   { kind: "reward", label: "Jam Pancake", count: 20, itemImageId: 592 },
 ];
 
@@ -109,7 +115,8 @@ export const CHAPTER_QUESTS: ChapterQuest[] = [
     gameTitle: "Chapter V - Break your limits : การทลายขีดจำกัด",
     kind: "รวบรวม",
     intro: "เพื่อให้ได้แหวนเวทย์มนต์",
-    requirements: ["จบ Chapter IV แล้ว", "X Awakened รับเควสนี้ไม่ได้", "อยู่ในร่าง Marin", "Hi Class LV 99 Job 1 หรือ Extend LV 99 Job 1"],
+    requirements: ["จบ Chapter IV แล้ว", "อยู่ในร่าง Marin"],
+    notes: ["ตั้งแต่ 4 พ.ย. 2026 ไม่เช็ค LV และ Job ตอนรับเควสแล้ว เช็กเฉพาะว่าผ่าน Chapter IV"],
     steps: [
       "คุยกับ NPC 5th Anniversary Exchange ใน Morroc รับได้พร้อมกันสูงสุด 2 เควส",
       "Shadow Stone: Desert Wolf [Event] ที่ Pyramid 3F / 4F (moc_pryd03 / moc_pryd04) ผ่านมุมซ้ายบนของ Morroc > Morroc Ruins > Pyramid",
@@ -161,7 +168,7 @@ export const RECURRING_QUESTS: RecurringQuestGroup[] = [
     note: "เควสที่ได้เป็นแบบสุ่ม · เมื่อรายงานสำเร็จแล้ว ต้องรอ 1 วัน",
     requiresChapter: 3,
     acceptAt: "prt_q 156 195",
-    rewards: DAILY_WEEKLY_REWARDS,
+    rewards: DAILY_REWARDS,
     rewardNote: "ส่งเควสสำเร็จ · ได้รับ 1 ครั้ง ต่อเควส",
     quests: [
       {
@@ -181,11 +188,11 @@ export const RECURRING_QUESTS: RecurringQuestGroup[] = [
   {
     id: "weekly",
     title: "Weekly Quest",
-    note: "ทำได้ครบ 3 เควส · รวม World Fruit 60 ต่อสัปดาห์",
+    note: "ทำได้ครบ 3 เควส · รวม World Fruit 180 ต่อสัปดาห์ (โปรโมชัน 3 เท่า 4 พ.ย. – 2 ธ.ค. 2026 · ปกติ 60)",
     requiresChapter: 5,
     acceptAt: "prt_q 156 195",
-    rewards: DAILY_WEEKLY_REWARDS,
-    rewardNote: "ส่งเควสสำเร็จ · ได้รับ 1 ครั้ง ต่อเควส",
+    rewards: WEEKLY_REWARDS,
+    rewardNote: "ส่งเควสสำเร็จ · ได้รับ 1 ครั้ง ต่อเควส · ครบ 3 เควส World Fruit 180",
     quests: [
       {
         title: "Weekly 1",

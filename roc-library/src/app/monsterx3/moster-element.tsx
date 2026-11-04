@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { ChevronDown, Search, X } from "lucide-react";
+import { ElementDot, MonsterElementLists, Stat } from "@/components/MonsterStats";
 import MonstersDb from "@/services/mosters/mostersDb";
 import { Monster } from "@/types/monster";
 import type { MonsterX3Event } from "@/types/monsterx3";
@@ -18,32 +19,6 @@ const SORT_OPTIONS: { value: SortKey; label: string }[] = [
 ];
 
 const DAY = 24 * 60 * 60 * 1000;
-
-/** The colour of each element's dot, as players picture them. Full class names so Tailwind sees them. */
-const ELEMENT_DOT: Record<string, string> = {
-  neutral: "bg-gray-400",
-  water: "bg-blue-500",
-  earth: "bg-amber-700",
-  fire: "bg-red-500",
-  wind: "bg-green-500",
-  poison: "bg-purple-500",
-  holy: "bg-yellow-400",
-  shadow: "bg-slate-700",
-  ghost: "bg-slate-200",
-  undead: "bg-emerald-700",
-};
-
-/** A small coloured dot that says which element at a glance; the name always sits beside it. */
-function ElementDot({ element }: { element: string }) {
-  return (
-    <span
-      aria-hidden="true"
-      className={`inline-block h-3 w-3 shrink-0 rounded-full ring-1 ring-base-content/30 ${
-        ELEMENT_DOT[element.toLowerCase()] ?? "bg-gray-400"
-      }`}
-    />
-  );
-}
 
 /** Dates are shown in Thailand time whatever the visitor's clock says. */
 const formatDate = (date: Date) =>
@@ -68,7 +43,7 @@ export default function MonsterEcomDatabase({ event }: { event: MonsterX3Event }
   const [sortBy, setSortBy] = useState<SortKey>("exp");
   const [descending, setDescending] = useState(true);
 
-  // รายชื่อ ID, พื้นที่ และ EXP/JOB ปกติของงาน อยู่ใน src/data/monsterx3/*.json
+  // รายชื่อ ID, พื้นที่ และ EXP/JOB ปกติของงาน อยู่ใน src/data/monsterx3/main.json
   const monsterx3Ids = event.monsters.map((m) => m.id);
   const rates = new Map(event.monsters.map((m) => [m.id, m]));
   const exp3 = (m: Monster) =>
@@ -151,6 +126,12 @@ export default function MonsterEcomDatabase({ event }: { event: MonsterX3Event }
                   · เหลืออีก {daysLeft} วัน
                 </span>
               )}
+            </p>
+            <p className="mt-1 text-sm text-base-content/70">
+              ที่มา:{" "}
+              <a href={event.source} target="_blank" rel="noopener noreferrer" className="underline">
+                ประกาศกิจกรรม {event.title}
+              </a>
             </p>
           </div>
         </header>
@@ -326,13 +307,6 @@ function MonsterCard({
   const [open, setOpen] = useState(false);
   const detailsId = `monster-${m.id}-details`;
 
-  // Elements that are not 100%: above it the monster takes more damage, below it less,
-  // and at 0% it takes none at all, which gets a group of its own.
-  const elements = Object.entries(m.element ?? {});
-  const weak = elements.filter(([, v]) => v > 100);
-  const resist = elements.filter(([, v]) => v < 100 && v !== 0);
-  const immune = elements.filter(([, v]) => v === 0);
-
   return (
     <article className="flex flex-col rounded-box border border-base-300 bg-base-100 p-4 transition-shadow hover:shadow-md">
       {/* The picture gets the full width of the card. A fixed-height flex box makes a tall
@@ -410,9 +384,7 @@ function MonsterCard({
             <Stat label="MDEF" value={m.mdef} />
             <Stat label="HIT" value={m.hit} />
           </dl>
-          <ElementList title="โดนธาตุแรงขึ้น" tone="text-success" items={weak} />
-          <ElementList title="ต้านทาน" tone="text-error" items={resist} />
-          <ElementList title="ไม่โดน (0%)" tone="text-base-content" items={immune} />
+          <MonsterElementLists element={m.element} />
         </div>
       )}
     </article>
@@ -452,50 +424,6 @@ function Reward({
           style={{ width: `${Math.max(4, Math.round(share * 100))}%` }}
         />
       </div>
-    </div>
-  );
-}
-
-function Stat({ label, value }: { label: string; value: string | number }) {
-  return (
-    <div className="rounded-field bg-base-200 px-2 py-1.5">
-      <dt className="text-[11px] font-semibold text-base-content/60">{label}</dt>
-      <dd className="text-sm font-bold tabular-nums">{value}</dd>
-    </div>
-  );
-}
-
-function ElementList({
-  title,
-  tone,
-  items,
-}: {
-  title: string;
-  tone: string;
-  items: [string, number][];
-}) {
-  if (items.length === 0) return null;
-  const sorted = [...items].sort((a, b) =>
-    tone === "text-success" ? b[1] - a[1] : a[1] - b[1],
-  );
-
-  return (
-    <div>
-      <p className="mb-1.5 text-xs font-semibold text-base-content/60">{title}</p>
-      <ul className="flex flex-wrap gap-1.5">
-        {sorted.map(([element, value]) => (
-          <li
-            key={element}
-            className="rounded-field border border-base-300 px-2 py-1 text-xs"
-          >
-            <span className="inline-flex items-center gap-1.5">
-              <ElementDot element={element} />
-              <span className="capitalize text-base-content/80">{element}</span>
-              <span className={`font-bold tabular-nums ${tone}`}>{value}%</span>
-            </span>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 }

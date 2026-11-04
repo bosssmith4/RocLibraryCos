@@ -1,3 +1,282 @@
-[
-  "2026-10"
-]
+{
+  "title": "Triple Experience Mons",
+  "source": "https://roc.gnjoy.in.th/event/triple-experience-mons-november-2026/",
+  "multiplier": 3,
+  "from": "2026-11-04T12:00:00+07:00",
+  "to": "2026-12-02T05:59:59+07:00",
+  "monsters": [
+    {
+      "id": 1367,
+      "name": "Blazer",
+      "group": "Nogg Road 1F - 2F",
+      "exp": 3173,
+      "job": 1871
+    },
+    {
+      "id": 1383,
+      "name": "Explosion",
+      "group": "Nogg Road 1F - 2F",
+      "exp": 2404,
+      "job": 1642
+    },
+    {
+      "id": 1072,
+      "name": "Kaho",
+      "group": "Nogg Road 1F - 2F",
+      "exp": 3990,
+      "job": 450
+    },
+    {
+      "id": 1387,
+      "name": "Gig",
+      "group": "Nogg Road 1F - 2F",
+      "exp": 3934,
+      "job": 2039
+    },
+    {
+      "id": 1384,
+      "name": "Deleter (Sky)",
+      "group": "Nogg Road 1F - 2F",
+      "exp": 3403,
+      "job": 2066
+    },
+    {
+      "id": 1385,
+      "name": "Deleter (Earth)",
+      "group": "Nogg Road 1F - 2F",
+      "exp": 3403,
+      "job": 2066
+    },
+    {
+      "id": 1382,
+      "name": "Diabolic",
+      "group": "Nogg Road 1F - 2F",
+      "exp": 3662,
+      "job": 2223
+    },
+    {
+      "id": 1381,
+      "name": "Grizzly",
+      "group": "Nogg Road 1F - 2F",
+      "exp": 3340,
+      "job": 2012
+    },
+    {
+      "id": 1366,
+      "name": "Lava Golem",
+      "group": "Nogg Road 1F - 2F",
+      "exp": 6470,
+      "job": 3879
+    },
+    {
+      "id": 1379,
+      "name": "Nightmare Terror",
+      "group": "Nogg Road 1F - 2F",
+      "exp": 6683,
+      "job": 4359
+    },
+    {
+      "id": 1721,
+      "name": "Dragon Egg",
+      "group": "Abyss Lake Underground 1F, 2F, 3F",
+      "exp": 6740,
+      "job": 0
+    },
+    {
+      "id": 1699,
+      "name": "Ancient Mimic",
+      "group": "Abyss Lake Underground 1F, 2F, 3F",
+      "exp": 2950,
+      "job": 2650
+    },
+    {
+      "id": 1714,
+      "name": "Ferus (Red)",
+      "group": "Abyss Lake Underground 1F, 2F, 3F",
+      "exp": 6750,
+      "job": 2230
+    },
+    {
+      "id": 1717,
+      "name": "Ferus (Green)",
+      "group": "Abyss Lake Underground 1F, 2F, 3F",
+      "exp": 8093,
+      "job": 8952
+    },
+    {
+      "id": 1713,
+      "name": "Acidus (Gold)",
+      "group": "Abyss Lake Underground 1F, 2F, 3F",
+      "exp": 14392,
+      "job": 4203
+    },
+    {
+      "id": 1716,
+      "name": "Acidus (Blue)",
+      "group": "Abyss Lake Underground 1F, 2F, 3F",
+      "exp": 28043,
+      "job": 8023
+    },
+    {
+      "id": 1715,
+      "name": "Novus (Red)",
+      "group": "Abyss Lake Underground 1F, 2F, 3F",
+      "exp": 1320,
+      "job": 1002
+    },
+    {
+      "id": 1718,
+      "name": "Novus (Yellow)",
+      "group": "Abyss Lake Underground 1F, 2F, 3F",
+      "exp": 1411,
+      "job": 1100
+    },
+    {
+      "id": 3020,
+      "name": "Fire Condor",
+      "group": "Flame Basin",
+      "exp": 7021,
+      "job": 7481
+    },
+    {
+      "id": 3021,
+      "name": "Fire Sandman",
+      "group": "Flame Basin",
+      "exp": 7207,
+      "job": 7734
+    },
+    {
+      "id": 3022,
+      "name": "Fire Frilldora",
+      "group": "Flame Basin",
+      "exp": 7807,
+      "job": 8199
+    },
+    {
+      "id": 3023,
+      "name": "Fire Golem",
+      "group": "Flame Basin",
+      "exp": 8912,
+      "job": 9464
+    },
+    {
+      "id": 1995,
+      "name": "Pinguicula",
+      "group": "Splendide Field (New World)",
+      "exp": 5840,
+      "job": 5324
+    },
+    {
+      "id": 1994,
+      "name": "Luciola Vespa",
+      "group": "Splendide Field (New World)",
+      "exp": 5892,
+      "job": 3612
+    },
+    {
+      "id": 2015,
+      "name": "Dark Pinguicula",
+      "group": "Splendide Field (New World)",
+      "exp": 5460,
+      "job": 4838
+    },
+    {
+      "id": 1993,
+      "name": "Naga",
+      "group": "Splendide Field (New World)",
+      "exp": 7652,
+      "job": 4424
+    },
+    {
+      "id": 1992,
+      "name": "Cornus",
+      "group": "Splendide Field (New World)",
+      "exp": 16224,
+      "job": 8008
+    },
+    {
+      "id": 1999,
+      "name": "Centipede Larva",
+      "group": "El Dicastes (New World)",
+      "exp": 9520,
+      "job": 5008
+    },
+    {
+      "id": 1986,
+      "name": "Tatacho",
+      "group": "El Dicastes (New World)",
+      "exp": 12225,
+      "job": 7730
+    },
+    {
+      "id": 2092,
+      "name": "Dolomedes",
+      "group": "El Dicastes (New World)",
+      "exp": 16755,
+      "job": 12885
+    },
+    {
+      "id": 2024,
+      "name": "Bradium Golem",
+      "group": "El Dicastes (New World)",
+      "exp": 21295,
+      "job": 8988
+    },
+    {
+      "id": 1987,
+      "name": "Centipede",
+      "group": "El Dicastes (New World)",
+      "exp": 10400,
+      "job": 6778
+    },
+    {
+      "id": 2221,
+      "name": "Randel Lawrence",
+      "group": "Bio Laboratory 4F",
+      "exp": 130000,
+      "job": 150000
+    },
+    {
+      "id": 2222,
+      "name": "Flamel Emure",
+      "group": "Bio Laboratory 4F",
+      "exp": 130000,
+      "job": 150000
+    },
+    {
+      "id": 2223,
+      "name": "Celia Alde",
+      "group": "Bio Laboratory 4F",
+      "exp": 130000,
+      "job": 150000
+    },
+    {
+      "id": 2224,
+      "name": "Chen Liu",
+      "group": "Bio Laboratory 4F",
+      "exp": 130000,
+      "job": 150000
+    },
+    {
+      "id": 2225,
+      "name": "Gertie",
+      "group": "Bio Laboratory 4F",
+      "exp": 130000,
+      "job": 150000
+    },
+    {
+      "id": 2226,
+      "name": "Alphoccio",
+      "group": "Bio Laboratory 4F",
+      "exp": 130000,
+      "job": 150000
+    },
+    {
+      "id": 2227,
+      "name": "Trentini",
+      "group": "Bio Laboratory 4F",
+      "exp": 130000,
+      "job": 150000
+    }
+  ]
+}

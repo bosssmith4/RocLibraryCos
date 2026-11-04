@@ -7,7 +7,7 @@
 const THAILAND_TIMEZONE_OFFSET = 7;
 const THAILAND_TIMEZONE = "Asia/Bangkok";
 
-const getThaiDateParts = (date: Date) => {
+export const getThaiDateParts = (date: Date) => {
   const formatter = new Intl.DateTimeFormat("en-CA", {
     timeZone: THAILAND_TIMEZONE,
     year: "numeric",

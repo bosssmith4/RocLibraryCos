@@ -107,11 +107,47 @@ body {
   }
 }
 
+/* Central Lab: a lit lamp flickers in short neon bursts but never goes dark, so the code stays readable.
+   It plays even with reduced motion, as the site's owner chose; keep it to two dips per burst. */
+@keyframes cenlab-lamp-core {
+  0%, 70%, 74%, 80%, 84%, 100% { opacity: 1; }
+  72%, 82% { opacity: 0.35; }
+}
+
+@keyframes cenlab-lamp-halo {
+  0%, 70%, 74%, 80%, 84%, 100% { opacity: 1; }
+  35% { opacity: 0.88; }
+  72%, 82% { opacity: 0.1; }
+}
+
+.cenlab-lamp-core {
+  animation: cenlab-lamp-core var(--lamp-duration) linear var(--lamp-delay) infinite;
+}
+
+.cenlab-lamp-halo {
+  animation: cenlab-lamp-halo var(--lamp-duration) linear var(--lamp-delay) infinite;
+}
+
 /* 5th Anniversary page: poster palette taken from the Item card gradient, kept the same in light and dark */
 .anvs {
   --anv-orange: #fd6c01;
   --anv-cream: #f0d29c;
   --anv-ink: #3a1400;
+  /* The Guarantee machine's two keys: yellow gold and cool silver, kept apart from the poster orange */
+  --key-gold: #d99a00;
+  --key-gold-fg: #2b1d00;
+  --key-gold-soft: #fff1bd;
+  --key-silver: #5b6b80;
+  --key-silver-fg: #ffffff;
+  --key-silver-soft: #e6ebf2;
+}
+
+[data-theme=roc-dark] .anvs {
+  --key-gold: #f2b705;
+  --key-gold-soft: #3a2c00;
+  --key-silver: #a9b6c8;
+  --key-silver-fg: #14202e;
+  --key-silver-soft: #28303b;
 }
 
 /* Poster dots: static confetti on the hero, no motion */

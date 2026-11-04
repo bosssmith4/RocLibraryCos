@@ -12,9 +12,9 @@ export interface MonsterX3Entry {
 
 /** One round of the Monster x3 (Triple Experience Mons) event. */
 export interface MonsterX3Event {
-  /** The file name without .json. */
-  id: string;
   title: string;
+  /** The address of the event announcement this round comes from. */
+  source: string;
   /** What the event multiplies EXP and JOB by (3 for x3). */
   multiplier: number;
   /** Start of the event, an ISO time with its Thailand offset (+07:00). */

@@ -79,9 +79,9 @@ export const WORLD_FRUIT_SOURCES: {
   },
   {
     source: "Weekly Quest",
-    amount: 60,
+    amount: 180,
     unit: "ชิ้น/สัปดาห์",
-    detail: "ทำได้ 3 เควส · เควสละ 20 ชิ้น รวม 60",
+    detail: "ทำได้ 3 เควส · เควสละ 60 ชิ้น รวม 180 (โปรโมชัน 3 เท่า ถึง 2 ธ.ค. 2026 · ปกติเควสละ 20 รวม 60)",
     href: "/5thAnvs#recurring-title",
   },
   {
@@ -125,8 +125,8 @@ export const WORLD_FRUIT_PLAN = {
       id: "weekly",
       name: "Weekly Quest",
       claimsPerWeek: 3,
-      perClaim: 20,
-      how: "3 เควส × 20 ชิ้น × สัปดาห์ละครั้ง",
+      perClaim: 60,
+      how: "3 เควส × 60 ชิ้น (ปกติ 20) × สัปดาห์ละครั้ง · 3 เท่าถึง 2 ธ.ค. 2026",
       itemImageId: 6435,
       requiresChapter: 5,
     },
@@ -169,7 +169,7 @@ export const WORLD_FRUIT_PLAN = {
   /** what the numbers assume, shown to the player so they can check them */
   assumptions: [
     "Daily ได้เควสแบบสุ่มวันละ 1 อัน เควสละ 20 ชิ้น จึงได้วันละ 20 ชิ้น",
-    "Weekly ทำได้ครบ 3 เควส เควสละ 20 ชิ้น รวม 60 ชิ้นต่อสัปดาห์",
+    "Weekly ทำได้ครบ 3 เควส ช่วงโปรโมชัน (4 พ.ย. – 2 ธ.ค. 2026) เควสละ 60 ชิ้น รวม 180 ชิ้นต่อสัปดาห์ ปกติเควสละ 20 ชิ้น รวม 60 ชิ้น",
     "Dragon Cataclysm ให้ Black Soul ×100 ซึ่ง 1 Black Soul = 1 World Fruit ทำได้ 1 เควสต่อ 4 วัน และเฉพาะ ศ · ส · อา จึงนับเป็นสัปดาห์ละ 1 ครั้ง",
     "World Event ได้ 20 ชิ้นต่อวัน เมื่อเซิร์ฟเวอร์ครบ 5,555 เควส ผู้เล่นคุมไม่ได้ จึงแยกไว้ ไม่รวมในยอดหลัก",
     "จำนวนวันเป็นค่าประมาณ ปัดขึ้น และเริ่มนับเมื่อปลดล็อกครบทุกเควสแล้ว",
