@@ -1,855 +1,25 @@
 {
-    "592": {
-        "unidentifiedDisplayName": "Jam Pancake",
-        "unidentifiedResourceName": "딸기잼팬케이크",
+    "23320": {
+        "unidentifiedDisplayName": "Melon Juice",
+        "unidentifiedResourceName": "멜론쥬스",
         "unidentifiedDescriptionName": [
-            "เค้กแยมสตรอเบอรี่ มันจะดูน่ากินกว่านี้ถ้าสตรอเบอรี่สุขงอม",
-            "^000088รักษาสถานะผิดปกติทั้งหมด, ^000088เพิ่ม HP และ SP",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "^ffffff_",
-            "น้ำหนัก : 15"
+            "เครื่องดื่มที่ทำจากเนื้อเมล่อนสด ๆ ให้รสชาติหวานละมุนเวลาทาน",
+            "เมื่อทานแล้วจะรู้สึกสดชื่นขึ้นมาเหมือนได้รับการฟื้นฟูร่างกาย",
+            "ช่วยฟื้นฟู HP, SP 10%, เพิ่ม HIT 30 เป็นเวลา 3 นาที",
+            "(ไอเทมนี้จะถูกลบออกวันที่ 13 มกราคม 2570 05.59 น.))",
+            "น้ำหนัก : 5"
         ],
-        "identifiedDisplayName": "Jam Pancake",
-        "identifiedResourceName": "딸기잼팬케이크",
+        "identifiedDisplayName": "Melon Juice",
+        "identifiedResourceName": "멜론쥬스",
         "identifiedDescriptionName": [
-            "เค้กแยมสตรอเบอรี่ มันจะดูน่ากินกว่านี้ถ้าสตรอเบอรี่สุขงอม",
-            "^000088รักษาสถานะผิดปกติทั้งหมด, ^000088เพิ่ม HP และ SP",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 15"
+            "เครื่องดื่มที่ทำจากเนื้อเมล่อนสด ๆ ให้รสชาติหวานละมุนเวลาทาน",
+            "เมื่อทานแล้วจะรู้สึกสดชื่นขึ้นมาเหมือนได้รับการฟื้นฟูร่างกาย",
+            "ช่วยฟื้นฟู HP, SP 10%",
+            "(ไอเทมนี้จะถูกลบออกวันที่ 13 มกราคม 2570 05.59 น.)",
+            "น้ำหนัก : 5"
         ],
         "slotCount": 0,
         "ClassNum": 0
-    },
-    "1489": {
-        "unidentifiedDisplayName": "Both Hands Spear",
-        "unidentifiedResourceName": "쟈벨린",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา ต้องทำการตรวจสอบโดยใช้ [Magnifier]"
-        ],
-        "identifiedDisplayName": "Spearfish",
-        "identifiedResourceName": "청새치_",
-        "identifiedDescriptionName": [
-            "^000088ไอเทมเช่า",
-            "หอกปลาทะเล มันมีชื่อเสียงว่าอร่อย มันถูกแช่เย็นจนแข็ง",
-            "เมื่อใช้สกิล pierce, Clashing Spiral, มีโอกาสติด Critical Damage สูงขึ้นและยังมีโอกาสทำให้ติดสถานะแช่แข็ง",
-            "Clashing Spiral Attack เพิ่มขึ้น 100%, Inspiration Attack 50% (ผลของสกิล Inspiration จะหายไปเมื่อถอดอาวุธ)",
-            "ถ้าเลเวลเกิน 100 ได้รับ ATK + 30",
-            "ประเภท : Both Hands Spear พลังโจมตี : 220",
-            "น้ำหนัก : 0",
-            "อาวุธ Lv : 1",
-            "Lv ที่ต้องการ : 50",
-            "อาชีพ : Swordman Cls"
-        ],
-        "slotCount": 0,
-        "ClassNum": 5
-    },
-    "2883": {
-        "unidentifiedDisplayName": "Accessory",
-        "unidentifiedResourceName": "링",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา ต้องทำการตรวจสอบโดยใช้ [Magnifier]"
-        ],
-        "identifiedDisplayName": "Ur's Seal",
-        "identifiedResourceName": "우르의인장",
-        "identifiedDescriptionName": [
-            "เครื่องประดับ ที่ถูกสร้างขึ้น Ur Runestone บริสูทธิ์",
-            "MHP + 2%",
-            "ลดค่าการใช้ SP ของสกิล Clashing Spiral และ Hundred Spears ลง 5",
-            "ประเภท : Accessory",
-            "พลังป้องกัน : 4",
-            "น้ำหนัก : 20",
-            "Lv ที่ต้องการ : 100",
-            "อาชีพ : Rune Knight"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0
-    },
-    "5979": {
-        "unidentifiedDisplayName": "Ribbon",
-        "unidentifiedResourceName": "리본",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Costume Fluttering Angel's Wing",
-        "identifiedResourceName": "C흩날리는천사의날개",
-        "identifiedDescriptionName": [
-            "ปีกคอสตูมที่พลิ้วไหวไปตามสายลม",
-            "ราวกับสามารถได้ยินพรจากพระเจ้าผ่านปีกที่โบกสะบัด",
-            "",
-            "ประเภท : Costume พลังป้องกัน : 0",
-            "ตำแหน่ง : Lower น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 1",
-            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": true
-    },
-    "6435": {
-        "unidentifiedDisplayName": "World Fruit",
-        "unidentifiedResourceName": "신선한열매",
-        "unidentifiedDescriptionName": [
-            "ผลไม้สดๆ จากต้น Yggdrasil กลิ่นก็หอมสดชื่น! สามารถนำไปแลกรับรางวัลพิเศษจากกิจกรรมครบรอบ 5 ปี Ragnarok Online Classic",
-            "^ff0000(ไอเท็มชิ้นนี้จะถูกลบเมื่อสิ้นสุดระยะเวลากิจกรรม)",
-            "น้ำหนัก : 0.5"
-        ],
-        "identifiedDisplayName": "World Fruit",
-        "identifiedResourceName": "신선한열매",
-        "identifiedDescriptionName": [
-            "(^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนและไม่สามารถฝากคลังได้) ",
-            "ผลไม้สดๆ จากต้น Yggdrasil กลิ่นก็หอมสดชื่น! สามารถนำไปแลกรับรางวัลพิเศษจากกิจกรรมครบรอบ 5 ปี Ragnarok Online Classic",
-            "^ff0000(ไอเท็มชิ้นนี้จะถูกลบเมื่อสิ้นสุดระยะเวลากิจกรรม)",
-            "น้ำหนัก : 0"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0
-    },
-    "6466": {
-        "unidentifiedDisplayName": "Clean Water",
-        "unidentifiedResourceName": "마법의호리병",
-        "unidentifiedDescriptionName": [
-            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนและไม่สามารถฝากคลังได้",
-            "น้ำสะอาดที่เหมาะแก่การนำมาใช้",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0"
-        ],
-        "identifiedDisplayName": "Clean Water",
-        "identifiedResourceName": "마법의호리병",
-        "identifiedDescriptionName": [
-            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนและไม่สามารถฝากคลังได้",
-            "น้ำสะอาดที่เหมาะแก่การนำมาใช้",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0
-    },
-    "6553": {
-        "unidentifiedDisplayName": "Leaf Made Wood",
-        "unidentifiedResourceName": "아놀리안피부",
-        "unidentifiedDescriptionName": [
-            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนและไม่สามารถฝากคลังได้",
-            "ชิ้นส่วนขนาดใหญ่ของสะพานที่ประกอบไปด้วยใบไม้จำนวนมากเข้าด้วยกัน ใช้เวลาในการทำนานมาก",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0"
-        ],
-        "identifiedDisplayName": "Leaf Made Wood",
-        "identifiedResourceName": "아놀리안피부",
-        "identifiedDescriptionName": [
-            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนและไม่สามารถฝากคลังได้",
-            "ชิ้นส่วนขนาดใหญ่ของสะพานที่ประกอบไปด้วยใบไม้จำนวนมากเข้าด้วยกัน ใช้เวลาในการทำนานมาก",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0
-    },
-    "6914": {
-        "unidentifiedDisplayName": "Black Soul",
-        "unidentifiedResourceName": "망자의한기",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา ต้องทำการตรวจสอบโดยใช้ [Magnifier]"
-        ],
-        "identifiedDisplayName": "Black Soul",
-        "identifiedResourceName": "망자의한기",
-        "identifiedDescriptionName": [
-            "วิญญาณร้ายที่ได้รับจากการทำภารกิจสังหาร Hydrolancer [Event] สามารถนำไปแลกรับรางวัลพิเศษจากกิจกรรมครบรอบ 5 ปี Ragnarok Online Classic",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0
-    },
-    "7000": {
-        "unidentifiedDisplayName": "Event Stone Coin",
-        "unidentifiedResourceName": "포링코인",
-        "unidentifiedDescriptionName": [
-            "เหรียญสุดพิเศษที่สามารถใช้ได้ในช่วงเวลากิจกรรมเท่านั้น",
-            "ถ้าเก็บสะสมไว้เยอะๆจะสามารถนำไปแลกเป็นคอสตูมสุดพิเศษหรือหิน Enchant ได้",
-            "(ไอเท็มดังกล่าวจะถูกลบออกในวันที่ 21 ตุลาคม 2569 หลังปิดปรับปรุงประจำสัปดาห์ )",
-            "^ff0000ไม่สามารถแลกเปลี่ยนได้",
-            "น้ำหนัก : 0"
-        ],
-        "identifiedDisplayName": "Event Stone Coin",
-        "identifiedResourceName": "포링코인",
-        "identifiedDescriptionName": [
-            "เหรียญสุดพิเศษที่สามารถใช้ได้ในช่วงเวลากิจกรรมเท่านั้น",
-            "ถ้าเก็บสะสมไว้เยอะๆจะสามารถนำไปแลกเป็นคอสตูมสุดพิเศษหรือหิน Enchant ได้",
-            "(ไอเท็มดังกล่าวจะถูกลบออกในวันที่ 21 ตุลาคม 2569 หลังปิดปรับปรุงประจำสัปดาห์ )",
-            "^ff0000ไม่สามารถแลกเปลี่ยนได้",
-            "น้ำหนัก : 0"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0
-    },
-    "7782": {
-        "unidentifiedDisplayName": "Anniver Gold Key77",
-        "unidentifiedResourceName": "시계탑열쇠",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Anniver Gold Key77",
-        "identifiedResourceName": "시계탑열쇠",
-        "identifiedDescriptionName": [
-            "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "กุญแจที่มีประกายแสงสีทอง ดูเหมือนว่ามันจะไม่ใช่กุญแจธรรมดาทั่วไปนะ",
-            "ลองเอาไปใช้ที่ [Guarantee Gacha] พิกัดแผนที่ในแมพกิจกรรมกันเถอะ",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "7783": {
-        "unidentifiedDisplayName": "Anniver Silver Key77",
-        "unidentifiedResourceName": "탑지하열쇠",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Anniver Silver Key77",
-        "identifiedResourceName": "탑지하열쇠",
-        "identifiedDescriptionName": [
-            "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "กุญแจที่มีประกายแสงสีเงิน ดูเหมือนว่ามันจะไม่ใช่กุญแจธรรมดาทั่วไปนะ",
-            "ลองเอาไปหยอดที่ [Guarantee Gacha] พิกัดแผนที่ในแมพกิจกรรมกันเถอะ",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "9068": {
-        "unidentifiedDisplayName": "Blue Unicorn Egg",
-        "unidentifiedResourceName": "수속성알",
-        "unidentifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "",
-            "ไข่ที่มี Q-Pet Blue Unicorn หลับใหลอยู่ สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator]",
-            "",
-            "หากความสัมพันธ์อยู่ในระดับไม่คุ้นเคยหรือเขินอาย เพิ่มความสามารถในการฟื้นฟู HP + 50 / SP + 10 (ทุกๆ 25 วินาที)",
-            "",
-            "หากความสัมพันธ์อยู่ในระดับปกติ เพิ่มความสามารถในการฟื้นฟู HP + 100 / SP + 20 (ทุกๆ 20 วินาที) , VIT + 1, MHP + 1%",
-            "",
-            "หากความสัมพันธ์อยู่ในระดับเป็นมิตร เพิ่มความสามารถในการฟื้นฟู HP + 400 / SP + 40 (ทุกๆ 25 วินาที) , VIT + 2, MHP + 2%,",
-            "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ ต่อศัตรู ทุกธาตุ 3%",
-            "",
-            "หากความสัมพันธ์อยู่ในระดับสนิทสนม เพิ่มความสามารถในการฟื้นฟู HP + 600 / SP + 60 (ทุกๆ 20 วินาที) , VIT + 3, MHP + 3%,",
-            "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ ต่อศัตรู ทุกธาตุ 5%",
-            "",
-            "^ff0000เพิ่มความเร็วในการเคลื่อนที่ขั้นสูงสุด, สามารถใช้งานสกิล Resurrection Lv.1 ได้",
-            "(ความสามารถพิเศษจะถูกลบออกวันที่ 13 มกราคม 2570 หลังปิดปรับปรุงเซิร์ฟเวอร์)"
-        ],
-        "identifiedDisplayName": "Blue Unicorn Egg",
-        "identifiedResourceName": "수속성알",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "",
-            "ไข่ที่มี Q-Pet Blue Unicorn หลับใหลอยู่ สามารถปลุกให้ตื่นขึ้นมาได้ด้วย [Pet Incubator]",
-            "",
-            "หากความสัมพันธ์อยู่ในระดับไม่คุ้นเคยหรือเขินอาย เพิ่มความสามารถในการฟื้นฟู HP + 50 / SP + 10 (ทุกๆ 25 วินาที)",
-            "",
-            "หากความสัมพันธ์อยู่ในระดับปกติ เพิ่มความสามารถในการฟื้นฟู HP + 100 / SP + 20 (ทุกๆ 20 วินาที) , VIT + 1, MHP + 1%",
-            "",
-            "หากความสัมพันธ์อยู่ในระดับเป็นมิตร เพิ่มความสามารถในการฟื้นฟู HP + 400 / SP + 40 (ทุกๆ 25 วินาที) , VIT + 2, MHP + 2%,",
-            "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ ต่อศัตรู ทุกธาตุ 3%",
-            "",
-            "หากความสัมพันธ์อยู่ในระดับสนิทสนม เพิ่มความสามารถในการฟื้นฟู HP + 600 / SP + 60 (ทุกๆ 20 วินาที) , VIT + 3, MHP + 3%,",
-            "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ ต่อศัตรู ทุกธาตุ 5%",
-            "",
-            "^ff0000เพิ่มความเร็วในการเคลื่อนที่ขั้นสูงสุด, สามารถใช้งานสกิล Resurrection Lv.1 ได้",
-            "(ความสามารถพิเศษจะถูกลบออกวันที่ 13 มกราคม 2570 หลังปิดปรับปรุงเซิร์ฟเวอร์)"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "12352": {
-        "unidentifiedDisplayName": "Dungeon Teleport Scroll III",
-        "unidentifiedResourceName": "빛의주문서",
-        "unidentifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนและตั้งร้านได้!! เป็นไอเท็มผูกมัดตัวละครหลังซื้อ",
-            "",
-            "ม้วนกระดาษที่บันทึกตำแหน่งของดันเจี้ยนต่างๆ เอาไว้",
-            "คุณสามารถไปที่ดังกล่าวได้เพียงทำการฉีกมัน โดยมีให้เลือก ดังนี้",
-            "Abyss Glast Heim ,Karu,the West Cave ,Krakatau Volcanic Island ,Kamidal Tunnel ,Bifrost Tower 1F,",
-            "Geffen Dungeon ,Geffenia ,Robot Factory 1F ,The Royal Tomb ,Les Forest ,Holy Ground ,Sunken Ship 1F ,Carpenter Shop in the tree"
-        ],
-        "identifiedDisplayName": "Dungeon Teleport Scroll III",
-        "identifiedResourceName": "빛의주문서",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนและตั้งร้านได้!! เป็นไอเท็มผูกมัดตัวละครหลังซื้อ",
-            "",
-            "ม้วนกระดาษที่บันทึกตำแหน่งของดันเจี้ยนต่างๆ เอาไว้",
-            "คุณสามารถไปที่ดังกล่าวได้เพียงทำการฉีกมัน โดยมีให้เลือก ดังนี้",
-            "Abyss Glast Heim ,Karu,the West Cave ,Krakatau Volcanic Island ,Kamidal Tunnel ,Bifrost Tower 1F,",
-            "Geffen Dungeon ,Geffenia ,Robot Factory 1F ,The Royal Tomb ,Les Forest ,Holy Ground ,Sunken Ship 1F ,Carpenter Shop in the tree",
-            "",
-            "น้ำหนัก : 0"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "14591": {
-        "unidentifiedDisplayName": "WoE Teleport Scroll",
-        "unidentifiedResourceName": "마녀의주문서",
-        "unidentifiedDescriptionName": [
-            "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "เป็น Scoll ที่บันทึกพิกัดของ ปราสาทกิลด์ไว้จำนวนมาก ถ้าใช้งานจะสามารถไปยังพื้นที่กิลด์วอร์ได้",
-            "&quot;Neuschwanstein&quot;, &quot;Hohenschwangau&quot;, &quot;Nuernberg &quot;, &quot;Wurzburg&quot;, &quot;Rothenburg&quot;, &quot;Leprion&quot;, &quot;Jyolbriger&quot;, &quot;Yssnelf&quot;, &quot;Bergel&quot;, &quot;Melcedez&quot;, &quot;Arbor of Light&quot;, &quot;Garden of Heaven&quot;, &quot;Shadow of Buddha&quot;, &quot;Red Palace&quot;, &quot;Bamboo Forest Hermitage&quot;, &quot;Kriemhild&quot;, &quot;Swanhild&quot;, &quot;Lazreagues&quot;, &quot;Skoegul&quot;, &quot;Kendul&quot;",
-            "คำเตือน - หลังจากกดใช้งานหากไม่มีการเลือกใดๆ ภายใน 1 นาที เอฟเฟกต์จะไม่ถูกใช้งาน"
-        ],
-        "identifiedDisplayName": "WoE Teleport Scroll",
-        "identifiedResourceName": "마녀의주문서",
-        "identifiedDescriptionName": [
-            "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "เป็น Scoll ที่บันทึกพิกัดของ ปราสาทกิลด์ไว้จำนวนมาก ถ้าใช้งานจะสามารถไปยังพื้นที่กิลด์วอร์ได้",
-            "&quot;Neuschwanstein&quot;, &quot;Hohenschwangau&quot;, &quot;Nuernberg &quot;, &quot;Wurzburg&quot;, &quot;Rothenburg&quot;, &quot;Leprion&quot;, &quot;Jyolbriger&quot;, &quot;Yssnelf&quot;, &quot;Bergel&quot;, &quot;Melcedez&quot;, &quot;Arbor of Light&quot;, &quot;Garden of Heaven&quot;, &quot;Shadow of Buddha&quot;, &quot;Red Palace&quot;, &quot;Bamboo Forest Hermitage&quot;, &quot;Kriemhild&quot;, &quot;Swanhild&quot;, &quot;Lazreagues&quot;, &quot;Skoegul&quot;, &quot;Kendul&quot;",
-            "คำเตือน - หลังจากกดใช้งานหากไม่มีการเลือกใดๆ ภายใน 1 นาที เอฟเฟกต์จะไม่ถูกใช้งาน",
-            "น้ำหนัก : 0"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0
-    },
-    "15367": {
-        "unidentifiedDisplayName": "Silk Robe",
-        "unidentifiedResourceName": "실버로브",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Astraea Armor",
-        "identifiedResourceName": "디바로브",
-        "identifiedDescriptionName": [
-            "ชุดเกราะที่กล่าวกันว่าเป็นผู้มีตระกูลสูงส่งจากต่างแดน",
-            "เมื่อสวมใส่กับ [Evil Druid Card],",
-            "[Astraea Armor] ทุกๆ 2 ขั้นอัพเกรด, MaxHP+3%(สูงสุดถึงขั้น 14).",
-            "เมื่อสวมใส่กับ [High Priest Card],",
-            "[Astraea Armor] มีขั้นอัพเกรดตั้งแต่ +10 ขึ้นไป เพิ่ม % MaxHP เท่ากับ (ขั้นอัพเกรด-5)*(ขั้นอัพเกรด-5) (สูงสุดถึง +14)",
-            "เมื่อสวมใส่กับ [Sealed High Priest Card],",
-            "[Astraea Armor] มีขั้นอัพเกรดตั้งแต่ +10 ขึ้นไป เพิ่ม % MaxHP เท่ากับ (ขั้นอัพเกรด-6)*(ขั้นอัพเกรด-6) (สูงสุดถึง +14)",
-            "เมื่อสวมใส่กับ [Astraea Shoes], [Astraea Manteau],",
-            "All state+3, MaxHP+15%.",
-            "ทนทานต่อการโจมตีทางกายภาพของศัตรูขนาดกลาง +5%.",
-            "เมื่อผลรวมขึ้นอัพเกรดตั้งแต่ 45 ขึ้นไป, จะไม่ติดสถานะ Frozen",
-            "ประเภท : Armor พลังป้องกัน : 80",
-            "น้ำหนัก : 50",
-            "เลเวลที่ต้องการ : 94",
-            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "16743": {
-        "unidentifiedDisplayName": "Spearfish Box 1H",
-        "unidentifiedResourceName": "상인전직상자",
-        "unidentifiedDescriptionName": [
-            "กล่องที่บรรจุหอกปลาเอาไว้ (ระยะเวลาหนึ่งชั่วโมง)",
-            "^000088ไอเทมเช่า",
-            "หอกปลาทะเล มันมีชื่อเสียงว่าอร่อย มันถูกแช่เย็นจนแข็ง",
-            "เมื่อใช้สกิล pierce, Clashing Spiral, มีโอกาสติด Critical Damage สูงขึ้นและยังมีโอกาสทำให้ติดสถานะแช่แข็ง",
-            "Clashing Spiral Attack เพิ่มขึ้น 100%, Inspiration Attack 50% (ผลของสกิล Inspiration จะหายไปเมื่อถอดอาวุธ)",
-            "ถ้าเลเวลเกิน 100 ได้รับ ATK + 30",
-            "ประเภท : Both HandsSpear พลังโจมตี : 220",
-            "น้ำหนัก : 0",
-            "อาวุธ Lv : 1",
-            "Lv ที่ต้องการ : 50",
-            "อาชีพ : SwordmanClass",
-            "^ff0000ไอเทมนี้ไม่สามารถยกเลิกการซื้อหรือคืนเงินได้",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Spearfish Box 1H",
-        "identifiedResourceName": "상인전직상자",
-        "identifiedDescriptionName": [
-            "กล่องที่บรรจุหอกปลาเอาไว้ (ระยะเวลาหนึ่งชั่วโมง)",
-            "^000088ไอเทมเช่า",
-            "หอกปลาทะเล มันมีชื่อเสียงว่าอร่อย มันถูกแช่เย็นจนแข็ง",
-            "เมื่อใช้สกิล pierce, Clashing Spiral, มีโอกาสติด Critical Damage สูงขึ้นและยังมีโอกาสทำให้ติดสถานะแช่แข็ง",
-            "Clashing Spiral Attack เพิ่มขึ้น 100%, Inspiration Attack 50% (ผลของสกิล Inspiration จะหายไปเมื่อถอดอาวุธ)",
-            "ถ้าเลเวลเกิน 100 ได้รับ ATK + 30",
-            "ประเภท : Both HandsSpear พลังโจมตี : 220",
-            "น้ำหนัก : 0",
-            "อาวุธ Lv : 1",
-            "Lv ที่ต้องการ : 50",
-            "อาชีพ : SwordmanClass",
-            "^ff0000ไอเทมนี้ไม่สามารถยกเลิกการซื้อหรือคืนเงินได้",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0
-    },
-    "16744": {
-        "unidentifiedDisplayName": "Spearfish Box 7D",
-        "unidentifiedResourceName": "보물상자_",
-        "unidentifiedDescriptionName": [
-            "กล่องที่บรรจุหอกปลาเอาไว้ (ระยะเวลา 7 วัน)",
-            "^000088ไอเทมเช่า",
-            "หอกปลาทะเล มันมีชื่อเสียงว่าอร่อย มันถูกแช่เย็นจนแข็ง",
-            "เมื่อใช้สกิล pierce, Clashing Spiral, มีโอกาสติด Critical Damage สูงขึ้นและยังมีโอกาสทำให้ติดสถานะแช่แข็ง",
-            "Clashing Spiral Attack เพิ่มขึ้น 100%, Inspiration Attack 50% (ผลของสกิล Inspiration จะหายไปเมื่อถอดอาวุธ)",
-            "ถ้าเลเวลเกิน 100 ได้รับ ATK + 30",
-            "ประเภท : Both HandsSpear พลังโจมตี : 220",
-            "น้ำหนัก : 0",
-            "อาวุธ Lv : 1",
-            "Lv ที่ต้องการ : 50",
-            "อาชีพ : SwordmanClass",
-            "^ff0000ไอเทมนี้ไม่สามารถยกเลิกการซื้อหรือคืนเงินได้",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Spearfish Box 7D",
-        "identifiedResourceName": "보물상자_",
-        "identifiedDescriptionName": [
-            "กล่องที่บรรจุหอกปลาเอาไว้ (ระยะเวลา 7 วัน)",
-            "^000088ไอเทมเช่า",
-            "หอกปลาทะเล มันมีชื่อเสียงว่าอร่อย มันถูกแช่เย็นจนแข็ง",
-            "เมื่อใช้สกิล pierce, Clashing Spiral, มีโอกาสติด Critical Damage สูงขึ้นและยังมีโอกาสทำให้ติดสถานะแช่แข็ง",
-            "Clashing Spiral Attack เพิ่มขึ้น 100%, Inspiration Attack 50% (ผลของสกิล Inspiration จะหายไปเมื่อถอดอาวุธ)",
-            "ถ้าเลเวลเกิน 100 ได้รับ ATK + 30",
-            "ประเภท : Both HandsSpear พลังโจมตี : 220",
-            "น้ำหนัก : 0",
-            "อาวุธ Lv : 1",
-            "Lv ที่ต้องการ : 50",
-            "อาชีพ : Swordman Cls",
-            "^ff0000ไอเทมนี้ไม่สามารถยกเลิกการซื้อหรือคืนเงินได้",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0
-    },
-    "18833": {
-        "unidentifiedDisplayName": "Headband",
-        "unidentifiedResourceName": "머리띠",
-        "unidentifiedDescriptionName": [
-            "ไอเทมปริศนา สามารถตรวจสอบได้ด้วยไอเทม [Magnifier]"
-        ],
-        "identifiedDisplayName": "5th Anniversary Marin Crown",
-        "identifiedResourceName": "마린의관",
-        "identifiedDescriptionName": [
-            "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "ที่คาดผมที่ถูกสร้างขึ้นมาใหม่ด้วยดีไซน์ที่ผสมผสานกันระหว่างมงกุฏดอกไม้กับ Marin",
-            "เพิ่มความเร็วเคลื่อนที่",
-            "เมื่อทำการโจมตีทางกายภาพ มีโอกาส 10% ที่ Cold Bolt Lv.10 จะทำงานโดยอัตโนมัติ",
-            "เมื่อทำการโจมตีทางกายภาพ มีโอกาส 10% ที่ Lightening Bolt Lv.10 จะทำงานโดยอัตโนมัติ",
-            "",
-            "เมื่ออัพเกรดถึงขั้น 4 ฟื้นฟู HP +555, SP +55 ทุกๆ 15 วินาที",
-            "เมื่ออัพเกรดถึงขั้น 5 All Status + 5",
-            "เมื่ออัพเกรดถึงขั้น 6 สามารถใช้สกิล Greed Lv.1 ได้",
-            "เมื่ออัพเกรดถึงขั้น 7 ATK + 55, MATK + 55",
-            "",
-            "ความสามารถพิเศษในช่วงเวลากิจกรรม",
-            "เมื่อสังหารมอนสเตอร์มีโอกาศเล็กน้อยได้รับ Aquamarine",
-            "จะถูกลบออกจากเกมในวันที่ 13 มกราคม 2570 หลังปิดปรับปรุงเซิฟเวอร์",
-            "^ff0000ไม่แสดงผลในพื้นที่ GvG และ PvP",
-            "ประเภท : Headgear พลังป้องกัน : 3",
-            "ตำแหน่ง : Upper  น้ำหนัก : 10",
-            "เลเวลที่ต้องการ : 1",
-            "อาชีพ : ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0
-    },
-    "20290": {
-        "unidentifiedDisplayName": "Cap",
-        "unidentifiedResourceName": "캡",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Costume Evil Druid Hat Black",
-        "identifiedResourceName": "C칠흑의이블드루이드모자",
-        "identifiedDescriptionName": [
-            "หมวกที่ดึงดูดความโดดเดี่ยวและเย็นชาของผู้สวมใส่ออกมา",
-            "ประเภท : Costume พลังป้องกัน : 0",
-            "ตำแหน่ง : Upper น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 1",
-            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
-        ],
-        "slotCount": 0,
-        "ClassNum": 1337,
-        "costume": true
-    },
-    "20505": {
-        "unidentifiedDisplayName": "Hood",
-        "unidentifiedResourceName": "후드",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Costume: Blue Cupid Wing",
-        "identifiedResourceName": "하늘색큐피트날개",
-        "identifiedDescriptionName": [
-            "^ff0000ไอเท็มชิ้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "ปีกสีฟ้าของนางฟ้าจอมซน ผู้ทำหน้าที่เชื่อมโยงความรักเข้าด้วยกัน",
-            "ที่บ่งบออกว่าผู้ครอบครองได้ผ่านกิจกรรมฉลองครบรอบ 5 ปี Ragnarok Online Classic",
-            "",
-            "ประเภท : Costume",
-            "พลังป้องกัน 0",
-            "ตำแหน่ง : Garment",
-            "น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 1",
-            "อาชีพที่ใส่ได้ : All Class"
-        ],
-        "slotCount": 0,
-        "ClassNum": 15,
-        "costume": true
-    },
-    "20530": {
-        "unidentifiedDisplayName": "Hood",
-        "unidentifiedResourceName": "후드",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Costume Gabriel's Wings",
-        "identifiedResourceName": "C_Wings_of_Gabriel",
-        "identifiedDescriptionName": [
-            "ปีกแห่งกาเบรียล หนึ่งในสี่อัครเทวทูตผู้ยิ่งใหญ่ ผู้ได้รับการขนานนามว่าเป็น “ทูตสวรรค์แห่งองค์พระผู้เป็นเจ้า”",
-            "ประเภท : Costume พลังป้องกัน : 0",
-            "ตำแหน่ง : Garment น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 1",
-            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
-        ],
-        "slotCount": 0,
-        "ClassNum": 37,
-        "costume": true
-    },
-    "20547": {
-        "unidentifiedDisplayName": "Hood",
-        "unidentifiedResourceName": "후드",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Costume: Whisper's Blessing",
-        "identifiedResourceName": "C_Ghost_Effect",
-        "identifiedDescriptionName": [
-            "เอ๊ะ... มีอะไรบางอย่างกำลังตามคุณมาอยู่หรือเปล่า?",
-            "แม้ว่ามันอาจดูน่าขนลุก แต่จริง ๆ แล้วสิ่งนี้คือ พร ไม่ใช่ คำสาป",
-            "ประเภท : Costume พลังป้องกัน : 0",
-            "ตำแหน่ง : Garment น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 1",
-            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": true
-    },
-    "20905": {
-        "unidentifiedDisplayName": "Garment",
-        "unidentifiedResourceName": "후드",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Astrea Manteau",
-        "identifiedResourceName": "디바망토",
-        "identifiedDescriptionName": [
-            "ผ้าคลุมที่ลือกันว่าผู้สูงศักดิ์ของประเทศที่ห่างไกลสวมใส่",
-            "MHP, MSP +5%",
-            "INT +2, VIT +2, DEX +2",
-            "เมื่ออัปเกรดถึงขั้น 12, ASPD +2",
-            "เมื่อสวมใส่ร่วมกับ Astraea Shoes,",
-            "All State +1",
-            "ลดความเสียหายต่อศัตรูทุกเผ่า +10%",
-            "MHP, MSP +5%",
-            "ประเภท : Garment พลังป้องกัน : 15",
-            "น้ำหนัก : 40 ",
-            "เลเวลที่ต้องการ : 1 ",
-            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "22167": {
-        "unidentifiedDisplayName": "Shoes",
-        "unidentifiedResourceName": "슈즈",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Astraea Shoes",
-        "identifiedResourceName": "디바슈즈",
-        "identifiedDescriptionName": [
-            "รองเท้าที่ลือกันว่าผู้สูงศักดิ์ของประเทศที่ห่างไกลสวมใส่",
-            "All state + 1",
-            "เมื่ออัปเกรดถึงขั้น 10",
-            "เมื่อ Base STR ตั้งแต่ 100 ขึ้นไป, เพิ่ม MHP+5%, MSP+5% (เมื่อ Base STR 120, เพิ่มอีกอย่างละ 2%),",
-            "เมื่อ Base INT ตั้งแต่ 100 ขึ้นไป, ลด Fixed Cast Time 30% (เมื่อ Base INT 120, ลดอีก 0.5 วินาที),",
-            "เมื่อ Base VIT ตั้งแต่ 100 ขึ้นไป, เพิ่มความต้านทานทางกายภาพจากการโจมตีของมอนสเตอร์ขนาดกลาง 10% (เมื่อ Base VIT 120, เพิ่มความต้านทานทางกายภาพจากการโจมตีของมอนสเตอร์ขนาดกลางอีก 5%),",
-            "เมื่อ Base AGI ตั้งแต่ 100 ขึ้นไป, ASPD +8% (เมื่อ Base AGI 120, ASPD +1 เพิ่มเติม),",
-            "เมื่อ Base DEX ตั้งแต่ 100 ขึ้นไป, ลด Delay หลังใช้สกิล 3% (เมื่อ Base DEX 120, ลดอีก 2%),",
-            "เมื่อ Base LUK ตั้งแต่ 100 ขึ้นไป, Cri +5 (เมื่อ Base LUK 120, Cri +2, Perfect Dodge +1)",
-            "",
-            "รองเท้าสามารถทำ Enchant กับ NPC Inception Boot ได้",
-            "ประเภท : Shoes พลังป้องกัน : 0",
-            "น้ำหนัก : 25",
-            "เลเวลที่ต้องการ : 100",
-            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "25254": {
-        "unidentifiedDisplayName": "Firewood",
-        "unidentifiedResourceName": "튼튼한나무가지",
-        "unidentifiedDescriptionName": [
-            "ไอเทมนี้ไม่สามารถแลกเปลี่ยนกับไอดีอื่นได้",
-            "กิ่งต้นไม้แห้ง ถ้าหากจุดไฟจะเผาไหม้ได้ดี",
-            "จะถูกลบออกเมื่อสิ้นสุดระยะเวลากิจกรรม (7 กรกฏาคม 2565)",
-            "น้ำหนัก : 0"
-        ],
-        "identifiedDisplayName": "Firewood",
-        "identifiedResourceName": "튼튼한나무가지",
-        "identifiedDescriptionName": [
-            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนและไม่สามารถฝากคลังได้",
-            "กิ่งต้นไม้แห้ง ถ้าหากจุดไฟจะเผาไหม้ได้ดี",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0
-    },
-    "27196": {
-        "unidentifiedDisplayName": "Nihil M. Heine Card",
-        "unidentifiedResourceName": "이름없는카드",
-        "unidentifiedDescriptionName": [
-            "เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดเล็ก 15%",
-            "เมื่อใช้ร่วมกับ Spica Nerious Card,",
-            "เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดเล็กและศัตรูประเภท Brute ขึ้นอีก 5%",
-            "^ffffff_ ",
-            "ประเภท : Card",
-            "ใช้กับ : Weapon",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Nihil M. Heine Card",
-        "identifiedResourceName": "이름없는카드",
-        "identifiedDescriptionName": [
-            "เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดเล็ก 15%",
-            "เมื่อใช้ร่วมกับ Spica Nerious Card,",
-            "เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดเล็กและศัตรูประเภท Brute ขึ้นอีก 5%",
-            "^ffffff_ ",
-            "ประเภท : Card",
-            "ใช้กับ : Weapon",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false,
-        "EffectID": 1186
-    },
-    "27197": {
-        "unidentifiedDisplayName": "Agnes Lugenburg Card",
-        "unidentifiedResourceName": "이름없는카드",
-        "unidentifiedDescriptionName": [
-            "เพิ่ม Damage ทางกายภาพต่อศัตรูขนาดเล็ก 15%",
-            "เมื่อใช้ร่วมกับ Jurgen Wigner Card, ",
-            "เพิ่ม Damage ทางกายภาพต่อศัตรูขนาดเล็กและศัตรูประเภท Brute ขึ้นอีก 5%",
-            "^ffffff_ ",
-            "ประเภท : Card",
-            "ใช้กับ : Weapon",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Agnes Lugenburg Card",
-        "identifiedResourceName": "이름없는카드",
-        "identifiedDescriptionName": [
-            "เพิ่ม Damage ทางกายภาพต่อศัตรูขนาดเล็ก 15%",
-            "เมื่อใช้ร่วมกับ Jurgen Wigner Card, ",
-            "เพิ่ม Damage ทางกายภาพต่อศัตรูขนาดเล็กและศัตรูประเภท Brute ขึ้นอีก 5%",
-            "^ffffff_ ",
-            "ประเภท : Card",
-            "ใช้กับ : Weapon",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false,
-        "EffectID": 1186
-    },
-    "27198": {
-        "unidentifiedDisplayName": "Jurgen Wigner Card",
-        "unidentifiedResourceName": "이름없는카드",
-        "unidentifiedDescriptionName": [
-            "เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Brute 15%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Weapon",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Jurgen Wigner Card",
-        "identifiedResourceName": "이름없는카드",
-        "identifiedDescriptionName": [
-            "เพิ่ม Damage ทางกายภาพต่อศัตรูประเภท Brute 15%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Weapon",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false,
-        "EffectID": 1186
-    },
-    "27199": {
-        "unidentifiedDisplayName": "Spica Nerious Card",
-        "unidentifiedResourceName": "이름없는카드",
-        "unidentifiedDescriptionName": [
-            "เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูประเภท Brute 15%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Weapon",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Spica Nerious Card",
-        "identifiedResourceName": "이름없는카드",
-        "identifiedDescriptionName": [
-            "เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูประเภท Brute 15%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Weapon",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false,
-        "EffectID": 1186
-    },
-    "27331": {
-        "unidentifiedDisplayName": "Kronecker G. Heine Card",
-        "unidentifiedResourceName": "이름없는카드",
-        "unidentifiedDescriptionName": [
-            "ลดระยะเวลาร่ายแบบแปรผัน 5%",
-            "เมื่อใช้ร่วมกับ Nihil M. Heine Card, ",
-            "ลด Delay หลังใช้สกิล 3%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Accessory (Right)",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Kronecker G. Heine Card",
-        "identifiedResourceName": "이름없는카드",
-        "identifiedDescriptionName": [
-            "ลดระยะเวลาร่ายแบบแปรผัน 5%",
-            "เมื่อใช้ร่วมกับ Nihil M. Heine Card, ",
-            "ลด Delay หลังใช้สกิล 3%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Accessory (Right)",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false,
-        "EffectID": 1186
-    },
-    "27333": {
-        "unidentifiedDisplayName": "Skia Nerious Card",
-        "unidentifiedResourceName": "이름없는카드",
-        "unidentifiedDescriptionName": [
-            "ASPD +5%",
-            "เมื่อใช้ร่วมกับ Agnes Lugenburg Card, ",
-            "ATK +5%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Accessory (Left)",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Skia Nerious Card",
-        "identifiedResourceName": "이름없는카드",
-        "identifiedDescriptionName": [
-            "ASPD +5%",
-            "เมื่อใช้ร่วมกับ Agnes Lugenburg Card, ",
-            "ATK +5%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Accessory (Left)",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false,
-        "EffectID": 1186
-    },
-    "27394": {
-        "unidentifiedDisplayName": "Kathryn Wigner Card",
-        "unidentifiedResourceName": "이름없는카드",
-        "unidentifiedDescriptionName": [
-            "ลดระยะเวลาร่ายแบบแปรผัน 5%",
-            "เมื่อใช้ร่วมกับ Spica Nerious Card และ Nihil M. Heine Card, ",
-            "เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดเล็กและศัตรูประเภท Brute 7%",
-            "เมื่อใช้ร่วมกับ Wolf Lugenburg Card และ Poe Richard Card, ",
-            "เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดกลาง 7%, ลด Delay หลังใช้สกิล 5%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Headgear",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Kathryn Wigner Card",
-        "identifiedResourceName": "이름없는카드",
-        "identifiedDescriptionName": [
-            "ลดระยะเวลาร่ายแบบแปรผัน 5%",
-            "เมื่อใช้ร่วมกับ Spica Nerious Card และ Nihil M. Heine Card, ",
-            "เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดเล็กและศัตรูประเภท Brute 7%",
-            "เมื่อใช้ร่วมกับ Wolf Lugenburg Card และ Poe Richard Card, ",
-            "เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูขนาดกลาง 7%, ลด Delay หลังใช้สกิล 5%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Headgear",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false,
-        "EffectID": 1186
-    },
-    "27396": {
-        "unidentifiedDisplayName": "Isaac Wigner Card",
-        "unidentifiedResourceName": "이름없는카드",
-        "unidentifiedDescriptionName": [
-            "ลด Delay หลังใช้สกิล 5%",
-            "เมื่อใช้ร่วมกับ Jurgen Wigner Card และ Agnes Lugenburg Card,",
-            "เพิ่ม Damage ทางกายภาพต่อศัตรูขนาดเล็กและศัตรูประเภท Brute 7%",
-            "เมื่อใช้ร่วมกับ Wolf Lugenburg Card และ Poe Richard Card,",
-            "เพิ่ม Damage ทางกายภาพต่อศัตรูขนาดกลาง 7%, ลด Delay หลังใช้สกิลลงอีก 3%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Headgear",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Isaac Wigner Card",
-        "identifiedResourceName": "이름없는카드",
-        "identifiedDescriptionName": [
-            "ลด Delay หลังใช้สกิล 5%",
-            "เมื่อใช้ร่วมกับ Jurgen Wigner Card และ Agnes Lugenburg Card,",
-            "เพิ่ม Damage ทางกายภาพต่อศัตรูขนาดเล็กและศัตรูประเภท Brute 7%",
-            "เมื่อใช้ร่วมกับ Wolf Lugenburg Card และ Poe Richard Card,",
-            "เพิ่ม Damage ทางกายภาพต่อศัตรูขนาดกลาง 7%, ลด Delay หลังใช้สกิลลงอีก 3%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Headgear",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false,
-        "EffectID": 1186
-    },
-    "31305": {
-        "unidentifiedDisplayName": "Ribbon",
-        "unidentifiedResourceName": "리본",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Costume Walking Poring",
-        "identifiedResourceName": "C_TW_1st_Balloon",
-        "identifiedDescriptionName": [
-            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "ลูกโป่งรูป Poring สุดน่ารักที่พร้อมลอยเคียงข้างนักผจญภัยทุกคน เติมสีสันให้การเดินทางและแสดงถึงความรักที่มีต่อเหล่า Poring",
-            "ประเภท : Costume พลังป้องกัน : 0",
-            "ตำแหน่ง : Lower น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 1",
-            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
-        ],
-        "slotCount": 0,
-        "ClassNum": 1666,
-        "costume": true
     },
     "31422": {
         "unidentifiedDisplayName": "Gum",
@@ -862,7 +32,6 @@
         "identifiedDescriptionName": [
             "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
             "ปีกใหญ่ ๆ ของ Angeling ที่ช่วยให้สามารถบินขึ้นสูงและไกลขึ้นได้",
-            "ที่บ่งบออกว่าผู้ครอบครองได้ผ่านกิจกรรมฉลองครบรอบ 5 ปี Ragnarok Online Classic",
             "ประเภท : Costume พลังป้องกัน : 0",
             "ตำแหน่ง : Lower น้ำหนัก : 0",
             "เลเวลที่ต้องการ : 1",
@@ -872,914 +41,325 @@
         "ClassNum": 976,
         "costume": true
     },
-    "32219": {
-        "unidentifiedDisplayName": "Ring",
-        "unidentifiedResourceName": "링",
+    "102133": {
+        "unidentifiedDisplayName": "Razer Energy Drink",
+        "unidentifiedResourceName": "레지스트_지",
         "unidentifiedDescriptionName": [
             "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
         ],
-        "identifiedDisplayName": "Astraea Ring",
-        "identifiedResourceName": "윈드링",
+        "identifiedDisplayName": "Razer Energy Drink",
+        "identifiedResourceName": "레지스트_지",
         "identifiedDescriptionName": [
-            "แหวนที่กล่าวกันว่าเป็นผู้มีตระกูลสูงส่งจากต่างแดน",
-            "All State + 1.",
-            "สามารถใช้งานสกิล Suffragium Lv.3 ได้",
-            "ดาเมจทางกายภาพและทางเวทมนตร์ที่สร้างต่อศัตรูประเภทบอสเพิ่ม 5%",
-            "ทุกๆการอัพเกรด 1 ขั้น MHP เพิ่มขึ้น 1%,ผลของการ Heal รุนแรงขึ้น 2%",
-            "เมื่ออัพเกรดขั้น 7  ลดความเสียหายทางกายภาพระยะไกล 5%",
-            "เมื่ออัพเกรดขั้น 9  Max HP +1000 , Max SP + 300",
-            "",
-            "เมื่อสวมใส่กับ [High Priest Card] หรือ [Sealed High Priest Card], การร่าย Auto Spell Assumption จะไม่แสดงผล",
-            "เปลี่ยนธาตุของเสื้อเกราะให้เป็นธาตุ Ghost",
-            "เพิ่มดาเมจทางเวทย์/กายภาพที่สร้างต่อมอนสเตอร์ประเภทบอสขึ้นอีก 20%",
-            "เมื่อสวมใส่กับ [Astraea Shoes], ลดดีเลย์หลังใช้สกิล 5%, MaxHP+8%, MaxSP+8%",
-            "",
-            "ประเภท : Accessory  พลังป้องกัน : 0",
-            "น้ำหนัก : 10",
-            "เลเวลที่ต้องการ : 100",
-            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+            "สารสีเขียวที่เพิ่มความคล่องตัวในการเคลื่อนที่ชั่วขณะ ",
+            "ความเร็วในการเคลื่อนเพิ่มขึ้น 5 วินาที",
+            "ระยะเวลาหลังใช้ 30 วินาที",
+            "น้ำหนัก : 1"
         ],
-        "slotCount": 1,
+        "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "101904": {
-        "unidentifiedDisplayName": "Level Up Box (1)",
-        "unidentifiedResourceName": "번호상자05",
+    "107314": {
+        "unidentifiedDisplayName": "Festa Stone Random Box",
+        "unidentifiedResourceName": "SSVIP_GIFT",
         "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Level Up Box (1)",
-        "identifiedResourceName": "번호상자05",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "กล่องอุปกรณ์ที่จำเป็นสำหรับการอัพเลเวลของผู้เริ่มต้น ",
-            "มี [NFS] Novice Potion 300ea, Novice Fly Wing 100ea, Novice Butterfly Wing 20ea, Elven Ears Box 1ea, Boarding Halter 7D Box 1ea บรรจุอยู่ภายใน",
-            "หากเปิดใช้งาน จะได้รับ Level Up Box (10)",
+            "กล่องที่เปิดออกจะมีโอกาสได้รับ Ragnarok Festa Stone ชนิดต่าง ๆ",
+            "เมื่อเปิดออกจะมีโอกาสได้รับหนึ่งในไอเทมดังต่อไปนี้",
             "",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
+            "Ragnarok Festa Stone STR (Upper)",
+            "Ragnarok Festa Stone AGI (Upper)",
+            "Ragnarok Festa Stone VIT (Upper)",
+            "Ragnarok Festa Stone INT (Upper)",
+            "Ragnarok Festa Stone DEX (Upper)",
+            "Ragnarok Festa Stone LUK (Upper)"
+        ],
+        "identifiedDisplayName": "Festa Stone Random Box",
+        "identifiedResourceName": "SSVIP_GIFT",
+        "identifiedDescriptionName": [
+            "กล่องที่เปิดออกจะมีโอกาสได้รับ Ragnarok Festa Stone ชนิดต่าง ๆ",
+            "เมื่อเปิดออกจะมีโอกาสได้รับหนึ่งในไอเทมดังต่อไปนี้",
+            "",
+            "Ragnarok Festa Stone STR (Upper)",
+            "Ragnarok Festa Stone AGI (Upper)",
+            "Ragnarok Festa Stone VIT (Upper)",
+            "Ragnarok Festa Stone INT (Upper)",
+            "Ragnarok Festa Stone DEX (Upper)",
+            "Ragnarok Festa Stone LUK (Upper)",
             "น้ำหนัก : 0"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "101905": {
-        "unidentifiedDisplayName": "Level Up Box (10)",
-        "unidentifiedResourceName": "번호상자05",
+    "108257": {
+        "unidentifiedDisplayName": "Ragnarok Festa 2026 Scroll",
+        "unidentifiedResourceName": "Festa_26_Scroll_TH_ROC",
         "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+            "Scroll สุดพิเศษจากงาน Ragnarok Festa 2026",
+            "ภายในรวบรวม ไอเทมสุดพิเศษและของรางวัลหลากหลายรายการ ให้นักผจญภัยได้ร่วมลุ้น!"
         ],
-        "identifiedDisplayName": "Level Up Box (10)",
-        "identifiedResourceName": "번호상자05",
+        "identifiedDisplayName": "Ragnarok Festa 2026 Scroll",
+        "identifiedResourceName": "Festa_26_Scroll_TH_ROC",
         "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "มี [NFS] Novice Potion 300ea, Blue Potion Box 1ea, Novice Fly Wing 100ea, Novice Magnifier 10ea, Time Guardian Box 1ea บรรจุอยู่ภายใน",
-            "หากเปิดใช้งาน จะได้รับ Level Up Box (20)",
-            "",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 10"
+            "Scroll สุดพิเศษจากงาน Ragnarok Festa 2026",
+            "ภายในรวบรวม ไอเทมสุดพิเศษและของรางวัลหลากหลายรายการ ให้นักผจญภัยได้ร่วมลุ้น!",
+            "น้ำหนัก : 1"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "101906": {
-        "unidentifiedDisplayName": "Level Up Box (30)",
-        "unidentifiedResourceName": "번호상자05",
+    "108384": {
+        "unidentifiedDisplayName": "CuteBoy Special Box II",
+        "unidentifiedResourceName": "CuteBoy_Box",
         "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+            "กล่องสุดพิเศษจาก Collaboration Ragnarok x CuteBoy",
+            "เมื่อเปิดออกจะสามารถลุ้นได้รับไอเทมสุดพิเศษจากภายในกล่อง"
         ],
-        "identifiedDisplayName": "Level Up Box (30)",
-        "identifiedResourceName": "번호상자05",
+        "identifiedDisplayName": "CuteBoy Special Box II",
+        "identifiedResourceName": "CuteBoy_Box",
         "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "กล่องอุปกรณ์ที่จำเป็นสำหรับการอัพเลเวลของผู้เริ่มต้น",
-            "มี [NFS] Yellow Potion 300ea, Blue Potion Box 3ea, Metal Refine Ticket 1ea, JOB Battle Manual 2ea, Battle Manual 2ea, Novice Butterfly Wing 20ea บรรจุอยู่ภายใน",
-            "หากเปิดใช้งาน จะได้รับ Level Up Box (40)",
-            "",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 30"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "101907": {
-        "unidentifiedDisplayName": "Level Up Box (20)",
-        "unidentifiedResourceName": "번호상자05",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Level Up Box (20)",
-        "identifiedResourceName": "번호상자05",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "กล่องอุปกรณ์ที่จำเป็นสำหรับการอัพเลเวลของผู้เริ่มต้น",
-            "มี [NFS] Novice Potion 300ea, Blue Potion Box 2ea, Novice Fly Wing 100ea, Novice Butterfly Wing 20ea, Increase Agility Lv.10 5ea, Blessing Lv.10 5ea บรรจุอยู่ภายใน",
-            "หากเปิดใช้งาน จะได้รับ Level Up Box (30)",
-            "",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 20"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "101908": {
-        "unidentifiedDisplayName": "Level Up Box (40)",
-        "unidentifiedResourceName": "번호상자05",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Level Up Box (40)",
-        "identifiedResourceName": "번호상자05",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "กล่องอุปกรณ์ที่จำเป็นสำหรับการอัพเลเวลของผู้เริ่มต้น",
-            "มี [NFS] Yellow Potion 300ea, Blue Potion Box 4ea, Novice Fly Wing 50ea, Novice Magnifier 10ea บรรจุอยู่ภายใน",
-            "หากเปิดใช้งาน จะได้รับ Level Up Box (50)",
-            "",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 40"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "101909": {
-        "unidentifiedDisplayName": "Level Up Box (50)",
-        "unidentifiedResourceName": "번호상자05",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Level Up Box (50)",
-        "identifiedResourceName": "번호상자05",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "กล่องอุปกรณ์ที่จำเป็นสำหรับการอัพเลเวลของผู้เริ่มต้น",
-            "มี [NFS] Yellow Potion 200ea, Blue Potion Box 5ea, Novice Fly Wing 50ea, Novice Butterfly Wing 20ea, Increase Agility Lv.10 10ea, Blessing Lv.10 10ea บรรจุอยู่ภายใน",
-            "หากเปิดใช้งาน จะได้รับ Level Up Box (60)",
-            "",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 50"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "101910": {
-        "unidentifiedDisplayName": "Level Up Box (60)",
-        "unidentifiedResourceName": "번호상자05",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Level Up Box (60)",
-        "identifiedResourceName": "번호상자05",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "กล่องอุปกรณ์ที่จำเป็นสำหรับการอัพเลเวลของผู้เริ่มต้น",
-            "มี [NFS] Orange Potion 100ea, Blue Potion Box 6ea ,Novice Fly Wing 50ea, Novice Butterfly Wing 20ea, Small Life Potion 5ea, Regeneration Potion 5ea บรรจุอยู่ภายใน",
-            "หากเปิดใช้งาน จะได้ครับ Level Up Box (70)",
-            "",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 60"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "101911": {
-        "unidentifiedDisplayName": "Level Up Box (70)",
-        "unidentifiedResourceName": "번호상자05",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Level Up Box (70)",
-        "identifiedResourceName": "번호상자05",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "กล่องอุปกรณ์ที่จำเป็นสำหรับการอัพเลเวลของผู้เริ่มต้น",
-            "มี [NFS] Orange Potion 100ea, Blue Potion Box 7ea, Novice Fly Wing 50ea, Novice Magnifier 10ea, Battle Maual 1ea บรรจุอยู่ภายใน",
-            "หากเปิดใช้งาน จะได้รับ Level Up Box (80)",
-            "",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 70"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "101915": {
-        "unidentifiedDisplayName": "Level Up Box (80)",
-        "unidentifiedResourceName": "번호상자05",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Level Up Box (80)",
-        "identifiedResourceName": "번호상자05",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "กล่องอุปกรณ์ที่จำเป็นสำหรับการอัพเลเวลของผู้เริ่มต้น",
-            "มี [NFS] White Potion 100ea, Blue Potion Box 8ea, Novice Fly Wing 50ea, Ultimate Cook 2ea, Bubble Gum 2ea, Battle Manual 2ea บรรจุอยู่ภายใน",
-            "หากเปิดใช้งาน จะได้รับ Level Up Box (90)",
-            "",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 80"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "101916": {
-        "unidentifiedDisplayName": "Level Up Box (90)",
-        "unidentifiedResourceName": "번호상자05",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Level Up Box (90)",
-        "identifiedResourceName": "번호상자05",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "กล่องอุปกรณ์ที่จำเป็นสำหรับการอัพเลเวลของผู้เริ่มต้น",
-            "มี [NFS] White Potion Box 3ea, Blue Potion Box 10ea, Secret Medicine 1ea, Ultimate Cook 5ea, Small Life Potion 10ea, Battle Manual 2ea, Small Mana Potion 5ea บรรจุอยู่ภายใน",
-            "หากเปิดใช้งาน จะได้รับ Level Up Box (99)",
-            "",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 90"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "101917": {
-        "unidentifiedDisplayName": "Level Up Box (99)",
-        "unidentifiedResourceName": "번호상자05",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Level Up Box (99)",
-        "identifiedResourceName": "번호상자05",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "กล่องอุปกรณ์ที่จำเป็นสำหรับการอัพเลเวลของผู้เริ่มต้น",
-            "มี Special Bravery Bag, Max Weight Up Scroll 3ea, Small Mana Potion 20ea, Small Life Potion 20ea บรรจุอยู่ภายใน",
-            "",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 99"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "108238": {
-        "unidentifiedDisplayName": "Transformer (Marin)",
-        "unidentifiedResourceName": "Marin_Pattern_Hat",
-        "unidentifiedDescriptionName": [
-            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "ม้วนกระดาษเวทย์มนตร์ ที่ทำให้คุณเปลี่ยนร่างเป็น Marin ได้เป็นเวลา 15 นาที",
-            "",
-            "เพิ่มความเร็วการเคลื่อนที่สูงสุด ในขณะที่อยู่ในร่าง Marin",
-            "เมื่อเลเวลสูงกว่า 99 เพิ่มค่าประสบการณ์ 50%",
-            "เมื่อเลเวลต่ำกว่า 100 เพิ่มค่าประสบการณ์ 150%",
-            "",
-            "^ff0000คำเตือน! การเปลี่ยนร่างจะถูกยกเลิกโดยทันที หากตัวละครตาย",
-            "(ไอเท็มชิ้นนี้จะถูกลบหลังสิ้นสุดระยะเวลากิจกรรม)"
-        ],
-        "identifiedDisplayName": "Transformer (Marin)",
-        "identifiedResourceName": "Marin_Pattern_Hat",
-        "identifiedDescriptionName": [
-            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "ม้วนกระดาษเวทย์มนตร์ ที่ทำให้คุณเปลี่ยนร่างเป็น Marin ได้เป็นเวลา 15 นาที",
-            "",
-            "เพิ่มความเร็วการเคลื่อนที่สูงสุด ในขณะที่อยู่ในร่าง Marin",
-            "เมื่อเลเวลสูงกว่า 99 เพิ่มค่าประสบการณ์ 50%",
-            "เมื่อเลเวลต่ำกว่า 100 เพิ่มค่าประสบการณ์ 150%",
-            "",
-            "^ff0000คำเตือน! การเปลี่ยนร่างจะถูกยกเลิกโดยทันที หากตัวละครตาย",
-            "(ไอเท็มชิ้นนี้จะถูกลบหลังสิ้นสุดระยะเวลากิจกรรม)",
-            "",
+            "กล่องสุดพิเศษจาก Collaboration Ragnarok x CuteBoy",
+            "เมื่อเปิดออกจะสามารถลุ้นได้รับไอเทมสุดพิเศษจากภายในกล่อง",
             "น้ำหนัก : 0"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "108239": {
-        "unidentifiedDisplayName": "[Event] Rise of Awakened Scroll",
-        "unidentifiedResourceName": "Costama_Egg154",
+    "108517": {
+        "unidentifiedDisplayName": "RO Festa Footprint Box",
+        "unidentifiedResourceName": "Re_Costama_Box_2023_1",
         "unidentifiedDescriptionName": [
-            "ม้วนคัมภีร์ที่จัดทำเพื่อเฉลิมฉลองครบรอบ 5 ปี Ragnarok Classic"
-        ],
-        "identifiedDisplayName": "[Event] Rise of Awakened Scroll",
-        "identifiedResourceName": "Costama_Egg154",
-        "identifiedDescriptionName": [
-            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "ม้วนคัมภีร์ที่จัดทำเพื่อเฉลิมฉลองครบรอบ 5 ปี Ragnarok Classic",
-            "น้ำหนัก : 0"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "108240": {
-        "unidentifiedDisplayName": "5th Anniversary Costume Box",
-        "unidentifiedResourceName": "냥뱃지상자",
-        "unidentifiedDescriptionName": [
-            "กล่องสุ่ม Costume เฉลิมฉลองครบรอบ 5 ปี Ragnarok Classic",
-            "เมื่อเปิดมีโอกาสได้รับไอเท็ม 1 ชิ้น จากรายชื่อดังนี้",
-            "Costume: Whisper's Blessing",
-            "Costume: Evil Druid Hat Black",
-            "Costume: Feather Hair",
-            "Costume: Wings of Gabriel",
-            "Costume: Nightmare Chain",
+            "กล่องพิเศษที่จัดทำขึ้นเพื่อเฉลิมฉลองงาน Ragnarok Festa 2026.",
+            "เมื่อเปิดกล่อง สามารถเลือกได้รับไอเทมเอฟเฟกต์รอยเท้า (Garment) ได้ 1 รายการจากรายการด้านล่าง",
             "",
-            "^ff0000ไอเทมจะถูกลบเมื่อสิ้นสุดกิจกรรม วันที่ 13 มกราคม 2570 (ก่อนปิดปรับปรุงเซิร์ฟเวอร์)"
+            "[รายการไอเทมที่สามารถเลือกได้]",
+            "Blue Butterfly Footprint (Garment)",
+            "Flower Garden (Garment)"
         ],
-        "identifiedDisplayName": "5th Anniversary Costume Box",
-        "identifiedResourceName": "냥뱃지상자",
+        "identifiedDisplayName": "RO Festa Footprint Box",
+        "identifiedResourceName": "Re_Costama_Box_2023_1",
         "identifiedDescriptionName": [
-            "กล่องสุ่ม Costume เฉลิมฉลองครบรอบ 5 ปี Ragnarok Classic",
-            "เมื่อเปิดมีโอกาสได้รับไอเท็ม 1 ชิ้น จากรายชื่อดังนี้",
-            "Costume: Whisper&#39;s Blessing",
-            "Costume: Evil Druid Hat Black",
-            "Costume: Feather Hair",
-            "Costume: Wings of Gabriel",
-            "Costume: Nightmare Chain",
+            "กล่องพิเศษที่จัดทำขึ้นเพื่อเฉลิมฉลองงาน Ragnarok Festa 2026.",
+            "เมื่อเปิดกล่อง สามารถเลือกได้รับไอเทมเอฟเฟกต์รอยเท้า (Garment) ได้ 1 รายการจากรายการด้านล่าง",
             "",
-            "^ff0000ไอเทมจะถูกลบเมื่อสิ้นสุดกิจกรรม วันที่ 13 มกราคม 2570 (ก่อนปิดปรับปรุงเซิร์ฟเวอร์)",
-            "",
-            "น้ำหนัก : 0"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "108300": {
-        "unidentifiedDisplayName": "Halloween Costume Scroll",
-        "unidentifiedResourceName": "Spirit_Scroll_TW",
-        "unidentifiedDescriptionName": [
-            "คัมภีร์ลึกลับที่บรรจุพลังอันน่าขนลุกเอาไว้ เมื่อคลี่ออก อาจลุ้นรับคอสตูมสุดสยองขวัญที่ซ่อนอยู่ภายใน"
-        ],
-        "identifiedDisplayName": "Halloween Costume Scroll",
-        "identifiedResourceName": "Spirit_Scroll_TW",
-        "identifiedDescriptionName": [
-            "คัมภีร์ลึกลับที่บรรจุพลังอันน่าขนลุกเอาไว้ เมื่อคลี่ออก อาจลุ้นรับคอสตูมสุดสยองขวัญที่ซ่อนอยู่ภายใน",
-            "^ff0000หากเปิดใช้งานหลังวันที่ 21 ตุลาคม 2569 หลังปิดปรับปรุงประจำสัปดาห์ จะไม่ได้รับ Event Stone Coin ",
+            "[รายการไอเทมที่สามารถเลือกได้]",
+            "Blue Butterfly Footprint (Garment)",
+            "Flower Garden (Garment)",
             "น้ำหนัก : 1"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "108338": {
-        "unidentifiedDisplayName": "5th Anni Ring Attack Box",
-        "unidentifiedResourceName": "MD_Geffen_Reward2",
+    "108518": {
+        "unidentifiedDisplayName": "RO Festa Effect Box",
+        "unidentifiedResourceName": "Re_Costama_Box_2023_3",
         "unidentifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
+            "กล่องพิเศษที่จัดทำขึ้นเพื่อเฉลิมฉลองงาน Ragnarok Festa 2026.",
+            "เมื่อเปิดกล่อง สามารถเลือกได้รับเอฟเฟกต์สวมใส่ส่วนบน (Upper) ได้ 1 รายการจากรายการด้านล่าง",
             "",
-            "กล่องสำหรับนำ 5th ROC Anniversary Ring ไปทำการ Option สำหรับสายกายภาพ",
-            "",
-            "^ff0000(ไอเท็มชิ้นนี้จะถูกลบหลังสิ้นสุดระยะเวลากิจกรรม)"
+            "[รายการไอเทมที่สามารถเลือกได้]",
+            "Magic Feather Effect (Upper)",
+            "Firework Effect (Upper)"
         ],
-        "identifiedDisplayName": "5th Anni Ring Attack Box",
-        "identifiedResourceName": "MD_Geffen_Reward2",
+        "identifiedDisplayName": "RO Festa Effect Box",
+        "identifiedResourceName": "Re_Costama_Box_2023_3",
         "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
+            "กล่องพิเศษที่จัดทำขึ้นเพื่อเฉลิมฉลองงาน Ragnarok Festa 2026.",
+            "เมื่อเปิดกล่อง สามารถเลือกได้รับเอฟเฟกต์สวมใส่ส่วนบน (Upper) ได้ 1 รายการจากรายการด้านล่าง",
             "",
-            "กล่องสำหรับนำ 5th ROC Anniversary Ring ไปทำการ Option สำหรับสายกายภาพ",
-            "",
-            "^ff0000(ไอเท็มชิ้นนี้จะถูกลบหลังสิ้นสุดระยะเวลากิจกรรม)",
-            "",
-            "น้ำหนัก : 0"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "108339": {
-        "unidentifiedDisplayName": "5th Anni Ring Magic Box",
-        "unidentifiedResourceName": "MD_Geffen_Reward",
-        "unidentifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "",
-            "กล่องสำหรับนำ 5th ROC Anniversary Ring ไปทำการ Option สำหรับสายเวทมนตร์",
-            "",
-            "^ff0000(ไอเท็มชิ้นนี้จะถูกลบหลังสิ้นสุดระยะเวลากิจกรรม)"
-        ],
-        "identifiedDisplayName": "5th Anni Ring Magic Box",
-        "identifiedResourceName": "MD_Geffen_Reward",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "",
-            "กล่องสำหรับนำ 5th ROC Anniversary Ring ไปทำการ Option สำหรับสายเวทมนตร์",
-            "",
-            "^ff0000(ไอเท็มชิ้นนี้จะถูกลบหลังสิ้นสุดระยะเวลากิจกรรม)",
-            "",
-            "น้ำหนัก : 0"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "108340": {
-        "unidentifiedDisplayName": "Ring of Experience 7 Day Box",
-        "unidentifiedResourceName": "오래된노란상자",
-        "unidentifiedDescriptionName": [
-            "กล่องที่บรรจุ 1 Experience Ring โปรดระวังของเสียหาย",
-            "7 วัน ไอเทมเช่า",
-            "แหวนที่มีพลังพิเศษบางอย่างบรรจุไว้",
-            "ได้รับ EXP เพิ่มขึ้น 15% จากมอนสเตอร์ทุกประเภท",
-            "สามารถใช้งาน Skill Teleport Lv.1 ได้"
-        ],
-        "identifiedDisplayName": "Ring of Experience 7 Day Box",
-        "identifiedResourceName": "오래된노란상자",
-        "identifiedDescriptionName": [
-            "กล่องที่บรรจุ 1 Experience Ring โปรดระวังของเสียหาย",
-            "7 วัน ไอเทมเช่า",
-            "แหวนที่มีพลังพิเศษบางอย่างบรรจุไว้",
-            "ได้รับ EXP เพิ่มขึ้น 15% จากมอนสเตอร์ทุกประเภท",
-            "สามารถใช้งาน Skill Teleport Lv.1 ได้",
-            "",
+            "[รายการไอเทมที่สามารถเลือกได้]",
+            "Magic Feather Effect (Upper)",
+            "Firework Effect (Upper)",
             "น้ำหนัก : 1"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "108341": {
-        "unidentifiedDisplayName": "Giant Fly Wing 7 Day",
-        "unidentifiedResourceName": "거대한파리날개",
+    "310850": {
+        "unidentifiedDisplayName": "Firework Effect",
+        "unidentifiedResourceName": "블루크리스탈조각",
         "unidentifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "",
-            "ไอเท็มเช่า 7 วัน",
-            "ปีกของสัตว์ร้ายยักษ์ที่มีมาตั้งแต่สมัยโบราณกาล ถูกตัดตกแต่งและใส่เวทมนตร์ไว้ เป็นสิ่งที่สามารถพาคนหลายคนไปยังสถานที่ที่ต้องการได้พร้อมกัน",
-            "หัวหน้า Party สามารถใช้งานมันได้ และจะนำพาสมาชิกใน Party ทุกคนไปยังที่ที่หัวหน้าเดินทางไปด้วยกัน",
-            "(จะไม่ได้รับผลของ Mandragora Howling)"
+            "Firework Effect"
         ],
-        "identifiedDisplayName": "Giant Fly Wing 7 Day",
-        "identifiedResourceName": "거대한파리날개",
+        "identifiedDisplayName": "Firework Effect",
+        "identifiedResourceName": "블루크리스탈조각",
         "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "",
-            "ไอเท็มเช่า 7 วัน",
-            "ปีกของสัตว์ร้ายยักษ์ที่มีมาตั้งแต่สมัยโบราณกาล ถูกตัดตกแต่งและใส่เวทมนตร์ไว้ เป็นสิ่งที่สามารถพาคนหลายคนไปยังสถานที่ที่ต้องการได้พร้อมกัน",
-            "หัวหน้า Party สามารถใช้งานมันได้ และจะนำพาสมาชิกใน Party ทุกคนไปยังที่ที่หัวหน้าเดินทางไปด้วยกัน",
-            "(จะไม่ได้รับผลของ Mandragora Howling)",
-            "",
-            "น้ำหนัก : 0"
+            "Firework Effect"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "108342": {
-        "unidentifiedDisplayName": "Party Giant Fly Wing 7 day box",
-        "unidentifiedResourceName": "C_Wing_Of_Fly_Box",
+    "313955": {
+        "unidentifiedDisplayName": "Blue Butterfly Footprint",
+        "unidentifiedResourceName": "발자국이펙트",
         "unidentifiedDescriptionName": [
-            "Rental Item",
-            "กล่องที่มี Unlimited Giant Fly Wing 7Day อยู่ภายใน",
-            "เมื่อเปิดออกมาจะไม่สามารถแลกเปลี่ยนได้"
+            "Blue Butterfly Footprint"
         ],
-        "identifiedDisplayName": "Party Giant Fly Wing 7 day box",
-        "identifiedResourceName": "C_Wing_Of_Fly_Box",
+        "identifiedDisplayName": "Blue Butterfly Footprint",
+        "identifiedResourceName": "발자국이펙트",
         "identifiedDescriptionName": [
-            "Rental Item",
-            "กล่องที่มี Unlimited Giant Fly Wing 7Day อยู่ภายใน",
-            "เมื่อเปิดออกมาจะไม่สามารถแลกเปลี่ยนได้",
-            "น้ำหนัก : 0"
+            "Blue Butterfly Footprint"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "108343": {
-        "unidentifiedDisplayName": "Guyak Pudding 7 Day",
-        "unidentifiedResourceName": "구약푸딩",
+    "314094": {
+        "unidentifiedDisplayName": "Blue Spirit Effect",
+        "unidentifiedResourceName": "ROS_BlueSpirit_Effect",
         "unidentifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "",
-            "ไอเท็มเช่า 7 วัน",
-            "เมื่อรับประทานพุดดิ้งในขณะที่มันเย็นอยู่ จะช่วยบรรเทาความร้อนได้",
-            "เพิ่มความเร็วในการเคลื่อนที่สูงสุด ภายในระยะเวลา 10 นาที ต่อการกด 1 ครั้ง",
-            "^ff0000ไม่สามารถใช้ใน GVG, PVP ได้"
+            "Blue Spirit Effect"
         ],
-        "identifiedDisplayName": "Guyak Pudding 7 Day",
-        "identifiedResourceName": "구약푸딩",
+        "identifiedDisplayName": "Blue Spirit Effect",
+        "identifiedResourceName": "ROS_BlueSpirit_Effect",
         "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "",
-            "ไอเท็มเช่า 7 วัน",
-            "เมื่อรับประทานพุดดิ้งในขณะที่มันเย็นอยู่ จะช่วยบรรเทาความร้อนได้",
-            "เพิ่มความเร็วในการเคลื่อนที่สูงสุด ภายในระยะเวลา 10 นาที ต่อการกด 1 ครั้ง",
-            "^ff0000ไม่สามารถใช้ใน GVG, PVP ได้",
-            "น้ำหนัก : 20"
+            "Blue Spirit Effect"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "108344": {
-        "unidentifiedDisplayName": "Guyak Pudding 7 Day box",
-        "unidentifiedResourceName": "C_Wing_Of_Fly_Box",
+    "314795": {
+        "unidentifiedDisplayName": "Ragnarok Festa VIT (Upper)",
+        "unidentifiedResourceName": "Dragenergy_Purple",
         "unidentifiedDescriptionName": [
-            "Rental Item",
-            "กล่องที่มี Guyak Pudding 7Day อยู่ภายใน",
-            "เมื่อเปิดออกมาจะไม่สามารถแลกเปลี่ยนได้"
+            "VIT + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "DEF + 100, MHp + 5%"
         ],
-        "identifiedDisplayName": "Guyak Pudding 7 Day box",
-        "identifiedResourceName": "C_Wing_Of_Fly_Box",
+        "identifiedDisplayName": "Ragnarok Festa VIT (Upper)",
+        "identifiedResourceName": "Dragenergy_Purple",
         "identifiedDescriptionName": [
-            "Rental Item",
-            "กล่องที่มี Guyak Pudding 7Day อยู่ภายใน",
-            "เมื่อเปิดออกมาจะไม่สามารถแลกเปลี่ยนได้",
-            "น้ำหนัก : 0"
+            "VIT + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "DEF + 100, MHp + 5%"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "108363": {
-        "unidentifiedDisplayName": "Boosting Weapon Box",
-        "unidentifiedResourceName": "선물상자_1",
+    "314797": {
+        "unidentifiedDisplayName": "Ragnarok Festa STR (Upper)",
+        "unidentifiedResourceName": "Dragenergy_Red",
         "unidentifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "กล่องใส่อาวุธ Boosting ผู้เล่นสามารถทำการเลือกอาวุธ Boosting ได้ 1 ชิ้น โดยมีรายละเอียด ดังนี้",
-            "",
-            "Boosting Two-handed Sword [2] ,Boosting Spear [2] ,Boosting Katar [2] ,Boosting Dagger [2] ,Boosting Bow [2]",
-            ",Boosting Guitar [2] ,Boosting Whip [2] ,Boosting Axe [2] ,Boosting Sword [2] ,Boosting Staff [2] ,Boosting Spellbook [2]",
-            ",Boosting Mace [2] ,Boosting Knuckle [2] ,Boosting Gatling [2] ,Boosting Nindo [2] ,Boosting Text [2]"
+            "STR + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "เพิ่ม Damage ทางภายระยะใกล้ 5%"
         ],
-        "identifiedDisplayName": "Boosting Weapon Box",
-        "identifiedResourceName": "선물상자_1",
+        "identifiedDisplayName": "Ragnarok Festa STR (Upper)",
+        "identifiedResourceName": "Dragenergy_Red",
         "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "กล่องใส่อาวุธ Boosting ผู้เล่นสามารถทำการเลือกอาวุธ Boosting ได้ 1 ชิ้น โดยมีรายละเอียด ดังนี้",
-            "",
-            "Boosting Two-handed Sword [2] ,Boosting Spear [2] ,Boosting Katar [2] ,Boosting Dagger [2] ,Boosting Bow [2]",
-            ",Boosting Guitar [2] ,Boosting Whip [2] ,Boosting Axe [2] ,Boosting Sword [2] ,Boosting Staff [2] ,Boosting Spellbook [2]",
-            ",Boosting Mace [2] ,Boosting Knuckle [2] ,Boosting Gatling [2] ,Boosting Nindo [2] ,Boosting Text [2]",
-            "น้ำหนัก : 0"
+            "STR + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "เพิ่ม Damage ทางภายระยะใกล้ 5%"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "108364": {
-        "unidentifiedDisplayName": "Boosting Armor Box",
-        "unidentifiedResourceName": "선물상자_3",
+    "314798": {
+        "unidentifiedDisplayName": "Ragnarok Festa AGI (Upper)",
+        "unidentifiedResourceName": "Dragenergy_Gold",
         "unidentifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "กล่องใส่อุปกรณ์ป้องกัน Boosting ผู้เล่นสามารถทำการเลือกเกราะป้องกัน Boosting ได้ 1 SET โดยมีรายละเอียด ดังนี้",
-            "Attack SET ประกอบด้วย ",
-            "Attacker Booster Greaves [1] ,Attacker Booster Manteau [1] ,Attacker Booster Plate [1] ,Attacker Booster Ring [1]",
-            "Range SET ประกอบด้วย",
-            "Range Booster Boots [1] ,Range Booster Brooch [1] ,Range Booster Manteau [1] ,Range Booster Suit [1]",
-            "Defunct SET ประกอบด้วย",
-            "Defunct Booster Earring [1] ,Defunct Booster Muffler [1] ,Defunct Booster Robe [1] ,Defunct Booster Shoes [1]",
-            "Elemental SET ประกอบด้วย",
-            "Defunct Booster Earring [1] ,Defunct Booster Muffler [1] ,Defunct Booster Robe [1] ,Defunct Booster Shoes [1]"
+            "AGI + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "Perferct Dodge +5, ASPD + 5%."
         ],
-        "identifiedDisplayName": "Boosting Armor Box",
-        "identifiedResourceName": "선물상자_3",
+        "identifiedDisplayName": "Ragnarok Festa AGI (Upper)",
+        "identifiedResourceName": "Dragenergy_Gold",
         "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "กล่องใส่อุปกรณ์ป้องกัน Boosting ผู้เล่นสามารถทำการเลือกเกราะป้องกัน Boosting ได้ 1 SET โดยมีรายละเอียด ดังนี้",
-            "Attack SET ประกอบด้วย ",
-            "Attacker Booster Greaves [1] ,Attacker Booster Manteau [1] ,Attacker Booster Plate [1] ,Attacker Booster Ring [1]",
-            "Range SET ประกอบด้วย",
-            "Range Booster Boots [1] ,Range Booster Brooch [1] ,Range Booster Manteau [1] ,Range Booster Suit [1]",
-            "Defunct SET ประกอบด้วย",
-            "Defunct Booster Earring [1] ,Defunct Booster Muffler [1] ,Defunct Booster Robe [1] ,Defunct Booster Shoes [1]",
-            "Elemental SET ประกอบด้วย",
-            "Defunct Booster Earring [1] ,Defunct Booster Muffler [1] ,Defunct Booster Robe [1] ,Defunct Booster Shoes [1]",
-            "น้ำหนัก : 0"
+            "AGI + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "Perferct Dodge +5, ASPD + 5%."
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "108365": {
-        "unidentifiedDisplayName": "Boosting Promotion Box",
-        "unidentifiedResourceName": "다이아보물상자",
+    "314799": {
+        "unidentifiedDisplayName": "Ragnarok Festa INT (Upper)",
+        "unidentifiedResourceName": "Dragenergy_Blue",
         "unidentifiedDescriptionName": [
-            "กล่อง Boosting ที่สามารถซื้อได้ในช่วงเวลากิจกรรมครบรอบ 5 ปี Ragnarok Classic เท่านัน เมื่อทำการเปิดจะได้รับ",
-            "Boosting Weapon Box 1 กล่อง และ Boosting Armor Box 1 กล่อง",
-            "",
-            "คำเตือน! เมื่อทำการเปิดกล่องจะไม่สามารถทำการแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "",
-            "น้ำหนัก : 11"
+            "INT + 5,",
+            "MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "MATK + 5%"
         ],
-        "identifiedDisplayName": "Boosting Promotion Box",
-        "identifiedResourceName": "다이아보물상자",
+        "identifiedDisplayName": "Ragnarok Festa INT (Upper)",
+        "identifiedResourceName": "Dragenergy_Blue",
         "identifiedDescriptionName": [
-            "กล่อง Boosting ที่สามารถซื้อได้ในช่วงเวลากิจกรรมครบรอบ 5 ปี Ragnarok Classic เท่านัน เมื่อทำการเปิดจะได้รับ",
-            "Boosting Weapon Box 1 กล่อง และ Boosting Armor Box 1 กล่อง",
-            "",
-            "คำเตือน! เมื่อทำการเปิดกล่องจะไม่สามารถทำการแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "",
-            "น้ำหนัก : 11"
+            "INT + 5,",
+            "MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "MATK + 5%"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "108385": {
-        "unidentifiedDisplayName": "5th Anniversary Card Album",
-        "unidentifiedResourceName": "황금인장카드",
+    "314800": {
+        "unidentifiedDisplayName": "Ragnarok Festa DEX (Upper)",
+        "unidentifiedResourceName": "Dragenergy_Green",
         "unidentifiedDescriptionName": [
-            "อัลบั้มการ์ดที่จัดทำขึ้น เพื่อเฉลิมฉลอง ครบรอบ 5 ปี Ragnarok Online Classic",
-            "ผู้เล่นสามารถกดเพื่อลุ้นรับการ์ด MVP จำนวน 1 ใบ"
+            "DEX + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "เพิ่ม Damage ทางกายภาพระยะไกล 5%"
         ],
-        "identifiedDisplayName": "5th Anniversary Card Album",
-        "identifiedResourceName": "황금인장카드",
+        "identifiedDisplayName": "Ragnarok Festa DEX (Upper)",
+        "identifiedResourceName": "Dragenergy_Green",
         "identifiedDescriptionName": [
-            "อัลบั้มการ์ดที่จัดทำขึ้น เพื่อเฉลิมฉลอง ครบรอบ 5 ปี Ragnarok Online Classic",
-            "ผู้เล่นสามารถกดเพื่อลุ้นรับการ์ด MVP จำนวน 1 ใบ",
-            "น้ำหนัก : 1"
+            "DEX + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "เพิ่ม Damage ทางกายภาพระยะไกล 5%"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "108409": {
-        "unidentifiedDisplayName": "5th Anniversary Scroll",
-        "unidentifiedResourceName": "기도스크롤",
+    "314801": {
+        "unidentifiedDisplayName": "Ragnarok Festa LUK (Upper)",
+        "unidentifiedResourceName": "Dragenergy_Silver",
         "unidentifiedDescriptionName": [
-            "คัมภีร์ที่ระลึกวันครบรอบ 5 ปี Ragnarok Classic ที่จัดทำขึ้นเพื่อเป็นการเฉลิมฉลอง ให้กับนักผจญภัยผู้กล้าที่ต่อสู้ฝ่าฟันมาตลอด 5 ปีแห่งการเดินทาง",
-            "^ff0000คำเตือน! หากเปิดใช้งานหลังวันที่ 25 พฤศจิกายน 2569 หลังปิดปรับปรุงประจำสัปดาห์ จะไม่ได้รับ 5th Anniversary Coin"
+            "LUK + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "Critical Damage + 5%"
         ],
-        "identifiedDisplayName": "5th Anniversary Scroll",
-        "identifiedResourceName": "기도스크롤",
+        "identifiedDisplayName": "Ragnarok Festa LUK (Upper)",
+        "identifiedResourceName": "Dragenergy_Silver",
         "identifiedDescriptionName": [
-            "คัมภีร์ที่ระลึกวันครบรอบ 5 ปี Ragnarok Classic ที่จัดทำขึ้นเพื่อเป็นการเฉลิมฉลอง ให้กับนักผจญภัยผู้กล้าที่ต่อสู้ฝ่าฟันมาตลอด 5 ปีแห่งการเดินทาง",
-            "^ff0000คำเตือน! หากเปิดใช้งานหลังวันที่ 25 พฤศจิกายน 2569 หลังปิดปรับปรุงประจำสัปดาห์ จะไม่ได้รับ 5th Anniversary Coin",
-            "",
-            "น้ำหนัก : 1"
+            "LUK + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "Critical Damage + 5%"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "108449": {
-        "unidentifiedDisplayName": "Pre Register Anniversary Box",
-        "unidentifiedResourceName": "영원스크롤",
+    "315055": {
+        "unidentifiedDisplayName": "Flower Garden",
+        "unidentifiedResourceName": "발자국이펙트",
         "unidentifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "คำแนะนำ กล่องใช้สำหรับการเข้าร่วมกิจกรรม 5th Anniversary",
-            "",
-            "กล่องพิเศษที่ถูกจัดทำสำหรับผู้ที่ทำการลงทะเบียนล่วงหน้า กิจกรรมครบรอบ 5 ปี Ragnarok Online Classic",
-            "เมื่อทำการเปิดจะสามารถรับไอเท็มดังนี้",
-            "[Event] Rise of Awakened Scroll 300 ใบ",
-            "Costume Walking Poring 1 ชิ้น",
-            "5th Anniversary Jumping Event Ticket 1 ใบ",
-            "Transformer (Marin) 1 ชิ้น",
-            "",
-            "^ff0000(ไอเท็มนี้จะถูกลบออกวันที่ 13 มกราคม 2570 หลังปิดปรับปรุงเซิร์ฟเวอร์)"
+            "Flower Garden Footprint"
         ],
-        "identifiedDisplayName": "Pre Register Anniversary Box",
-        "identifiedResourceName": "영원스크롤",
+        "identifiedDisplayName": "Flower Garden",
+        "identifiedResourceName": "발자국이펙트",
         "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "คำแนะนำ กล่องใช้สำหรับการเข้าร่วมกิจกรรม 5th Anniversary",
-            "",
-            "กล่องพิเศษที่ถูกจัดทำสำหรับผู้ที่ทำการลงทะเบียนล่วงหน้า กิจกรรมครบรอบ 5 ปี Ragnarok Online Classic",
-            "เมื่อทำการเปิดจะสามารถรับไอเท็มดังนี้",
-            "[Event] Rise of Awakened Scroll 300 ใบ",
-            "Costume Walking Poring 1 ชิ้น",
-            "5th Anniversary Jumping Event Ticket 1 ใบ",
-            "Transformer (Marin) 1 ชิ้น",
-            "",
-            "^ff0000(ไอเท็มนี้จะถูกลบออกวันที่ 13 มกราคม 2570 หลังปิดปรับปรุงเซิร์ฟเวอร์)",
-            "",
-            "น้ำหนัก : 0"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "300128": {
-        "unidentifiedDisplayName": "Wolf Lugenburg Card",
-        "unidentifiedResourceName": "이름없는카드",
-        "unidentifiedDescriptionName": [
-            "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูประเภท Insect 15%",
-            "เมื่อใช้ร่วมกับ Poe Richard Card,",
-            "ATK +5%, MATK +5%, เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูขนาดกลาง 5%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Weapon",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Wolf Lugenburg Card",
-        "identifiedResourceName": "이름없는카드",
-        "identifiedDescriptionName": [
-            "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูประเภท Insect 15%",
-            "เมื่อใช้ร่วมกับ Poe Richard Card,",
-            "ATK +5%, MATK +5%, เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูขนาดกลาง 5%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Weapon",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false,
-        "EffectID": 1186
-    },
-    "300130": {
-        "unidentifiedDisplayName": "Poe Richard Card",
-        "unidentifiedResourceName": "이름없는카드",
-        "unidentifiedDescriptionName": [
-            "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูประเภท Plant 15%",
-            "",
-            "ประเภท : Card",
-            "ใช้กับ : Weapon",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Poe Richard Card",
-        "identifiedResourceName": "이름없는카드",
-        "identifiedDescriptionName": [
-            "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูประเภท Plant 15%",
-            "",
-            "ประเภท : Card",
-            "ใช้กับ : Weapon",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false,
-        "EffectID": 1186
-    },
-    "300308": {
-        "unidentifiedDisplayName": "Meyer Lugenburg Card",
-        "unidentifiedResourceName": "이름없는카드",
-        "unidentifiedDescriptionName": [
-            "เมื่อใช้สกิล เพิ่มปริมาณการใช้ SP 10%",
-            "ทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 4%",
-            "เมื่อใช้ร่วมกับ Kronecker G. Heine Card, MATK +3%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Armor",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Meyer Lugenburg Card",
-        "identifiedResourceName": "이름없는카드",
-        "identifiedDescriptionName": [
-            "เมื่อใช้สกิล เพิ่มปริมาณการใช้ SP 10%",
-            "ทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 4%",
-            "เมื่อใช้ร่วมกับ Kronecker G. Heine Card, MATK +3%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Armor",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false,
-        "EffectID": 1186
-    },
-    "300310": {
-        "unidentifiedDisplayName": "Helmut Lugenburg Card",
-        "unidentifiedResourceName": "이름없는카드",
-        "unidentifiedDescriptionName": [
-            "เมื่อใช้สกิล เพิ่มปริมาณการใช้ SP 10%",
-            "ทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพระยะใกล้/ระยะไกล 4%",
-            "เมื่อใช้ร่วมกับ Skia Nerious Card, ATK +3%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Armor",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Helmut Lugenburg Card",
-        "identifiedResourceName": "이름없는카드",
-        "identifiedDescriptionName": [
-            "เมื่อใช้สกิล เพิ่มปริมาณการใช้ SP 10%",
-            "ทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพระยะใกล้/ระยะไกล 4%",
-            "เมื่อใช้ร่วมกับ Skia Nerious Card, ATK +3%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Armor",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false,
-        "EffectID": 1186
-    },
-    "300422": {
-        "unidentifiedDisplayName": "Catherine Gaebolg Card",
-        "unidentifiedResourceName": "이름없는카드",
-        "unidentifiedDescriptionName": [
-            "ลดความต้านทานต่อการโจมตีธาตุ Neutral 10%, เพิ่ม Damage ทางกายภาพระยะใกล้ 5%",
-            "ทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพระยะใกล้ขึ้นอีก 4%",
-            "เมื่อใช้ร่วมกับ Helmut Lugenburg Card เพิ่ม Damage ทางกายภาพระยะใกล้ 5%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Garment",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Catherine Gaebolg Card",
-        "identifiedResourceName": "이름없는카드",
-        "identifiedDescriptionName": [
-            "ลดความต้านทานต่อการโจมตีธาตุ Neutral 10%, เพิ่ม Damage ทางกายภาพระยะใกล้ 5%",
-            "ทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพระยะใกล้ขึ้นอีก 4%",
-            "เมื่อใช้ร่วมกับ Helmut Lugenburg Card เพิ่ม Damage ทางกายภาพระยะใกล้ 5%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Garment",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "300424": {
-        "unidentifiedDisplayName": "Friedrich S. Heine Card",
-        "unidentifiedResourceName": "이름없는카드",
-        "unidentifiedDescriptionName": [
-            "ลดความต้านทานต่อการโจมตีธาตุ Neutral 10%, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%",
-            "ทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางเวทมนตร์ทุกธาตุขึ้นอีก 4%",
-            "เมื่อใช้ร่วมกับ Meyer Lugenburg Card เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Garment",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Friedrich S. Heine Card",
-        "identifiedResourceName": "이름없는카드",
-        "identifiedDescriptionName": [
-            "ลดความต้านทานต่อการโจมตีธาตุ Neutral 10%, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%",
-            "ทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางเวทมนตร์ทุกธาตุขึ้นอีก 4%",
-            "เมื่อใช้ร่วมกับ Meyer Lugenburg Card เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 5%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Garment",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "300426": {
-        "unidentifiedDisplayName": "Crux Findel Card",
-        "unidentifiedResourceName": "이름없는카드",
-        "unidentifiedDescriptionName": [
-            "ลดความต้านทานต่อการโจมตีธาตุ Neutral 10%, เพิ่ม Damage ทางกายภาพระยะไกล 5%",
-            "ทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%",
-            "เมื่อใช้ร่วมกับ Helmut Lugenburg Card เพิ่ม Damage ทางกายภาพระยะไกล 5%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Garment",
-            "น้ำหนัก : 1"
-        ],
-        "identifiedDisplayName": "Crux Findel Card",
-        "identifiedResourceName": "이름없는카드",
-        "identifiedDescriptionName": [
-            "ลดความต้านทานต่อการโจมตีธาตุ Neutral 10%, เพิ่ม Damage ทางกายภาพระยะไกล 5%",
-            "ทุก ๆ การอัพเกรด 2 ขั้น เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 4%",
-            "เมื่อใช้ร่วมกับ Helmut Lugenburg Card เพิ่ม Damage ทางกายภาพระยะไกล 5%",
-            "^ffffff_",
-            "ประเภท : Card",
-            "ใช้กับ : Garment",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "310197": {
-        "unidentifiedDisplayName": "Heaven and Earth Collapse",
-        "unidentifiedResourceName": "에너지파편",
-        "unidentifiedDescriptionName": [
-            "หินที่ช่วยปลุกพลังที่หลับใหลอยู่",
-            "ใช้ติดตั้งที่ Slot ของ Garment เพื่อเพิ่มความสามารถดังนี้",
-            "",
-            "Atk + 1%",
-            "เมื่อสวมใส่ร่วมกับ Angel Ribbon Wing",
-            "ลดความเสียหายที่ได้รับจากผู้เล่นลง 5%,",
-            "ลดความเสียหายที่ได้รับจากการโจมตีธาตุ Holy และ Poison ลง 5%"
-        ],
-        "identifiedDisplayName": "Heaven and Earth Collapse",
-        "identifiedResourceName": "에너지파편",
-        "identifiedDescriptionName": [
-            "หินที่ช่วยปลุกพลังที่หลับใหลอยู่",
-            "ใช้ติดตั้งที่ Slot ของ Garment เพื่อเพิ่มความสามารถดังนี้",
-            "",
-            "Atk + 1%",
-            "เมื่อสวมใส่ร่วมกับ Angel Ribbon Wing",
-            "ลดความเสียหายที่ได้รับจากผู้เล่นลง 5%,",
-            "ลดความเสียหายที่ได้รับจากการโจมตีธาตุ Holy และ Poison ลง 5%"
+            "Flower Garden Footprint"
         ],
         "slotCount": 0,
         "ClassNum": 0,
@@ -1818,7 +398,7 @@
             "ทุก ๆ การอัพเกรดหมวก 1 ขั้น DEF +50",
             "",
             "เมื่อสวมใส่ครบทุกชิ้นข้างต้น：",
-            "หากสวมใส่โดยอาชีพ High Priest ขึ้นไปและผลรวมขั้นอัพเกรดตั้งแต่ 48 ขึ้นไป, จะสามารถใช้สกิล [Enegy Coat] ได้",
+            "หากสวมใส่โดยอาชีพ High Priest ขึ้นไป และผลรวมขั้นอัพเกรดของ Helm/ Armor/ Manteau/ Shoes ตั้งแต่ 48 ขึ้นไป, จะสามารถใช้สกิล [Enegy Coat] ได้",
             "ประเภท : Headgear พลังป้องกัน : 0",
             "ตำแหน่ง : Upper น้ำหนัก : 20",
             "เลเวลที่ต้องการ : 100",
@@ -1828,1273 +408,126 @@
         "ClassNum": 468,
         "costume": false
     },
-    "400557": {
-        "unidentifiedDisplayName": "Hat",
-        "unidentifiedResourceName": "헬름",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Costume Egg Picky Doll",
-        "identifiedResourceName": "픽키알껍질",
-        "identifiedDescriptionName": [
-            "หมวกตุ๊กตา Picky ที่จัดทำ ฉลองครบรอบ 5 ปี Ragnarok Classic",
-            "",
-            "เมื่อโจมตีทางกายภาพ หรือ เวทย์ มีโอกาสที่จะเปลี่ยนร่างเป็น Grand Peco 10 วินาที",
-            "และเพิ่มพลังโจมตีมอนเตอร์ธาตุไฟแรงขึ้น 55% เมื่ออยู่สถานะ Grand Peco",
-            "",
-            "^ff0000ค่าประสบการณ์จากการกำจัดมอนสเตอร์ +5% / อัตราการดรอปไอเทม +5%",
-            "(ความสามารถจะถูกลบออกวันที่ 13 มกราคม 2570 หลังปิดปรับปรุงเซิร์ฟเวอร์)",
-            "",
-            "ประเภท : Costume พลังป้องกัน : 0",
-            "ตำแหน่ง : Upper น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 1",
-            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
-        ],
-        "slotCount": 0,
-        "ClassNum": 1001,
-        "costume": true
-    },
-    "410752": {
+    "410665": {
         "unidentifiedDisplayName": "Ribbon",
         "unidentifiedResourceName": "리본",
         "unidentifiedDescriptionName": [
             "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
         ],
-        "identifiedDisplayName": "Cherub Coronet",
-        "identifiedResourceName": "GorgonCoronet",
+        "identifiedDisplayName": "Costume Cons of Emoji",
+        "identifiedResourceName": "C_Nf_Stamp",
         "identifiedDescriptionName": [
-            "มงกุฎสวยงามเพื่อบูชาทูตสวรรค์ผู้สง่างาม",
-            "STR + 5 , INT + 5",
-            "ATK + 60 , MATK + 60",
-            "ต้านทานสถานะ Bleeding และ Confusion + 100%",
-            "เมื่อค่า STR หรือ DEX พื้นฐานรวมกันตั้งแต่ 120 ขึ้นไป",
-            "ATK เพิ่มขึ้นอีก + 100,",
-            "ความเสียหายกายภาพที่สร้างต่อมอนสเตอร์ประเภท Boss + 15%",
-            "เมื่อค่า VIT หรือ INT พื้นฐานรวมกันตั้งแต่ 120 ขึ้นไป",
-            "MATK เพิ่มขึ้นอีก + 100,",
-            "ประสิทธิภาพการฮีลเพิ่มขึ้นอีก + 50%,",
-            "ปริมาณ HP ที่ได้รับจากการฮีลเพิ่มขึ้นอีก + 30%,",
-            "ความเสียหายเวทย์มนต์ที่สร้างต่อมอนสเตอร์ประเภท Boss + 15%",
-            "ประเภท : Headgear พลังป้องกัน : 0",
-            "ตำแหน่ง : Middle น้ำหนัก : 100",
-            "เลเวลที่ต้องการ : 100",
-            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
-        ],
-        "slotCount": 0,
-        "ClassNum": 2250,
-        "costume": false
-    },
-    "420576": {
-        "unidentifiedDisplayName": "Ribbon",
-        "unidentifiedResourceName": "리본",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Costume Nightmare Chain",
-        "identifiedResourceName": "C_Nightmare_Chain",
-        "identifiedDescriptionName": [
-            "โซ่ต้องสาปที่จะพันธนาการผู้สวมใส่ไว้กับฝันร้ายอันทุกข์ทรมาน",
+            "ATK + 40, MATK + 40",
+            "MHP + 5%, MSP + 5%",
+            "HIT + 25, CRI + 5",
+            "ลด Global Cooldown 3%",
+            "เพิ่มประสบการณ์ที่ได้รับเมื่อกำจัดมอนสเตอร์ 20%",
+            "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อมอนสเตอร์ทุกเผ่า 10% (ยกเว้น Player)",
+            "ATK + 10%, Critical Damage + 10%",
+            "เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 10%",
+            "",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 6 มกราคม 2569)",
             "ประเภท : Costume พลังป้องกัน : 0",
-            "ตำแหน่ง : Lower น้ำหนัก : 0",
+            "ตำแหน่ง : Middle น้ำหนัก : 0",
             "เลเวลที่ต้องการ : 1",
             "อาชีพที่ใส่ได้ : ทุกอาชีพ"
         ],
         "slotCount": 0,
-        "ClassNum": 0,
+        "ClassNum": 2852,
         "costume": true
     },
-    "420887": {
-        "unidentifiedDisplayName": "Ribbon",
-        "unidentifiedResourceName": "리본",
+    "480802": {
+        "unidentifiedDisplayName": "Hood",
+        "unidentifiedResourceName": "후드",
         "unidentifiedDescriptionName": [
             "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
         ],
-        "identifiedDisplayName": "Costume: Feather Hair",
-        "identifiedResourceName": "C_Feather_Hair_TT",
+        "identifiedDisplayName": "Costume Ancient Tao Gunka",
+        "identifiedResourceName": "C_Joyful_Taogunka",
         "identifiedDescriptionName": [
-            "แม้จะไม่สามารถโบยบินไปบนท้องฟ้าได้ แต่อย่างน้อยก็สามารถสัมผัสความรู้สึกราวกับกำลังแหวกสายลมได้",
-            "วิกผมที่ประดับด้วยปีกเล็ก ๆ ทั้งสองข้าง ซึ่งจะโบกไหวไปมาอย่างแผ่วเบา เพิ่มจังหวะอันพลิ้วไหวให้กับทุกย่างก้าวของผู้สวมใส่",
+            "Costume Ancient Tao Gunka ที่เกิดมาเพื่อตามติดตัวละคร",
+            "ให้ความรู้สึกแปลกใหม่ เหมือนมีใครจ้องมองอยู่ตลอดเวลา",
+            "EXP +10%",
+            "DROP+ 5%",
+            "เมื่อทำการสังหารศัตรู มีโอกาส 0.5% ได้รับ Melon Juice 1 ชิ้น",
+            "ความสามารถพิเศษในระยะเวลากิจกรรม (4 พฤศจิกายน 2569  - 13 มกราคม 2570 05.59 น.)",
             "ประเภท : Costume พลังป้องกัน : 0",
-            "ตำแหน่ง : Lower น้ำหนัก : 0",
+            "ตำแหน่ง : Garment น้ำหนัก : 0",
             "เลเวลที่ต้องการ : 1",
             "อาชีพที่ใส่ได้ : ทุกอาชีพ"
         ],
         "slotCount": 0,
-        "ClassNum": 2734,
+        "ClassNum": 2827,
         "costume": true
     },
-    "440021": {
-        "unidentifiedDisplayName": "Costume Angeling Bubble",
-        "unidentifiedResourceName": "풍선껌",
+    "480879": {
+        "unidentifiedDisplayName": "Hood",
+        "unidentifiedResourceName": "후드",
         "unidentifiedDescriptionName": [
             "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
         ],
-        "identifiedDisplayName": "Costume Angeling Bubble",
-        "identifiedResourceName": "엔젤링풍선",
+        "identifiedDisplayName": "Costume Wings of Arrogant Thanatos",
+        "identifiedResourceName": "C_S_Thanatos_Wing",
         "identifiedDescriptionName": [
-            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "ปีกใหญ่ ๆ ของ Angeling ที่ช่วยให้สามารถบินขึ้นสูงและไกลขึ้นได้",
-            "ที่บ่งบออกว่าผู้ครอบครองได้ผ่านกิจกรรมฉลองครบรอบ 5 ปี Ragnarok Online Classic",
+            "ปีกที่ถ่ายทอดพลังของ Thanatos ผู้ถูกครอบงำด้วยความเย่อหยิ่งและความคลุ้มคลั่ง",
+            "ปีกที่แฝงไปด้วยสายตานับไม่ถ้วน แผ่รัศมีอันน่าสะพรึงกลัวและทรงพลังจนยากจะต้านทาน",
             "ประเภท : Costume พลังป้องกัน : 0",
-            "ตำแหน่ง : Upper, Middle, Lower น้ำหนัก : 0",
+            "ตำแหน่ง : Garment น้ำหนัก : 0",
             "เลเวลที่ต้องการ : 1",
             "อาชีพที่ใส่ได้ : ทุกอาชีพ"
         ],
         "slotCount": 0,
-        "ClassNum": 976,
+        "ClassNum": 323,
         "costume": true
     },
-    "450001": {
-        "unidentifiedDisplayName": "Armor",
-        "unidentifiedResourceName": "우든메일",
+    "1000365": {
+        "unidentifiedDisplayName": "Magic Feather Effect (Upper)",
+        "unidentifiedResourceName": "블루크리스탈조각",
         "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+            "Upper Enchant ที่ Slot ช่องที่ 4 ของอุปกรณ์ Costume แล้วติดตั้งเอฟเฟกต์เข้าไป",
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,22,113,0,100,0,0</INFO></NAVI>"
         ],
-        "identifiedDisplayName": "Attacker Booster Plate",
-        "identifiedResourceName": "사룡의갑옷",
+        "identifiedDisplayName": "Magic Feather Effect (Upper)",
+        "identifiedResourceName": "블루크리스탈조각",
         "identifiedDescriptionName": [
-            "เสื้อเกราะสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "เชี่ยวชาญเฉพาะด้านการโจมตีกายภาพระยะใกล้",
-            "",
-            "ไม่สามารถอัพเกรดทั่วไปได้",
-            "",
-            "ATK + 100.",
-            "ลด Delay หลังใช้สกิล 5%",
-            "ทุก ๆ การอัพเกรด 2 ขั้น ATK + 1%",
-            "ทุก ๆ การอัพเกรด 3 ขั้น Critical Damage +1%",
-            "เมื่ออัพเกรดถึงขั้น 7, ATK + 50.",
-            "เมื่ออัพเกรดถึงขั้น 9, ลด Delay หลังใช้สกิลลงอีก 5%",
-            "ประเภท: Armor พลังป้องกัน: 120",
-            "น้ำหนัก: 0",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "450002": {
-        "unidentifiedDisplayName": "Armor",
-        "unidentifiedResourceName": "코튼셔츠",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Elemental Booster Robe",
-        "identifiedResourceName": "쉐퍼드클로스",
-        "identifiedDescriptionName": [
-            "เสื้อคลุมสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "เชี่ยวชาญเฉพาะด้านการโจมตีเวทมนตร์ธาตุส่วนหนึ่ง",
-            "",
-            "ไม่สามารถอัพเกรดทั่วไปได้",
-            "",
-            "MATK + 100.",
-            "ลดระยะเวลาร่ายแบบแปรผัน 5%",
-            "ทุก ๆ การอัพเกรด 2 ขั้น MATK + 1%",
-            "ทุก ๆ การอัพเกรด 3 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 1%",
-            "เมื่ออัพเกรดถึงขั้น 7, MATK + 50.",
-            "เมื่ออัพเกรดถึงขั้น 9, ลดระยะเวลาร่ายแบบแปรผัน 5%",
-            "ประเภท: Armor พลังป้องกัน: 80",
-            "น้ำหนัก: 0",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "450003": {
-        "unidentifiedDisplayName": "Armor",
-        "unidentifiedResourceName": "코튼셔츠",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Defunct Booster Robe",
-        "identifiedResourceName": "비셔스클로스",
-        "identifiedDescriptionName": [
-            "เสื้อคลุมสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "เชี่ยวชาญเฉพาะด้านการโจมตีเวทมนตร์ธาตุส่วนหนึ่ง",
-            "",
-            "ไม่สามารถอัพเกรดทั่วไปได้",
-            "",
-            "MATK + 100.",
-            "ลดระยะเวลาร่ายแบบแปรผัน 5%",
-            "ทุก ๆ การอัพเกรด 2 ขั้น MATK + 1%",
-            "ทุก ๆ การอัพเกรด 3 ขั้น ลดระยะเวลาร่ายแบบแปรผัน 1%",
-            "เมื่ออัพเกรดถึงขั้น 7, MATK + 50.",
-            "เมื่ออัพเกรดถึงขั้น 9, ลดระยะเวลาร่ายแบบแปรผัน 5%",
-            "ประเภท: Armor พลังป้องกัน: 90",
-            "น้ำหนัก: 0",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "450004": {
-        "unidentifiedDisplayName": "Armor",
-        "unidentifiedResourceName": "우든메일",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Range Booster Suit",
-        "identifiedResourceName": "헌터메일",
-        "identifiedDescriptionName": [
-            "เสื้อเกราะสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "เชี่ยวชาญเฉพาะด้านการโจมตีกายภาพระยะไกล",
-            "",
-            "ไม่สามารถอัพเกรดทั่วไปได้",
-            "",
-            "ATK + 100.",
-            "ลด Delay หลังใช้สกิล 5%",
-            "ทุก ๆ การอัพเกรด 2 ขั้น ASPD +1%",
-            "ทุก ๆ การอัพเกรด 3 ขั้น เพิ่ม Damage ทางกายภาพระยะไกล 1%",
-            "เมื่ออัพเกรดถึงขั้น 7 ATK +50",
-            "เมื่ออัพเกรดถึงขั้น 9 ลด Delay หลังใช้สกิลลงอีก 5%",
-            "ประเภท: Armor พลังป้องกัน: 100",
-            "น้ำหนัก: 0",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "450508": {
-        "unidentifiedDisplayName": "Noblesse Assassin Suit",
-        "unidentifiedResourceName": "Noblesse_Assasin_Suit",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Noblesse Assassin Suit",
-        "identifiedResourceName": "Noblesse_Assasin_Suit",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "ชุดของ Assassin Cross ระดับสูงที่สลักลวดลายของ Rune Midgarts",
-            "_",
-            "ATK + 50",
-            "_",
-            "เมื่ออัพเกรดถึงขั้น 7, ASPD + 3%",
-            "เมื่ออัพเกรดถึงขั้น 9, ATK + 5%",
-            "_",
-            "เมื่อสวมใส่ร่วมกับ Noblesse Attack Manteau, Noblesse Attack Boots, Noblesse Attack Ring,",
-            "ASPD + 1, ATK + 5%, เพิ่ม Damage สกิล Meteor Assault 30%",
-            "_",
-            "เมื่อผลรวมค่าอัพเกรดของ Noblesse Assassin Suit, Noblesse Attack Manteau, Noblesse Attack Boots รวมกันตั้งแต่ 27 ขึ้นไป",
-            "ASPD + 1, ATK + 5%, เพิ่ม Damage สกิล Meteor Assault ขึ้นอีก 20%",
-            "ประเภท : Armor  พลังป้องกัน : 70",
-            "น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 70",
-            "อาชีพที่ใส่ได้ : Assassin Cross"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "470000": {
-        "unidentifiedDisplayName": "Shoes",
-        "unidentifiedResourceName": "슈즈",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Attacker Booster Greaves",
-        "identifiedResourceName": "기간트부츠",
-        "identifiedDescriptionName": [
-            "รองเท้าบู๊ทสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "เชี่ยวชาญเฉพาะด้านการโจมตีกายภาพระยะใกล้",
-            "",
-            "ไม่สามารถอัพเกรดทั่วไปได้",
-            "",
-            "ATK + 20, FLEE + 20.",
-            "ทุก ๆ การอัพเกรด 3 ขั้น MHP +1%",
-            "เมื่ออัพเกรดถึงขั้น 7, MHP +5%",
-            "เมื่ออัพเกรดถึงขั้น 9, ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที",
-            "ประเภท: Shoes พลังป้องกัน: 20",
-            "น้ำหนัก: 0",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "470001": {
-        "unidentifiedDisplayName": "Shoes",
-        "unidentifiedResourceName": "슈즈",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Elemental Booster Shoes",
-        "identifiedResourceName": "샤렐슈즈",
-        "identifiedDescriptionName": [
-            "รองเท้าสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "เชี่ยวชาญเฉพาะด้านการโจมตีเวทมนตร์ธาตุส่วนหนึ่ง",
-            "",
-            "ไม่สามารถอัพเกรดทั่วไปได้",
-            "",
-            "MATK + 20, FLEE + 20.",
-            "ทุก ๆ การอัพเกรด 3 ขั้น MHP +400",
-            "เมื่ออัพเกรดถึงขั้น 7, MHP +1800",
-            "เมื่ออัพเกรดถึงขั้น 9 ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที",
-            "ประเภท: Shoes พลังป้องกัน: 15",
-            "น้ำหนัก: 0",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "470002": {
-        "unidentifiedDisplayName": "Shoes",
-        "unidentifiedResourceName": "슈즈",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Defunct Booster Shoes",
-        "identifiedResourceName": "플로워슈즈",
-        "identifiedDescriptionName": [
-            "รองเท้าสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "เชี่ยวชาญเฉพาะด้านการโจมตีเวทมนตร์ธาตุส่วนหนึ่ง",
-            "",
-            "ไม่สามารถอัพเกรดทั่วไปได้",
-            "",
-            "MATK + 20, FLEE + 20.",
-            "ทุก ๆ การอัพเกรด 3 ขั้น MHP +400",
-            "เมื่ออัพเกรดถึงขั้น 7, MHP +1800",
-            "เมื่ออัพเกรดถึงขั้น 9 ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที",
-            "ประเภท: Shoes พลังป้องกัน: 18",
-            "น้ำหนัก: 0",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "470003": {
-        "unidentifiedDisplayName": "Shoes",
-        "unidentifiedResourceName": "슈즈",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Range Booster Boots",
-        "identifiedResourceName": "진홍색각반",
-        "identifiedDescriptionName": [
-            "รองเท้าบู๊ทสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "เชี่ยวชาญเฉพาะด้านการโจมตีกายภาพระยะไกล",
-            "",
-            "ไม่สามารถอัพเกรดทั่วไปได้",
-            "",
-            "ATK + 20, HIT + 15.",
-            "ทุก ๆ การอัพเกรด 3 ขั้น MSP +50",
-            "เมื่ออัพเกรดถึงขั้น 7, MSP +300",
-            "เมื่ออัพเกรดถึงขั้น 9 ลดระยะเวลาร่ายแบบคงที่ 0.5 วินาที",
-            "ประเภท: Shoes พลังป้องกัน: 18",
-            "น้ำหนัก: 0",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "480000": {
-        "unidentifiedDisplayName": "Hood",
-        "unidentifiedResourceName": "후드",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Attacker Booster Manteau",
-        "identifiedResourceName": "웤웤망토",
-        "identifiedDescriptionName": [
-            "ผ้าคลุมไหล่สุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "เชี่ยวชาญเฉพาะด้านการโจมตีกายภาพระยะใกล้",
-            "",
-            "ไม่สามารถอัพเกรดทั่วไปได้",
-            "",
-            "ASPD +5%",
-            "ทุก ๆ การอัพเกรด 3 ขั้น CRI +2",
-            "เมื่ออัพเกรดถึงขั้น 7, Critical Damage +5%",
-            "เมื่ออัพเกรดถึงขั้น 9 ลด Delay หลังใช้สกิล 10%",
-            "ประเภท: Garment พลังป้องกัน: 30",
-            "น้ำหนัก: 0",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "480001": {
-        "unidentifiedDisplayName": "Hood",
-        "unidentifiedResourceName": "후드",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Elemental Booster Muffler",
-        "identifiedResourceName": "샤렐망토",
-        "identifiedDescriptionName": [
-            "ผ้าคลุมไหล่สุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "เชี่ยวชาญเฉพาะด้านการโจมตีเวทมนตร์ธาตุส่วนหนึ่ง",
-            "",
-            "ไม่สามารถอัพเกรดทั่วไปได้",
-            "",
-            "ลดระยะเวลาร่ายแบบแปรผัน 5%",
-            "ทุก ๆ การอัพเกรด 3 ขั้น MATK +4",
-            "เมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Water, Wind, Earth, Fire, Neutral 5%",
-            "เมื่ออัพเกรดถึงขั้น 9 ลด Delay หลังใช้สกิล 10%",
-            "ประเภท: Garment พลังป้องกัน: 20",
-            "น้ำหนัก: 0",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "480002": {
-        "unidentifiedDisplayName": "Hood",
-        "unidentifiedResourceName": "후드",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Defunct Booster Muffler",
-        "identifiedResourceName": "플로워망토",
-        "identifiedDescriptionName": [
-            "ผ้าคลุมไหล่สุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "เชี่ยวชาญเฉพาะด้านการโจมตีเวทมนตร์ธาตุส่วนหนึ่ง",
-            "",
-            "ไม่สามารถอัพเกรดทั่วไปได้",
-            "",
-            "ลดระยะเวลาร่ายแบบแปรผัน 5%",
-            "ทุก ๆ การอัพเกรด 3 ขั้น MATK +4",
-            "เมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางเวทมนตร์ธาตุ Ghost, Holy, Shadow, Undead, Poison 5%",
-            "เมื่ออัพเกรดถึงขั้น 9 ลด Delay หลังใช้สกิล 10%",
-            "ประเภท: Garment พลังป้องกัน: 25",
-            "น้ำหนัก: 0",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "480003": {
-        "unidentifiedDisplayName": "Hood",
-        "unidentifiedResourceName": "후드",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Range Booster Manteau",
-        "identifiedResourceName": "영웅의망토",
-        "identifiedDescriptionName": [
-            "ผ้าคลุมไหล่สุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "เชี่ยวชาญเฉพาะด้านการโจมตีกายภาพระยะไกล",
-            "",
-            "ไม่สามารถอัพเกรดทั่วไปได้",
-            "",
-            "ลดระยะเวลาร่ายแบบแปรผัน 5%",
-            "ทุก ๆ การอัพเกรด 3 ขั้น ATK +2",
-            "เมื่ออัพเกรดถึงขั้น 7 เพิ่ม Damage ทางกายภาพระยะไกล 5%",
-            "เมื่ออัพเกรดถึงขั้น 9 ลด Delay หลังใช้สกิล 10%",
-            "ประเภท: Garment พลังป้องกัน: 30",
-            "น้ำหนัก: 0",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "480991": {
-        "unidentifiedDisplayName": "Muffler",
-        "unidentifiedResourceName": "머플러",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Angel Ribbon Wing",
-        "identifiedResourceName": "AngelRibbonWing",
-        "identifiedDescriptionName": [
-            "เสื้อคลุมสำหรับชุดที่ตัดเย็บจากขนเทวดาสีขาว",
-            "มันออกแบบอย่างวิจิตรให้ดูราวกับมีโบว์ผูกประดับอยู่",
-            "",
-            "ATK +1, MATK +1 ต่อทุกการเพิ่มขึ้นของ 1 Base Lv",
-            "เมื่ออัพเกรดถึงขั้น 7, ATK +10% , MATK +10% ",
-            "เมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางกายภาพและเวทมนตร์ต่อศัตรูทุกขนาด 15%",
-            "เมื่ออัพเกรดถึงขั้น 11, เพิกเฉยต่อพลังป้องกันทางกายภาพ/เวทมนตร์ของมอนสเตอร์ประเภท Angel , Demon 30%",
-            "",
-            "เมื่อสวมใส่ร่วมกับ [Heaven and Earth Collapse]",
-            "ลดความเสียหายที่ได้รับจากผู้เล่นลง 5%,",
-            "ลดความเสียหายที่ได้รับจากการโจมตีธาตุ Holy และ Poison ลง 5%",
-            "",
-            "ประเภท : Garment  พลังป้องกัน : 10",
-            "น้ำหนัก : 10",
-            "เลเวลที่ต้องการ : 1",
-            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 42,
-        "costume": false
-    },
-    "490004": {
-        "unidentifiedDisplayName": "Ring",
-        "unidentifiedResourceName": "링",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Attacker Booster Ring",
-        "identifiedResourceName": "마신의반지",
-        "identifiedDescriptionName": [
-            "แหวนสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "เชี่ยวชาญเฉพาะด้านการโจมตีกายภาพระยะใกล้",
-            "",
-            "ASPD +10%",
-            "ลดระยะเวลาร่ายแบบแปรผัน 10%",
-            "MHP +3%, Critical Damage +5%",
-            "ประเภท: Accessory พลังป้องกัน: 0",
-            "น้ำหนัก: 0",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "490005": {
-        "unidentifiedDisplayName": "Earring",
-        "unidentifiedResourceName": "이어링",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Elemental Booster Earring",
-        "identifiedResourceName": "여포링귀장식",
-        "identifiedDescriptionName": [
-            "ต่างหูสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "เชี่ยวชาญเฉพาะด้านการโจมตีเวทมนตร์ธาตุส่วนหนึ่ง",
-            "",
-            "ASPD +10%",
-            "ลดระยะเวลาร่ายแบบแปรผัน 10%",
-            "MSP +3%, เพิ่ม Damage ทางเวทมนตร์ธาตุ Water, Wind, Earth, Fire, Neutral 5%",
-            "ประเภท: Accessory พลังป้องกัน: 0",
-            "น้ำหนัก: 0",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "490006": {
-        "unidentifiedDisplayName": "Earring",
-        "unidentifiedResourceName": "이어링",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Defunct Booster Earring",
-        "identifiedResourceName": "남포링귀장식",
-        "identifiedDescriptionName": [
-            "ต่างหูสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "เชี่ยวชาญเฉพาะด้านการโจมตีเวทมนตร์ธาตุส่วนหนึ่ง",
-            "",
-            "ASPD +10%",
-            "ลดระยะเวลาร่ายแบบแปรผัน 10%",
-            "MSP + 3%, เพิ่ม Damage ทางเวทมนตร์ธาตุ Ghost, Holy, Shadow, Undead, Poison 5%",
-            "ประเภท: Accessory พลังป้องกัน: 0",
-            "น้ำหนัก: 0",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "490007": {
-        "unidentifiedDisplayName": "Ring",
-        "unidentifiedResourceName": "링",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Range Booster Brooch",
-        "identifiedResourceName": "EgirRing",
-        "identifiedDescriptionName": [
-            "แหวนสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "เชี่ยวชาญเฉพาะด้านการโจมตีกายภาพระยะไกล",
-            "",
-            "ASPD +10%",
-            "ลดระยะเวลาร่ายแบบแปรผัน 10%",
-            "MHP + 3%, เพิ่ม Damage ทางกายภาพระยะไกล 2%",
-            "ประเภท: Accessory พลังป้องกัน: 0",
-            "น้ำหนัก: 0",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "491120": {
-        "unidentifiedDisplayName": "Ring",
-        "unidentifiedResourceName": "링",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "5th ROC Anniversary Ring",
-        "identifiedResourceName": "Anniv_Ring_5th_ROC",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "แหวนที่บ่งบอกว่าผู้ครอบครองได้ผ่านกิจกรรมฉลองครบรอบ 5 ปี Ragnarok Online Classic",
-            "",
-            "ATK 5% , MATK 5%.",
-            "ความเร็วในการโจมตีเพิ่มขึ้น 5%",
-            "ร่ายเวทย์ได้โดยไม่ถูกขัดขวาง",
-            "เมื่ออัพเกรดถึงขั้น 5 HP+500 , SP+50",
-            "เมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกเผ่า 5%",
-            "เมื่ออัพเกรดถึงขั้น 12 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกธาตุ 10%",
-            "",
-            "เมื่อสวมใส่คู่กับ Marin Card",
-            "ATK+25, MATK+25",
-            "เมื่อกำจัด Monster มีโอกาส 0.5% ดรอปไอเทม &#39;Aquamarine&#39;",
-            "",
-            "ประเภท : Accessory(Right) พลังป้องกัน : 0",
-            "น้ำหนัก : 55",
-            "เลเวลที่ต้องการ : 5",
-            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
-        ],
-        "slotCount": 1,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "491121": {
-        "unidentifiedDisplayName": "Ring of Experience 7 Day",
-        "unidentifiedResourceName": "Ring_Of_Ceryneian",
-        "unidentifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "แหวนที่มีพลังพิเศษบางอย่างบรรจุไว้",
-            "ได้รับ EXP เพิ่มขึ้น 15% จากมอนสเตอร์ทุกประเภท",
-            "สามารถใช้งาน Skill Teleport Lv.1 ได้"
-        ],
-        "identifiedDisplayName": "Ring of Experience 7 Day",
-        "identifiedResourceName": "Ring_Of_Ceryneian",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "แหวนที่มีพลังพิเศษบางอย่างบรรจุไว้",
-            "ได้รับ EXP เพิ่มขึ้น 15% จากมอนสเตอร์ทุกประเภท",
-            "สามารถใช้งาน Skill Teleport Lv.1 ได้",
-            "",
-            "ประเภท : Accessory  พลังป้องกัน : 0",
-            "น้ำหนัก : 0",
-            "เลเวลที่ต้องการ : 1",
-            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+            "Upper Enchant ที่ Slot ช่องที่ 4 ของอุปกรณ์ Costume แล้วติดตั้งเอฟเฟกต์เข้าไป",
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,22,113,0,100,0,0</INFO></NAVI>",
+            "น้ำหนัก : 10"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "500001": {
-        "unidentifiedDisplayName": "Sword",
-        "unidentifiedResourceName": "소드",
+    "1000573": {
+        "unidentifiedDisplayName": "Firework Effect (Upper)",
+        "unidentifiedResourceName": "블루크리스탈조각",
         "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+            "มอบ Effect ให้แก่อุปกรณ์ Costume หากนำไปให้ Effect Talor ที่ Aver De Dosh จะช่วย Enchant Costume ให้"
         ],
-        "identifiedDisplayName": "Boosting Sword",
-        "identifiedResourceName": "빛나는검",
+        "identifiedDisplayName": "Firework Effect (Upper)",
+        "identifiedResourceName": "블루크리스탈조각",
         "identifiedDescriptionName": [
-            "ดาบมือเดียวสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "",
-            "ATK + 2%, ลดระยะเวลาร่ายแบบแปรผัน 3%",
-            "ทุก ๆ การอัพเกรด 1 ขั้น ATK +3",
-            "ทุก ๆ Base Lv. 15, ATK +3 (ใช้งานสูงสุดถึง Lv. 120)",
-            "เมื่ออัพเกรดถึงขั้น 7, ทุก ๆ การเรียนรู้สกิล Learning Potion 1 เลเวล ลดระยะเวลาร่ายแบบแปรผันลงอีก 1%",
-            "เมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางกายภาพระยะไกล 10%",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Attacker Booster (Plate/Manteau/Greaves/Ring),",
-            "ASPD +2, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Mammonite 1% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Cart Boost เพิ่ม Damage สกิล Mammonite ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch),",
-            "MHP + 10%, ลดระยะเวลาร่ายแบบแปรผัน 10%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Acid Demonstration 1% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Crazy Uproar เพิ่ม Damage สกิล Acid Demonstration ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "ประเภท: Sword พลังโจมตี: 160",
-            "น้ำหนัก: 0",
-            "เลเวลของอาวุธ: 4",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: Awakened Merchant Class"
+            "มอบ Effect ให้แก่อุปกรณ์ Costume หากนำไปให้ Effect Talor ที่ Aver De Dosh จะช่วย Enchant Costume ให้",
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,22,112,0,100,0,0</INFO></NAVI>",
+            "น้ำหนัก : 10"
         ],
-        "slotCount": 2,
-        "ClassNum": 2,
+        "slotCount": 0,
+        "ClassNum": 0,
         "costume": false
     },
-    "510001": {
-        "unidentifiedDisplayName": "Dagger",
-        "unidentifiedResourceName": "나이프",
+    "1001586": {
+        "unidentifiedDisplayName": "Razer Gold Key",
+        "unidentifiedResourceName": "기만의열쇠",
         "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ",
+            "(ไอเทมนี้จะถูกลบออกวันที่ 2 ธันวาคม 2569 เวลา 05.59 น.)"
         ],
-        "identifiedDisplayName": "Boosting Dagger",
-        "identifiedResourceName": "Blut_Dagger",
+        "identifiedDisplayName": "Razer Gold Key",
+        "identifiedResourceName": "기만의열쇠",
         "identifiedDescriptionName": [
-            "มีดสั้นสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "",
-            "MATK + 160.",
-            "เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire 3%, ATK +3%",
-            "ทุก ๆ การอัพเกรด 1 ขั้น ATK +2, MATK +2",
-            "ทุก ๆ Base Lv. 15, ATK +3, MATK +3 (ใช้งานสูงสุดถึง Lv. 120)",
-            "เมื่ออัพเกรดถึงขั้น 7, ทุก ๆ การเรียนรู้สกิล Plagiarism 1 เลเวล เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire ขึ้นอีก 1%",
-            "เมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 10%",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Elemental Booster (Robe/Muffler/Shoes/Earring),",
-            "MATK +20, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 10%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Meteor Storm 2% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Preserve เพิ่ม Damage สกิล Meteor Storm ขึ้นอีก 35% เป็นเวลา 60 วินาที",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Attacker Booster (Plate/Manteau/Greaves/Ring),",
-            "ATK +5%, ลด Delay หลังใช้สกิล 15%",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Back Stab 1% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Preserve เพิ่ม Damage สกิล Back Stab ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "ประเภท: Dagger พลังโจมตี: 150",
-            "น้ำหนัก: 0",
-            "เลเวลของอาวุธ: 4",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: Awakened Thief Class"
-        ],
-        "slotCount": 2,
-        "ClassNum": 1,
-        "costume": false
-    },
-    "510002": {
-        "unidentifiedDisplayName": "Dagger",
-        "unidentifiedResourceName": "나이프",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Boosting Nindo",
-        "identifiedResourceName": "빛나는대거",
-        "identifiedDescriptionName": [
-            "มีดสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "",
-            "MATK + 160.",
-            "เพิ่ม Damage ทางเวทมนตร์ธาตุ Water, Wind, Fire 3%, ATK +3%",
-            "ทุก ๆ การอัพเกรด 1 ขั้น ATK +2, MATK +2",
-            "ทุก ๆ Base Lv. 15, ATK +3, MATK +3 (ใช้งานสูงสุดถึง Lv. 120)",
-            "เมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Ninja Mastery 1 เลเวล ลดระยะเวลาร่ายแบบแปรผัน 1%",
-            "เมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 10%",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Elemental Booster (Robe/Muffler/Shoes/Earring),",
-            "MATK +20, ลด Delay หลังใช้สกิล 10%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Flaming Petals, Freezing Spear, Wind Blade 2% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Ninja Aura เพิ่ม Damage สกิล Flaming Petals, Freezing Spear, Wind Blade ขึ้นอีก 35% เป็นเวลา 60 วินาที",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch),",
-            "ATK +20, ลด Cooldown สกิล Cross Slash 1 วินาที,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Kunai Splash 1% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Ninja Aura เพิ่ม Damage สกิล Kunai Splash ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "ประเภท: Dagger พลังโจมตี: 150",
-            "น้ำหนัก: 0",
-            "เลเวลของอาวุธ: 4",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: Ninja Cls"
-        ],
-        "slotCount": 2,
-        "ClassNum": 1,
-        "costume": false
-    },
-    "520000": {
-        "unidentifiedDisplayName": "Axe",
-        "unidentifiedResourceName": "액스",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Boosting Axe",
-        "identifiedResourceName": "Blut_Axe",
-        "identifiedDescriptionName": [
-            "ขวานมือเดียวสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "",
-            "ไม่สามารถทำลายได้, ATK + 5%.",
-            "ทุก ๆ การอัพเกรด 1 ขั้น ATK +3",
-            "ทุก ๆ Base Lv. 15, ATK +3 (ใช้งานสูงสุดถึง Lv. 120)",
-            "เมื่ออัพเกรดถึงขั้น 7, ทุก ๆ การเรียนรู้สกิล Weaponry Research 1 เลเวล ATK +3",
-            "เมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 15%",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Attacker Booster (Plate/Manteau/Greaves/Ring),",
-            "ลด Delay หลังใช้สกิล 10%,ATK+20,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Cart Termination 1% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Weapon Perfection เพิ่ม Damage สกิล Cart Termination ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch),",
-            "ลดระยะเวลาร่ายแบบแปรผัน 10%, ลด Delay หลังใช้สกิล 15%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Mammonite 1% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Weapon Perfection เพิ่ม Damage สกิล Mammonite ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "ประเภท: One-Handed Axe พลังโจมตี: 200",
-            "น้ำหนัก: 0",
-            "เลเวลของอาวุธ: 4",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: Awakened Merchant Class"
-        ],
-        "slotCount": 2,
-        "ClassNum": 6,
-        "costume": false
-    },
-    "530000": {
-        "unidentifiedDisplayName": "Spear",
-        "unidentifiedResourceName": "쟈벨린",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Boosting Spear",
-        "identifiedResourceName": "Blut_Spear",
-        "identifiedDescriptionName": [
-            "หอกมือเดียวสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "",
-            "MATK + 160.",
-            "เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 3%, ATK +3%",
-            "ทุก ๆ การอัพเกรด 1 ขั้น ATK +2, MATK +2",
-            "ทุก ๆ Base Lv. 15, ATK +3, MATK +3 (ใช้งานสูงสุดถึง Lv. 120)",
-            "เมื่ออัพเกรดถึงขั้น 7, ทุก ๆ การเรียนรู้สกิล Faith 1 เลเวล เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy ขึ้นอีก 1%",
-            "เมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางกายภาพระยะไกล 10%",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Defunct Booster (Robe/Muffler/Shoes/Earring),",
-            "MATK +20, ลด Delay หลังใช้สกิล 10%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Grand Cross 1% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Cure เพิ่ม Damage สกิล Grand Cross ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch),",
-            "ASPD +2, เพิ่ม Damage ทางกายภาพระยะไกล 10%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Shield Chain 2% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Spear Quicken เพิ่ม Damage สกิล Shield Chain ขึ้นอีก 35% เป็นเวลา 60 วินาที",
-            "ประเภท: One-Handed Spear พลังโจมตี: 160",
-            "น้ำหนัก: 0",
-            "เลเวลของอาวุธ: 4",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: Awakened Swordman Class"
-        ],
-        "slotCount": 2,
-        "ClassNum": 4,
-        "costume": false
-    },
-    "540000": {
-        "unidentifiedDisplayName": "Book",
-        "unidentifiedResourceName": "북",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Boosting Spellbook",
-        "identifiedResourceName": "빛나는책",
-        "identifiedDescriptionName": [
-            "หนังสือเวทสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "",
-            "MATK + 165.",
-            "MATK + 2%, เพิ่ม Damage ทางเวทมนตร์ธาตุ Earth 3%",
-            "ทุก ๆ การอัพเกรด 1 ขั้น MATK +3",
-            "ทุก ๆ Base Lv. 15, MATK +3 (ใช้งานสูงสุดถึง Lv. 120)",
-            "เมื่ออัพเกรดถึงขั้น 7, ทุก ๆ การเรียนรู้สกิล Indulge 1 เลเวล เพิ่ม Damage ทางเวทมนตร์ธาตุ Earth 2%",
-            "เมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 10%",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Elemental Booster (Robe/Muffler/Shoes/Earring),",
-            "MATK +20, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุดขนาด 10%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Heaven&#39;s Drive 1% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Foresight เพิ่ม Damage สกิล Heaven&#39;s Drive ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Defunct Booster (Robe/Muffler/Shoes/Earring),",
-            "MATK + 20, ASPD + 2.",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Fire Bolt, Cold Bolt, Lightning Bolt 2% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Lucky Cast เพิ่ม Damage สกิล Fire Bolt, Cold Bolt, Lightning Bolt ขึ้นอีก 35% เป็นเวลา 60 วินาที",
-            "ประเภท: Book พลังโจมตี: 165",
-            "น้ำหนัก: 0",
-            "เลเวลของอาวุธ: 4",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: Awakened Professor Class"
-        ],
-        "slotCount": 2,
-        "ClassNum": 15,
-        "costume": false
-    },
-    "540001": {
-        "unidentifiedDisplayName": "Book",
-        "unidentifiedResourceName": "북",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Boosting Text",
-        "identifiedResourceName": "강화북",
-        "identifiedDescriptionName": [
-            "หนังสือสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "",
-            "ATK + 5%.",
-            "ทุก ๆ การอัพเกรด 1 ขั้น ATK +3",
-            "ทุก ๆ Base Lv. 15, ATK +3 (ใช้งานสูงสุดถึง Lv. 120)",
-            "เมื่ออัพเกรดถึงขั้น 7, ทุก ๆ การเรียนรู้สกิล Run 1 เลเวล ASPD +1%",
-            "เมื่ออัพเกรดถึงขั้น 9, ATK + 10%",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Attacker Booster (Plate/Manteau/Greaves/Ring),",
-            "ATK +20, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Warmth of Star 1% (ใช้งานสูงสุดถึง Lv. 120).",
-            "เมื่อใช้สกิล Flash Kick เพิ่ม Damage สกิล Warmth of Star ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch),",
-            "ATK + 20, ASPD + 2.",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Warmth of Star 2% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Flash Kick เพิ่ม Damage สกิล Warmth of Star ขึ้นอีก 35% เป็นเวลา 60 วินาที",
-            "ประเภท: Book พลังโจมตี: 160",
-            "น้ำหนัก: 0",
-            "เลเวลของอาวุธ: 4",
-            "เลเวลที่ต้องการ: 99",
-            "อาชีพที่ใส่ได้: Star Gladiator"
-        ],
-        "slotCount": 2,
-        "ClassNum": 15,
-        "costume": false
-    },
-    "560000": {
-        "unidentifiedDisplayName": "Knuckle",
-        "unidentifiedResourceName": "바그낙",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Boosting Knuckle",
-        "identifiedResourceName": "디바크로",
-        "identifiedDescriptionName": [
-            "สนับสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "",
-            "ATK + 2%, MHP + 3%.",
-            "ทุก ๆ การอัพเกรด 1 ขั้น ATK +3",
-            "ทุก ๆ Base Lv. 15, ATK +3 (ใช้งานสูงสุดถึง Lv. 120)",
-            "เมื่ออัพเกรดถึงขั้น 7, ทุก ๆ การเรียนรู้สกิล Vigor Explosion 1 เลเวล MHP +2%",
-            "เมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Attacker Booster (Plate/Manteau/Greaves/Ring),",
-            "MHP + 10%, ATK + 10%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Asura Strike 1% (ใช้งานสูงสุดถึง Lv. 120).",
-            "เมื่อใช้สกิล Zen เพิ่ม Damage สกิล Asura Strike ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch),",
-            "MSP +10%, ลด Delay หลังใช้สกิล 15%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Finger Offensive 2% (ใช้งานสูงสุดถึง Lv. 120).",
-            "เมื่อใช้สกิล Zen เพิ่ม Damage สกิล Finger Offensive ขึ้นอีก 35% เป็นเวลา 60 วินาที",
-            "ประเภท: Knuclke พลังโจมตี: 150",
-            "น้ำหนัก: 0",
-            "เลเวลของอาวุธ: 4",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: Awakened Champion Class"
-        ],
-        "slotCount": 2,
-        "ClassNum": 12,
-        "costume": false
-    },
-    "570000": {
-        "unidentifiedDisplayName": "Guitar",
-        "unidentifiedResourceName": "기타",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Boosting Guitar",
-        "identifiedResourceName": "Blut_Guiter",
-        "identifiedDescriptionName": [
-            "เครื่องดนตรีสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "",
-            "MATK + 160.",
-            "เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 3%, ATK +3%",
-            "ทุก ๆ การอัพเกรด 1 ขั้น ATK +2, MATK +2",
-            "ทุก ๆ Base Lv. 15, ATK +3, MATK +3 (ใช้งานสูงสุดถึง Lv. 120)",
-            "เมื่ออัพเกรดถึงขั้น 7, ทุก ๆ การเรียนรู้สกิล Musical Lesson 1 เลเวล ลดระยะเวลาร่ายแบบแปรผัน 1%",
-            "เมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 10%",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Elemental Booster (Robe/Muffler/Shoes/Earring),",
-            "MATK +20, ลด Delay หลังใช้สกิล 10%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Arrow Vulcan 1% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Improve Concentration เพิ่ม Damage สกิล Arrow Vulcan ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch),",
-            "ATK +20, ลด Cooldown สกิล Bragi&#39;s Poem 2 วินาที",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Arrow Vulcan 1% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Improve Concentration เพิ่ม Damage สกิล Arrow Vulcan ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "ประเภท: Instrument พลังโจมตี: 150",
-            "น้ำหนัก: 0",
-            "เลเวลของอาวุธ: 4",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: Awakened Clown Class"
-        ],
-        "slotCount": 2,
-        "ClassNum": 13,
-        "costume": false
-    },
-    "580000": {
-        "unidentifiedDisplayName": "Whip",
-        "unidentifiedResourceName": "로프",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Boosting Whip",
-        "identifiedResourceName": "Blut_Whip",
-        "identifiedDescriptionName": [
-            "แส้สุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "",
-            "MATK + 160.",
-            "เพิ่ม Damage ทางเวทมนตร์ธาตุ Neutral 3%, ATK +3%",
-            "ทุก ๆ การอัพเกรด 1 ขั้น ATK +2, MATK +2",
-            "ทุก ๆ Base Lv. 15, ATK +3, MATK +3 (ใช้งานสูงสุดถึง Lv.120)",
-            "เมื่ออัพเกรดถึงขั้น 7, ทุก ๆ การเรียนรู้สกิล Dancing Lesson 1 เลเวล ลดระยะเวลาร่ายแบบแปรผัน 1%",
-            "เมื่ออัพเกรดถึงขั้น 9, เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 10%",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Elemental Booster (Robe/Muffler/Shoes/Earring),",
-            "MATK +20, ลด Delay หลังใช้สกิล 10%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Arrow Vulcan 1% (ใช้งานสูงสุดถึง Lv.120),",
-            "เมื่อใช้ Improve Concentration เพิ่ม Damage สกิล Arrow Vulcan ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch),",
-            "ATK +20, ลด Cooldown สกิล Service for You 2 วินาที",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Arrow Vulcan 1% (ใช้งานสูงสุดถึง Lv.120),",
-            "เมื่อใช้ Improve Concentration เพิ่ม Damage สกิล Arrow Vulcan ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "ประเภท: Whip พลังโจมตี: 150",
-            "น้ำหนัก: 0",
-            "เลเวลของอาวุธ: 4",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: Awakened Gypsy Class"
-        ],
-        "slotCount": 2,
-        "ClassNum": 14,
-        "costume": false
-    },
-    "590000": {
-        "unidentifiedDisplayName": "Mace",
-        "unidentifiedResourceName": "클럽",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Boosting Mace",
-        "identifiedResourceName": "발키리해머",
-        "identifiedDescriptionName": [
-            "กระบองสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "",
-            "MATK + 160, ไม่สามารถทำลายได้",
-            "เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy 3%, ATK +3%",
-            "ทุก ๆ การอัพเกรด 1 ขั้น ATK + 2, MATK + 2",
-            "ทุก ๆ Base Lv. 15, ATK +3, MATK +3 (ใช้งานสูงสุดถึง Lv.120)",
-            "เมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Meditation 1 เลเวล เพิ่ม Damage ทางเวทมนตร์ธาตุ Holy ขึ้นอีก 1%",
-            "เมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 10%",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Defunct Booster (Robe/Muffler/Shoes/Earring),",
-            "MATK +20, เพิ่ม Damage สกิล Holy Light 30%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Magnus Exorcismus 1% (ใช้งานสูงสุดถึง Lv.120),",
-            "เมื่อใช้ Magnificat เพิ่ม Damage สกิล Magnus Exorcismus ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch),",
-            "ASPD +2, Critical Damage +10%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Holy Cross 2% (ใช้งานสูงสุดถึง Lv.120),",
-            "เมื่อทำการโจมตีกายภาพมีโอกาศร่าย Holy Cross ขึ้นอีก 15%",
-            "ประเภท: Mace พลังโจมตี: 160",
-            "น้ำหนัก: 0",
-            "เลเวลของอาวุธ: 4",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: Awakened Acolyte Class"
-        ],
-        "slotCount": 2,
-        "ClassNum": 8,
-        "costume": false
-    },
-    "600001": {
-        "unidentifiedDisplayName": "Two-Handed Sword",
-        "unidentifiedResourceName": "바스타드소드",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Boosting Two-handed Sword",
-        "identifiedResourceName": "FullForce",
-        "identifiedDescriptionName": [
-            "ดาบสองมือสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "",
-            "CRI + 10, MHP + 3%.",
-            "ทุก ๆ Base Lv. 15, ATK +3 (ใช้งานสูงสุดถึง Lv. 120)",
-            "ทุก ๆ การอัพเกรด 1 ขั้น ATK +3",
-            "เมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Two hand Quicken 1 เลเวล ASPD +1%",
-            "เมื่ออัพเกรดถึงขั้น 9 Critical Damage +10%",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Attacker Booster (Plate/Manteau/Greaves/Ring),",
-            "ASPD +2, Critical Damage +10%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Bowling Bash 2% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Spear Dynamo เพิ่ม Damage สกิล Bowling Bash ขึ้นอีก 35% เป็นเวลา 60 วินาที",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch),",
-            "MHP +10%, ลด Delay หลังใช้สกิล 15%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Clashing Spiral 1% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Spear Dynamo เพิ่ม Damage สกิล Clashing Spiral ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "ประเภท: Two-Handed Sword พลังโจมตี: 250",
-            "น้ำหนัก: 0",
-            "เลเวลของอาวุธ: 4",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: Awakened Swordman Class"
-        ],
-        "slotCount": 2,
-        "ClassNum": 3,
-        "costume": false
-    },
-    "610000": {
-        "unidentifiedDisplayName": "Katar",
-        "unidentifiedResourceName": "카타르",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Boosting Katar",
-        "identifiedResourceName": "Blut_Katar",
-        "identifiedDescriptionName": [
-            "Katar สุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "",
-            "ATK +2%, Critical Damage +3%",
-            "ทุก ๆ การอัพเกรด 1 ขั้น ATK +3",
-            "ทุก ๆ Base Lv. 15, ATK +3 (ใช้งานสูงสุดถึง Lv. 120)",
-            "เมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Katar Mastery 1 เลเวล Critical Damage +1% เพิ่มเติม",
-            "เมื่ออัพเกรดถึงขั้น 9, ATK +10%",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Attacker Booster (Plate/Manteau/Greaves/Ring),",
-            "ASPD +2, Critical Damage +10%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 1% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Enchant Deadly Poison เพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุขึ้นอีก 10% เป็นเวลา 60 วินาที",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch),",
-            "ATK +10%, ลด Delay หลังใช้สกิล 15%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Soul Destroyer 1% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Enchant Deadly Poison เพิ่ม Damage สกิล Soul Destroyer ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "ประเภท: Katar พลังโจมตี: 150",
-            "น้ำหนัก: 0",
-            "เลเวลของอาวุธ: 4",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: Awakened Thief Class"
-        ],
-        "slotCount": 2,
-        "ClassNum": 16,
-        "costume": false
-    },
-    "640000": {
-        "unidentifiedDisplayName": "Staff",
-        "unidentifiedResourceName": "롯드",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Boosting Staff",
-        "identifiedResourceName": "Blut_Wand",
-        "identifiedDescriptionName": [
-            "Staff สุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "",
-            "MATK + 200.",
-            "ไม่สามารถทำลายได้, MATK +2%, เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire 3%",
-            "ทุก ๆ การอัพเกรด 1 ขั้น MATK +3",
-            "ทุก ๆ Base Lv. 15, MATK +3 (ใช้งานสูงสุดถึง Lv. 120)",
-            "เมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Mystical Amplification 1 เลเวล เพิ่ม Damage ทางเวทมนตร์ธาตุ Fire ขึ้นอีก 1%",
-            "เมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางเวทมนตร์ธาตุ Ghost, Wind, Water 10%",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Elemental Booster (Robe/Muffler/Shoes/Earring),",
-            "MATK +20, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 10%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Meteor Storm 1% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Mystical Amplification เพิ่ม Damage สกิล Meteor Storm ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Defunct Booster (Robe/Muffler/Shoes/Earring),",
-            "MATK +20, ลด Delay หลังใช้สกิล 10%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Napalm Vulcan 1% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Mystical Amplification เพิ่ม Damage สกิล Napalm Vulcan ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "ประเภท: Two-Handed Rod พลังโจมตี: 100",
-            "น้ำหนัก: 0",
-            "เลเวลของอาวุธ: 4",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: Awakened Magician Class"
-        ],
-        "slotCount": 2,
-        "ClassNum": 23,
-        "costume": false
-    },
-    "700001": {
-        "unidentifiedDisplayName": "Bow",
-        "unidentifiedResourceName": "보우",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Boosting Bow",
-        "identifiedResourceName": "Blut_Bow",
-        "identifiedDescriptionName": [
-            "ธนูสุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "",
-            "CRI + 10, MHP + 3%.",
-            "ทุก ๆ การอัพเกรด 1 ขั้น ATK +3",
-            "ทุก ๆ Base Lv. 15, ATK +3 (ใช้งานสูงสุดถึง Lv. 120)",
-            "เมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Wind Walker 1 เลเวล ASPD +1%",
-            "เมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกล 10%",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Attacker Booster (Plate/Manteau/Greaves/Ring),",
-            "ASPD +2, Critical Damage +10%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Focused Arrow Strike 1% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Falcon Eyes เพิ่ม Damage สกิล Focused Arrow Strike ขึ้นอีก 35% เป็นเวลา 60 วินาที",
-            "",
-            "เมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch),",
-            "MHP +10%, ลด Delay หลังใช้สกิล 15%,",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Blitz Beat 2% (ใช้งานสูงสุดถึง Lv. 120),",
-            "เมื่อใช้สกิล Falcon Eyes เพิ่ม Damage สกิล Blitz Beat ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "ประเภท: Bow พลังโจมตี: 160",
-            "น้ำหนัก: 0",
-            "เลเวลของอาวุธ: 4",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: Awakened Archer Class"
-        ],
-        "slotCount": 2,
-        "ClassNum": 11,
-        "costume": false
-    },
-    "830000": {
-        "unidentifiedDisplayName": "Gatling Gun",
-        "unidentifiedResourceName": "드리프터",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Boosting Gatling",
-        "identifiedResourceName": "Blut_Gatling",
-        "identifiedDescriptionName": [
-            "ปืนกลขนาดใหญ่สุดพิเศษที่เตรียมไว้เพื่อทำให้นักผจญภัยพัฒนาไปอย่างรวดเร็ว",
-            "",
-            "ATK + 5%.",
-            "ทุก ๆ การอัพเกรด 1 ขั้น ATK +3",
-            "ทุก ๆ Base Lv. 15, ATK +3 (ใช้งานสูงสุดถึง Lv. 120)",
-            "เมื่ออัพเกรดถึงขั้น 7 ทุก ๆ การเรียนรู้สกิล Single Action 1 เลเวล เพิ่ม Damage ทางกายภาพระยะไกล 1%",
-            "เมื่ออัพเกรดถึงขั้น 9 เพิ่ม Damage ทางกายภาพระยะไกลขึ้นอีก 10%",
-            " ",
-            "เมื่อสวมใส่ร่วมกับ Range Booster (Suit/Manteau/Boots/Brooch),",
-            "ATK +20, ลด Cooldown สกิล Fire Rain 1 วินาที",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Fire Rain 2% (ใช้งานสูงสุดถึง Lv. 120)",
-            "เมื่อใช้สกิล Rich&#39;s Coin เพิ่ม Damage สกิล Fire Rain ขึ้นอีก 35% เป็นเวลา 60 วินาที",
-            " ",
-            "เมื่อสวมใส่ร่วมกับ Attacker Booster (Plate/Manteau/Greaves/Ring),",
-            "ATK +20, เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 10%",
-            "ทุก ๆ Base Lv. 15 เพิ่ม Damage สกิล Round Trip 1% (ใช้งานสูงสุดถึง Lv. 120)",
-            "เมื่อใช้สกิล Rich&#39;s Coin เพิ่ม Damage สกิล Round Trip ขึ้นอีก 20% เป็นเวลา 60 วินาที",
-            "ประเภท: Gatling Gun พลังโจมตี: 170",
-            "น้ำหนัก: 0",
-            "เลเวลของอาวุธ: 4",
-            "เลเวลที่ต้องการ: 100",
-            "อาชีพที่ใส่ได้: Gunslinger Cls"
-        ],
-        "slotCount": 2,
-        "ClassNum": 19,
-        "costume": false
-    },
-    "1001878": {
-        "unidentifiedDisplayName": "5th Anniversary Jumping Event Ticket",
-        "unidentifiedResourceName": "고급티켓_금색",
-        "unidentifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "",
-            "ตั๋วสำหรับ 5th Anniversary Jumping Event",
-            "ช่วยทำให้ตัวละครมี Lv. 99  อย่างรวดเร็วทันใจ",
-            "^ff0000(ไอเท็มนี้จะถูกลบเมื่อสิ้นสุดกิจกรรม!)"
-        ],
-        "identifiedDisplayName": "5th Anniversary Jumping Event Ticket",
-        "identifiedResourceName": "고급티켓_금색",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "",
-            "ตั๋วสำหรับ 5th Anniversary Jumping Event",
-            "ช่วยทำให้ตัวละครมี Lv. 99  อย่างรวดเร็วทันใจ",
-            "^ff0000(ไอเท็มนี้จะถูกลบเมื่อสิ้นสุดกิจกรรม!)",
-            "",
-            "น้ำหนัก : 0"
+            "กุญแจไขกล่องสมบัติที่รวบรวมสิ่งของล้ำค่าไว้มากมาย",
+            "(ไอเทมนี้จะถูกลบออกวันที่ 2 ธันวาคม 2569 เวลา 05.59 น.)",
+            "น้ำหนัก : 10"
         ],
         "slotCount": 0,
         "ClassNum": 0,
@@ -3111,8 +544,9 @@
         "identifiedDescriptionName": [
             "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนและไม่สามารถฝากคลังได้",
             "Ticket ใช้สำหรับ Enchant Option Costume ดังนี้ ",
-            "1.<ITEM>Costume Angeling Bubble<INFO>440021</INFO></ITEM>",
-            "2.<ITEM>Costume Blue Cupid Wing<INFO>20505</INFO></ITEM>",
+            "1.<ITEM> Angeling Bubble<INFO>440021</INFO></ITEM>",
+            "2.<ITEM> Blue Cupid Wing<INFO>20505</INFO></ITEM>",
+            "3.<ITEM> Poring Surfboard<INFO>480335</INFO></ITEM>",
             "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
             "น้ำหนัก : 0"
         ],
@@ -3120,127 +554,257 @@
         "ClassNum": 0,
         "costume": false
     },
-    "1002468": {
-        "unidentifiedDisplayName": "[NFS] Gacha Ticket",
-        "unidentifiedResourceName": "보스니아입장권",
+    "1002108": {
+        "unidentifiedDisplayName": "Blue Butterfly Footprint (Garment)",
+        "unidentifiedResourceName": "발자국이펙트",
         "unidentifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้ และไม่สามารถใส่ในคลังเก็บของได้!",
-            "",
-            "ตั๋วที่ยืนยันว่าคุณได้เข้าร่วม ในช่วงกิจกรรมครบรอบ 5 ปี Ragnarok Online Classic",
-            "สามารถนำมาเป็นบัตรผ่านเพื่อรับของรางวัลพิเศษได้ที่ NPC : Dr.Time",
-            "",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) "
+            "มอบเอฟเฟกต์เมื่อ Enchant ช่องที่ 3 ของ Costume ประเภท Garment",
+            "^ff0000Blue Butterfly Footprint",
+            "^ffffff<NAVI>^4D4DFF[Lace La Zard]<INFO>mal_in01,20,107,0,100,0,0</INFO></NAVI>"
         ],
-        "identifiedDisplayName": "[NFS] Gacha Ticket",
-        "identifiedResourceName": "보스니아입장권",
+        "identifiedDisplayName": "Blue Butterfly Footprint (Garment)",
+        "identifiedResourceName": "발자국이펙트",
         "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้ และไม่สามารถใส่ในคลังเก็บของได้!",
-            "",
-            "ตั๋วที่ยืนยันว่าคุณได้เข้าร่วม ในช่วงกิจกรรมครบรอบ 5 ปี Ragnarok Online Classic",
-            "สามารถนำมาเป็นบัตรผ่านเพื่อรับของรางวัลพิเศษได้ที่ NPC : Dr.Time",
-            "",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0"
+            "มอบเอฟเฟกต์เมื่อ Enchant ช่องที่ 3 ของ Costume ประเภท Garment",
+            "^ff0000Blue Butterfly Footprint",
+            "^ffffff<NAVI>^4D4DFF[Lace La Zard]<INFO>mal_in01,20,107,0,100,0,0</INFO></NAVI>",
+            "น้ำหนัก : 10"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "1003225": {
-        "unidentifiedDisplayName": "5th Anniversary Coin",
-        "unidentifiedResourceName": "터보트랙코인",
+    "1002193": {
+        "unidentifiedDisplayName": "Blue Spirit Effect (Middle)",
+        "unidentifiedResourceName": "블루크리스탈조각",
         "unidentifiedDescriptionName": [
-            "^ff0000ไอเท็มชื้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "",
-            "[Guarantee Gacha]",
-            "เหรียญสีทองแวววาวระยิบระยับลองเอาไปหยอดที่พิกัดแผนที่กิจกรรมกันเถอะ",
-            "(ไอเท็มดังกล่าวจะถูกลบออกหลังจากปิดปรับปรุงเซิร์ฟเวอร์วันที่ 25 พฤศจิกายน 2569)"
+            "Middle Enchant ที่ Slot ช่องที่ 4 ของอุปกรณ์ Costume แล้วติดตั้งเอฟเฟกต์เข้าไป",
+            "^ff0000Blue Spirit Effect",
+            "^ffffff_",
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,22,113,0,100,0,0</INFO></NAVI>",
+            "^ffffff_",
+            "น้ำหนัก : 10"
         ],
-        "identifiedDisplayName": "5th Anniversary Coin",
-        "identifiedResourceName": "터보트랙코인",
+        "identifiedDisplayName": "Blue Spirit Effect (Middle)",
+        "identifiedResourceName": "블루크리스탈조각",
         "identifiedDescriptionName": [
-            "^ff0000ไอเท็มชื้นนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "",
-            "[Guarantee Gacha]",
-            "เหรียญสีทองแวววาวระยิบระยับลองเอาไปหยอดที่พิกัดแผนที่กิจกรรมกันเถอะ",
-            "(ไอเท็มดังกล่าวจะถูกลบออกหลังจากปิดปรับปรุงเซิร์ฟเวอร์วันที่ 25 พฤศจิกายน 2569)",
-            "น้ำหนัก : 1"
+            "Middle Enchant ที่ Slot ช่องที่ 4 ของอุปกรณ์ Costume แล้วติดตั้งเอฟเฟกต์เข้าไป",
+            "^ff0000Blue Spirit Effect",
+            "^ffffff_",
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,22,113,0,100,0,0</INFO></NAVI>",
+            "^ffffff_",
+            "น้ำหนัก : 10"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "1003285": {
-        "unidentifiedDisplayName": "5th Pet Anniversary Ticket",
-        "unidentifiedResourceName": "쿠폰",
+    "1002559": {
+        "unidentifiedDisplayName": "Ragnarok Festa Stone STR (Upper)",
+        "unidentifiedResourceName": "영혼의조각",
         "unidentifiedDescriptionName": [
-            "คูปองสำหรับแลกสัตว์เลี้ยง Blue Unicorn เฉลิมฉลองครบรอบ 5 ปี Ragnarok Classic",
-            "สามารถนำคูปองไปแลกได้ที่ NPC ผู้ฝึกสัตว์เลี้ยง ในแผนที่เมือง Izlude",
+            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
+            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
             "",
-            "^ff0000ไอเทมจะถูกลบเมื่อสิ้นสุดกิจกรรม วันที่ 13 มกราคม 2570 (ก่อนปิดปรับปรุงเซิร์ฟเวอร์)"
+            "STR + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "เพิ่ม Damage ทางกายภาพระยะใกล้ 5%",
+            "",
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>"
         ],
-        "identifiedDisplayName": "5th Pet Anniversary Ticket",
-        "identifiedResourceName": "쿠폰",
+        "identifiedDisplayName": "Ragnarok Festa Stone STR (Upper)",
+        "identifiedResourceName": "영혼의조각",
         "identifiedDescriptionName": [
-            "คูปองสำหรับแลกสัตว์เลี้ยง Blue Unicorn เฉลิมฉลองครบรอบ 5 ปี Ragnarok Classic",
-            "สามารถนำคูปองไปแลกได้ที่ NPC ผู้ฝึกสัตว์เลี้ยง ในแผนที่เมือง Izlude",
+            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
+            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
             "",
-            "^ff0000ไอเทมจะถูกลบเมื่อสิ้นสุดกิจกรรม วันที่ 13 มกราคม 2570 (ก่อนปิดปรับปรุงเซิร์ฟเวอร์)",
+            "STR + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "เพิ่ม Damage ทางกายภาพระยะใกล้ 5%",
             "",
-            "น้ำหนัก : 0"
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>",
+            "น้ำหนัก : 10"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "1003311": {
-        "unidentifiedDisplayName": "5th Anniv God Hammer",
-        "unidentifiedResourceName": "금색망치",
+    "1002560": {
+        "unidentifiedDisplayName": "Ragnarok Festa Stone AGI (Upper)",
+        "unidentifiedResourceName": "영혼의조각",
         "unidentifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้ และไม่สามารถใส่ในคลังเก็บของได้!",
+            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
+            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
             "",
-            "ค้อน God's Hammer ที่ถูกทำขึ้นเพื่อฉลองครบรอบ 5 ปี Ragnarok Online Classic",
-            "ใช้เพิ่มเปอร์เซนการอัพเกรดอุปกรณ์สวมใส่และอาวุธที่ได้รับจากกิจกรรมเท่านั้น",
+            "AGI + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "Perferct Doage +5, ASPD + 5%.",
             "",
-            "^ff0000(ไอเท็มชิ้นนี้จะถูกลบหลังสิ้นสุดระยะเวลากิจกรรม)"
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>"
         ],
-        "identifiedDisplayName": "5th Anniv God Hammer",
-        "identifiedResourceName": "금색망치",
+        "identifiedDisplayName": "Ragnarok Festa Stone AGI (Upper)",
+        "identifiedResourceName": "영혼의조각",
         "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้ และไม่สามารถใส่ในคลังเก็บของได้!",
+            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
+            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
             "",
-            "ค้อน God&#39;s Hammer ที่ถูกทำขึ้นเพื่อฉลองครบรอบ 5 ปี Ragnarok Online Classic",
-            "ใช้เพิ่มเปอร์เซนการอัพเกรดอุปกรณ์สวมใส่และอาวุธที่ได้รับจากกิจกรรมเท่านั้น",
+            "AGI + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "Perferct Doage +5, ASPD + 5%.",
             "",
-            "^ff0000(ไอเท็มชิ้นนี้จะถูกลบหลังสิ้นสุดระยะเวลากิจกรรม)",
-            "น้ำหนัก : 0"
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>",
+            "น้ำหนัก : 10"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "1003312": {
-        "unidentifiedDisplayName": "5th Anniv God Furnace",
-        "unidentifiedResourceName": "금색용광로",
+    "1002561": {
+        "unidentifiedDisplayName": "Ragnarok Festa Stone VIT (Upper)",
+        "unidentifiedResourceName": "영혼의조각",
         "unidentifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้ และไม่สามารถใส่ในคลังเก็บของได้!",
+            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
+            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
             "",
-            "เตาหลอมเทวะ God's Furnace ที่ถูกทำขึ้นเพื่อฉลองครบรอบ 5 ปี Ragnarok Online Classic",
-            "ป้องกันการเสียหายจากการอัพเกรดอุปกรณ์สวมใส่และอาวุธที่ได้รับจากกิจกรรมเท่านั้น",
+            "VIT + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "DEF + 100 MHP + 5%.",
             "",
-            "^ff0000(ไอเท็มชิ้นนี้จะถูกลบหลังสิ้นสุดระยะเวลากิจกรรม)"
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>"
         ],
-        "identifiedDisplayName": "5th Anniv God Furnace",
-        "identifiedResourceName": "금색용광로",
+        "identifiedDisplayName": "Ragnarok Festa Stone VIT (Upper)",
+        "identifiedResourceName": "영혼의조각",
         "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้ และไม่สามารถใส่ในคลังเก็บของได้!",
+            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
+            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
             "",
-            "เตาหลอมเทวะ God&#39;s Furnace ที่ถูกทำขึ้นเพื่อฉลองครบรอบ 5 ปี Ragnarok Online Classic",
-            "ป้องกันการเสียหายจากการอัพเกรดอุปกรณ์สวมใส่และอาวุธที่ได้รับจากกิจกรรมเท่านั้น",
+            "VIT + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "DEF + 100 MHP + 5%.",
             "",
-            "^ff0000(ไอเท็มชิ้นนี้จะถูกลบหลังสิ้นสุดระยะเวลากิจกรรม)",
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>",
+            "น้ำหนัก : 10"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "1002562": {
+        "unidentifiedDisplayName": "Ragnarok Festa Stone INT (Upper)",
+        "unidentifiedResourceName": "영혼의조각",
+        "unidentifiedDescriptionName": [
+            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
+            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
             "",
-            "น้ำหนัก : 0"
+            "INT + 5,",
+            "MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "MATK + 5%",
+            "",
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>"
+        ],
+        "identifiedDisplayName": "Ragnarok Festa Stone INT (Upper)",
+        "identifiedResourceName": "영혼의조각",
+        "identifiedDescriptionName": [
+            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
+            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
+            "",
+            "INT + 5,",
+            "MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "MATK + 5%",
+            "",
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>",
+            "น้ำหนัก : 10"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "1002563": {
+        "unidentifiedDisplayName": "Ragnarok Festa Stone DEX (Upper)",
+        "unidentifiedResourceName": "영혼의조각",
+        "unidentifiedDescriptionName": [
+            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
+            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
+            "",
+            "DEX + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "เพิ่ม Damage ทางกายภาพระยะไกล 5%",
+            "",
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>"
+        ],
+        "identifiedDisplayName": "Ragnarok Festa Stone DEX (Upper)",
+        "identifiedResourceName": "영혼의조각",
+        "identifiedDescriptionName": [
+            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
+            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
+            "",
+            "DEX + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "เพิ่ม Damage ทางกายภาพระยะไกล 5%",
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>",
+            "น้ำหนัก : 10"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "1002564": {
+        "unidentifiedDisplayName": "Ragnarok Festa Stone LUK (Upper)",
+        "unidentifiedResourceName": "영혼의조각",
+        "unidentifiedDescriptionName": [
+            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
+            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
+            "",
+            "LUK + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "Critical Damage + 5%",
+            "",
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>"
+        ],
+        "identifiedDisplayName": "Ragnarok Festa Stone LUK (Upper)",
+        "identifiedResourceName": "영혼의조각",
+        "identifiedDescriptionName": [
+            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
+            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
+            "",
+            "LUK + 5,",
+            "ATK, MATK + 15,",
+            "ลด Global Cooldown 5%,",
+            "Critical Damage + 5%",
+            "",
+            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>",
+            "น้ำหนัก : 10"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "1002822": {
+        "unidentifiedDisplayName": "Flower Garden (Garment)",
+        "unidentifiedResourceName": "발자국이펙트",
+        "unidentifiedDescriptionName": [
+            "มอบเอฟเฟกต์เมื่อ Enchant ช่องที่ 3 ของ Costume ประเภท Garment",
+            "^ff0000Flower Garden",
+            "^ffffff<NAVI>^4D4DFF[Lace La Zard]<INFO>mal_in01,20,107,0,100,0,0</INFO></NAVI>"
+        ],
+        "identifiedDisplayName": "Flower Garden (Garment)",
+        "identifiedResourceName": "발자국이펙트",
+        "identifiedDescriptionName": [
+            "มอบเอฟเฟกต์เมื่อ Enchant ช่องที่ 3 ของ Costume ประเภท Garment",
+            "^ff0000Flower Garden",
+            "^ffffff<NAVI>^4D4DFF[Lace La Zard]<INFO>mal_in01,20,107,0,100,0,0</INFO></NAVI>",
+            "น้ำหนัก : 10"
         ],
         "slotCount": 0,
         "ClassNum": 0,
