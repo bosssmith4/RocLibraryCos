@@ -10,17 +10,31 @@ import {
   X,
 } from "lucide-react";
 import {
+  CostumeInfo,
+  costumeInfo,
   costumePreviewUrls,
-  hasCostumeSprite,
+  FootprintInfo,
   PreviewGender,
 } from "@/data/costumePreview";
 import {
+  Bounds,
   Character,
   drawCharacter,
+  Gear,
   isHeldPose,
   loadSpriteAsset,
+  loadSpriteFiles,
   measureCharacter,
 } from "@/utils/spriteComposer";
+import {
+  createStrRenderer,
+  loadStrEffect,
+  measureStr,
+  StrEffect,
+  strDuration,
+  strFrameAt,
+  StrRenderer,
+} from "@/utils/strEffect";
 
 const CANVAS_WIDTH = 300;
 const CANVAS_HEIGHT = 340;
@@ -34,9 +48,12 @@ const GENDERS: { value: PreviewGender; label: string }[] = [
 ];
 
 /** An ACT holds 8 directions for each pose: action = pose type × 8 + direction. */
+const IDLE = 0;
+const WALK = 1;
 const POSES = [
-  { type: 0, label: "ยืน (Idle)" },
+  { type: IDLE, label: "ยืน (Idle)" },
   { type: 2, label: "นั่ง (Sit)" },
+  { type: WALK, label: "เดิน (Walk)" },
 ];
 
 /** Direction 0 faces the viewer; each step turns the character towards the viewer's left. */
@@ -55,23 +72,174 @@ const ALL_ACTIONS = POSES.flatMap((p) =>
   DIRECTIONS.map((_, d) => p.type * 8 + d),
 );
 
+/**
+ * The way each direction walks on screen (x right, y down), matching DIRECTIONS. The ground
+ * is seen from above at a slant, so a step towards or away from the viewer looks shorter.
+ */
+const HEADINGS = [
+  [0, 1],
+  [-1, 1],
+  [-1, 0],
+  [-1, -1],
+  [0, -1],
+  [1, -1],
+  [1, 0],
+  [1, 1],
+].map(([x, y]) => {
+  const length = Math.hypot(x, y);
+  return [x / length, y / length] as const;
+});
+const GROUND_SLANT = 0.7;
+
+/**
+ * Footprint values the game's table does not always give, in sprite pixels. The table's own
+ * values are taken in the same unit; what they mean is a best guess, checked against the game.
+ */
+const FOOTPRINT_DEFAULTS = { stride: 30, gap: 10, scale: 0.15, lift: 10 };
+
+interface Footprint {
+  info: FootprintInfo;
+  /** Left foot, right foot. */
+  top: [StrEffect | null, StrEffect | null];
+  bottom: [StrEffect | null, StrEffect | null];
+}
+
+interface Scene {
+  character: Character;
+  effect?: StrEffect & { behind: boolean };
+  footprint?: Footprint;
+}
+
 type LoadState =
   | { status: "loading" }
   | { status: "error" }
-  | { status: "ready"; character: Character };
+  | { status: "ready"; scene: Scene };
 
-async function loadCharacter(
+async function loadGear(
+  urls: { spr: string; act: string } | undefined,
+  sprite: CostumeInfo["sprite"],
+  gender: PreviewGender,
+): Promise<Gear | undefined> {
+  if (!urls || !sprite) return undefined;
+  const asset = await loadSpriteFiles(urls.spr, urls.act);
+  return sprite.kind === "robe"
+    ? { kind: "robe", asset, behind: sprite.behind?.[gender] ?? {} }
+    : { kind: "headgear", asset };
+}
+
+/** A Footprint made of .str files; a footprint of pictures (PNG) is not shown. */
+async function loadFootprint(
+  folder: string,
+  info: FootprintInfo | undefined,
+): Promise<Footprint | undefined> {
+  if (!info || info.Type !== "STR") return undefined;
+  const load = (file: string | null) =>
+    file ? loadStrEffect(folder, file) : Promise.resolve(null);
+  const [topLeft, topRight, bottomLeft, bottomRight] = await Promise.all([
+    load(info.StrFile_Top_Left),
+    load(info.StrFile_Top_Right),
+    load(info.StrFile_Bottom_Left),
+    load(info.StrFile_Bottom_Right),
+  ]);
+  return {
+    info,
+    top: [topLeft, topRight],
+    bottom: [bottomLeft, bottomRight],
+  };
+}
+
+async function loadScene(
   patchKey: string,
   gender: PreviewGender,
-): Promise<Character> {
-  const url = costumePreviewUrls(patchKey, gender);
-  const [body, head, gear] = await Promise.all([
+): Promise<Scene> {
+  const info = await costumeInfo(patchKey);
+  if (!info) throw new Error(`no costume entry for ${patchKey}`);
+
+  const url = costumePreviewUrls(patchKey, gender, info.sprite?.[gender]);
+  const [body, head, gear, effect, footprint] = await Promise.all([
     loadSpriteAsset(url.body),
     loadSpriteAsset(url.head, url.hair),
-    loadSpriteAsset(url.gear),
+    loadGear(url.gear, info.sprite, gender),
+    info.effect && loadStrEffect(url.effect, info.effect.file),
+    loadFootprint(url.effect, info.footprint),
   ]);
-  return { body, head, gear };
+  return {
+    character: { body, head, gear },
+    effect: effect && info.effect && { ...effect, behind: info.effect.behind },
+    footprint,
+  };
 }
+
+/**
+ * Paints the steps of a Footprint left so far while walking on the spot. A step is taken at
+ * the start and the middle of each walk cycle, left foot first; each plays its effect once
+ * and slides back the way the character came, as if the character walked on.
+ */
+function paintFootprint(
+  renderer: StrRenderer,
+  footprint: Footprint,
+  { direction, cycle, elapsed }: { direction: number; cycle: number; elapsed: number },
+  originX: number,
+  originY: number,
+  scale: number,
+) {
+  const { info, top, bottom } = footprint;
+  const stride = info.Stride ?? FOOTPRINT_DEFAULTS.stride;
+  const gap = info.Gap ?? FOOTPRINT_DEFAULTS.gap;
+  const lift = (info.Height_Top ?? 0) * FOOTPRINT_DEFAULTS.lift;
+  const step = cycle / 2;
+  const speed = stride / step;
+  const [hx, hy] = HEADINGS[direction];
+  const angle = (Math.atan2(hx, -hy * GROUND_SLANT) * 180) / Math.PI;
+  const lifetime = Math.max(
+    0,
+    ...[...top, ...bottom].map((e) => (e ? strDuration(e) : 0)),
+  );
+
+  const first = Math.max(0, Math.ceil((elapsed - lifetime) / step));
+  for (let k = first; k * step <= elapsed; k++) {
+    const age = elapsed - k * step;
+    const foot = k % 2;
+    const side = (foot === 0 ? -1 : 1) * (gap / 2);
+    // On the ground: back along the heading, and to one side of it for each foot.
+    const groundX = -hx * speed * age - hy * side;
+    const groundY = -hy * speed * age + hx * side;
+    const x = originX + groundX * scale;
+    const y = originY + groundY * GROUND_SLANT * scale;
+
+    const mark = bottom[foot];
+    if (mark && age < strDuration(mark)) {
+      renderer.paint(
+        mark,
+        strFrameAt(mark, age),
+        x,
+        y,
+        scale * (info.Scale_Bottom ?? FOOTPRINT_DEFAULTS.scale),
+        info.IsAdjustAngle ? angle : 0,
+      );
+    }
+    const rise = top[foot];
+    if (rise && age < strDuration(rise)) {
+      renderer.paint(
+        rise,
+        strFrameAt(rise, age),
+        x,
+        y - lift * scale,
+        scale * (info.Scale_Top ?? FOOTPRINT_DEFAULTS.scale),
+      );
+    }
+  }
+}
+
+const union = (a: Bounds | null, b: Bounds | null): Bounds | null =>
+  a && b
+    ? {
+        minX: Math.min(a.minX, b.minX),
+        minY: Math.min(a.minY, b.minY),
+        maxX: Math.max(a.maxX, b.maxX),
+        maxY: Math.max(a.maxY, b.maxY),
+      }
+    : (a ?? b);
 
 function PreviewCanvas({
   patchKey,
@@ -87,6 +255,9 @@ function PreviewCanvas({
   onTogglePlay: () => void;
 }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  /** WebGL canvases for effects: under the character (Footprints, effects drawn behind) and over it. */
+  const backRef = useRef<HTMLCanvasElement>(null);
+  const frontRef = useRef<HTMLCanvasElement>(null);
   /** Milliseconds into the animation, kept so a pause resumes where it stopped. */
   const pausedAt = useRef(0);
   const [state, setState] = useState<{
@@ -97,10 +268,9 @@ function PreviewCanvas({
 
   useEffect(() => {
     let cancelled = false;
-    loadCharacter(patchKey, gender)
-      .then((character) => {
-        if (!cancelled)
-          setState({ key, value: { status: "ready", character } });
+    loadScene(patchKey, gender)
+      .then((scene) => {
+        if (!cancelled) setState({ key, value: { status: "ready", scene } });
       })
       .catch(() => {
         if (!cancelled) setState({ key, value: { status: "error" } });
@@ -112,22 +282,37 @@ function PreviewCanvas({
 
   const current: LoadState =
     state.key === key ? state.value : { status: "loading" };
-  const character = current.status === "ready" ? current.character : null;
+  const scene = current.status === "ready" ? current.scene : null;
 
   useEffect(() => {
     const ctx = canvasRef.current?.getContext("2d");
-    if (!ctx || !character) return;
+    if (!ctx || !scene) return;
+    const { character, effect, footprint } = scene;
+    const back = backRef.current ? createStrRenderer(backRef.current) : null;
+    const front = frontRef.current ? createStrRenderer(frontRef.current) : null;
+    const effectRenderer = effect?.behind ? back : front;
+    const dispose = () => {
+      back?.dispose();
+      front?.dispose();
+    };
 
     // Fit everything any pose and direction paints, effects included, inside the
     // canvas, so turning or changing pose never rescales the picture.
-    const bounds = measureCharacter(character, ALL_ACTIONS);
-    const width = bounds ? bounds.maxX - bounds.minX : 1;
-    const height = bounds ? bounds.maxY - bounds.minY : 1;
-    const scale = Math.min(
-      MAX_SCALE,
-      (CANVAS_WIDTH - PADDING * 2) / width,
-      (CANVAS_HEIGHT - PADDING * 2) / height,
+    const fit = (b: Bounds | null) =>
+      Math.min(
+        MAX_SCALE,
+        (CANVAS_WIDTH - PADDING * 2) / (b ? b.maxX - b.minX : 1),
+        (CANVAS_HEIGHT - PADDING * 2) / (b ? b.maxY - b.minY : 1),
+      );
+    const characterBounds = measureCharacter(character, ALL_ACTIONS);
+    const allBounds = union(
+      characterBounds,
+      effect ? measureStr(effect) : null,
     );
+    // An effect may spread wider than the window, as it does on the game's screen; it never
+    // shrinks the character below its size in the game, and the window crops the rest.
+    const scale = Math.max(fit(allBounds), Math.min(1, fit(characterBounds)));
+    const bounds = scale > fit(allBounds) ? characterBounds : allBounds;
     const centreX = ((bounds?.minX ?? 0) + (bounds?.maxX ?? 0)) / 2;
     const centreY = ((bounds?.minY ?? 0) + (bounds?.maxY ?? 0)) / 2;
     const originX = CANVAS_WIDTH / 2 - scale * centreX;
@@ -135,6 +320,8 @@ function PreviewCanvas({
 
     const bodyAction = character.body.act.actions[action];
     const held = isHeldPose(character.body, action);
+    // Footprints are left only while walking.
+    const walking = Math.floor(action / 8) === WALK;
 
     const paint = (elapsed: number) => {
       const bodyFrame = held
@@ -148,12 +335,31 @@ function PreviewCanvas({
         originY,
         scale,
       );
+      back?.clear();
+      front?.clear();
+      if (back && footprint && walking) {
+        paintFootprint(
+          back,
+          footprint,
+          {
+            direction: action % 8,
+            cycle: bodyAction.delay * bodyAction.frames.length,
+            elapsed,
+          },
+          originX,
+          originY,
+          scale,
+        );
+      }
+      if (effectRenderer && effect) {
+        effectRenderer.paint(effect, strFrameAt(effect, elapsed), originX, originY, scale);
+      }
     };
 
     // Paused: hold the moment it stopped at.
     if (!playing) {
       paint(pausedAt.current);
-      return;
+      return dispose;
     }
 
     const start = performance.now() - pausedAt.current;
@@ -165,12 +371,23 @@ function PreviewCanvas({
       paint(pausedAt.current);
     };
     raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [character, action, playing]);
+    return () => {
+      cancelAnimationFrame(raf);
+      dispose();
+    };
+  }, [scene, action, playing]);
+
+  const lit = Boolean(scene?.effect || scene?.footprint);
+  const hasBack = Boolean(scene?.footprint || scene?.effect?.behind);
+  const hasFront = Boolean(scene?.effect && !scene.effect.behind);
 
   return (
+    // An effect or a Footprint adds light onto the scene, as in the game, so it plays on a
+    // dark stage; on a pale one it would wash out to white.
     <div
-      className="relative mx-auto"
+      className={`relative mx-auto overflow-hidden rounded-box ${
+        lit ? "bg-neutral" : "bg-base-200"
+      }`}
       style={{ width: CANVAS_WIDTH, maxWidth: "100%" }}
     >
       <canvas
@@ -179,13 +396,31 @@ function PreviewCanvas({
         height={CANVAS_HEIGHT}
         role="img"
         aria-label="ตัวอย่างการสวมใส่ไอเทมบนตัวละคร"
-        className="h-auto w-full rounded-box bg-base-200"
+        className="relative z-1 block h-auto w-full"
       />
+      {hasBack && (
+        <canvas
+          ref={backRef}
+          width={CANVAS_WIDTH}
+          height={CANVAS_HEIGHT}
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-0 h-full w-full"
+        />
+      )}
+      {hasFront && (
+        <canvas
+          ref={frontRef}
+          width={CANVAS_WIDTH}
+          height={CANVAS_HEIGHT}
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 z-2 h-full w-full"
+        />
+      )}
       <button
         type="button"
         onClick={onTogglePlay}
         aria-label={playing ? "หยุดเล่นภาพเคลื่อนไหว" : "เล่นภาพเคลื่อนไหว"}
-        className="btn btn-circle btn-sm absolute right-2 bottom-2 min-h-11 min-w-11"
+        className="btn btn-circle btn-sm absolute z-3 right-2 bottom-2 min-h-11 min-w-11"
       >
         {playing ? (
           <Pause aria-hidden="true" className="h-4 w-4" />
@@ -194,7 +429,7 @@ function PreviewCanvas({
         )}
       </button>
       {current.status === "loading" && (
-        <div className="absolute inset-0 flex items-center justify-center">
+        <div className="absolute inset-0 z-3 flex items-center justify-center">
           <Loader2
             aria-label="กำลังโหลด"
             className="h-6 w-6 animate-spin text-base-content/60"
@@ -204,7 +439,7 @@ function PreviewCanvas({
       {current.status === "error" && (
         <p
           role="alert"
-          className="absolute inset-0 flex items-center justify-center p-4 text-center text-sm text-error"
+          className="absolute inset-0 z-3 flex items-center justify-center p-4 text-center text-sm text-error"
         >
           โหลดภาพตัวอย่างไม่สำเร็จ
         </p>
@@ -213,22 +448,24 @@ function PreviewCanvas({
   );
 }
 
-/** True when this costume item has headgear sprite files to preview. */
-export function useCostumeSprite(patchKey: string, costume: boolean) {
-  const [available, setAvailable] = useState(false);
+/**
+ * What the converter found for this item (a headgear, robe, effect or Footprint), costume or
+ * not, so an effect item or an ordinary headgear can be previewed too; null when nothing.
+ */
+export function useCostumeSprite(patchKey: string) {
+  const [found, setFound] = useState<{ key: string; info: CostumeInfo | null }>();
 
   useEffect(() => {
-    if (!costume) return;
     let cancelled = false;
-    hasCostumeSprite(patchKey).then((ok) => {
-      if (!cancelled) setAvailable(ok);
+    costumeInfo(patchKey).then((info) => {
+      if (!cancelled) setFound({ key: patchKey, info });
     });
     return () => {
       cancelled = true;
     };
-  }, [patchKey, costume]);
+  }, [patchKey]);
 
-  return costume && available;
+  return found?.key === patchKey ? found.info : null;
 }
 
 export function CostumePreviewButton({ onOpen }: { onOpen: () => void }) {
@@ -250,16 +487,19 @@ export function CostumePreviewButton({ onOpen }: { onOpen: () => void }) {
 export function CostumePreviewModal({
   patchKey,
   name,
+  startWalking = false,
   onClose,
 }: {
   patchKey: string;
   name: string;
+  startWalking?: boolean;
   onClose: () => void;
 }) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [gender, setGender] = useState<PreviewGender>("male");
   const [direction, setDirection] = useState(0);
-  const [poseType, setPoseType] = useState(POSES[0].type);
+  // A Footprint shows only while walking, so its item opens walking.
+  const [poseType, setPoseType] = useState(startWalking ? WALK : IDLE);
   const [playing, setPlaying] = useState(true);
   const titleId = `costume-preview-title-${patchKey}`;
 

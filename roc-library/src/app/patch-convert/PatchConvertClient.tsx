@@ -85,7 +85,8 @@ function ExportableItem({
   const [exporting, setExporting] = useState(false);
   const [inlined, setInlined] = useState<Record<string, string>>({});
   const [previewOpen, setPreviewOpen] = useState(false);
-  const canPreview = useCostumeSprite(patchKey, item.costume);
+  const preview = useCostumeSprite(patchKey);
+  const canPreview = preview !== null;
   const exportRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -220,6 +221,7 @@ function ExportableItem({
         <CostumePreviewModal
           patchKey={patchKey}
           name={item.identifiedDisplayName}
+          startWalking={Boolean(preview?.footprint)}
           onClose={() => setPreviewOpen(false)}
         />
       )}

@@ -49,3 +49,37 @@ export interface ActAction {
 export interface ActData {
   actions: ActAction[]
 }
+
+/** One keyframe of an STR effect layer. A type 1 key holds the change per frame from the type 0 key before it. */
+export interface StrKey {
+  frame: number
+  type: number
+  /** Centre of the picture on the 640×480 effect screen. */
+  offset: [number, number]
+  /** u, v of the top-left corner, then of the bottom-right one. */
+  uv: [number, number, number, number]
+  /** x of the four corners (top-left, top-right, bottom-right, bottom-left), then their y. */
+  xy: number[]
+  aniframe: number
+  anitype: number
+  delay: number
+  /** 1024 units make a full turn. */
+  angle: number
+  /** r, g, b, a (0-255). */
+  color: [number, number, number, number]
+  /** Direct3D blend factors. */
+  srcBlend: number
+  destBlend: number
+}
+
+export interface StrLayer {
+  textures: string[]
+  keys: StrKey[]
+}
+
+export interface StrData {
+  fps: number
+  /** How many frames one loop of the effect lasts. */
+  frameCount: number
+  layers: StrLayer[]
+}

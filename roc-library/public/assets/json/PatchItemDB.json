@@ -1,497 +1,1074 @@
 {
-    "23320": {
-        "unidentifiedDisplayName": "Melon Juice",
-        "unidentifiedResourceName": "멜론쥬스",
+    "20113": {
+        "unidentifiedDisplayName": "Costume Stargazer's Hat",
+        "unidentifiedResourceName": "점성술사의모자",
         "unidentifiedDescriptionName": [
-            "เครื่องดื่มที่ทำจากเนื้อเมล่อนสด ๆ ให้รสชาติหวานละมุนเวลาทาน",
-            "เมื่อทานแล้วจะรู้สึกสดชื่นขึ้นมาเหมือนได้รับการฟื้นฟูร่างกาย",
-            "ช่วยฟื้นฟู HP, SP 10%, เพิ่ม HIT 30 เป็นเวลา 3 นาที",
-            "(ไอเทมนี้จะถูกลบออกวันที่ 13 มกราคม 2570 05.59 น.))",
-            "น้ำหนัก : 5"
+            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
+            "หมวกที่เล่าขานกันว่าเป็นหมวกคู่ใจของเหล่ากะลาสี",
+            "โดดเด่นด้วยเครื่องประดับรูปเข็มทิศซึ่งได้รับแรงบันดาลใจจากดาวเหนือ ดาวนำทางของนักเดินเรือ",
+            "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อมอนสเตอร์ทุกขนาด 15%,",
+            "เพิ่มค่าประสบการณ์ที่ได้รับเมื่อกำจัดมอนสเตอร์ 15%, เพิ่มอัตราดรอปไอเทม 15%,",
+            "สามารถใช้งานสกิล Overcharge Lv.10 ได้,",
+            "เพิ่มอัตราฟื้นฟูของ Delicious Fish 1000%",
+            "",
+            "หากมีการเรียนรู้สกิล Overcharge Lv.10 อยู่แล้ว, ทุก ๆ การเรียนรู้ 1 เลเวล ATK/MATK + 5",
+            "",
+            "(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)"
         ],
-        "identifiedDisplayName": "Melon Juice",
-        "identifiedResourceName": "멜론쥬스",
+        "identifiedDisplayName": "Costume Stargazer's Hat",
+        "identifiedResourceName": "점성술사의모자",
         "identifiedDescriptionName": [
-            "เครื่องดื่มที่ทำจากเนื้อเมล่อนสด ๆ ให้รสชาติหวานละมุนเวลาทาน",
-            "เมื่อทานแล้วจะรู้สึกสดชื่นขึ้นมาเหมือนได้รับการฟื้นฟูร่างกาย",
-            "ช่วยฟื้นฟู HP, SP 10%",
-            "(ไอเทมนี้จะถูกลบออกวันที่ 13 มกราคม 2570 05.59 น.)",
-            "น้ำหนัก : 5"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0
-    },
-    "31422": {
-        "unidentifiedDisplayName": "Gum",
-        "unidentifiedResourceName": "풍선껌",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
-        ],
-        "identifiedDisplayName": "Costume Angeling Bubble",
-        "identifiedResourceName": "엔젤링풍선",
-        "identifiedDescriptionName": [
-            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
-            "ปีกใหญ่ ๆ ของ Angeling ที่ช่วยให้สามารถบินขึ้นสูงและไกลขึ้นได้",
+            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
+            "หมวกที่เล่าขานกันว่าเป็นหมวกคู่ใจของเหล่ากะลาสี",
+            "โดดเด่นด้วยเครื่องประดับรูปเข็มทิศซึ่งได้รับแรงบันดาลใจจากดาวเหนือ ดาวนำทางของนักเดินเรือ",
+            "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อมอนสเตอร์ทุกขนาด 15%,",
+            "เพิ่มค่าประสบการณ์ที่ได้รับเมื่อกำจัดมอนสเตอร์ 15%, เพิ่มอัตราดรอปไอเทม 15%,",
+            "สามารถใช้งานสกิล Overcharge Lv.10 ได้,",
+            "เพิ่มอัตราฟื้นฟูของ Delicious Fish 1000%",
+            "",
+            "หากมีการเรียนรู้สกิล Overcharge Lv.10 อยู่แล้ว, ทุก ๆ การเรียนรู้ 1 เลเวล ATK/MATK + 5",
+            "",
+            "(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
             "ประเภท : Costume พลังป้องกัน : 0",
-            "ตำแหน่ง : Lower น้ำหนัก : 0",
+            "ตำแหน่ง : Upper น้ำหนัก : 0",
             "เลเวลที่ต้องการ : 1",
             "อาชีพที่ใส่ได้ : ทุกอาชีพ"
         ],
         "slotCount": 0,
-        "ClassNum": 976,
+        "ClassNum": 1253,
         "costume": true
     },
-    "102133": {
-        "unidentifiedDisplayName": "Razer Energy Drink",
-        "unidentifiedResourceName": "레지스트_지",
+    "24675": {
+        "unidentifiedDisplayName": "Shadow Armor",
+        "unidentifiedResourceName": "아머쉐도우",
         "unidentifiedDescriptionName": [
             "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
         ],
-        "identifiedDisplayName": "Razer Energy Drink",
-        "identifiedResourceName": "레지스트_지",
+        "identifiedDisplayName": "True Gemstone Shadow Armor",
+        "identifiedResourceName": "아머쉐도우3",
         "identifiedDescriptionName": [
-            "สารสีเขียวที่เพิ่มความคล่องตัวในการเคลื่อนที่ชั่วขณะ ",
-            "ความเร็วในการเคลื่อนเพิ่มขึ้น 5 วินาที",
-            "ระยะเวลาหลังใช้ 30 วินาที",
+            "ชุดเกราะที่เพิ่มพลังป้องกันเมื่อสวมใส่เพิ่มบนเกราะอีกที สามารถใส่แบบชิ้นเดียวได้ แต่พลังป้องกันจะต่ำ",
+            "MATK + 3%",
+            "ทุก ๆ การอัพเกรด 2 ขั้น, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 1%",
+            "เมื่ออัพเกรดถึงขั้น 10, ลดระยะเวลาร่ายแบบแปรผัน 3%",
+            "เมื่อสวมใส่ร่วมกับ True Gemstone Shadow Shoes, MATK + 2%,",
+            "เมื่อค่าอัพเกรดรวมกันตั้งแต่ 18 ขึ้นไป, จะไม่สูญเสีย Gemstone เมื่อใช้สกิล แต่เพิ่มปริมาณการใช้ SP 40%,,",
+            "เมื่อค่าอัพเกรดรวมกันตั้งแต่ 20 ขึ้นไป, เพิ่ม Damage ทางเวทมนตร์ต่อศัตรูทุกขนาด 12%",
+            "ประเภท : Shadow Equipment ",
+            "ตำแหน่ง : Armor",
+            "น้ำหนัก : 0",
+            "เลเวลที่ต้องการ : 1",
+            "อาชีพที่ใสได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": true
+    },
+    "24676": {
+        "unidentifiedDisplayName": "Shadow Shoes",
+        "unidentifiedResourceName": "슈즈쉐도우",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "True Gemstone Shadow Shoes",
+        "identifiedResourceName": "슈즈쉐도우3",
+        "identifiedDescriptionName": [
+            "รองเท้าที่สามารถสวมใส่เข้าไปในรองเท้าอีกที สามารถใส่แบบชิ้นเดียวได้ แต่ประสิทธิภาพจะต่ำ",
+            "MATK + 3%",
+            "ทุก ๆ การอัพเกรด 2 ขั้น, เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 1%",
+            "เมื่ออัพเกรดถึงขั้น 10, ลดระยะเวลาร่ายแบบแปรผัน 3%",
+            "ประเภท : Shadow Equipment",
+            "ตำแหน่ง : Shoes น้ำหนัก : 0",
+            "เลเวลที่ต้องการ : 1",
+            "อาชีพที่ใสได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": true
+    },
+    "107016": {
+        "unidentifiedDisplayName": "Blessed Angel Scroll",
+        "unidentifiedResourceName": "Angelgolt_Egg",
+        "unidentifiedDescriptionName": [
+            "ม้วนคัมภีร์ศักดิ์สิทธิ์ที่ถูกผนึกด้วยพลังแห่งเทวทูตชั้นสูง",
+            "ตัวอักษรโบราณสลักด้วยแสงสีทองจะปรากฏขึ้นเมื่อผู้ถือครองมีจิตบริสุทธิ์เท่านั้น"
+        ],
+        "identifiedDisplayName": "Blessed Angel Scroll",
+        "identifiedResourceName": "Angelgolt_Egg",
+        "identifiedDescriptionName": [
+            "ม้วนคัมภีร์ศักดิ์สิทธิ์ที่ถูกผนึกด้วยพลังแห่งเทวทูตชั้นสูง",
+            "ตัวอักษรโบราณสลักด้วยแสงสีทองจะปรากฏขึ้นเมื่อผู้ถือครองมีจิตบริสุทธิ์เท่านั้น",
+            "^ff0000หากเปิดใช้งานหลังวันที่ 25 พฤศจิกายน 2569 หลังปิดปรับปรุงประจำสัปดาห์ จะไม่ได้รับ 5th Anniversary Coin ",
             "น้ำหนัก : 1"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "107314": {
-        "unidentifiedDisplayName": "Festa Stone Random Box",
-        "unidentifiedResourceName": "SSVIP_GIFT",
+    "107316": {
+        "unidentifiedDisplayName": "Baby Shark Bag Selection Box",
+        "unidentifiedResourceName": "찰랑스크롤",
         "unidentifiedDescriptionName": [
-            "กล่องที่เปิดออกจะมีโอกาสได้รับ Ragnarok Festa Stone ชนิดต่าง ๆ",
-            "เมื่อเปิดออกจะมีโอกาสได้รับหนึ่งในไอเทมดังต่อไปนี้",
-            "",
-            "Ragnarok Festa Stone STR (Upper)",
-            "Ragnarok Festa Stone AGI (Upper)",
-            "Ragnarok Festa Stone VIT (Upper)",
-            "Ragnarok Festa Stone INT (Upper)",
-            "Ragnarok Festa Stone DEX (Upper)",
-            "Ragnarok Festa Stone LUK (Upper)"
+            "Costume Pinkfong Baby Shark Collaboration Selection Box",
+            "สามารถเลือกรับ Baby Shark Bag ได้ 1 ชิ้น",
+            " ",
+            "[ไอเท็มที่สามารถเลือกได้]",
+            "Costume Baby Shark Bag",
+            "Costume Mommy Shark Bag",
+            "Costume Daddy Shark Bag",
+            "Costume Grandma Shark Bag",
+            "Costume Grandpa Shark Bag"
         ],
-        "identifiedDisplayName": "Festa Stone Random Box",
-        "identifiedResourceName": "SSVIP_GIFT",
+        "identifiedDisplayName": "Baby Shark Bag Selection Box",
+        "identifiedResourceName": "찰랑스크롤",
         "identifiedDescriptionName": [
-            "กล่องที่เปิดออกจะมีโอกาสได้รับ Ragnarok Festa Stone ชนิดต่าง ๆ",
-            "เมื่อเปิดออกจะมีโอกาสได้รับหนึ่งในไอเทมดังต่อไปนี้",
-            "",
-            "Ragnarok Festa Stone STR (Upper)",
-            "Ragnarok Festa Stone AGI (Upper)",
-            "Ragnarok Festa Stone VIT (Upper)",
-            "Ragnarok Festa Stone INT (Upper)",
-            "Ragnarok Festa Stone DEX (Upper)",
-            "Ragnarok Festa Stone LUK (Upper)",
+            "Costume Pinkfong Baby Shark Collaboration Selection Box",
+            "สามารถเลือกรับ Baby Shark Bag ได้ 1 ชิ้น",
+            " ",
+            "[ไอเท็มที่สามารถเลือกได้]",
+            "Costume Baby Shark Bag",
+            "Costume Mommy Shark Bag",
+            "Costume Daddy Shark Bag",
+            "Costume Grandma Shark Bag",
+            "Costume Grandpa Shark Bag",
             "น้ำหนัก : 0"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "108257": {
-        "unidentifiedDisplayName": "Ragnarok Festa 2026 Scroll",
-        "unidentifiedResourceName": "Festa_26_Scroll_TH_ROC",
+    "107317": {
+        "unidentifiedDisplayName": "Baby Shark Hood Selection Box",
+        "unidentifiedResourceName": "찰랑스크롤",
         "unidentifiedDescriptionName": [
-            "Scroll สุดพิเศษจากงาน Ragnarok Festa 2026",
-            "ภายในรวบรวม ไอเทมสุดพิเศษและของรางวัลหลากหลายรายการ ให้นักผจญภัยได้ร่วมลุ้น!"
+            "Costume Pinkfong Baby Shark Collaboration Selection Box",
+            "สามารถเลือกรับ Baby Shark Hood ได้ 1 ชิ้น",
+            " ",
+            "[ไอเท็มที่สามารถเลือกได้]",
+            "Costume Baby Shark Hood",
+            "Costume Mommy Shark Hood",
+            "Costume Daddy Shark Hood",
+            "Costume Grandma Shark Hood",
+            "Costume Grandpa Shark Hood"
         ],
-        "identifiedDisplayName": "Ragnarok Festa 2026 Scroll",
-        "identifiedResourceName": "Festa_26_Scroll_TH_ROC",
+        "identifiedDisplayName": "Baby Shark Hood Selection Box",
+        "identifiedResourceName": "찰랑스크롤",
         "identifiedDescriptionName": [
-            "Scroll สุดพิเศษจากงาน Ragnarok Festa 2026",
-            "ภายในรวบรวม ไอเทมสุดพิเศษและของรางวัลหลากหลายรายการ ให้นักผจญภัยได้ร่วมลุ้น!",
-            "น้ำหนัก : 1"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "108384": {
-        "unidentifiedDisplayName": "CuteBoy Special Box II",
-        "unidentifiedResourceName": "CuteBoy_Box",
-        "unidentifiedDescriptionName": [
-            "กล่องสุดพิเศษจาก Collaboration Ragnarok x CuteBoy",
-            "เมื่อเปิดออกจะสามารถลุ้นได้รับไอเทมสุดพิเศษจากภายในกล่อง"
-        ],
-        "identifiedDisplayName": "CuteBoy Special Box II",
-        "identifiedResourceName": "CuteBoy_Box",
-        "identifiedDescriptionName": [
-            "กล่องสุดพิเศษจาก Collaboration Ragnarok x CuteBoy",
-            "เมื่อเปิดออกจะสามารถลุ้นได้รับไอเทมสุดพิเศษจากภายในกล่อง",
+            "Costume Pinkfong Baby Shark Collaboration Selection Box",
+            "สามารถเลือกรับ Baby Shark Hood ได้ 1 ชิ้น",
+            " ",
+            "[ไอเท็มที่สามารถเลือกได้]",
+            "Costume Baby Shark Hood",
+            "Costume Mommy Shark Hood",
+            "Costume Daddy Shark Hood",
+            "Costume Grandma Shark Hood",
+            "Costume Grandpa Shark Hood",
             "น้ำหนัก : 0"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "108517": {
-        "unidentifiedDisplayName": "RO Festa Footprint Box",
-        "unidentifiedResourceName": "Re_Costama_Box_2023_1",
+    "107318": {
+        "unidentifiedDisplayName": "Baby Shark Doll Selection Box",
+        "unidentifiedResourceName": "찰랑스크롤",
         "unidentifiedDescriptionName": [
-            "กล่องพิเศษที่จัดทำขึ้นเพื่อเฉลิมฉลองงาน Ragnarok Festa 2026.",
-            "เมื่อเปิดกล่อง สามารถเลือกได้รับไอเทมเอฟเฟกต์รอยเท้า (Garment) ได้ 1 รายการจากรายการด้านล่าง",
-            "",
-            "[รายการไอเทมที่สามารถเลือกได้]",
-            "Blue Butterfly Footprint (Garment)",
-            "Flower Garden (Garment)"
+            "Costume Pinkfong Baby Shark Collaboration Selection Box",
+            "สามารถเลือกรับระหว่าง Pilot Fish, Baby Shark Minimi ได้ 1 ชิ้น",
+            " ",
+            "[ไอเท็มที่สามารถเลือกได้]",
+            "Costume Pilot Fish",
+            "Costume Baby Shark Minimi"
         ],
-        "identifiedDisplayName": "RO Festa Footprint Box",
-        "identifiedResourceName": "Re_Costama_Box_2023_1",
+        "identifiedDisplayName": "Baby Shark Doll Selection Box",
+        "identifiedResourceName": "찰랑스크롤",
         "identifiedDescriptionName": [
-            "กล่องพิเศษที่จัดทำขึ้นเพื่อเฉลิมฉลองงาน Ragnarok Festa 2026.",
-            "เมื่อเปิดกล่อง สามารถเลือกได้รับไอเทมเอฟเฟกต์รอยเท้า (Garment) ได้ 1 รายการจากรายการด้านล่าง",
-            "",
-            "[รายการไอเทมที่สามารถเลือกได้]",
-            "Blue Butterfly Footprint (Garment)",
-            "Flower Garden (Garment)",
+            "Costume Pinkfong Baby Shark Collaboration Selection Box",
+            "สามารถเลือกรับระหว่าง Pilot Fish, Baby Shark Minimi ได้ 1 ชิ้น",
+            " ",
+            "[ไอเท็มที่สามารถเลือกได้]",
+            "Costume Pilot Fish",
+            "Costume Baby Shark Minimi",
+            "น้ำหนัก : 0"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "107707": {
+        "unidentifiedDisplayName": "Sixth Sense Scroll",
+        "unidentifiedResourceName": "Mm_Morocc_Adt_Egg",
+        "unidentifiedDescriptionName": [
+            "เปิดสัมผัสแห่งโชคชะตา ลุ้นรับไอเทมหายากระดับแรร์ เปี่ยมด้วยเสน่ห์อันลึกลับ ราวกับพลังแห่งสัมผัสที่หก",
+            "^ff0000หากเปิดใช้งานหลังวันที่ 25 พฤศจิกายน 2569 หลังปิดปรับปรุงประจำสัปดาห์ จะไม่ได้รับ 5th Anniversary Coin "
+        ],
+        "identifiedDisplayName": "Sixth Sense Scroll",
+        "identifiedResourceName": "Mm_Morocc_Adt_Egg",
+        "identifiedDescriptionName": [
+            "เปิดสัมผัสแห่งโชคชะตา ลุ้นรับไอเทมหายากระดับแรร์ เปี่ยมด้วยเสน่ห์อันลึกลับ ราวกับพลังแห่งสัมผัสที่หก",
+            "^ff0000หากเปิดใช้งานหลังวันที่ 25 พฤศจิกายน 2569 หลังปิดปรับปรุงประจำสัปดาห์ จะไม่ได้รับ 5th Anniversary Coin ",
             "น้ำหนัก : 1"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "108518": {
-        "unidentifiedDisplayName": "RO Festa Effect Box",
-        "unidentifiedResourceName": "Re_Costama_Box_2023_3",
+    "107843": {
+        "unidentifiedDisplayName": "Record of Ryujin Scroll",
+        "unidentifiedResourceName": "찰랑스크롤",
         "unidentifiedDescriptionName": [
-            "กล่องพิเศษที่จัดทำขึ้นเพื่อเฉลิมฉลองงาน Ragnarok Festa 2026.",
-            "เมื่อเปิดกล่อง สามารถเลือกได้รับเอฟเฟกต์สวมใส่ส่วนบน (Upper) ได้ 1 รายการจากรายการด้านล่าง",
-            "",
-            "[รายการไอเทมที่สามารถเลือกได้]",
-            "Magic Feather Effect (Upper)",
-            "Firework Effect (Upper)"
+            "บันทึกโบราณที่จารึกเรื่องราวของริวจิน เทพมังกรแห่งท้องทะเล ภายในแฝงไว้ด้วยพลังลึกลับที่รอผู้คู่ควรมาปลดผนึก",
+            "ว่ากันว่ามันเป็นกุญแจสู่พลังอันยิ่งใหญ่ของมังกรศักดิ์สิทธิ์"
         ],
-        "identifiedDisplayName": "RO Festa Effect Box",
-        "identifiedResourceName": "Re_Costama_Box_2023_3",
+        "identifiedDisplayName": "Record of Ryujin Scroll",
+        "identifiedResourceName": "찰랑스크롤",
         "identifiedDescriptionName": [
-            "กล่องพิเศษที่จัดทำขึ้นเพื่อเฉลิมฉลองงาน Ragnarok Festa 2026.",
-            "เมื่อเปิดกล่อง สามารถเลือกได้รับเอฟเฟกต์สวมใส่ส่วนบน (Upper) ได้ 1 รายการจากรายการด้านล่าง",
-            "",
-            "[รายการไอเทมที่สามารถเลือกได้]",
-            "Magic Feather Effect (Upper)",
-            "Firework Effect (Upper)",
+            "บันทึกโบราณที่จารึกเรื่องราวของริวจิน เทพมังกรแห่งท้องทะเล ภายในแฝงไว้ด้วยพลังลึกลับที่รอผู้คู่ควรมาปลดผนึก",
+            "ว่ากันว่ามันเป็นกุญแจสู่พลังอันยิ่งใหญ่ของมังกรศักดิ์สิทธิ์",
+            "^ff0000หากเปิดใช้งานหลังวันที่ 25 พฤศจิกายน 2569 หลังปิดปรับปรุงประจำสัปดาห์ จะไม่ได้รับ 5th Anniversary Coin ",
             "น้ำหนัก : 1"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "310850": {
-        "unidentifiedDisplayName": "Firework Effect",
-        "unidentifiedResourceName": "블루크리스탈조각",
+    "108559": {
+        "unidentifiedDisplayName": "Scorpio Scroll",
+        "unidentifiedResourceName": "전갈자리스크롤",
         "unidentifiedDescriptionName": [
-            "Firework Effect"
+            "คัมภีร์ลึกลับที่บันทึกพลังของกลุ่มดาว Scorpio ผู้พิทักษ์แห่งความลึกลับ ว่ากันว่าผู้ที่สามารถครอบครองมันได้ จะได้รับพรจากดวงดาวและเข้าใกล้โชคชะตาที่ถูกซ่อนเอาไว้",
+            "(หากเปิดใช้งานหลังวันที่ 25 พฤศจิกายน 2569 (หลังปิดปรับปรุงประจำสัปดาห์) จะไม่ได้รับ Scorpio Coin)"
         ],
-        "identifiedDisplayName": "Firework Effect",
-        "identifiedResourceName": "블루크리스탈조각",
+        "identifiedDisplayName": "Scorpio Scroll",
+        "identifiedResourceName": "전갈자리스크롤",
         "identifiedDescriptionName": [
-            "Firework Effect"
+            "คัมภีร์ลึกลับที่บันทึกพลังของกลุ่มดาว Scorpio ผู้พิทักษ์แห่งความลึกลับ ว่ากันว่าผู้ที่สามารถครอบครองมันได้ จะได้รับพรจากดวงดาวและเข้าใกล้โชคชะตาที่ถูกซ่อนเอาไว้",
+            "(หากเปิดใช้งานหลังวันที่ 25 พฤศจิกายน 2569 (หลังปิดปรับปรุงประจำสัปดาห์) จะไม่ได้รับ Scorpio Coin)",
+            "",
+            "น้ำหนัก : 1"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "313955": {
-        "unidentifiedDisplayName": "Blue Butterfly Footprint",
-        "unidentifiedResourceName": "발자국이펙트",
+    "200968": {
+        "unidentifiedDisplayName": "Baby Shark Hood Costume Package",
+        "unidentifiedResourceName": "NewServer_Package",
         "unidentifiedDescriptionName": [
-            "Blue Butterfly Footprint"
+            "แพ็คเกจที่มี Costume Baby Shark Hood",
+            "ภายในประกอบไปด้วย God Furnace 5 ชิ้น และ God Hammer 5 ชิ้น"
         ],
-        "identifiedDisplayName": "Blue Butterfly Footprint",
-        "identifiedResourceName": "발자국이펙트",
+        "identifiedDisplayName": "Baby Shark Hood Costume Package",
+        "identifiedResourceName": "NewServer_Package",
         "identifiedDescriptionName": [
-            "Blue Butterfly Footprint"
+            "แพ็คเกจที่มี Costume Baby Shark Hood",
+            "ภายในประกอบไปด้วย God Furnace 5 ชิ้น และ God Hammer 5 ชิ้น",
+            "น้ำหนัก : 0"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "314094": {
-        "unidentifiedDisplayName": "Blue Spirit Effect",
-        "unidentifiedResourceName": "ROS_BlueSpirit_Effect",
+    "200969": {
+        "unidentifiedDisplayName": "Baby Shark Bag Costume Package",
+        "unidentifiedResourceName": "NewServer_Package",
         "unidentifiedDescriptionName": [
-            "Blue Spirit Effect"
+            "แพ็คเกจที่มี Costume Baby Shark Bag",
+            "ภายในประกอบไปด้วย [NFS] Enriched Elunium 1 ชิ้น , [NFS] Enriched Oridecon 1 ชิ้น"
         ],
-        "identifiedDisplayName": "Blue Spirit Effect",
-        "identifiedResourceName": "ROS_BlueSpirit_Effect",
+        "identifiedDisplayName": "Baby Shark Bag Costume Package",
+        "identifiedResourceName": "NewServer_Package",
         "identifiedDescriptionName": [
-            "Blue Spirit Effect"
+            "แพ็คเกจที่มี Costume Baby Shark Bag",
+            "ภายในประกอบไปด้วย [NFS] Enriched Elunium 1 ชิ้น , [NFS] Enriched Oridecon 1 ชิ้น",
+            "น้ำหนัก : 0"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "314795": {
-        "unidentifiedDisplayName": "Ragnarok Festa VIT (Upper)",
-        "unidentifiedResourceName": "Dragenergy_Purple",
+    "200970": {
+        "unidentifiedDisplayName": "Baby Shark Doll Package",
+        "unidentifiedResourceName": "NewServer_Package",
         "unidentifiedDescriptionName": [
-            "VIT + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "DEF + 100, MHp + 5%"
+            "แพ็คเกจที่มี Costume Baby Shark Minimi และ Costume Pilot Fish",
+            "ภายในประกอบไปด้วย [NFS] Enriched Elunium 1 ชิ้น , [NFS] Enriched Oridecon 1 ชิ้น"
         ],
-        "identifiedDisplayName": "Ragnarok Festa VIT (Upper)",
-        "identifiedResourceName": "Dragenergy_Purple",
+        "identifiedDisplayName": "Baby Shark Doll Package",
+        "identifiedResourceName": "NewServer_Package",
         "identifiedDescriptionName": [
-            "VIT + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "DEF + 100, MHp + 5%"
+            "แพ็คเกจที่มี Costume Baby Shark Minimi และ Costume Pilot Fish",
+            "ภายในประกอบไปด้วย [NFS] Enriched Elunium 1 ชิ้น , [NFS] Enriched Oridecon 1 ชิ้น",
+            "น้ำหนัก : 0"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "314797": {
-        "unidentifiedDisplayName": "Ragnarok Festa STR (Upper)",
-        "unidentifiedResourceName": "Dragenergy_Red",
+    "200971": {
+        "unidentifiedDisplayName": "Baby Shark Bag Package",
+        "unidentifiedResourceName": "NewServer_Package",
         "unidentifiedDescriptionName": [
-            "STR + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "เพิ่ม Damage ทางภายระยะใกล้ 5%"
+            "แพ็คเกจที่มี Baby Shark Bag"
         ],
-        "identifiedDisplayName": "Ragnarok Festa STR (Upper)",
-        "identifiedResourceName": "Dragenergy_Red",
+        "identifiedDisplayName": "Baby Shark Bag Package",
+        "identifiedResourceName": "NewServer_Package",
         "identifiedDescriptionName": [
-            "STR + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "เพิ่ม Damage ทางภายระยะใกล้ 5%"
+            "แพ็คเกจที่มี Baby Shark Bag",
+            "น้ำหนัก : 0"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "314798": {
-        "unidentifiedDisplayName": "Ragnarok Festa AGI (Upper)",
-        "unidentifiedResourceName": "Dragenergy_Gold",
+    "300834": {
+        "unidentifiedDisplayName": "Baby Shark Card",
+        "unidentifiedResourceName": "이름없는카드",
         "unidentifiedDescriptionName": [
-            "AGI + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "Perferct Dodge +5, ASPD + 5%."
+            "ทุก ๆ Base Lv.10 ATK + 10, DEF + 3, MDEF + 1",
+            "(สูงสุดถึง Base Lv.200)",
+            "^CC3D3D[ความสามารถช่วงเวลากิจกรรม].",
+            "เพิ่มค่าประสบการณ์ที่ได้รับเมื่อกำจัดมอนสเตอร์ประเภท Fish , Brute 15%,",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)"
         ],
-        "identifiedDisplayName": "Ragnarok Festa AGI (Upper)",
-        "identifiedResourceName": "Dragenergy_Gold",
+        "identifiedDisplayName": "Baby Shark Card",
+        "identifiedResourceName": "이름없는카드",
         "identifiedDescriptionName": [
-            "AGI + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "Perferct Dodge +5, ASPD + 5%."
+            "ทุก ๆ Base Lv.10 ATK + 10, DEF + 3, MDEF + 1",
+            "(สูงสุดถึง Base Lv.200)",
+            "^CC3D3D[ความสามารถช่วงเวลากิจกรรม].",
+            "เพิ่มค่าประสบการณ์ที่ได้รับเมื่อกำจัดมอนสเตอร์ประเภท Fish , Brute 15%,",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
+            "ประเภท : Card",
+            "ใช้กับ : Garment",
+            "น้ำหนัก : 1"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": false,
+        "EffectID": 1186
+    },
+    "300835": {
+        "unidentifiedDisplayName": "Shark Family Card",
+        "unidentifiedResourceName": "이름없는카드",
+        "unidentifiedDescriptionName": [
+            "ทุก ๆ Base Lv.10 MATK + 10, DEF + 3, MDEF + 1",
+            "(สูงสุดถึง Base Lv.200)",
+            "^CC3D3D[ความสามารถช่วงเวลากิจกรรม].",
+            "เพิ่มค่าประสบการณ์ที่ได้รับเมื่อกำจัดมอนสเตอร์ประเภท Fish , Brute 15%,",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)"
+        ],
+        "identifiedDisplayName": "Shark Family Card",
+        "identifiedResourceName": "이름없는카드",
+        "identifiedDescriptionName": [
+            "ทุก ๆ Base Lv.10 MATK + 10, DEF + 3, MDEF + 1",
+            "(สูงสุดถึง Base Lv.200)",
+            "^CC3D3D[ความสามารถช่วงเวลากิจกรรม].",
+            "เพิ่มค่าประสบการณ์ที่ได้รับเมื่อกำจัดมอนสเตอร์ประเภท Fish , Brute 15%,",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
+            "ประเภท : Card",
+            "ใช้กับ : Garment",
+            "น้ำหนัก : 1"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": false,
+        "EffectID": 1186
+    },
+    "315942": {
+        "unidentifiedDisplayName": "Scorpio Gem",
+        "unidentifiedResourceName": "Scorpio_Card_JP",
+        "unidentifiedDescriptionName": [
+            "อัญมณี Opal ที่เจียระไนเป็นสัญลักษณ์แห่งราศี Scorpio เชื่อกันว่าผู้ครอบครองจะได้รับพลังแห่งความมุ่งมั่นและความลึกลับของแมงป่อง",
+            "",
+            "LUK + 2",
+            "Flee + 30",
+            "",
+            "เมื่อสวมใส่ร่วมกับ Scorpio Diadem [1] หรือ [NFS] Scorpio Diadem [1],",
+            "ทุก ๆ การอัพเกรด Headgear 1 ขั้น,Flee + 10, เพิ่ม Damage สกิล Sonic Bow 10%",
+            "เมื่อใช้งานสกิล Cross Slash จะใช้งานสกิล Sonic Blow Lv.1 โดยอัติโนมัติ (เมื่อเรียนสกิลในเลเวลที่สูงกว่า จะร่ายในเลเวลสูงสุด),",
+            "ลด Damage ที่ได้รับจาก Player 20%"
+        ],
+        "identifiedDisplayName": "Scorpio Gem",
+        "identifiedResourceName": "Scorpio_Card_JP",
+        "identifiedDescriptionName": [
+            "อัญมณี Opal ที่เจียระไนเป็นสัญลักษณ์แห่งราศี Scorpio เชื่อกันว่าผู้ครอบครองจะได้รับพลังแห่งความมุ่งมั่นและความลึกลับของแมงป่อง",
+            "",
+            "LUK + 2",
+            "Flee + 30",
+            "",
+            "เมื่อสวมใส่ร่วมกับ Scorpio Diadem [1] หรือ [NFS] Scorpio Diadem [1],",
+            "ทุก ๆ การอัพเกรด Headgear 1 ขั้น,Flee + 10, เพิ่ม Damage สกิล Sonic Bow 10%",
+            "เมื่อใช้งานสกิล Cross Slash จะใช้งานสกิล Sonic Blow Lv.1 โดยอัติโนมัติ (เมื่อเรียนสกิลในเลเวลที่สูงกว่า จะร่ายในเลเวลสูงสุด),",
+            "ลด Damage ที่ได้รับจาก Player 20%"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "314799": {
-        "unidentifiedDisplayName": "Ragnarok Festa INT (Upper)",
-        "unidentifiedResourceName": "Dragenergy_Blue",
-        "unidentifiedDescriptionName": [
-            "INT + 5,",
-            "MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "MATK + 5%"
-        ],
-        "identifiedDisplayName": "Ragnarok Festa INT (Upper)",
-        "identifiedResourceName": "Dragenergy_Blue",
-        "identifiedDescriptionName": [
-            "INT + 5,",
-            "MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "MATK + 5%"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "314800": {
-        "unidentifiedDisplayName": "Ragnarok Festa DEX (Upper)",
-        "unidentifiedResourceName": "Dragenergy_Green",
-        "unidentifiedDescriptionName": [
-            "DEX + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "เพิ่ม Damage ทางกายภาพระยะไกล 5%"
-        ],
-        "identifiedDisplayName": "Ragnarok Festa DEX (Upper)",
-        "identifiedResourceName": "Dragenergy_Green",
-        "identifiedDescriptionName": [
-            "DEX + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "เพิ่ม Damage ทางกายภาพระยะไกล 5%"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "314801": {
-        "unidentifiedDisplayName": "Ragnarok Festa LUK (Upper)",
-        "unidentifiedResourceName": "Dragenergy_Silver",
-        "unidentifiedDescriptionName": [
-            "LUK + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "Critical Damage + 5%"
-        ],
-        "identifiedDisplayName": "Ragnarok Festa LUK (Upper)",
-        "identifiedResourceName": "Dragenergy_Silver",
-        "identifiedDescriptionName": [
-            "LUK + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "Critical Damage + 5%"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "315055": {
-        "unidentifiedDisplayName": "Flower Garden",
-        "unidentifiedResourceName": "발자국이펙트",
-        "unidentifiedDescriptionName": [
-            "Flower Garden Footprint"
-        ],
-        "identifiedDisplayName": "Flower Garden",
-        "identifiedResourceName": "발자국이펙트",
-        "identifiedDescriptionName": [
-            "Flower Garden Footprint"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "400075": {
-        "unidentifiedDisplayName": "Hairband",
-        "unidentifiedResourceName": "머리띠",
+    "401367": {
+        "unidentifiedDisplayName": "Cap",
+        "unidentifiedResourceName": "캡",
         "unidentifiedDescriptionName": [
             "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
         ],
-        "identifiedDisplayName": "Astraea Helm",
-        "identifiedResourceName": "레긴레이브의날개",
+        "identifiedDisplayName": "Costume Baby Shark Mascot Head",
+        "identifiedResourceName": "C_CLB_BS_head",
         "identifiedDescriptionName": [
-            "MaxHP+10%",
-            "เมื่ออัพเกรดขั้น 7, MaxHP เพิ่มอีก +10%",
-            "เมื่ออัพเกรดขั้น 9, ดาเมจทางเวทย์/กายภาพที่ได้รับจากศัตรูทุกธาตุลดลง 5%",
-            "เมื่ออัพเกรดขั้น 10, ดาเมจทางเวทย์/กายภาพที่ได้รับจากศัตรูทุกขนาดลดลง 5%",
-            "เมื่ออัพเกรดขั้น 11, ดาเมจทางเวทย์/กายภาพที่ได้รับจากศัตรูทุกประเภทลดลง 5%",
-            "เมื่ออัพเกรดขั้น 12 ดาเมจทางเวทย์/กายภาพที่ได้รับจากศัตรูทุกเผ่าลดลง 5%",
-            "",
-            "เมื่อสวมใส่กับ [Astraea Shoes]",
-            "การร่ายแบบคงตัวลดลง 0.5 วินาที, Perfect Dodge +10",
-            "",
-            "เมื่อสวมใส่กับ [Astraea Armor]",
-            "มีโอกาส 5% ที่จะได้รับผลของ [Muscle Fool] เมื่อโดนโจมตีทางกายภาพ",
-            "เพิ่มผลของ Heal + 20%",
-            "",
-            "เมื่อสวมใส่กับ [Astraea Manteau]",
-            "ดาเมจจากการโจมตีทางกายภาพระยะไกลที่ได้รับลดลง 15%",
-            "ดาเมจทางเวทย์/กายภาพที่ได้รับจากศัตรูทุกธาตุลดลง 5%",
-            "",
-            "เมื่อสวมใส่กับ [Astraea Ring]",
-            "All State+3，",
-            "ดีเลย์หลังใช้สกิลลดลง 7%",
-            "ทุก ๆ การอัพเกรดหมวก 1 ขั้น DEF +50",
-            "",
-            "เมื่อสวมใส่ครบทุกชิ้นข้างต้น：",
-            "หากสวมใส่โดยอาชีพ High Priest ขึ้นไป และผลรวมขั้นอัพเกรดของ Helm/ Armor/ Manteau/ Shoes ตั้งแต่ 48 ขึ้นไป, จะสามารถใช้สกิล [Enegy Coat] ได้",
-            "ประเภท : Headgear พลังป้องกัน : 0",
-            "ตำแหน่ง : Upper น้ำหนัก : 20",
-            "เลเวลที่ต้องการ : 100",
+            "Pinkfong Baby Shark Collaboration",
+            " ",
+            "หมวกมาสคอตที่ออกแบบเลียนแบบรูปลักษณ์ของ Baby Shark ที่สวมใส่บนศีรษะ",
+            "^ffffff_",
+            "^CC3D3D[ความสามารถช่วงเวลากิจกรรม]",
+            "เพิ่มค่าประสบการณ์ที่ได้รับเมื่อกำจัดมอนสเตอร์ประเภท Fish , Brute 15%",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
+            "ประเภท : Costume พลังป้องกัน : 0",
+            "ตำแหน่ง : Upper น้ำหนัก : 0",
+            "เลเวลที่ต้องการ : 1",
             "อาชีพที่ใส่ได้ : ทุกอาชีพ"
         ],
+        "slotCount": 0,
+        "ClassNum": 2833,
+        "costume": true
+    },
+    "401372": {
+        "unidentifiedDisplayName": "Hood",
+        "unidentifiedResourceName": "후드",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Costume Baby Shark Hood",
+        "identifiedResourceName": "C_CLB_BS_Hood_B",
+        "identifiedDescriptionName": [
+            "Pinkfong Baby Shark Collaboration",
+            "",
+            "เสื้อฮู้ดที่ดีไซน์มาจากใบหน้าของ Baby Shark สุดน่ารัก",
+            "Critical Damage + 20% , CRI + 10,",
+            "เพิ่มอัตราดรอป 3%",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
+            "ประเภท : Costume พลังป้องกัน : 0",
+            "ตำแหน่ง : Upper น้ำหนัก : 0",
+            "เลเวลที่ต้องการ : 1",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 0,
+        "ClassNum": 2834,
+        "costume": true
+    },
+    "401373": {
+        "unidentifiedDisplayName": "Hood",
+        "unidentifiedResourceName": "후드",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Costume Mommy Shark Hood",
+        "identifiedResourceName": "C_CLB_BS_Hood_M",
+        "identifiedDescriptionName": [
+            "Pinkfong Baby Shark Collaboration",
+            " ",
+            "เสื้อฮู้ดที่ดีไซน์มาจากใบหน้าของ Mommy Shark แสนใจดี",
+            "เพิ่ม Damage ทางกายภาพระยะใกล้ 10% , HIT + 30,",
+            "เพิ่มอัตราดรอป 3%",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
+            "ประเภท : Costume พลังป้องกัน : 0",
+            "ตำแหน่ง : Upper น้ำหนัก : 0",
+            "เลเวลที่ต้องการ : 1",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 0,
+        "ClassNum": 2835,
+        "costume": true
+    },
+    "401374": {
+        "unidentifiedDisplayName": "Hood",
+        "unidentifiedResourceName": "후드",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Costume Daddy Shark Hood",
+        "identifiedResourceName": "C_CLB_BS_Hood_F",
+        "identifiedDescriptionName": [
+            "Pinkfong Baby Shark Collaboration",
+            " ",
+            "เสื้อฮู้ดที่ดีไซน์มาจากใบหน้าของ Daddy Shark ที่น่าไว้วางใจ",
+            "Damage เวทมนต์ทุกธาตุ 10% , เพิ่มปริมาณ Heal 10%,",
+            "เพิ่มอัตราดรอป 3%",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
+            "ประเภท : Costume พลังป้องกัน : 0",
+            "ตำแหน่ง : Upper น้ำหนัก : 0",
+            "เลเวลที่ต้องการ : 1",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 0,
+        "ClassNum": 2836,
+        "costume": true
+    },
+    "401375": {
+        "unidentifiedDisplayName": "Hood",
+        "unidentifiedResourceName": "후드",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Costume Grandma Shark Hood",
+        "identifiedResourceName": "C_CLB_BS_Hood_GM",
+        "identifiedDescriptionName": [
+            "Pinkfong Baby Shark Collaboration",
+            " ",
+            "เสื้อฮู้ดที่ดีไซน์มาจากใบหน้าของ Grandma Shark ที่อบอุ่น",
+            "เพิ่ม Damage ทางกายภาพระยะไกล 10% , Flee + 30,",
+            "เพิ่มอัตราดรอป 3%",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
+            "ประเภท : Costume พลังป้องกัน : 0",
+            "ตำแหน่ง : Upper น้ำหนัก : 0",
+            "เลเวลที่ต้องการ : 1",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 0,
+        "ClassNum": 2837,
+        "costume": true
+    },
+    "401376": {
+        "unidentifiedDisplayName": "Hood",
+        "unidentifiedResourceName": "후드",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Costume Grandpa Shark Hood",
+        "identifiedResourceName": "C_CLB_BS_Hood_GF",
+        "identifiedDescriptionName": [
+            "Pinkfong Baby Shark Collaboration",
+            " ",
+            "เสื้อฮู้ดที่ดีไซน์มาจากใบหน้าของ Grandpa Shark ผู้เปี่ยมด้วยความเมตตา",
+            "MaxHP + 10,000 , DEF + 180 , MDEF +20,",
+            "เพิ่มอัตราดรอป 3%",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
+            "ประเภท : Costume พลังป้องกัน : 0",
+            "ตำแหน่ง : Upper น้ำหนัก : 0",
+            "เลเวลที่ต้องการ : 1",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 0,
+        "ClassNum": 2838,
+        "costume": true
+    },
+    "401658": {
+        "unidentifiedDisplayName": "Helm",
+        "unidentifiedResourceName": "헬름",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Scorpio Diadem",
+        "identifiedResourceName": "천헐궁보관",
+        "identifiedDescriptionName": [
+            "มงกุฎงดงามที่ประดับสัญลักษณ์แมงป่อง ตัวแทนแห่งราศี Scorpio จักรราศีลำดับที่ 8 เชื่อกันว่าประกายอัญมณีบนมงกุฎซ่อนความลับของดวงดาวเอาไว้",
+            "",
+            "AGI + 10, ATK + 50",
+            "MaxHP + 10%",
+            "เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 10%",
+            "",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 7 ขึ้นไป, เพิ่ม Damage สกิล Sonic Blow 30%",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 8 ขึ้นไป, เมื่อกำจัดมอนสเตอร์ ฟื้้นฟู HP 500, SP 20.",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 9 ขึ้นไป, เพิ่ม Damage ทางกายภาพระยะใกล้ 15%",
+            "",
+            "เมื่อสวมใส่โดย Assassin Cross ขึ้นไป,",
+            "สามารถใช้งานสกิล Cross Slash Lv.10 ได้,",
+            "ลด Damage ที่ได้รับจากมอนสเตอร์ประเภท Boss 10%",
+            "ประเภท : Headgear พลังป้องกัน : 12",
+            "ตำแหน่ง : Upper น้ำหนัก : 80",
+            "เลเวลที่ต้องการ : 100",
+            "อาชีพที่ใสได้ : Thief Classes"
+        ],
         "slotCount": 1,
-        "ClassNum": 468,
+        "ClassNum": 606,
         "costume": false
     },
-    "410665": {
+    "401659": {
+        "unidentifiedDisplayName": "Helm",
+        "unidentifiedResourceName": "헬름",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "[NFS] Scorpio Diadem",
+        "identifiedResourceName": "천헐궁보관",
+        "identifiedDescriptionName": [
+            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
+            "มงกุฎงดงามที่ประดับสัญลักษณ์แมงป่อง ตัวแทนแห่งราศี Scorpio จักรราศีลำดับที่ 8 เชื่อกันว่าประกายอัญมณีบนมงกุฎซ่อนความลับของดวงดาวเอาไว้",
+            "",
+            "AGI + 10, ATK + 50",
+            "MaxHP + 10%",
+            "เพิ่ม Damage ทางกายภาพต่อศัตรูทุกประเภท 10%",
+            "",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 7 ขึ้นไป, เพิ่ม Damage สกิล Sonic Blow 30%",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 8 ขึ้นไป, เมื่อกำจัดมอนสเตอร์ ฟื้้นฟู HP 500, SP 20.",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 9 ขึ้นไป, เพิ่ม Damage ทางกายภาพระยะใกล้ 15%",
+            "",
+            "เมื่อสวมใส่โดย Assassin Cross ขึ้นไป,",
+            "สามารถใช้งานสกิล Cross Slash Lv.10 ได้,",
+            "ลด Damage ที่ได้รับจากมอนสเตอร์ประเภท Boss 10%",
+            "ประเภท : Headgear พลังป้องกัน : 12",
+            "ตำแหน่ง : Upper น้ำหนัก : 80",
+            "เลเวลที่ต้องการ : 100",
+            "อาชีพที่ใสได้ : Thief Classes"
+        ],
+        "slotCount": 1,
+        "ClassNum": 606,
+        "costume": false
+    },
+    "410636": {
         "unidentifiedDisplayName": "Ribbon",
         "unidentifiedResourceName": "리본",
         "unidentifiedDescriptionName": [
             "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
         ],
-        "identifiedDisplayName": "Costume Cons of Emoji",
-        "identifiedResourceName": "C_Nf_Stamp",
+        "identifiedDisplayName": "Costume Pilot Fish",
+        "identifiedResourceName": "C_CLB_BS_Pilot_Fish",
         "identifiedDescriptionName": [
-            "ATK + 40, MATK + 40",
-            "MHP + 5%, MSP + 5%",
-            "HIT + 25, CRI + 5",
-            "ลด Global Cooldown 3%",
-            "เพิ่มประสบการณ์ที่ได้รับเมื่อกำจัดมอนสเตอร์ 20%",
-            "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อมอนสเตอร์ทุกเผ่า 10% (ยกเว้น Player)",
-            "ATK + 10%, Critical Damage + 10%",
-            "เพิ่ม Damage ทางเวทมนตร์ทุกธาตุ 10%",
-            "",
-            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 6 มกราคม 2569)",
+            "Pinkfong Baby Shark Collaboration",
+            " ",
+            "Pilot Fish ที่เหมือนกำลังเต้นรำแหวกว่ายในท้องทะเลตามเรามา",
+            "สามารถมองเห็นตัวละครที่ซ่อนตัว (Hiding / Cloaking) ได้,",
+            "เพิ่มค่าประสบการณ์ที่ได้รับเมื่อกำจัดมอนสเตอร์ 5%, เพิ่มอัตราดรอป 3%",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
             "ประเภท : Costume พลังป้องกัน : 0",
             "ตำแหน่ง : Middle น้ำหนัก : 0",
             "เลเวลที่ต้องการ : 1",
             "อาชีพที่ใส่ได้ : ทุกอาชีพ"
         ],
         "slotCount": 0,
-        "ClassNum": 2852,
+        "ClassNum": 2839,
         "costume": true
     },
-    "480802": {
+    "410637": {
+        "unidentifiedDisplayName": "Ribbon",
+        "unidentifiedResourceName": "리본",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Costume Baby Shark Minimi",
+        "identifiedResourceName": "C_CLB_BS_Mini",
+        "identifiedDescriptionName": [
+            "Pinkfong Baby Shark Collaboration",
+            " ",
+            "&quot;ดู๊ด ดู ดู่ ดุด!&quot;",
+            "หุ่นยนต์ตัวจิ๋วที่ดีไซน์มาจาก Baby Shark",
+            "ลอยไปลอยมาเหมือนดวงอาทิตย์เหนือหัวที่ทะเล",
+            "ป้องกันสถานะ Silence , Blind ได้,",
+            "เพิ่มค่าประสบการณ์ที่ได้รับเมื่อกำจัดมอนสเตอร์ 5%, เพิ่มอัตราดรอป 3%",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
+            "ประเภท : Costume พลังป้องกัน : 0",
+            "ตำแหน่ง : Middle น้ำหนัก : 0",
+            "เลเวลที่ต้องการ : 1",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 0,
+        "ClassNum": 2840,
+        "costume": true
+    },
+    "480205": {
         "unidentifiedDisplayName": "Hood",
         "unidentifiedResourceName": "후드",
         "unidentifiedDescriptionName": [
             "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
         ],
-        "identifiedDisplayName": "Costume Ancient Tao Gunka",
-        "identifiedResourceName": "C_Joyful_Taogunka",
+        "identifiedDisplayName": "Costume Astra Blessing",
+        "identifiedResourceName": "C_Astra_Blessing",
         "identifiedDescriptionName": [
-            "Costume Ancient Tao Gunka ที่เกิดมาเพื่อตามติดตัวละคร",
-            "ให้ความรู้สึกแปลกใหม่ เหมือนมีใครจ้องมองอยู่ตลอดเวลา",
-            "EXP +10%",
-            "DROP+ 5%",
-            "เมื่อทำการสังหารศัตรู มีโอกาส 0.5% ได้รับ Melon Juice 1 ชิ้น",
-            "ความสามารถพิเศษในระยะเวลากิจกรรม (4 พฤศจิกายน 2569  - 13 มกราคม 2570 05.59 น.)",
+            "วงเวทที่ประดับด้วยลวดลายกลุ่มดาว ราวกับจะสัมผัสได้ถึงพลังอันยิ่งใหญ่จากดวงดาว",
+            "ประเภท : Costume พลังป้องกัน : 0",
+            "ตำแหน่ง : Garment น้ำหนัก : 0",
+            "เลเวลที่ต้องการ : 1",
+            "อาชีพที่ใสได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": true
+    },
+    "480818": {
+        "unidentifiedDisplayName": "Muffler",
+        "unidentifiedResourceName": "머플러",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Costume Baby Shark Bag",
+        "identifiedResourceName": "C_CLB_BS_Bag_B",
+        "identifiedDescriptionName": [
+            "Pinkfong Baby Shark Collaboration",
+            " ",
+            "กระเป๋าที่ดีไซน์มาจาก Baby Shark สุดน่ารัก จนอยากจะสะพายอวดทุกคนเลย",
+            "LUK + 10,",
+            "Critical Damage + 30% , ASPD + 1,",
+            "เพิ่มค่าประสบการณ์ที่ได้รับเมื่อกำจัดมอนสเตอร์ 10%",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
             "ประเภท : Costume พลังป้องกัน : 0",
             "ตำแหน่ง : Garment น้ำหนัก : 0",
             "เลเวลที่ต้องการ : 1",
             "อาชีพที่ใส่ได้ : ทุกอาชีพ"
         ],
         "slotCount": 0,
-        "ClassNum": 2827,
+        "ClassNum": 308,
         "costume": true
     },
-    "480879": {
-        "unidentifiedDisplayName": "Hood",
-        "unidentifiedResourceName": "후드",
+    "480819": {
+        "unidentifiedDisplayName": "Muffler",
+        "unidentifiedResourceName": "머플러",
         "unidentifiedDescriptionName": [
             "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
         ],
-        "identifiedDisplayName": "Costume Wings of Arrogant Thanatos",
-        "identifiedResourceName": "C_S_Thanatos_Wing",
+        "identifiedDisplayName": "Costume Mommy Shark Bag",
+        "identifiedResourceName": "C_CLB_BS_Bag_M",
         "identifiedDescriptionName": [
-            "ปีกที่ถ่ายทอดพลังของ Thanatos ผู้ถูกครอบงำด้วยความเย่อหยิ่งและความคลุ้มคลั่ง",
-            "ปีกที่แฝงไปด้วยสายตานับไม่ถ้วน แผ่รัศมีอันน่าสะพรึงกลัวและทรงพลังจนยากจะต้านทาน",
+            "Pinkfong Baby Shark Collaboration",
+            " ",
+            "กระเป๋าที่ดีไซน์มาจาก Mommy Shark แสนใจดี อยากจะสะพายอวดทุกคนจังเลย",
+            "STR + 10,",
+            "เพิ่ม Damage ทางกายภาพต่อศัตรูทุกธาตุ 10% , P Hit+10%",
+            "เพิ่มค่าประสบการณ์ที่ได้รับเมื่อกำจัดมอนสเตอร์ 10%",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
             "ประเภท : Costume พลังป้องกัน : 0",
             "ตำแหน่ง : Garment น้ำหนัก : 0",
             "เลเวลที่ต้องการ : 1",
             "อาชีพที่ใส่ได้ : ทุกอาชีพ"
         ],
         "slotCount": 0,
-        "ClassNum": 323,
+        "ClassNum": 309,
         "costume": true
+    },
+    "480820": {
+        "unidentifiedDisplayName": "Muffler",
+        "unidentifiedResourceName": "머플러",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Costume Daddy Shark Bag",
+        "identifiedResourceName": "C_CLB_BS_Bag_F",
+        "identifiedDescriptionName": [
+            "Pinkfong Baby Shark Collaboration",
+            " ",
+            "กระเป๋าที่ดีไซน์มาจาก Daddy Shark ที่น่าไว้วางใจ อยากจะสะพายอวดทุกคนจังเลย",
+            "INT + 10,",
+            "เพิ่ม Damage เวทมนตร์ต่อศัตรูทุกขนาด 10%, ระยะเวลาในการร่ายเวทลดลง 10%,",
+            "เพิ่มค่าประสบการณ์ที่ได้รับเมื่อกำจัดมอนสเตอร์ 10%",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
+            "ประเภท : Costume พลังป้องกัน : 0",
+            "ตำแหน่ง : Garment น้ำหนัก : 0",
+            "เลเวลที่ต้องการ : 1",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 0,
+        "ClassNum": 310,
+        "costume": true
+    },
+    "480821": {
+        "unidentifiedDisplayName": "Muffler",
+        "unidentifiedResourceName": "머플러",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Costume Grandma Shark Bag",
+        "identifiedResourceName": "C_CLB_BS_Bag_GM",
+        "identifiedDescriptionName": [
+            "Pinkfong Baby Shark Collaboration",
+            " ",
+            "กระเป๋าที่ดีไซน์มาจาก Grandma Shark ที่แสนอบอุ่น อยากจะสะพายอวดทุกคนจังเลย",
+            "DEX + 10,",
+            "เพิ่ม Damage ทางกายภาพระยะไกล 10% , ลด Delay หลังใช้สกิล 5%",
+            "เพิ่มค่าประสบการณ์ที่ได้รับเมื่อกำจัดมอนสเตอร์ 10%",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
+            "ประเภท : Costume พลังป้องกัน : 0",
+            "ตำแหน่ง : Garment น้ำหนัก : 0",
+            "เลเวลที่ต้องการ : 1",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 0,
+        "ClassNum": 311,
+        "costume": true
+    },
+    "480822": {
+        "unidentifiedDisplayName": "Muffler",
+        "unidentifiedResourceName": "머플러",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Costume Grandpa Shark Bag",
+        "identifiedResourceName": "C_CLB_BS_Bag_GF",
+        "identifiedDescriptionName": [
+            "Pinkfong Baby Shark Collaboration",
+            " ",
+            "กระเป๋าที่ดีไซน์มาจาก Grandpa Shark ที่แสนอบอุ่น อยากจะสะพายอวดทุกคนจังเลย",
+            "VIT + 10,",
+            "เพิ่มความทนทานต่อธาตุ Fire Water Wind Earth และธาตุ Holy 10%,",
+            "เพิ่มค่าประสบการณ์ที่ได้รับเมื่อกำจัดมอนสเตอร์ 10%",
+            "^ff0000(ความสามารถของไอเท็มชิ้นนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
+            "ประเภท : Costume พลังป้องกัน : 0",
+            "ตำแหน่ง : Garment น้ำหนัก : 0",
+            "เลเวลที่ต้องการ : 1",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 0,
+        "ClassNum": 312,
+        "costume": true
+    },
+    "480947": {
+        "unidentifiedDisplayName": "Muffler",
+        "unidentifiedResourceName": "머플러",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Baby Shark Bag",
+        "identifiedResourceName": "C_CLB_BS_Bag_B",
+        "identifiedDescriptionName": [
+            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
+            "Pinkfong Baby Shark Collaboration",
+            "กระเป๋าที่ดีไซน์มาจาก Baby Shark สุดน่ารัก จนอยากจะสะพายอวดทุกคนเลย",
+            " ",
+            "เพิ่มอัตราดรอป 3%, ",
+            "เพิ่มค่าประสบการณ์ที่ได้รับจากมอนสเตอร์ประเภท Fish 15%",
+            " ",
+            "ทุกๆการอัพเกรด 1 ขั้นเพิ่มความต้านทานต่อการโจมตีธาตุ Neutral 1%,",
+            "เมื่ออัพเกรดถึงขั้น 5, เพิ่มความต้านทานต่อการโจมตีธาตุ Water 50%",
+            "เมื่ออัพเกรดถึงขั้น 7, เมื่อกำจัดมอนเตอร์ด้วยการโจมตีทางกายภาพ/เวทมนตร์ ฟื้นฟู HP 100, SP 10",
+            "เมื่ออัพเกรดถึงขั้น 9, สามารถใช้งานสกิล Greed Lv.1 ได้",
+            "เมื่ออัพเกรดถึงขั้น 13, เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 10%",
+            "ประเภท : Garment  พลังป้องกัน : 0",
+            "น้ำหนัก : 30",
+            "เลเวล Armor : 1",
+            "เลเวลที่ต้องการ : 1",
+            "อาชีพที่ใส่ได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 0,
+        "ClassNum": 308,
+        "costume": false
+    },
+    "481010": {
+        "unidentifiedDisplayName": "Manteau",
+        "unidentifiedResourceName": "망토",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "[NFS] Manteau of Great Nature",
+        "identifiedResourceName": "망토오브그레이트네이쳐",
+        "identifiedDescriptionName": [
+            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
+            "",
+            "ไม่สามารถทำลายได้",
+            "",
+            "เสื้อคลุมที่มีพลังแห่งผืนดิน ราวกับปกป้องผู้สวมใส่จากศัตรู ล้อมรอบด้วยหินแข็งแกร่ง",
+            "",
+            "ลดความเสียหายที่ได้รับจากการโจมตีธาตุ Earth -10%",
+            "เพิ่มความเสียหายที่ได้รับจากการโจมตีธาตุ Fire +10%",
+            "เมื่อได้รับการโจมตีทางกายภาพระยะใกล้และไกล, มีโอกาสร่าย Stone Curse ใส่ศัตรูทั้งหมดที่อยู่ในบริเวณ 5*5 ช่อง จากศูนย์กลางของตัวเอง",
+            "เมื่ออัพเกรดตั้งแต่ 5 ขึ้นไป, ทุกการอัพเกรด 1 เมื่อได้รับการโจมตีทางกายภาพระยะใกล้และไกล เพิ่มโอกาสร่าย Stone Curse",
+            "",
+            "ประเภท : Garment  พลังป้องกัน : 10",
+            "น้ำหนัก : 30",
+            "เลเวลที่ต้องการ : 70",
+            "อาชีพที่ใสได้ : ทุกอาชีพ"
+        ],
+        "slotCount": 1,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "490436": {
+        "unidentifiedDisplayName": "Record of Acolyte 2",
+        "unidentifiedResourceName": "Record_Mage2_TW",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Record of Acolyte 2",
+        "identifiedResourceName": "Record_Mage2_TW",
+        "identifiedDescriptionName": [
+            "บันทึกส่วนที่เหลือของกลุ่มนักบวชที่เข้าไปสำรวจยังพื้นที่ Tomb of Honor",
+            "",
+            "SP + 120",
+            "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 6%",
+            "ทุก ๆ การอัพเกรด 2 ขั้น ATK, MATK + 10",
+            "เมื่ออัพเกรดถึงขั้น 5 ลดระยะเวลาร่ายแปรผัน 15%, ลด Global Cooldown 5%",
+            "เมื่ออัพเกรดถึงขึ้น 7 เพิ่ม Damage ทางกายภาพระยะใกล้ 5%, MATK +5%",
+            "เมื่ออัพเกรดถึงขึ้น 9 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกธาตุ 10%",
+            "",
+            "เมื่อสวมใส่ร่วมกับ Record of Acolyte หรือ [Not For Sale] Record of Acolyte,",
+            "เมื่อสวมใส่โดย Awakened High Priest,เพิกเฉยต่อพลังป้องกันทางกายภาพและเวทมนตร์ของมอนสเตอร์ทุกเผ่า(ยกเว้น Player) 20%,ลดคูลดาวน์สกิล Magnus Exorcismus 2 วินาที",
+            "เมื่อสวมใส่โดย Awakened Champion, เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์ทุกเผ่า (ยกเว้น Player) 20%,",
+            "เมื่อใช้งานสกิล Asura Strike จะร่ายสกิล Zen อัตโนมัติ",
+            "",
+            "ประเภท : Accessory(Left) พลังป้องกัน : 0",
+            "น้ำหนัก : 10",
+            "เลเวลที่ต้องการ : 100",
+            "อาชีพที่ใส่ได้ : Awakened Acolyte Class"
+        ],
+        "slotCount": 1,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "490437": {
+        "unidentifiedDisplayName": "[NFS] Record of Acolyte 2",
+        "unidentifiedResourceName": "Record_Mage2_TW",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "[NFS] Record of Acolyte 2",
+        "identifiedResourceName": "Record_Mage2_TW",
+        "identifiedDescriptionName": [
+            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
+            "บันทึกส่วนที่เหลือของกลุ่มนักบวชที่เข้าไปสำรวจยังพื้นที่ Tomb of Honor",
+            "",
+            "SP + 120",
+            "เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกขนาด 6%",
+            "ทุก ๆ การอัพเกรด 2 ขั้น ATK, MATK + 10",
+            "เมื่ออัพเกรดถึงขั้น 5 ลดระยะเวลาร่ายแปรผัน 15%, ลด Global Cooldown 5%",
+            "เมื่ออัพเกรดถึงขึ้น 7 เพิ่ม Damage ทางกายภาพระยะใกล้ 5%, MATK +5%",
+            "เมื่ออัพเกรดถึงขึ้น 9 เพิ่ม Damage ทางกายภาพ/เวทมนตร์ต่อศัตรูทุกธาตุ 10%",
+            "",
+            "เมื่อสวมใส่ร่วมกับ Record of Acolyte หรือ [Not For Sale] Record of Acolyte,",
+            "เมื่อสวมใส่โดย Awakened High Priest,เพิกเฉยต่อพลังป้องกันทางกายภาพและเวทมนตร์ของมอนสเตอร์ทุกเผ่า(ยกเว้น Player) 20%,ลดคูลดาวน์สกิล Magnus Exorcismus 2 วินาที",
+            "เมื่อสวมใส่โดย Awakened Champion, เพิกเฉยต่อพลังป้องกันทางกายภาพของมอนสเตอร์ทุกเผ่า (ยกเว้น Player) 20%,",
+            "เมื่อใช้งานสกิล Asura Strike จะร่ายสกิล Zen อัตโนมัติ",
+            "",
+            "ประเภท : Accessory(Left) พลังป้องกัน : 0",
+            "น้ำหนัก : 10",
+            "เลเวลที่ต้องการ : 100",
+            "อาชีพที่ใส่ได้ : Awakened Acolyte Class"
+        ],
+        "slotCount": 1,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "491140": {
+        "unidentifiedDisplayName": "Ring",
+        "unidentifiedResourceName": "링",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Scorpio Ring",
+        "identifiedResourceName": "Scorpio_Ring_J",
+        "identifiedDescriptionName": [
+            "แหวนที่สลักลวดลายหางแมงป่องโอบรอบอัญมณีลึกลับ เป็นสัญลักษณ์แห่งคำมั่นที่ไม่มีวันเลือนหาย แม้ถูกเก็บซ่อนไว้ในความมืด",
+            "ATK + 30",
+            "MaxHP + 1000",
+            "เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 5%",
+            "",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 5 ขึ้นไป, MaxHP + 10%, Flee + 30",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 7 ขึ้นไป, เพิ่ม Damage สกิล Sonic Blow 30%",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 9 ขึ้นไป, เพิ่ม Damage สกิล Sonic Blow 50%",
+            "",
+            "เมื่อสวมใส่โดย Assassin Cross ขึ้นไป,",
+            "ทุก ๆ Base Lv.2 เพิ่ม Damage สกิล Sonic Blow 1%,",
+            "เพิ่ม Damage ทางกายภาพระยะใกล้ 15%,",
+            "",
+            "ประเภท : Accessory  พลังป้องกัน : 0",
+            "น้ำหนัก : 10",
+            "เลเวลที่ต้องการ : 100",
+            "อาชีพที่ใสได้ : Thief Classes"
+        ],
+        "slotCount": 1,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "491141": {
+        "unidentifiedDisplayName": "Ring",
+        "unidentifiedResourceName": "링",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "[NFS] Scorpio Ring",
+        "identifiedResourceName": "Scorpio_Ring_J",
+        "identifiedDescriptionName": [
+            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
+            "แหวนที่สลักลวดลายหางแมงป่องโอบรอบอัญมณีลึกลับ เป็นสัญลักษณ์แห่งคำมั่นที่ไม่มีวันเลือนหาย แม้ถูกเก็บซ่อนไว้ในความมืด",
+            "ATK + 30",
+            "MaxHP + 1000",
+            "เพิ่ม Damage ทางกายภาพต่อศัตรูทุกขนาด 5%",
+            "",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 5 ขึ้นไป, MaxHP + 10%, Flee + 30",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 7 ขึ้นไป, เพิ่ม Damage สกิล Sonic Blow 30%",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 9 ขึ้นไป, เพิ่ม Damage สกิล Sonic Blow 50%",
+            "",
+            "เมื่อสวมใส่โดย Assassin Cross ขึ้นไป,",
+            "ทุก ๆ Base Lv.2 เพิ่ม Damage สกิล Sonic Blow 1%,",
+            "เพิ่ม Damage ทางกายภาพระยะใกล้ 15%,",
+            "",
+            "ประเภท : Accessory  พลังป้องกัน : 0",
+            "น้ำหนัก : 10",
+            "เลเวลที่ต้องการ : 100",
+            "อาชีพที่ใสได้ : Thief Classes"
+        ],
+        "slotCount": 1,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "610106": {
+        "unidentifiedDisplayName": "Jur",
+        "unidentifiedResourceName": "쥬르",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "Scorpio Katar",
+        "identifiedResourceName": "Scorpio_Katar_J",
+        "identifiedDescriptionName": [
+            "กาตาร์ที่มีคมดาบโค้งดุจเหล็กในแมงป่อง สร้างขึ้นภายใต้แสงแห่งกลุ่มดาว Scorpio ว่ากันว่าคมดาบจะเผยประกายเมื่อโชคชะตาของผู้ถือครองใกล้เปลี่ยนผัน",
+            "",
+            "ถ้าผู้สวมใส่มีค่า STR พื้นฐาน 110 หรือมากกว่ามีโอกาสที่จะทำให้ศัตรูติด &#39;Stun, Curse, Silence, Poison หรือ Bleeding&#39; แบบสุ่ม",
+            "",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 7 ขึ้นไป, เพิกเฉยพลังป้องกัน (DEF) ของมอนสเตอร์ทุกเผ่า 50%",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 9 ขึ้นไป, มีโอกาส 3% ที่จะได้รับ HP 5% ของความเสียหายที่ทำได้",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 11 ขึ้นไป, เพิกเฉยพลังป้องกัน (DEF) ของมอนสเตอร์ทุกเผ่า 50%",
+            "",
+            "เมื่อสวมใส่โดย Assassin Cross ขึ้นไป,",
+            "HIT + 30, Perfect Dodge + 20,มีโอกาสปลดอาวุธและชุดเกราะของศัตรู",
+            "ลด Damage ที่ได้รับจากมอนสเตอร์ประเภท Boss 20%",
+            "ประเภท : Katar พลังโจมตี : 250",
+            "น้ำหนัก : 100",
+            "เลเวล Weapon : 4",
+            "เลเวลที่ต้องการ : 100",
+            "อาชีพที่ใสได้ : Thief Classes"
+        ],
+        "slotCount": 2,
+        "ClassNum": 16,
+        "costume": false
+    },
+    "610107": {
+        "unidentifiedDisplayName": "Jur",
+        "unidentifiedResourceName": "쥬르",
+        "unidentifiedDescriptionName": [
+            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
+        ],
+        "identifiedDisplayName": "[NFS] Scorpio Katar",
+        "identifiedResourceName": "Scorpio_Katar_J",
+        "identifiedDescriptionName": [
+            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
+            "กาตาร์ที่มีคมดาบโค้งดุจเหล็กในแมงป่อง สร้างขึ้นภายใต้แสงแห่งกลุ่มดาว Scorpio ว่ากันว่าคมดาบจะเผยประกายเมื่อโชคชะตาของผู้ถือครองใกล้เปลี่ยนผัน",
+            "",
+            "ถ้าผู้สวมใส่มีค่า STR พื้นฐาน 110 หรือมากกว่ามีโอกาสที่จะทำให้ศัตรูติด &#39;Stun, Curse, Silence, Poison หรือ Bleeding&#39; แบบสุ่ม",
+            "",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 7 ขึ้นไป, เพิกเฉยพลังป้องกัน (DEF) ของมอนสเตอร์ทุกเผ่า 50%",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 9 ขึ้นไป, มีโอกาส 3% ที่จะได้รับ HP 5% ของความเสียหายที่ทำได้",
+            "เมื่อขั้นอัพเกรดตั้งแต่ 11 ขึ้นไป, เพิกเฉยพลังป้องกัน (DEF) ของมอนสเตอร์ทุกเผ่า 50%",
+            "",
+            "เมื่อสวมใส่โดย Assassin Cross ขึ้นไป,",
+            "HIT + 30, Perfect Dodge + 20,มีโอกาสปลดอาวุธและชุดเกราะของศัตรู",
+            "ลด Damage ที่ได้รับจากมอนสเตอร์ประเภท Boss 20%",
+            "ประเภท : Katar พลังโจมตี : 250",
+            "น้ำหนัก : 100",
+            "เลเวล Weapon : 4",
+            "เลเวลที่ต้องการ : 100",
+            "อาชีพที่ใสได้ : Thief Classes"
+        ],
+        "slotCount": 2,
+        "ClassNum": 16,
+        "costume": false
     },
     "1000365": {
         "unidentifiedDisplayName": "Magic Feather Effect (Upper)",
         "unidentifiedResourceName": "블루크리스탈조각",
         "unidentifiedDescriptionName": [
-            "Upper Enchant ที่ Slot ช่องที่ 4 ของอุปกรณ์ Costume แล้วติดตั้งเอฟเฟกต์เข้าไป",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,22,113,0,100,0,0</INFO></NAVI>"
+            "มอบ Effect ให้แก่อุปกรณ์ Costume ที่ Slot ช่องที่ 4 ของอุปกรณ์ Costume แล้วติดตั้งเอฟเฟกต์เข้าไป",
+            "Magic Feather Effect"
         ],
         "identifiedDisplayName": "Magic Feather Effect (Upper)",
         "identifiedResourceName": "블루크리스탈조각",
         "identifiedDescriptionName": [
-            "Upper Enchant ที่ Slot ช่องที่ 4 ของอุปกรณ์ Costume แล้วติดตั้งเอฟเฟกต์เข้าไป",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,22,113,0,100,0,0</INFO></NAVI>",
+            "มอบ Effect ให้แก่อุปกรณ์ Costume ที่ Slot ช่องที่ 4 ของอุปกรณ์ Costume แล้วติดตั้งเอฟเฟกต์เข้าไป",
+            "Magic Feather Effect",
             "น้ำหนัก : 10"
         ],
         "slotCount": 0,
@@ -502,53 +1079,34 @@
         "unidentifiedDisplayName": "Firework Effect (Upper)",
         "unidentifiedResourceName": "블루크리스탈조각",
         "unidentifiedDescriptionName": [
-            "มอบ Effect ให้แก่อุปกรณ์ Costume หากนำไปให้ Effect Talor ที่ Aver De Dosh จะช่วย Enchant Costume ให้"
+            "มอบ Effect ให้แก่อุปกรณ์ Costume ที่ Slot ช่องที่ 4 ของอุปกรณ์ Costume แล้วติดตั้งเอฟเฟกต์เข้าไป",
+            "Firework Effect"
         ],
         "identifiedDisplayName": "Firework Effect (Upper)",
         "identifiedResourceName": "블루크리스탈조각",
         "identifiedDescriptionName": [
-            "มอบ Effect ให้แก่อุปกรณ์ Costume หากนำไปให้ Effect Talor ที่ Aver De Dosh จะช่วย Enchant Costume ให้",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,22,112,0,100,0,0</INFO></NAVI>",
+            "มอบ Effect ให้แก่อุปกรณ์ Costume ที่ Slot ช่องที่ 4 ของอุปกรณ์ Costume แล้วติดตั้งเอฟเฟกต์เข้าไป",
+            "Firework Effect",
             "น้ำหนัก : 10"
         ],
         "slotCount": 0,
         "ClassNum": 0,
         "costume": false
     },
-    "1001586": {
-        "unidentifiedDisplayName": "Razer Gold Key",
-        "unidentifiedResourceName": "기만의열쇠",
-        "unidentifiedDescriptionName": [
-            "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ",
-            "(ไอเทมนี้จะถูกลบออกวันที่ 2 ธันวาคม 2569 เวลา 05.59 น.)"
-        ],
-        "identifiedDisplayName": "Razer Gold Key",
-        "identifiedResourceName": "기만의열쇠",
-        "identifiedDescriptionName": [
-            "กุญแจไขกล่องสมบัติที่รวบรวมสิ่งของล้ำค่าไว้มากมาย",
-            "(ไอเทมนี้จะถูกลบออกวันที่ 2 ธันวาคม 2569 เวลา 05.59 น.)",
-            "น้ำหนัก : 10"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "1002093": {
-        "unidentifiedDisplayName": "[Event] Enchant Costume Ticket",
-        "unidentifiedResourceName": "Symposium_Card_YL",
+    "1000923": {
+        "unidentifiedDisplayName": "Scorpio Coin",
+        "unidentifiedResourceName": "금화",
         "unidentifiedDescriptionName": [
             "ไอเท็มปริศนา จำเป็นต้องใช้ [Magnifier] ในการตรวจสอบ"
         ],
-        "identifiedDisplayName": "[Event] Enchant Costume Ticket",
-        "identifiedResourceName": "Symposium_Card_YL",
+        "identifiedDisplayName": "Scorpio Coin",
+        "identifiedResourceName": "금화",
         "identifiedDescriptionName": [
-            "^ff0000ไอเท็มนี้ไม่สามารถแลกเปลี่ยนและไม่สามารถฝากคลังได้",
-            "Ticket ใช้สำหรับ Enchant Option Costume ดังนี้ ",
-            "1.<ITEM> Angeling Bubble<INFO>440021</INFO></ITEM>",
-            "2.<ITEM> Blue Cupid Wing<INFO>20505</INFO></ITEM>",
-            "3.<ITEM> Poring Surfboard<INFO>480335</INFO></ITEM>",
-            "(^ff0000ไอเท็มดังกล่าวจะถูกลบหลังจบกิจกรรม) ",
-            "น้ำหนัก : 0"
+            "^ff0000ไม่สามารถแลกเปลี่ยนกับผู้เล่นคนอื่นได้",
+            "เหรียญสีทองแวววาวระยิบระยับ",
+            "ลองเอาไปหยอดที่ [Guarantee Gacha] พิกัดแผนที่กิจกรรมกันเถอะ",
+            "(ไอเท็มดังกล่าวจะถูกลบออกหลังจากปิดปรับปรุงเซิฟเวอร์วันที่ 25 พฤศจิกายน 2569)",
+            "น้ำหนัก : 1"
         ],
         "slotCount": 0,
         "ClassNum": 0,
@@ -558,232 +1116,16 @@
         "unidentifiedDisplayName": "Blue Butterfly Footprint (Garment)",
         "unidentifiedResourceName": "발자국이펙트",
         "unidentifiedDescriptionName": [
-            "มอบเอฟเฟกต์เมื่อ Enchant ช่องที่ 3 ของ Costume ประเภท Garment",
+            "มอบเอฟเฟกต์เมื่อ Enchant ช่องที่ 4 ของ Costume ประเภท Garment",
             "^ff0000Blue Butterfly Footprint",
             "^ffffff<NAVI>^4D4DFF[Lace La Zard]<INFO>mal_in01,20,107,0,100,0,0</INFO></NAVI>"
         ],
         "identifiedDisplayName": "Blue Butterfly Footprint (Garment)",
         "identifiedResourceName": "발자국이펙트",
         "identifiedDescriptionName": [
-            "มอบเอฟเฟกต์เมื่อ Enchant ช่องที่ 3 ของ Costume ประเภท Garment",
+            "มอบเอฟเฟกต์เมื่อ Enchant ช่องที่ 4 ของ Costume ประเภท Garment",
             "^ff0000Blue Butterfly Footprint",
             "^ffffff<NAVI>^4D4DFF[Lace La Zard]<INFO>mal_in01,20,107,0,100,0,0</INFO></NAVI>",
-            "น้ำหนัก : 10"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "1002193": {
-        "unidentifiedDisplayName": "Blue Spirit Effect (Middle)",
-        "unidentifiedResourceName": "블루크리스탈조각",
-        "unidentifiedDescriptionName": [
-            "Middle Enchant ที่ Slot ช่องที่ 4 ของอุปกรณ์ Costume แล้วติดตั้งเอฟเฟกต์เข้าไป",
-            "^ff0000Blue Spirit Effect",
-            "^ffffff_",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,22,113,0,100,0,0</INFO></NAVI>",
-            "^ffffff_",
-            "น้ำหนัก : 10"
-        ],
-        "identifiedDisplayName": "Blue Spirit Effect (Middle)",
-        "identifiedResourceName": "블루크리스탈조각",
-        "identifiedDescriptionName": [
-            "Middle Enchant ที่ Slot ช่องที่ 4 ของอุปกรณ์ Costume แล้วติดตั้งเอฟเฟกต์เข้าไป",
-            "^ff0000Blue Spirit Effect",
-            "^ffffff_",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,22,113,0,100,0,0</INFO></NAVI>",
-            "^ffffff_",
-            "น้ำหนัก : 10"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "1002559": {
-        "unidentifiedDisplayName": "Ragnarok Festa Stone STR (Upper)",
-        "unidentifiedResourceName": "영혼의조각",
-        "unidentifiedDescriptionName": [
-            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
-            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
-            "",
-            "STR + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "เพิ่ม Damage ทางกายภาพระยะใกล้ 5%",
-            "",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>"
-        ],
-        "identifiedDisplayName": "Ragnarok Festa Stone STR (Upper)",
-        "identifiedResourceName": "영혼의조각",
-        "identifiedDescriptionName": [
-            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
-            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
-            "",
-            "STR + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "เพิ่ม Damage ทางกายภาพระยะใกล้ 5%",
-            "",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>",
-            "น้ำหนัก : 10"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "1002560": {
-        "unidentifiedDisplayName": "Ragnarok Festa Stone AGI (Upper)",
-        "unidentifiedResourceName": "영혼의조각",
-        "unidentifiedDescriptionName": [
-            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
-            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
-            "",
-            "AGI + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "Perferct Doage +5, ASPD + 5%.",
-            "",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>"
-        ],
-        "identifiedDisplayName": "Ragnarok Festa Stone AGI (Upper)",
-        "identifiedResourceName": "영혼의조각",
-        "identifiedDescriptionName": [
-            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
-            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
-            "",
-            "AGI + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "Perferct Doage +5, ASPD + 5%.",
-            "",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>",
-            "น้ำหนัก : 10"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "1002561": {
-        "unidentifiedDisplayName": "Ragnarok Festa Stone VIT (Upper)",
-        "unidentifiedResourceName": "영혼의조각",
-        "unidentifiedDescriptionName": [
-            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
-            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
-            "",
-            "VIT + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "DEF + 100 MHP + 5%.",
-            "",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>"
-        ],
-        "identifiedDisplayName": "Ragnarok Festa Stone VIT (Upper)",
-        "identifiedResourceName": "영혼의조각",
-        "identifiedDescriptionName": [
-            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
-            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
-            "",
-            "VIT + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "DEF + 100 MHP + 5%.",
-            "",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>",
-            "น้ำหนัก : 10"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "1002562": {
-        "unidentifiedDisplayName": "Ragnarok Festa Stone INT (Upper)",
-        "unidentifiedResourceName": "영혼의조각",
-        "unidentifiedDescriptionName": [
-            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
-            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
-            "",
-            "INT + 5,",
-            "MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "MATK + 5%",
-            "",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>"
-        ],
-        "identifiedDisplayName": "Ragnarok Festa Stone INT (Upper)",
-        "identifiedResourceName": "영혼의조각",
-        "identifiedDescriptionName": [
-            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
-            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
-            "",
-            "INT + 5,",
-            "MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "MATK + 5%",
-            "",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>",
-            "น้ำหนัก : 10"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "1002563": {
-        "unidentifiedDisplayName": "Ragnarok Festa Stone DEX (Upper)",
-        "unidentifiedResourceName": "영혼의조각",
-        "unidentifiedDescriptionName": [
-            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
-            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
-            "",
-            "DEX + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "เพิ่ม Damage ทางกายภาพระยะไกล 5%",
-            "",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>"
-        ],
-        "identifiedDisplayName": "Ragnarok Festa Stone DEX (Upper)",
-        "identifiedResourceName": "영혼의조각",
-        "identifiedDescriptionName": [
-            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
-            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
-            "",
-            "DEX + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "เพิ่ม Damage ทางกายภาพระยะไกล 5%",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>",
-            "น้ำหนัก : 10"
-        ],
-        "slotCount": 0,
-        "ClassNum": 0,
-        "costume": false
-    },
-    "1002564": {
-        "unidentifiedDisplayName": "Ragnarok Festa Stone LUK (Upper)",
-        "unidentifiedResourceName": "영혼의조각",
-        "unidentifiedDescriptionName": [
-            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
-            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
-            "",
-            "LUK + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "Critical Damage + 5%",
-            "",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>"
-        ],
-        "identifiedDisplayName": "Ragnarok Festa Stone LUK (Upper)",
-        "identifiedResourceName": "영혼의조각",
-        "identifiedDescriptionName": [
-            "หิน Ragnarok Festa 2026 ที่ช่วยปลุกพลังของตัวละคร",
-            "ใช้ติดตั้งที่ Slot 2 ของ Costume Upper",
-            "",
-            "LUK + 5,",
-            "ATK, MATK + 15,",
-            "ลด Global Cooldown 5%,",
-            "Critical Damage + 5%",
-            "",
-            "^ffffff<NAVI>^4D4DFF[Aver De Dosh]<INFO>mal_in01,23,113,0,100,0,0</INFO></NAVI>",
             "น้ำหนัก : 10"
         ],
         "slotCount": 0,
@@ -794,17 +1136,83 @@
         "unidentifiedDisplayName": "Flower Garden (Garment)",
         "unidentifiedResourceName": "발자국이펙트",
         "unidentifiedDescriptionName": [
-            "มอบเอฟเฟกต์เมื่อ Enchant ช่องที่ 3 ของ Costume ประเภท Garment",
+            "มอบเอฟเฟกต์เมื่อ Enchant ช่องที่ 4 ของ Costume ประเภท Garment",
             "^ff0000Flower Garden",
             "^ffffff<NAVI>^4D4DFF[Lace La Zard]<INFO>mal_in01,20,107,0,100,0,0</INFO></NAVI>"
         ],
         "identifiedDisplayName": "Flower Garden (Garment)",
         "identifiedResourceName": "발자국이펙트",
         "identifiedDescriptionName": [
-            "มอบเอฟเฟกต์เมื่อ Enchant ช่องที่ 3 ของ Costume ประเภท Garment",
+            "มอบเอฟเฟกต์เมื่อ Enchant ช่องที่ 4 ของ Costume ประเภท Garment",
             "^ff0000Flower Garden",
             "^ffffff<NAVI>^4D4DFF[Lace La Zard]<INFO>mal_in01,20,107,0,100,0,0</INFO></NAVI>",
             "น้ำหนัก : 10"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "1002959": {
+        "unidentifiedDisplayName": "Baby Shark Coin",
+        "unidentifiedResourceName": "CLB_BS_Coin",
+        "unidentifiedDescriptionName": [
+            "เหรียญที่ได้รับเมื่อรับฟังคำขอของ Baby Shark"
+        ],
+        "identifiedDisplayName": "Baby Shark Coin",
+        "identifiedResourceName": "CLB_BS_Coin",
+        "identifiedDescriptionName": [
+            "เหรียญที่ได้รับเมื่อรับฟังคำขอของ Baby Shark",
+            "",
+            "^ff0000(ไอเท็มนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
+            "น้ำหนัก : 0"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "1100060": {
+        "unidentifiedDisplayName": "Baby Shark Bread",
+        "unidentifiedResourceName": "CLB_BS_Bread",
+        "unidentifiedDescriptionName": [
+            "ขนมปังแสนอร่อยที่ทำขึ้นโดยเลียนแบบรูปร่างของ Baby Shark",
+            "ดูอุ่น ๆ และน่ารักน่ากิน",
+            "^000088ฟื้นฟู HP 3250 โดยประมาณ",
+            "^ffffff_",
+            "^ff0000(ไอเท็มนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)"
+        ],
+        "identifiedDisplayName": "Baby Shark Bread",
+        "identifiedResourceName": "CLB_BS_Bread",
+        "identifiedDescriptionName": [
+            "ขนมปังแสนอร่อยที่ทำขึ้นโดยเลียนแบบรูปร่างของ Baby Shark",
+            "ดูอุ่น ๆ และน่ารักน่ากิน",
+            "^000088ฟื้นฟู HP 3250 โดยประมาณ",
+            "^ffffff_",
+            "^ff0000(ไอเท็มนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
+            "น้ำหนัก : 0.1"
+        ],
+        "slotCount": 0,
+        "ClassNum": 0,
+        "costume": false
+    },
+    "1100061": {
+        "unidentifiedDisplayName": "Baby Shark Singing Candy",
+        "unidentifiedResourceName": "CLB_BS_Candy",
+        "unidentifiedDescriptionName": [
+            "อมยิ้มน่ารักที่ทำขึ้นโดยเลียนแบบใบหน้าของ Baby Shark",
+            "กินแล้วรู้สึกอยากร้องเพลงเลย! !",
+            "^000088ฟื้นฟู SP 420 โดยประมาณ",
+            "^ffffff_",
+            "^ff0000(ไอเท็มนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)"
+        ],
+        "identifiedDisplayName": "Baby Shark Singing Candy",
+        "identifiedResourceName": "CLB_BS_Candy",
+        "identifiedDescriptionName": [
+            "อมยิ้มน่ารักที่ทำขึ้นโดยเลียนแบบใบหน้าของ Baby Shark",
+            "กินแล้วรู้สึกอยากร้องเพลงเลย!",
+            "^000088ฟื้นฟู SP 420 โดยประมาณ",
+            "^ffffff_",
+            "^ff0000(ไอเท็มนี้จะถูกลบหลังปิดปรับปรุงเซิร์ฟเวอร์วันที่ 13 มกราคม 2570)",
+            "น้ำหนัก : 0.1"
         ],
         "slotCount": 0,
         "ClassNum": 0,
