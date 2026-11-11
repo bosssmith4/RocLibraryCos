@@ -385,10 +385,10 @@ function PreviewCanvas({
     // An effect or a Footprint adds light onto the scene, as in the game, so it plays on a
     // dark stage; on a pale one it would wash out to white.
     <div
-      className={`relative mx-auto overflow-hidden rounded-box ${
+      // A phone gets a smaller stage, so the window leaves the page visible around it.
+      className={`relative mx-auto w-60 max-w-full overflow-hidden rounded-box sm:w-[300px] ${
         lit ? "bg-neutral" : "bg-base-200"
       }`}
-      style={{ width: CANVAS_WIDTH, maxWidth: "100%" }}
     >
       <canvas
         ref={canvasRef}
@@ -522,11 +522,11 @@ export function CostumePreviewModal({
         if (e.key === "ArrowLeft") turn(1);
         if (e.key === "ArrowRight") turn(-1);
       }}
-      className="modal modal-bottom sm:modal-middle"
+      className="modal"
     >
-      <div className="modal-box w-full max-w-md space-y-4 p-4 sm:p-6">
+      <div className="modal-box max-h-[calc(100dvh-2rem)] w-[calc(100%-2rem)] max-w-sm space-y-3 overflow-y-auto p-3 sm:max-w-md sm:space-y-4 sm:p-6">
         <div className="flex items-start justify-between gap-3">
-          <h2 id={titleId} className="min-w-0 text-lg font-bold">
+          <h2 id={titleId} className="min-w-0 pt-2 text-base font-bold sm:text-lg">
             {name}
           </h2>
           <form method="dialog">
@@ -547,8 +547,9 @@ export function CostumePreviewModal({
           onTogglePlay={() => setPlaying((p) => !p)}
         />
 
-        <div className="grid gap-3 sm:grid-cols-2">
-          <div className="space-y-1.5">
+        {/* Phone: direction on its own row, pose and character side by side under it. */}
+        <div className="grid grid-cols-2 gap-2 sm:gap-3">
+          <div className="col-span-2 space-y-1 sm:col-span-1 sm:space-y-1.5">
             <span className="text-xs font-semibold text-base-content/70">
               ทิศทาง
             </span>
@@ -575,14 +576,14 @@ export function CostumePreviewModal({
             </div>
           </div>
 
-          <label className="space-y-1.5">
-            <span className="text-xs font-semibold text-base-content/70">
+          <label className="min-w-0 space-y-1 sm:space-y-1.5">
+            <span className="block text-xs font-semibold text-base-content/70">
               ท่าทาง
             </span>
             <select
               value={poseType}
               onChange={(e) => setPoseType(Number(e.target.value))}
-              className="select select-bordered min-h-13 w-full"
+              className="select select-bordered min-h-11 w-full sm:min-h-13"
             >
               {POSES.map((p) => (
                 <option key={p.type} value={p.type}>
@@ -595,9 +596,9 @@ export function CostumePreviewModal({
           <div
             role="group"
             aria-label="เพศของตัวละคร"
-            className="space-y-1.5 sm:col-span-2"
+            className="min-w-0 space-y-1 sm:col-span-2 sm:space-y-1.5"
           >
-            <span className="text-xs font-semibold text-base-content/70">
+            <span className="block text-xs font-semibold text-base-content/70">
               ตัวละคร
             </span>
             <div className="join w-full">
