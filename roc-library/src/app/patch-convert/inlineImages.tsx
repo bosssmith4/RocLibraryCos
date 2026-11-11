@@ -43,9 +43,15 @@ function fetchDataUrl(src: string): Promise<string> {
   return pending;
 }
 
-/** Embeds the logo, the banner and the item picture (the logo stands in if it is missing). */
-export async function loadInlineImages(patchKey: string): Promise<InlineMap> {
-  const itemSrc = `/assets/images/PatchImage/${patchKey}.bmp`;
+/**
+ * Embeds the logo, the banner and the item picture (the logo stands in if it is missing).
+ * A card's picture is its Card illustration, passed as `illustration`.
+ */
+export async function loadInlineImages(
+  patchKey: string,
+  illustration?: string,
+): Promise<InlineMap> {
+  const itemSrc = illustration ?? `/assets/images/PatchImage/${patchKey}.bmp`;
   const [logo, banner, item] = await Promise.all([
     fetchDataUrl(LOGO_SRC),
     fetchDataUrl(BANNER_SRC),

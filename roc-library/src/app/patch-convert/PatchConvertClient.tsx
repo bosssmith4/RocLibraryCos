@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import { Check, Download, Loader2 } from "lucide-react";
 import { PageSkeleton } from "@/components/Loader";
 
+import { cardIllustrations } from "@/data/patchCard";
 import { useItemDb } from "@/services/patchData/itemsService";
 import { PatchItemsDto } from "@/types/patch";
 import * as htmlToImage from "html-to-image";
@@ -74,12 +75,30 @@ async function deliverImage(file: File) {
   setTimeout(() => URL.revokeObjectURL(url), 60_000);
 }
 
+/** Item id → Card illustration URL for the patch's cards; empty until loaded. */
+function useCardIllustrations() {
+  const [cards, setCards] = useState<Record<string, string>>({});
+  useEffect(() => {
+    let cancelled = false;
+    cardIllustrations().then((all) => {
+      if (!cancelled) setCards(all);
+    });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+  return cards;
+}
+
 function ExportableItem({
   patchKey,
   item,
+  illustration,
 }: {
   patchKey: string;
   item: PatchItemsDto;
+  /** The Card illustration, when the item is a card: it takes the place of the item's picture. */
+  illustration?: string;
 }) {
   const [status, setStatus] = useState<ExportStatus>("idle");
   const [exporting, setExporting] = useState(false);
@@ -129,8 +148,8 @@ function ExportableItem({
 
   // Fetch the card's pictures ahead of time so the press has little left to wait for.
   useEffect(() => {
-    loadInlineImages(patchKey).catch(() => undefined);
-  }, [patchKey]);
+    loadInlineImages(patchKey, illustration).catch(() => undefined);
+  }, [patchKey, illustration]);
 
   // The confirmation fades back to the normal button after a moment.
   useEffect(() => {
@@ -143,7 +162,7 @@ function ExportableItem({
     setStatus("busy");
     try {
       // The export copy only mounts once every picture is embedded in it.
-      setInlined(await loadInlineImages(patchKey));
+      setInlined(await loadInlineImages(patchKey, illustration));
       setExporting(true);
     } catch {
       setStatus("error");
@@ -157,6 +176,7 @@ function ExportableItem({
           <p className="text-xs text-base-content/60">
             รหัส {patchKey}
             {item.costume && " · Costume"}
+            {illustration && " · Card"}
           </p>
           <h2
             id={`item-title-${patchKey}`}
@@ -212,7 +232,9 @@ function ExportableItem({
         <ItemCard
           id={`item${patchKey}`}
           item={item}
-          image={<ImageConvertPage patchKey={patchKey} />}
+          image={
+            <ImageConvertPage patchKey={patchKey} illustration={illustration} />
+          }
           showSponsor
         />
       </div>
@@ -243,7 +265,9 @@ function ExportableItem({
             <ItemCard
               id={`export${patchKey}`}
               item={item}
-              image={<ImageConvertPage patchKey={patchKey} />}
+              image={
+            <ImageConvertPage patchKey={patchKey} illustration={illustration} />
+          }
               showSponsor
             />
           </InlineImageProvider>
@@ -257,6 +281,7 @@ export default function PatchConvertClient() {
   const { items, loading, error } = useItemDb();
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState<string>();
+  const cards = useCardIllustrations();
 
   const entries = Object.entries(items || {});
   const needle = query.trim().toLowerCase();
@@ -300,6 +325,7 @@ export default function PatchConvertClient() {
             onSelect={setSelected}
             query={query}
             onQueryChange={setQuery}
+            cards={cards}
           />
 
           {current ? (
@@ -307,6 +333,7 @@ export default function PatchConvertClient() {
               key={current[0]}
               patchKey={current[0]}
               item={current[1]}
+              illustration={cards[current[0]]}
             />
           ) : (
             <p className="rounded-box border border-dashed border-base-300 p-10 text-center text-base-content/70">

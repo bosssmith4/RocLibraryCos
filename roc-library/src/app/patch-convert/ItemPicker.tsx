@@ -15,6 +15,8 @@ interface ItemPickerProps {
   onSelect: (key: string) => void;
   query: string;
   onQueryChange: (query: string) => void;
+  /** Items that are cards (they have a Card illustration). */
+  cards: Record<string, string>;
 }
 
 function Thumbnail({ patchKey }: { patchKey: string }) {
@@ -39,11 +41,13 @@ function ItemRow({
   patchKey,
   item,
   selected,
+  card,
   onSelect,
 }: {
   patchKey: string;
   item: PatchItemsDto;
   selected: boolean;
+  card: boolean;
   onSelect: (key: string) => void;
 }) {
   return (
@@ -65,6 +69,7 @@ function ItemRow({
         <span className="mt-0.5 block text-xs text-base-content/60">
           รหัส {patchKey}
           {item.costume && " · Costume"}
+          {card && " · Card"}
         </span>
       </span>
     </button>
@@ -79,10 +84,12 @@ function MobileSelect({
   entries,
   selectedKey,
   onSelect,
+  cards,
 }: {
   entries: Entry[];
   selectedKey: string | undefined;
   onSelect: (key: string) => void;
+  cards: Record<string, string>;
 }) {
   const [open, setOpen] = useState(false);
   const current = entries.find(([key]) => key === selectedKey);
@@ -143,6 +150,7 @@ function MobileSelect({
                   patchKey={key}
                   item={item}
                   selected={key === selectedKey}
+                  card={key in cards}
                   onSelect={choose}
                 />
               </li>
@@ -165,6 +173,7 @@ export default function ItemPicker({
   onSelect,
   query,
   onQueryChange,
+  cards,
 }: ItemPickerProps) {
   const searching = query.trim() !== "";
 
@@ -213,6 +222,7 @@ export default function ItemPicker({
             entries={entries}
             selectedKey={selectedKey}
             onSelect={onSelect}
+            cards={cards}
           />
 
           {/* Wide screens: a list that scrolls on its own. */}
@@ -227,6 +237,7 @@ export default function ItemPicker({
                     patchKey={key}
                     item={item}
                     selected={key === selectedKey}
+                    card={key in cards}
                     onSelect={onSelect}
                   />
                 </li>
