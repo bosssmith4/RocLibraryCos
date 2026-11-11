@@ -11,6 +11,7 @@ import ImageConvertPage from "./image-convert";
 import ItemCard from "./ItemCard";
 import { InlineImageProvider, loadInlineImages } from "./inlineImages";
 import ItemPicker from "./ItemPicker";
+import { NewMapsButton, NewMapsModal, useNewMaps } from "./NewMaps";
 import {
   CostumePreviewButton,
   CostumePreviewModal,
@@ -282,6 +283,8 @@ export default function PatchConvertClient() {
   const [query, setQuery] = useState("");
   const [selected, setSelected] = useState<string>();
   const cards = useCardIllustrations();
+  const maps = useNewMaps();
+  const [mapsOpen, setMapsOpen] = useState(false);
 
   const entries = Object.entries(items || {});
   const needle = query.trim().toLowerCase();
@@ -307,15 +310,24 @@ export default function PatchConvertClient() {
   return (
     <main className="px-4 py-6 sm:px-6">
       <div className="mx-auto max-w-7xl">
-        <header className="mb-6 max-w-2xl">
-          <h1 className="text-2xl font-bold text-base-content sm:text-3xl">
-            Patch Convert
-          </h1>
-          <p className="mt-1 text-sm text-base-content/70">
-            เลือกไอเทมจากแพตช์ แล้วกดดาวน์โหลดรูป เพื่อบันทึกการ์ดเป็น PNG
-            สำหรับโพสต์
-          </p>
+        <header className="mb-6 flex flex-wrap items-start justify-between gap-3">
+          <div className="max-w-2xl">
+            <h1 className="text-2xl font-bold text-base-content sm:text-3xl">
+              Patch Convert
+            </h1>
+            <p className="mt-1 text-sm text-base-content/70">
+              เลือกไอเทมจากแพตช์ แล้วกดดาวน์โหลดรูป เพื่อบันทึกการ์ดเป็น PNG
+              สำหรับโพสต์
+            </p>
+          </div>
+          {/* Only when the patch brings New maps. */}
+          {maps.length > 0 && (
+            <NewMapsButton count={maps.length} onOpen={() => setMapsOpen(true)} />
+          )}
         </header>
+        {mapsOpen && maps.length > 0 && (
+          <NewMapsModal maps={maps} onClose={() => setMapsOpen(false)} />
+        )}
 
         <div className="grid gap-6 lg:grid-cols-[18rem_minmax(0,1fr)] lg:items-start">
           <ItemPicker
