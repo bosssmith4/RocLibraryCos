@@ -1,0 +1,216 @@
+{
+  "title": "Scorpio Scroll",
+  "cover": "108559.bmp",
+  "source": "https://roc.gnjoy.in.th/promotion/baphomet-scorpio-scroll/",
+  "prizes": [
+    {
+      "id": "480205",
+      "name": "Costume Astra Blessing",
+      "image": null,
+      "quantity": 1,
+      "tier": "SSR",
+      "rate": 0.05,
+      "announce": true
+    },
+    {
+      "id": "22829",
+      "name": "Sealed Card Album",
+      "image": null,
+      "quantity": 1,
+      "tier": "SSR",
+      "rate": 0.05
+    },
+    {
+      "id": "23719",
+      "name": "Sealed Card Album II",
+      "image": null,
+      "quantity": 1,
+      "tier": "SSR",
+      "rate": 0.05
+    },
+    {
+      "id": "401658",
+      "name": "Scorpio Diadem [1]",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.11
+    },
+    {
+      "id": "491140",
+      "name": "Scorpio Ring [1]",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.13
+    },
+    {
+      "id": "610106",
+      "name": "Scorpio Katar [2]",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.13
+    },
+    {
+      "id": "20747",
+      "name": "Manteau of Great Nature [1]",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.13
+    },
+    {
+      "id": "24675",
+      "name": "True Gemstone Shadow Armor",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.13
+    },
+    {
+      "id": "24676",
+      "name": "True Gemstone Shadow Shoes",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.15
+    },
+    {
+      "id": "24262",
+      "name": "Assassin Shadow Shoes",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.34
+    },
+    {
+      "id": "24275",
+      "name": "Assassin Shadow Armor",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.4
+    },
+    {
+      "id": "24150",
+      "name": "Infinity Shadow Earring",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.39
+    },
+    {
+      "id": "23247",
+      "name": "Status Shadow Item Combiner",
+      "image": null,
+      "quantity": 1,
+      "tier": "R",
+      "rate": 0.59
+    },
+    {
+      "id": "12103",
+      "name": "Blood Twig",
+      "image": null,
+      "quantity": 1,
+      "tier": "B",
+      "rate": 1.25
+    },
+    {
+      "id": "17066",
+      "name": "Poison Bottle Box",
+      "image": null,
+      "quantity": 1,
+      "tier": "B",
+      "rate": 2.0
+    },
+    {
+      "id": "23115",
+      "name": "Class Shadow Cube",
+      "image": null,
+      "quantity": 1,
+      "tier": "B",
+      "rate": 2.0
+    },
+    {
+      "id": "102121",
+      "name": "[Scroll] AGI Biscuit Stick",
+      "image": null,
+      "quantity": 2,
+      "tier": "B",
+      "rate": 5.0
+    },
+    {
+      "id": "101514",
+      "name": "[Scroll] INT Biscuit Stick",
+      "image": null,
+      "quantity": 2,
+      "tier": "B",
+      "rate": 5.0
+    },
+    {
+      "id": "101513",
+      "name": "[Scroll] STR Biscuit Stick",
+      "image": null,
+      "quantity": 2,
+      "tier": "B",
+      "rate": 5.0
+    },
+    {
+      "id": "101337",
+      "name": "[Scroll] VIT Biscuit Stick",
+      "image": null,
+      "quantity": 2,
+      "tier": "B",
+      "rate": 5.0
+    },
+    {
+      "id": "101336",
+      "name": "[Scroll] DEX Biscuit Stick",
+      "image": null,
+      "quantity": 2,
+      "tier": "B",
+      "rate": 5.0
+    },
+    {
+      "id": "102120",
+      "name": "[Scroll] LUK Biscuit Stick",
+      "image": null,
+      "quantity": 2,
+      "tier": "B",
+      "rate": 5.0
+    },
+    {
+      "id": "14846",
+      "name": "[Scroll] Inc Agi Lv.10 Scroll",
+      "image": null,
+      "quantity": 10,
+      "tier": "C",
+      "rate": 11.0
+    },
+    {
+      "id": "14845",
+      "name": "[Scroll] Blessing Lv.10",
+      "image": null,
+      "quantity": 10,
+      "tier": "C",
+      "rate": 11.1
+    },
+    {
+      "id": "14844",
+      "name": "[Scroll] Kafra Card",
+      "image": null,
+      "quantity": 5,
+      "tier": "E",
+      "rate": 20.0
+    },
+    {
+      "id": "9909",
+      "name": "[Scroll] Ex Def Potion",
+      "image": null,
+      "quantity": 5,
+      "tier": "E",
+      "rate": 20.0
+    }
+  ]
+}
