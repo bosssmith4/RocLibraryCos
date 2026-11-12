@@ -29,7 +29,7 @@ export function calculateAspdCorrection(agi: number) {
 }
 
 export function calculateStatTerm(agi: number, dex: number) {
-  return Math.sqrt(Math.max(0, agi) * 9.9987 + Math.max(0, dex) * 0.1922);
+  return Math.sqrt(Math.max(0, agi) * 9.999 + Math.max(0, dex) * 0.19212);
 }
 
 export function calculateBaseCase(
@@ -43,11 +43,11 @@ export function calculateBaseCase(
 }
 
 export function calculateBaseASPD(baseCase: number, totalModifier: number) {
-  return roundDown(200 - (200 - baseCase) * (1 - totalModifier), 3);
+  return 200 - (200 - baseCase) * (1 - totalModifier);
 }
 
 export function calculateEquipContribution(baseASPD: number, equipMod: number) {
-  return roundDown((195 - baseASPD) * equipMod, 2);
+  return roundDown((195 - baseASPD) * equipMod, 1);
 }
 
 export function calculateFinalRaw(baseASPD: number, equipContrib: number, flatASPD: number) {
@@ -62,7 +62,6 @@ export function calcASPD(
   dex: number,
   potionMod: number,
   skillMod: number,
-  specialMod: number,
   equipMod: number,
   flatASPD: number,
   maxASPD = 193,
@@ -79,12 +78,13 @@ export function calcASPD(
     aspdPenalty,
   );
 
-  const bonusTotal = potionMod + skillMod + specialMod;
+  const bonusTotal = potionMod + skillMod;
   const baseASPD = calculateBaseASPD(baseCase, bonusTotal);
   const equipContrib = calculateEquipContribution(baseASPD, equipMod);
   const afterEquipASPD = baseASPD + equipContrib;
   const finalRaw = calculateFinalRaw(baseASPD, equipContrib, flatASPD);
-  const final = Math.min(maxASPD, Math.max(0, Math.floor(finalRaw)));
+  const finalExact = Math.min(maxASPD, Math.max(0, roundDown(finalRaw, 2)));
+  const final = Math.floor(finalExact);
 
   return {
     jobWeaponBase,
@@ -97,6 +97,7 @@ export function calcASPD(
     equipContrib,
     afterEquipASPD,
     finalRaw,
+    finalExact,
     final,
   };
 }
@@ -110,7 +111,6 @@ export function stepsToASPD(
   dex: number,
   potionMod: number,
   skillMod: number,
-  specialMod: number,
   equipMod: number,
   flatASPD: number,
   maxASPD = 193,
@@ -127,7 +127,6 @@ export function stepsToASPD(
       dex,
       potionMod,
       skillMod,
-      specialMod,
       equipMod,
       flatASPD,
       maxASPD,
@@ -149,7 +148,6 @@ export function stepsToASPD(
       dex + extra,
       potionMod,
       skillMod,
-      specialMod,
       equipMod,
       flatASPD,
       maxASPD,
@@ -164,11 +162,11 @@ export function stepsToASPD(
   return { agiNeeded, dexNeeded };
 }
 /**
- * Attacks per second for a Final ASPD before the class cap. The cap itself is 190 for Class 1-2 (5 a second)
- * and 193 for Extended and Awakened (counted as 7 a second).
+ * Attacks per second for a Final ASPD before the class cap. The cap itself is 190 for Class 1-2 and High Class
+ * (5 a second) and 193 for Extended and Awakened (counted as 7 a second).
  */
 export function attacksPerSecond(finalRaw: number, maxASPD: number) {
-  if (finalRaw >= 193) return 7;
-  if (Math.min(finalRaw, maxASPD) === 190) return 5;
+  if (Math.min(finalRaw, maxASPD) >= 193) return 7;
+  if (Math.floor(Math.min(finalRaw, maxASPD)) === 190) return 5;
   return 50 / (200 - Math.floor(finalRaw));
 }

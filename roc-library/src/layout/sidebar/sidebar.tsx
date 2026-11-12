@@ -74,6 +74,13 @@ const fileTree: FileTreeItem[] = [
         icon: "https://api.iconify.design/fluent-emoji-flat/tokyo-tower.svg?color=%23f4fb00",
         href: "/endless-tower",
       },
+      {
+        id: "aspd",
+        name: "The Flash Calc (ASPD)",
+        type: "file",
+        icon: "https://api.iconify.design/famicons/flash.svg?color=%23f4fb00",
+        href: "/aspd-calc",
+      },
     ],
   },
   // {
@@ -249,8 +256,7 @@ function FileTreeNode({
               style={{
                 backgroundImage: `url(https://api.iconify.design/mdi/folder${expanded ? "-open" : ""}.svg?color=%2393c5fd)`,
               }}
-            >
-            </span>
+            ></span>
             <span className="text-sm shrink-0">
               {item.icon && (
                 <span
@@ -302,11 +308,16 @@ function FileTreeNode({
               />
             )}
           </span>
-          <span className={`truncate font-medium ${isActive || isPending ? "" : "text-base-content/85 group-hover:text-base-content"}`}>
+          <span
+            className={`truncate font-medium ${isActive || isPending ? "" : "text-base-content/85 group-hover:text-base-content"}`}
+          >
             {item.name}
           </span>
           {isPending && (
-            <span className="loading loading-spinner loading-xs ml-auto shrink-0" aria-hidden="true" />
+            <span
+              className="loading loading-spinner loading-xs ml-auto shrink-0"
+              aria-hidden="true"
+            />
           )}
         </Link>
       )}
@@ -343,7 +354,9 @@ export default function SidebarPage() {
         <p className="text-[10px] text-base-content/60 mb-3">
           © 2025 ROC Library. All rights reserved.
         </p>
-        <p className="text-[10px] font-semibold text-base-content/80 mb-2">Supporter</p>
+        <p className="text-[10px] font-semibold text-base-content/80 mb-2">
+          Supporter
+        </p>
         <div className="flex justify-center gap-2">
           {[
             {

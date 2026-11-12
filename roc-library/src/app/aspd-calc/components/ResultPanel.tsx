@@ -1,95 +1,105 @@
-import ASPDGauge from "./ASPDGauge";
+import { useEffect, useRef, useState } from "react";
+import { Zap } from "lucide-react";
+import { attacksPerSecond } from "@/utils/aspdFormula";
+import { AspdTrack, BeatLane } from "./ASPDGauge";
 import type { ResultPanelProps } from "../types";
 
-export default function ResultPanel({
-  classTier,
-  maxASPD,
-  result,
-  jobBaseASPD,
-  weaponFactor,
-  offHandFactor,
-  flatASPD,
-}: ResultPanelProps) {
-  const aspdColor = result.final >= 170 ? "text-green-400" : result.final >= 140 ? "text-yellow-400" : "text-red-400";
+/** Runs the shown number up or down to the target instead of jumping; jumps when motion is reduced. */
+function useCountUp(target: number) {
+  const [shown, setShown] = useState(target);
+  const current = useRef(target);
+
+  useEffect(() => {
+    const from = current.current;
+    if (from === target) return;
+    const duration = window.matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : 350;
+    const start = performance.now();
+    let frame = requestAnimationFrame(function tick(now) {
+      const progress = duration === 0 ? 1 : Math.min(1, (now - start) / duration);
+      const value = Math.round(from + (target - from) * (1 - (1 - progress) ** 3));
+      current.current = value;
+      setShown(value);
+      if (progress < 1) frame = requestAnimationFrame(tick);
+    });
+    return () => cancelAnimationFrame(frame);
+  }, [target]);
+
+  return shown;
+}
+
+export default function ResultPanel({ tierLabel, maxASPD, result }: ResultPanelProps) {
+  const shownASPD = useCountUp(result.final);
+  const attacksPerSec = attacksPerSecond(result.finalRaw, maxASPD);
+  const atCap = result.final >= maxASPD;
+  const overCap = result.finalRaw - maxASPD;
+  const toNext = Math.floor(result.finalRaw) + 1 - result.finalRaw;
 
   return (
-    <div className="flex flex-col items-center gap-4 rounded-2xl border border-sky-500/30 p-5" style={{ background: "rgba(10,20,50,0.9)", boxShadow: "0 0 40px rgba(56,189,248,0.08)" }}>
-      <h2 className="self-start text-sm font-bold uppercase tracking-widest text-sky-400">⚡ Result</h2>
+    <section
+      aria-labelledby="aspd-result-heading"
+      className={`aspd-screen flex flex-col gap-5 p-5 ${atCap ? "aspd-screen-max" : ""}`}
+    >
+      {/* Remounts on every change of ASPD, so the glow plays once per change */}
+      <span key={result.final} className="aspd-flash" />
+      <Zap
+        aria-hidden="true"
+        strokeWidth={1}
+        className="pointer-events-none absolute -right-8 -top-6 size-56 text-sky-400/10"
+      />
 
-      {classTier === "awakened" ? (
-        <div className="flex h-52 w-52 flex-col items-center justify-center rounded-full border border-yellow-500/30 bg-yellow-500/5">
-          <span className="text-4xl">🚧</span>
-          <p className="mt-2 text-sm font-bold text-yellow-400">Coming Soon</p>
-        </div>
-      ) : (
-        <ASPDGauge aspd={result.final} max={maxASPD} />
-      )}
-
-      <div className="w-full space-y-2 border-t border-white/10 pt-3 text-xs">
-        <div className="flex justify-between">
-          <span className="text-white/40">Job Base ASPD</span>
-          <span className="font-mono text-white">{jobBaseASPD}</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-white/40">Weapon Factor</span>
-          <span className="font-mono text-white">{weaponFactor >= 0 ? "+" : ""}{weaponFactor}</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-white/40">Combined Base</span>
-          <span className="font-mono font-bold text-yellow-300">{result.jobWeaponBase.toFixed(2)}</span>
-        </div>
-        <div className="flex justify-between">
-          <span className="text-white/40">Off-Hand</span>
-          <span className="font-mono text-white">{offHandFactor !== 0 ? offHandFactor : "—"}</span>
-        </div>
-
-        <div className="space-y-1.5 border-t border-white/10 pt-2">
-          <p className="mb-1 text-xs uppercase tracking-widest text-white/30">Formula Steps</p>
-          <div className="flex justify-between">
-            <span className="text-white/50">ASPD Penalty</span>
-            <span className="font-mono font-bold text-orange-300">{result.aspdPenalty.toFixed(2)}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-white/50">ASPD Correction</span>
-            <span className="font-mono font-bold text-orange-300">{result.aspdCorrection.toFixed(3)}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-white/50">Stat Root</span>
-            <span className="font-mono font-bold text-sky-300">{result.statTerm.toFixed(4)}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-white/50">Base Case</span>
-            <span className="font-mono font-bold text-sky-300">{result.baseCase.toFixed(4)}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-white/50">Base ASPD</span>
-            <span className="font-mono font-bold text-sky-300">{result.baseASPD.toFixed(2)}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-white/50">Equip ASPD %</span>
-            <span className="font-mono text-sky-300">+{result.equipContrib.toFixed(1)}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-white/50">After Equip ASPD</span>
-            <span className="font-mono font-bold text-sky-300">{result.afterEquipASPD.toFixed(2)}</span>
-          </div>
-          <div className="flex justify-between">
-            <span className="text-white/50">Flat ASPD</span>
-            <span className="font-mono text-white/60">+{flatASPD}</span>
-          </div>
-        </div>
-
-        <div className="flex justify-between border-t border-white/10 pt-2">
-          <span className="text-sm font-bold text-white/70">Final ASPD</span>
-          <span className={`font-mono text-base font-black ${aspdColor}`}>{result.final}</span>
-        </div>
+      <div className="relative flex items-center justify-between gap-3">
+        <h2 id="aspd-result-heading" className="flex items-center gap-1.5 font-mono text-sm font-bold uppercase tracking-widest text-sky-300">
+          <Zap aria-hidden="true" className="size-4 fill-current" />
+          ASPD
+        </h2>
+        <span className="text-xs text-sky-100/80">
+          {tierLabel} · Max {maxASPD}
+        </span>
       </div>
 
-      <div
-        className={`w-full rounded-lg border py-2 text-center text-sm font-bold uppercase tracking-widest ${result.final >= 185 ? "border-green-500/50 bg-green-500/10 text-green-400" : result.final >= 170 ? "border-yellow-500/50 bg-yellow-500/10 text-yellow-400" : result.final >= 150 ? "border-orange-500/50 bg-orange-500/10 text-orange-400" : "border-red-500/50 bg-red-500/10 text-red-400"}`}
-      >
-        {result.final >= 185 ? "⚡ Lightning Fast" : result.final >= 170 ? "🔥 Very Fast" : result.final >= 150 ? "✅ Normal" : "🐢 Slow"}
+      <div className="relative">
+        <p className="sr-only" aria-live="polite">
+          ASPD {result.final}
+        </p>
+        <div className="flex items-end gap-3" aria-hidden="true">
+          <p className={`aspd-digits font-mono text-8xl font-black leading-none tabular-nums ${atCap ? "text-amber-300" : "text-sky-100"}`}>
+            {shownASPD}
+          </p>
+          {atCap ? (
+            <span className="mb-2 rounded-md bg-amber-400 px-2.5 py-1 font-mono text-sm font-black text-amber-950">MAX</span>
+          ) : (
+            <span className="mb-2 font-mono text-xl font-bold text-sky-300">
+              .{result.finalExact.toFixed(2).split(".")[1]}
+            </span>
+          )}
+        </div>
+        <p className="mt-3 text-sm text-sky-100/90">
+          {atCap ? (
+            <>
+              ถึง Max {maxASPD} แล้ว
+              {overCap >= 0.01 ? ` (เกินมา ${overCap.toFixed(2)})` : ""}
+            </>
+          ) : (
+            <>
+              ขาดอีก <span className="font-mono font-bold text-sky-300">{toNext.toFixed(2)}</span> จะขึ้นเป็น {result.final + 1}
+            </>
+          )}
+        </p>
       </div>
-    </div>
+
+      <div className="relative">
+        <AspdTrack aspd={result.finalExact} max={maxASPD} />
+      </div>
+
+      <div className="relative border-t border-sky-400/25 pt-4">
+        <p className="mb-2 flex items-baseline justify-between gap-3 text-sm text-sky-100/90">
+          <span>
+            ตี <span className="font-mono text-2xl font-black text-sky-300">{attacksPerSec.toFixed(2)}</span> ครั้ง/วินาที
+          </span>
+          <span className="text-sky-100/80">ทุก {(1 / attacksPerSec).toFixed(2)} วิ</span>
+        </p>
+        <BeatLane attacksPerSec={attacksPerSec} />
+      </div>
+    </section>
   );
 }
