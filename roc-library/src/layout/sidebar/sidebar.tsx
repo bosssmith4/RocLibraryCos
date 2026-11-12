@@ -8,6 +8,7 @@ import { useLoading } from "@/context/LoadingContext";
 import teteGuild from "../../../public/assets/images/GuildImage/vanCleef.png";
 import dogGuild from "../../../public/assets/images/GuildImage/dog.jpg";
 import rocFunGuild from "../../../public/assets/images/GuildImage/rocfun.png";
+import { tr } from "framer-motion/client";
 
 interface FileTreeItem {
   id: string;
@@ -15,6 +16,7 @@ interface FileTreeItem {
   type: "folder" | "file";
   icon?: string;
   href?: string;
+  link_target?: boolean | null;
   children?: FileTreeItem[];
 }
 
@@ -162,6 +164,14 @@ const fileTree: FileTreeItem[] = [
     icon: "https://api.iconify.design/fluent-emoji-flat/speech-balloon.svg",
     href: "/say-something",
   },
+  {
+    id: "skin-game",
+    name: "Skin UI",
+    type: "file",
+    icon: "https://api.iconify.design/fxemoji/dog.svg",
+    href: "https://drive.google.com/drive/u/0/folders/1pbN2d8I4M2cYRcuzhxrsn21nrMiX9pPw",
+    link_target: true,
+  },
   // {
   //   id: "vct-calc",
   //   name: "VCT Calculator",
@@ -233,9 +243,16 @@ function FileTreeNode({
   const isActive = !isFolder && item.href === pathname;
   const isPending = !isFolder && item.href === pendingHref;
 
-  const handleLinkClick = (event: React.MouseEvent) => {
-    startNavigation(item.href || "#", event);
+  const handleLinkClick = (event: React.MouseEvent<HTMLAnchorElement>) => {
     toggleDrawer();
+
+    // External link / Open new tab
+    if (item.link_target) {
+      return;
+    }
+
+    // Normal navigation
+    startNavigation(item.href || "#", event);
   };
 
   const paddingLeft = level * 12;
@@ -291,6 +308,8 @@ function FileTreeNode({
           href={item.href || "#"}
           onClick={handleLinkClick}
           title={item.name}
+          target={item.link_target ? "_blank" : undefined}
+          rel={item.link_target ? "noopener noreferrer" : undefined}
           aria-current={isActive ? "page" : undefined}
           style={{ paddingLeft: `${8 + paddingLeft}px` }}
           className={`flex items-center py-2.5 px-3 rounded-lg transition-colors text-sm w-full gap-2 group ${
