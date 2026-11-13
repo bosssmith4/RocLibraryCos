@@ -76,6 +76,13 @@ const fileTree: FileTreeItem[] = [
         icon: "https://api.iconify.design/fluent-emoji-flat/tokyo-tower.svg?color=%23f4fb00",
         href: "/endless-tower",
       },
+      // {
+      //   id: "mvp",
+      //   name: "MVP Hunter",
+      //   type: "file",
+      //   icon: "https://api.iconify.design/fluent-emoji-flat/skull.svg",
+      //   href: "/mvp",
+      // },
       {
         id: "aspd",
         name: "The Flash Calc (ASPD)",
