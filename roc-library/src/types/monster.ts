@@ -24,7 +24,7 @@ export interface Monster {
 export interface MapSpawn {
   /** map name as the game writes it, such as moc_pryd04 */
   map: string;
-  /** Respawn window: shortest and longest wait after death, in minutes */
+  /** Respawn window: shortest and longest wait after death, in minutes; [0, 0] when it returns within seconds */
   cooldown: [number, number];
   /** hand-written end of the Route, for a map the game's Warp list does not reach */
   routeNote?: string;

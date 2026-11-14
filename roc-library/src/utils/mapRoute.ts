@@ -1,7 +1,10 @@
 const LINKS_URL = "/assets/json/MapLinks.json";
 
-/** One Warp, as scripts/extract-navigation.mjs writes it: from, x, y, to, toX, toY, NPC name ("" when walked onto). */
-type WarpRow = [string, number, number, string, number, number, string];
+/**
+ * One Warp, as scripts/extract-navigation.mjs writes it: from, x, y, to, toX, toY, NPC name ("" when walked onto).
+ * A Gate Warp row carries two more: the choice to pick in the NPC's menu and its price in Zeny.
+ */
+type WarpRow = [string, number, number, string, number, number, string, string?, number?];
 
 export interface MapInfo {
   name: string;
@@ -26,6 +29,10 @@ export interface RouteStep {
   y: number;
   npc: string;
   to: string;
+  /** Gate Warp only: the choice to pick in the NPC's menu */
+  choice?: string;
+  /** Gate Warp only: what the Warp costs, in Zeny */
+  zeny?: number;
 }
 
 let loaded: Promise<MapLinks | undefined> | undefined;
@@ -39,24 +46,33 @@ export function mapLinks(): Promise<MapLinks | undefined> {
 }
 
 /**
- * The Route with the fewest Warps from one map to another: an empty list when they are the same
- * map, undefined when the Warp list does not connect them.
+ * The Route with the fewest Warps from one map to another, the one that costs less Zeny when two
+ * are as short: an empty list when they are the same map, undefined when the Warp list does not
+ * connect them.
  */
 export function findRoute(data: MapLinks, from: string, to: string): RouteStep[] | undefined {
-  const cameBy = new Map<string, WarpRow | null>([[from, null]]);
-  const queue = [from];
-  for (let i = 0; i < queue.length && !cameBy.has(to); i++) {
-    for (const link of data.links) {
-      if (link[0] !== queue[i] || cameBy.has(link[3])) continue;
-      cameBy.set(link[3], link);
-      queue.push(link[3]);
+  const best = new Map<string, { link: WarpRow | null; zeny: number }>([[from, { link: null, zeny: 0 }]]);
+  // one round per Warp taken: every map of a round is as far, so only its Zeny can still improve
+  for (let round = [from]; round.length && !best.has(to); ) {
+    const next: string[] = [];
+    for (const map of round) {
+      const spent = best.get(map)?.zeny ?? 0;
+      for (const link of data.links) {
+        if (link[0] !== map) continue;
+        const zeny = spent + (link[8] ?? 0);
+        const known = best.get(link[3]);
+        if (!known) next.push(link[3]);
+        else if (!next.includes(link[3]) || known.zeny <= zeny) continue;
+        best.set(link[3], { link, zeny });
+      }
     }
+    round = next;
   }
-  if (!cameBy.has(to)) return undefined;
+  if (!best.has(to)) return undefined;
 
   const steps: RouteStep[] = [];
-  for (let link = cameBy.get(to); link; link = cameBy.get(link[0])) {
-    steps.unshift({ map: link[0], x: link[1], y: link[2], npc: link[6], to: link[3] });
+  for (let link = best.get(to)?.link; link; link = best.get(link[0])?.link) {
+    steps.unshift({ map: link[0], x: link[1], y: link[2], npc: link[6], to: link[3], choice: link[7], zeny: link[8] });
   }
   return steps;
 }

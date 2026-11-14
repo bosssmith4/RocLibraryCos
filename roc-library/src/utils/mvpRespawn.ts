@@ -55,7 +55,10 @@ export function formatDuration(ms: number): string {
   return hours > 0 ? `${hours}:${rest}` : rest;
 }
 
-/** "60–70 นาที", or "24 ชม. – 24 ชม. 10 นาที" for a long wait. */
+/** True when the boss returns within seconds of its death, so there is no Respawn window to work out. */
+export const respawnsAtOnce = (cooldown: [number, number]) => cooldown[1] === 0;
+
+/** "60–70 นาที", "ไม่เกิน 30 นาที" when it may return at once, or "24 ชม. – 24 ชม. 10 นาที" for a long wait. */
 export function formatCooldown([min, max]: [number, number]): string {
   const part = (minutes: number) => {
     if (minutes < 180) return `${minutes} นาที`;
@@ -63,5 +66,6 @@ export function formatCooldown([min, max]: [number, number]): string {
     return `${Math.floor(minutes / 60)} ชม.${rest ? ` ${rest} นาที` : ""}`;
   };
   if (min === max) return part(min);
+  if (min === 0) return `ไม่เกิน ${part(max)}`;
   return max < 180 ? `${min}–${max} นาที` : `${part(min)} – ${part(max)}`;
 }

@@ -34,14 +34,14 @@ const floorData1to100: BossFloor[] = [
   { floor: 20, bosses: [{ name: "Orc Hero", monsterIds: [1087] }] },
   { floor: 25, bosses: [{ name: "Lord of the Dead", monsterIds: [1373] }] },
   { floor: 30, bosses: [{ name: "Dracula", monsterIds: [1389] }] },
-  { floor: 35, bosses: [{ name: "Turtle General", monsterIds: [2105] }] },
+  { floor: 35, bosses: [{ name: "Turtle General", monsterIds: [1312] }] },
   { floor: 40, bosses: [{ name: "Lady Tanee", monsterIds: [1688] }] },
   { floor: 45, bosses: [{ name: "Drake", monsterIds: [1112] }] },
   {
     floor: 50,
     bosses: [
       { name: "White Lady", monsterIds: [1630] },
-      { name: "Evil Snake Lord", monsterIds: [2104] },
+      { name: "Evil Snake Lord", monsterIds: [1418] },
     ],
   },
   {

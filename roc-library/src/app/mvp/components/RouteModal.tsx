@@ -89,35 +89,33 @@ export default function RouteModal({ mvpName, spawn, links, town, onTownChange, 
           {!links ? (
             <p className="py-6 text-center text-base-content/70">โหลดข้อมูลเส้นทางไม่ได้ ลองเปิดหน้าใหม่อีกครั้ง</p>
           ) : steps === undefined ? (
-            <p className="rounded-lg bg-base-200 p-4 text-base-content/80">
-              {spawn.routeNote ?? "ยังไม่มีข้อมูลเส้นทาง"}
-            </p>
+            <p className="rounded-lg bg-base-200 p-4 text-base-content/80">{spawn.routeNote ?? "ยังไม่มีข้อมูลเส้นทาง"}</p>
           ) : (
             <>
               <p className="text-sm text-base-content/70">
-                {steps.length === 0 && arrives
-                  ? "เมืองนี้คือแมพที่บอสเกิด"
-                  : `ผ่าน ${steps.length} Warp`}
+                {steps.length === 0 && arrives ? "เมืองนี้คือแมพที่บอสเกิด" : `ผ่าน ${steps.length} Warp`}
               </p>
               <ol className="space-y-3">
                 {steps.map((step, i) => (
                   <StepRow key={`${step.map}-${step.to}`} index={i + 1} step={step} links={links} />
                 ))}
-                <li className="flex items-center gap-3 rounded-lg border border-primary/30 bg-primary/10 p-3">
-                  <Flag aria-hidden className="h-5 w-5 shrink-0 text-primary" />
-                  <div className="min-w-0 flex-1">
-                    <p className="font-semibold text-base-content">
-                      {arrives ? "ถึงแมพที่บอสเกิด" : "ข้อมูล Warp ของเกมมีถึงตรงนี้"}: {mapName(reachable)}{" "}
-                      <span className="font-mono text-sm text-base-content/70">({reachable})</span>
-                    </p>
-                    {!arrives && (
-                      <p className="mt-1 text-sm text-base-content/80">
-                        {spawn.routeNote ?? "ยังไม่มีข้อมูลเส้นทางช่วงที่เหลือ"}
+                <li className="flex flex-col gap-3 rounded-lg border border-primary/30 bg-primary/10 p-3 sm:flex-row sm:items-center">
+                  <div className="flex min-w-0 flex-1 items-start gap-3">
+                    <Flag aria-hidden className="mt-0.5 h-5 w-5 shrink-0 text-primary" />
+                    <div className="min-w-0 flex-1">
+                      <p className="font-semibold text-base-content">
+                        {arrives ? "ถึงแมพที่บอสเกิด" : "ข้อมูล Warp ของเกมมีถึงตรงนี้"}: {mapName(reachable)}{" "}
+                        <span className="font-mono text-sm text-base-content/70">({reachable})</span>
                       </p>
-                    )}
-                    {arrives && spawn.routeNote && (
-                      <p className="mt-1 text-sm text-base-content/80">{spawn.routeNote}</p>
-                    )}
+                      {!arrives && (
+                        <p className="mt-1 text-sm text-base-content/80">
+                          {spawn.routeNote ?? "ยังไม่มีข้อมูลเส้นทางช่วงที่เหลือ"}
+                        </p>
+                      )}
+                      {arrives && spawn.routeNote && (
+                        <p className="mt-1 text-sm text-base-content/80">{spawn.routeNote}</p>
+                      )}
+                    </div>
                   </div>
                   <Minimap map={reachable} links={links} />
                 </li>
@@ -134,44 +132,61 @@ export default function RouteModal({ mvpName, spawn, links, town, onTownChange, 
 function StepRow({ index, step, links }: { index: number; step: RouteStep; links: MapLinks }) {
   const name = (map: string) => links.maps[map]?.name ?? map;
   return (
-    <li className="flex items-center gap-3 rounded-lg border border-base-300 bg-base-100 p-3">
-      <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-content">
-        {index}
-      </span>
-      <div className="min-w-0 flex-1 space-y-1">
-        <p className="font-semibold text-base-content">
-          {name(step.map)} <span className="font-mono text-sm font-normal text-base-content/70">({step.map})</span>
-        </p>
-        <p className="text-sm text-base-content/80">
-          {step.npc ? (
-            <>
-              <MessageCircle aria-hidden className="mr-1 inline h-4 w-4 text-primary" />
-              คุยกับ NPC <span className="font-semibold">{step.npc}</span> ที่{" "}
-            </>
-          ) : (
-            "เดินเข้า Warp ที่ "
-          )}
-          <span className="font-mono font-semibold text-base-content">
-            {step.x}, {step.y}
-          </span>
-        </p>
-        <p className="text-sm text-base-content/70">
-          ไป {name(step.to)} <span className="font-mono">({step.to})</span>
-        </p>
+    <li className="flex flex-col gap-3 rounded-lg border border-base-300 bg-base-100 p-3 sm:flex-row sm:items-center">
+      <div className="flex min-w-0 flex-1 items-start gap-3">
+        <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-content">
+          {index}
+        </span>
+        <div className="min-w-0 flex-1 space-y-1">
+          <p className="font-semibold text-base-content">
+            {name(step.map)} <span className="font-mono text-sm font-normal text-base-content/70">({step.map})</span>
+          </p>
+          <p className="text-sm text-base-content/80">
+            {step.npc ? (
+              <>
+                <MessageCircle aria-hidden className="mr-1 inline h-4 w-4 text-primary" />
+                คุยกับ NPC <span className="font-semibold">{step.npc}</span> ที่{" "}
+              </>
+            ) : (
+              "เดินเข้า Warp ที่ "
+            )}
+            <WarpMark className="mx-1 inline-block h-3 w-3 align-middle" />
+            <span className="font-mono font-semibold text-base-content">
+              {step.x}, {step.y}
+            </span>
+            {step.choice && (
+              <>
+                {" "}
+                เลือก <span className="font-semibold text-base-content">{step.choice}</span>
+              </>
+            )}
+            {!!step.zeny && ` (${step.zeny.toLocaleString("en-US")} z)`}
+          </p>
+          <p className="text-sm text-base-content/70">
+            ไป {name(step.to)} <span className="font-mono">({step.to})</span>
+          </p>
+        </div>
       </div>
       <Minimap map={step.map} links={links} dot={{ x: step.x, y: step.y }} />
     </li>
   );
 }
 
-/** The map's minimap picture, with a pulsing dot on the cell to go to. Nothing when the site has no picture. */
+/** The mark that stands for the Warp cell, on the minimap and beside its coordinates. */
+function WarpMark({ className }: { className: string }) {
+  return (
+    <span aria-hidden className={`rounded-full border-2 border-white bg-warning ring-2 ring-black ${className}`} />
+  );
+}
+
+/** The map's minimap picture, with cross lines and a pulsing mark on the cell to go to. Nothing when the site has no picture. */
 function Minimap({ map, links, dot }: { map: string; links: MapLinks; dot?: { x: number; y: number } }) {
   const info = links.maps[map];
   if (!info?.img) return null;
   const at = dot && minimapPosition(info, dot.x, dot.y);
   return (
     // the game draws minimaps for a dark window, so they keep a dark ground in both Theme modes
-    <div className="relative h-28 w-28 shrink-0 overflow-hidden rounded-lg bg-neutral sm:h-40 sm:w-40">
+    <div className="relative aspect-square w-full max-w-64 shrink-0 self-center overflow-hidden rounded-lg bg-neutral sm:w-52">
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
         src={`/assets/images/minimap/${map}.webp`}
@@ -180,14 +195,27 @@ function Minimap({ map, links, dot }: { map: string; links: MapLinks; dot?: { x:
         className="h-full w-full"
       />
       {at && (
-        <span
-          aria-hidden
-          className="absolute h-3 w-3 -translate-x-1/2 -translate-y-1/2"
-          style={{ left: `${at.left * 100}%`, top: `${at.top * 100}%` }}
-        >
-          <span className="absolute inset-0 rounded-full bg-warning motion-safe:animate-ping" />
-          <span className="absolute inset-0 rounded-full border-2 border-white bg-warning" />
-        </span>
+        <>
+          {/* cross lines lead the eye to the mark from any edge of the map */}
+          <span
+            aria-hidden
+            className="absolute inset-x-0 h-0.5 -translate-y-1/2 bg-white/80 shadow-[0_0_2px_black]"
+            style={{ top: `${at.top * 100}%` }}
+          />
+          <span
+            aria-hidden
+            className="absolute inset-y-0 w-0.5 -translate-x-1/2 bg-white/80 shadow-[0_0_2px_black]"
+            style={{ left: `${at.left * 100}%` }}
+          />
+          <span
+            aria-hidden
+            className="absolute h-5 w-5 -translate-x-1/2 -translate-y-1/2"
+            style={{ left: `${at.left * 100}%`, top: `${at.top * 100}%` }}
+          >
+            <span className="absolute -inset-2 rounded-full border-2 border-warning motion-safe:animate-ping" />
+            <WarpMark className="absolute inset-0" />
+          </span>
+        </>
       )}
     </div>
   );

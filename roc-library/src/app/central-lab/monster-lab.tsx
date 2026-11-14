@@ -35,7 +35,7 @@ const STAGES: { id: StageType; label: string; monsterIds: number[] }[] = [
     id: "stage3",
     label: "Stage 3",
     monsterIds: [
-      1623, 2104, 2105, 1785, 1734, 1719, 1768, 2165, 1765, 2253, 2255, 1832,
+      1623, 1418, 1312, 1785, 1734, 1719, 1768, 2165, 1765, 2253, 2255, 1832,
       1874,
     ],
   },

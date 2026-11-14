@@ -22,6 +22,30 @@ const TOWNS = [
 ];
 /** Maps whose Warps are left out: shortcuts an ordinary player cannot take. Edit by hand. */
 const BLOCKED_MAPS = ["s_atelier"];
+/** Names of maps the game's own name table leaves out. Edit by hand. */
+const MAP_NAMES = { mag_dun03: "Nogg Road 3F", gl_cas01_: "Glast Heim Abyss", gef_fild14: "West Orc Village" };
+/**
+ * Gate Warp: an NPC of the server that the game's Warp list does not know. Edit by hand.
+ * Each choice: [menu text, map, x, y where the player lands].
+ */
+const GATE_WARP = {
+  map: "moc_ruins",
+  x: 74,
+  y: 165,
+  npc: "Gate Warp (Dungeon)",
+  zeny: 5000,
+  choices: [
+    ["Juperos Ruins Dungeon", "juperos_01", 54, 246],
+    ["Abbey Dungeon", "abbey01", 51, 15],
+    ["Rachel Dungeon", "ra_san01", 139, 135],
+    ["Ice Cave", "ice_dun01", 157, 15],
+    ["Abyss Dungeon", "abyss_01", 260, 272],
+    ["Ancient Odin Temple", "odin_tem01", 100, 146],
+    ["Tower of Thanatos", "tha_t01", 149, 38],
+    ["Bio Laboratory", "lhz_dun01", 149, 286],
+    ["Morse Cave", "moro_vol", 149, 286],
+  ],
+};
 
 /** Kinds of Warp in Navi_Link that are an NPC to talk to; the rest are walked onto. */
 const NPC_WARP_TYPES = [201, 204];
@@ -252,19 +276,26 @@ function bmpToRgba(bmp) {
 const thai = new TextDecoder("windows-874");
 const fromGameText = (latin1) => thai.decode(Buffer.from(latin1, "latin1")).trim();
 
-/** Fewest-Warp search from one map; returns each reached map's previous map. */
+/**
+ * Fewest-Warp search from one map, the cheaper way winning a tie (as findRoute of
+ * src/utils/mapRoute.ts does); returns each reached map's previous map.
+ */
 function reachFrom(start, linksByMap) {
-  const previous = new Map([[start, null]]);
-  const queue = [start];
-  while (queue.length) {
-    const map = queue.shift();
-    for (const link of linksByMap.get(map) ?? []) {
-      if (previous.has(link[3])) continue;
-      previous.set(link[3], map);
-      queue.push(link[3]);
+  const best = new Map([[start, { previous: null, zeny: 0 }]]);
+  for (let level = [start]; level.length; ) {
+    const next = [];
+    for (const map of level) {
+      for (const link of linksByMap.get(map) ?? []) {
+        const zeny = best.get(map).zeny + (link[8] ?? 0);
+        const known = best.get(link[3]);
+        if (!known) next.push(link[3]);
+        else if (!next.includes(link[3]) || known.zeny <= zeny) continue;
+        best.set(link[3], { previous: map, zeny });
+      }
     }
+    level = next;
   }
-  return previous;
+  return new Map([...best].map(([map, { previous }]) => [map, previous]));
 }
 
 async function main() {
@@ -276,6 +307,7 @@ async function main() {
   const grf = openGrf(grfPath);
 
   // Warps: [from, x, y, to, toX, toY, npcName]; npcName is "" for a Warp that is walked onto.
+  // A Gate Warp row carries two more: the menu choice and its price in Zeny.
   const linkFile = grf.find(/\\navigation\\navi_link_[a-z]+\.lub$/)[0];
   if (!linkFile) throw new Error("No navigation\\navi_link_*.lub in this GRF");
   const seen = new Set();
@@ -288,31 +320,35 @@ async function main() {
     seen.add(key);
     links.push([from, x, y, to, toX, toY, NPC_WARP_TYPES.includes(type) ? fromGameText(name) : ""]);
   }
+  for (const [choice, to, toX, toY] of GATE_WARP.choices) {
+    links.push([GATE_WARP.map, GATE_WARP.x, GATE_WARP.y, to, toX, toY, GATE_WARP.npc, choice, GATE_WARP.zeny]);
+  }
   const linksByMap = new Map();
   for (const link of links) linksByMap.set(link[0], [...(linksByMap.get(link[0]) ?? []), link]);
 
-  const mapNames = new Map();
+  const mapNames = new Map(Object.entries(MAP_NAMES));
   const nameTable = grf.read("data\\mapnametable.txt");
   for (const line of nameTable ? nameTable.toString("latin1").split(/\r?\n/) : []) {
     const match = line.match(/^([^/#]+)\.rsw#([^#]*)#/);
     if (match) mapNames.set(match[1].toLowerCase(), fromGameText(match[2]));
   }
 
-  const spawnMaps = new Set(
-    [...fs.readFileSync(MONSTER_DB, "utf8").matchAll(/\{\s*map:\s*"([^"]+)",\s*cooldown:/g)].map((m) => m[1]),
-  );
-  const pictured = new Set();
+  const monsterDb = fs.readFileSync(MONSTER_DB, "utf8");
+  const spawnMaps = new Set([...monsterDb.matchAll(/\{\s*map:\s*"([^"]+)",\s*cooldown:/g)].map((m) => m[1]));
+  // a Route to a Spawn map the Warp list does not reach ends at its routeVia map
+  const routeEnds = new Set([...spawnMaps, ...[...monsterDb.matchAll(/routeVia:\s*"([^"]+)"/g)].map((m) => m[1])]);
+  const pictured = new Set(spawnMaps);
   for (const town of TOWNS) {
     const previous = reachFrom(town, linksByMap);
-    for (const spawn of spawnMaps) {
-      for (let map = spawn; map != null && previous.has(map); map = previous.get(map)) pictured.add(map);
+    for (const end of routeEnds) {
+      for (let map = end; map != null && previous.has(map); map = previous.get(map)) pictured.add(map);
     }
   }
 
   fs.mkdirSync(MINIMAP_OUT, { recursive: true });
   const minimapFolder = grf.find(/\\map\\prontera\.bmp$/)[0]?.replace(/prontera\.bmp$/, "");
   const maps = {};
-  for (const map of new Set(links.flatMap((link) => [link[0], link[3]]))) {
+  for (const map of new Set([...links.flatMap((link) => [link[0], link[3]]), ...spawnMaps])) {
     const gat = grf.read(`data\\${map}.gat`);
     const info = { name: mapNames.get(map) ?? map };
     if (gat) Object.assign(info, { w: gat.readUInt32LE(6), h: gat.readUInt32LE(10) });
