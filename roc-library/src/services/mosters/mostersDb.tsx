@@ -7230,7 +7230,7 @@ export default function MonstersDb(): Monster[] {
     },
     {
       id: 1388,
-      name: "Archangeling",
+      name: "Arc Angeling",
       image: "/assets/images/monsterDb/1388.gif",
       lv: 84,
       hp: 25100,
