@@ -22,6 +22,14 @@ const TOWNS = [
 ];
 /** Maps whose Warps are left out: shortcuts an ordinary player cannot take. Edit by hand. */
 const BLOCKED_MAPS = ["s_atelier"];
+/**
+ * Warps in the game's Warp list that the server does not honour, as [map, x, y, to]. Edit by hand.
+ * in_orcs01 reaches Orc Dungeon 2F only through Orc Dungeon 1F on this server.
+ */
+const BLOCKED_WARPS = [
+  ["in_orcs01", 108, 114, "orcsdun02"],
+  ["orcsdun02", 180, 15, "in_orcs01"],
+];
 /** Names of maps the game's own name table leaves out. Edit by hand. */
 const MAP_NAMES = { mag_dun03: "Nogg Road 3F", gl_cas01_: "Glast Heim Abyss", gef_fild14: "West Orc Village" };
 /**
@@ -54,6 +62,8 @@ const GATE_WARP = {
 const EXTRA_WARPS = [
   ["gef_fild10", 27, 219, "gef_fild14", 367, 219],
   ["gef_fild14", 371, 219, "gef_fild10", 31, 219],
+  ["moc_fild11", 379, 197, "moc_fild15", 41, 105],
+  ["moc_fild15", 38, 105, "moc_fild11", 376, 197],
 ];
 
 /** Kinds of Warp in Navi_Link that are an NPC to talk to; the rest are walked onto. */
@@ -324,6 +334,7 @@ async function main() {
   for (const row of readLuaTables(grf.read(linkFile)).Navi_Link) {
     const [from, , type, , name, , x, y, to, toX, toY] = row;
     if (!type || BLOCKED_MAPS.includes(from) || BLOCKED_MAPS.includes(to)) continue;
+    if (BLOCKED_WARPS.some(([m, bx, by, bto]) => m === from && bx === x && by === y && bto === to)) continue;
     const key = [from, x, y, to, toX, toY].join(",");
     if (seen.has(key)) continue;
     seen.add(key);

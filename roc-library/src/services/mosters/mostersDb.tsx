@@ -20,7 +20,7 @@ export default function MonstersDb(): Monster[] {
       jobUp: 0,
       map: "Endless Tower ",
       mapspawn: [
-        { map: "gef_fild14", cooldown: [60, 70] },
+        { map: "gef_fild14", cooldown: [1440, 1450] },
       ],
       element: {
         neutral: 100,
@@ -53,7 +53,7 @@ export default function MonstersDb(): Monster[] {
       jobUp: 0,
       map: "",
       mapspawn: [
-        { map: "orcsdun01", cooldown: [120, 130] },
+        { map: "orcsdun02", cooldown: [120, 130] },
       ],
       element: {
         neutral: 100,
@@ -185,7 +185,7 @@ export default function MonstersDb(): Monster[] {
       jobUp: 0,
       map: "",
       mapspawn: [
-        { map: "moc_fild17", cooldown: [120, 130] },
+        { map: "moc_fild15", cooldown: [120, 130] },
       ],
       element: {
         neutral: 100,
@@ -617,7 +617,7 @@ export default function MonstersDb(): Monster[] {
       mapspawn: [
         { map: "pay_fild04", cooldown: [60, 90] },
         { map: "prt_maze03", cooldown: [113, 170] },
-        { map: "treasure02", cooldown: [33, 53] },
+        { map: "treasure01", cooldown: [33, 53] },
       ],
       element: {
         neutral: 0,
@@ -5788,7 +5788,7 @@ export default function MonstersDb(): Monster[] {
       jobUp: 0,
       map: "Endless Tower",
       mapspawn: [
-        { map: "mjolnir_04", cooldown: [120, 130] },
+        { map: "mjolnir_05", cooldown: [120, 130] },
       ],
       element: {
         neutral: 100,

@@ -80,3 +80,10 @@ export function formatCooldown([min, max]: [number, number]): string {
   if (min === 0) return `ไม่เกิน ${part(max)}`;
   return max < 180 ? `${min}–${max} นาที` : `${part(min)} – ${part(max)}`;
 }
+
+/** "16 พ.ย. 13:05" on Thailand's clock, from a stored ISO time. For the dev note boards. */
+export function thaiDateTime(iso: string): string {
+  const at = Date.parse(iso);
+  const date = new Date(at + THAILAND_OFFSET_MS);
+  return `${date.getUTCDate()} ${THAI_MONTHS[date.getUTCMonth()]} ${thaiClock(at)}`;
+}

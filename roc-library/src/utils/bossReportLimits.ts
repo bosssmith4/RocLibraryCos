@@ -11,3 +11,18 @@ export const PROBLEMS = [
 ] as const;
 
 export type ProblemId = (typeof PROBLEMS)[number]["id"];
+
+/** A Spawn report as the dev's MVP report board shows it. */
+export interface BossReportRow {
+  id: number;
+  createdAt: string;
+  monsterId: number;
+  monsterName: string;
+  spawnMap: string;
+  listed: string;
+  problem: string;
+  detail: string;
+  name: string | null;
+  /** when the dev ticked it as fixed; null while it is still open */
+  fixedAt: string | null;
+}

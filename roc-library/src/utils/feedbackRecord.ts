@@ -1,9 +1,10 @@
 import { createClient } from "@supabase/supabase-js";
-import { MESSAGE_MAX, MESSAGE_MIN, NAME_MAX } from "@/utils/feedbackLimits";
+import { listBoardRows, setBoardRowDone } from "@/utils/devBoardRecord";
+import type { BoardStatus } from "@/utils/devBoard";
+import { MESSAGE_MAX, MESSAGE_MIN, NAME_MAX, type FeedbackRow } from "@/utils/feedbackLimits";
 
 /** The Feedback table: every message sent from the Feedback page. Server-side only (service key). */
 const TABLE = "feedback";
-
 
 function client() {
   const url = process.env.SUPABASE_URL;
@@ -41,3 +42,18 @@ export async function saveFeedback(input: FeedbackInput) {
   const { error } = await db.from(TABLE).insert({ name: input.name, message: input.message });
   return !error;
 }
+
+const toFeedback = (r: Record<string, unknown>): FeedbackRow => ({
+  id: r.id as number,
+  createdAt: r.created_at as string,
+  name: (r.name as string | null) ?? null,
+  message: r.message as string,
+  readAt: (r.read_at as string | null) ?? null,
+});
+
+/** Reads one page of messages, newest first, with how many are unread and read. Dev board only. */
+export const listFeedback = (status: BoardStatus, page: number) =>
+  listBoardRows(TABLE, "read_at", status, page, toFeedback);
+
+/** Marks one message read, or unread again. Returns false when it could not be saved. Dev board only. */
+export const setFeedbackRead = (id: number, read: boolean) => setBoardRowDone(TABLE, "read_at", id, read);

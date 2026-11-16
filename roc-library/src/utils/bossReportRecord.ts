@@ -1,6 +1,8 @@
 import { createClient } from "@supabase/supabase-js";
 import MonstersDb from "@/services/mosters/mostersDb";
-import { DETAIL_MAX, DETAIL_MIN, NAME_MAX, PROBLEMS } from "@/utils/bossReportLimits";
+import { DETAIL_MAX, DETAIL_MIN, NAME_MAX, PROBLEMS, type BossReportRow } from "@/utils/bossReportLimits";
+import { listBoardRows, setBoardRowDone } from "@/utils/devBoardRecord";
+import type { BoardStatus } from "@/utils/devBoard";
 import { formatCooldown } from "@/utils/mvpRespawn";
 
 /** The Spawn report table: every note sent from the MVP Hunter. Server-side only (service key). */
@@ -78,3 +80,23 @@ export async function saveBossReport(input: BossReportInput) {
   });
   return !error;
 }
+
+const toReport = (r: Record<string, unknown>): BossReportRow => ({
+  id: r.id as number,
+  createdAt: r.created_at as string,
+  monsterId: r.monster_id as number,
+  monsterName: r.monster_name as string,
+  spawnMap: r.spawn_map as string,
+  listed: r.listed as string,
+  problem: r.problem as string,
+  detail: r.detail as string,
+  name: (r.name as string | null) ?? null,
+  fixedAt: (r.fixed_at as string | null) ?? null,
+});
+
+/** Reads one page of reports, newest first, with how many there are in each status. Dev board only. */
+export const listBossReports = (status: BoardStatus, page: number) =>
+  listBoardRows(TABLE, "fixed_at", status, page, toReport);
+
+/** Marks one report fixed, or open again. Returns false when it could not be saved. Dev board only. */
+export const setBossReportFixed = (id: number, fixed: boolean) => setBoardRowDone(TABLE, "fixed_at", id, fixed);
