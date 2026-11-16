@@ -48,6 +48,17 @@ export function thaiDayLabel(at: number, now: number): string {
 }
 
 /** "1:05:09" or "05:09". */
+const THAI_MONTHS = ["ม.ค.", "ก.พ.", "มี.ค.", "เม.ย.", "พ.ค.", "มิ.ย.", "ก.ค.", "ส.ค.", "ก.ย.", "ต.ค.", "พ.ย.", "ธ.ค."];
+
+/** "วันนี้" / "เมื่อวาน", or the date ("14 พ.ย.") for an older Death time, on Thailand's calendar. */
+export function thaiDeathDay(at: number, now: number): string {
+  const days = thaiDay(at) - thaiDay(now);
+  if (days === 0) return "วันนี้";
+  if (days === -1) return "เมื่อวาน";
+  const date = new Date(at + THAILAND_OFFSET_MS);
+  return `${date.getUTCDate()} ${THAI_MONTHS[date.getUTCMonth()]}`;
+}
+
 export function formatDuration(ms: number): string {
   const total = Math.max(0, Math.ceil(ms / 1000));
   const hours = Math.floor(total / 3600);

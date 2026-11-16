@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, useSyncExternalStore } from "react";
-import { ChevronDown, Clock, RotateCcw, Route as RouteIcon, Search, Skull, Trash2, X } from "lucide-react";
+import { ChevronDown, Clock, Flag, RotateCcw, Route as RouteIcon, Search, Skull, Trash2, X } from "lucide-react";
 import { MonsterElementLists, Stat } from "@/components/MonsterStats";
 import MonstersDb from "@/services/mosters/mostersDb";
 import type { MapSpawn, Monster } from "@/types/monster";
@@ -13,9 +13,11 @@ import {
   respawnWindow,
   thaiClock,
   thaiDayLabel,
+  thaiDeathDay,
   type RespawnStatus,
   type RespawnWindow,
 } from "@/utils/mvpRespawn";
+import ReportModal from "./components/ReportModal";
 import RouteModal from "./components/RouteModal";
 
 const TIMES_KEY = "roc-mvp-death-times";
@@ -104,6 +106,7 @@ function MvpTracker() {
   const [search, setSearch] = useState("");
   const [links, setLinks] = useState<MapLinks>();
   const [route, setRoute] = useState<{ mvp: Mvp; spawn: MapSpawn }>();
+  const [report, setReport] = useState<{ mvp: Mvp; spawn: MapSpawn }>();
 
   useEffect(() => {
     const interval = setInterval(() => setNow(Date.now()), TICK_MS);
@@ -145,7 +148,7 @@ function MvpTracker() {
       mvp.mapspawn.flatMap((spawn) => {
         const death = times[spawnKey(mvp, spawn)];
         if (death === undefined || respawnsAtOnce(spawn.cooldown)) return [];
-        return [{ mvp, spawn, respawn: respawnWindow(death, spawn.cooldown, now) }];
+        return [{ mvp, spawn, death, respawn: respawnWindow(death, spawn.cooldown, now) }];
       }),
     )
     .sort((a, b) => a.respawn.from - b.respawn.from);
@@ -195,12 +198,13 @@ function MvpTracker() {
           </div>
         ) : (
           <ul className="divide-y divide-base-300">
-            {tracked.map(({ mvp, spawn, respawn }) => (
+            {tracked.map(({ mvp, spawn, death, respawn }) => (
               <TrackedRow
                 key={spawnKey(mvp, spawn)}
                 mvp={mvp}
                 spawn={spawn}
                 mapName={links?.maps[spawn.map]?.name}
+                death={death}
                 respawn={respawn}
                 now={now}
                 onDeath={(at) => setDeath(spawnKey(mvp, spawn), at)}
@@ -271,6 +275,7 @@ function MvpTracker() {
                       now={now}
                       onDeath={(at) => setDeath(spawnKey(mvp, spawn), at)}
                       onRoute={() => setRoute({ mvp, spawn })}
+                      onReport={() => setReport({ mvp, spawn })}
                     />
                   ))}
                 </div>
@@ -279,6 +284,16 @@ function MvpTracker() {
           </ul>
         )}
       </section>
+
+      {report && (
+        <ReportModal
+          monsterId={report.mvp.id}
+          mvpName={report.mvp.name}
+          spawn={report.spawn}
+          mapName={links?.maps[report.spawn.map]?.name}
+          onClose={() => setReport(undefined)}
+        />
+      )}
 
       {route && (
         <RouteModal
@@ -305,7 +320,8 @@ function Sprite({ src, size }: { src: string; size: string }) {
 
 /** "14:05 – 14:15", with "(พรุ่งนี้)" and the like when that is not today. */
 function WindowClock({ respawn, now }: { respawn: RespawnWindow; now: number }) {
-  const day = thaiDayLabel(respawn.from, now);
+  // a window that has begun is dated by the Death time shown beside it, so only a coming one needs "พรุ่งนี้"
+  const day = respawn.status === "waiting" ? thaiDayLabel(respawn.from, now) : "";
   return (
     <>
       {thaiClock(respawn.from)}
@@ -326,13 +342,14 @@ interface TrackedRowProps {
   mvp: Mvp;
   spawn: MapSpawn;
   mapName: string | undefined;
+  death: number;
   respawn: RespawnWindow;
   now: number;
   onDeath: (at: number | undefined) => void;
   onRoute: () => void;
 }
 
-function TrackedRow({ mvp, spawn, mapName, respawn, now, onDeath, onRoute }: TrackedRowProps) {
+function TrackedRow({ mvp, spawn, mapName, death, respawn, now, onDeath, onRoute }: TrackedRowProps) {
   const status = STATUS_STYLE[respawn.status];
   const label = `${mvp.name} ที่ ${spawn.map}`;
   return (
@@ -344,10 +361,13 @@ function TrackedRow({ mvp, spawn, mapName, respawn, now, onDeath, onRoute }: Tra
           <p className="truncate text-sm text-base-content/70">{mapName ?? spawn.map}</p>
         </div>
       </div>
-      <div className="flex-1 basis-32 sm:flex-none sm:basis-40">
+      <div className="flex-1 basis-40 sm:flex-none sm:basis-52">
         <p className="text-xs text-base-content/70">ช่วงเวลาเกิด</p>
         <p className="text-xl font-bold tabular-nums text-base-content">
           <WindowClock respawn={respawn} now={now} />
+        </p>
+        <p className="text-xs text-base-content/70">
+          ตาย {thaiDeathDay(death, now)} {thaiClock(death)}
         </p>
       </div>
       <div className="flex-1 basis-32 sm:flex-none sm:basis-44">
@@ -439,9 +459,10 @@ interface SpawnRowProps {
   now: number;
   onDeath: (at: number | undefined) => void;
   onRoute: () => void;
+  onReport: () => void;
 }
 
-function SpawnRow({ mvpName, spawn, mapName, death, now, onDeath, onRoute }: SpawnRowProps) {
+function SpawnRow({ mvpName, spawn, mapName, death, now, onDeath, onRoute, onReport }: SpawnRowProps) {
   // nothing to time when the boss is back within seconds
   const atOnce = respawnsAtOnce(spawn.cooldown);
   const respawn = death === undefined || atOnce ? undefined : respawnWindow(death, spawn.cooldown, now);
@@ -460,14 +481,24 @@ function SpawnRow({ mvpName, spawn, mapName, death, now, onDeath, onRoute }: Spa
             {atOnce ? "เกิดใหม่ทันที ไม่ต้องจับเวลา" : `เกิดใหม่ใน ${formatCooldown(spawn.cooldown)}`}
           </p>
         </div>
-        <button
-          type="button"
-          className="btn btn-outline btn-sm min-h-10 gap-1"
-          aria-label={`เส้นทางไปหา ${label}`}
-          onClick={onRoute}
-        >
-          <RouteIcon aria-hidden className="h-4 w-4" /> เส้นทาง
-        </button>
+        <div className="flex items-center gap-2">
+          <button
+            type="button"
+            className="btn btn-ghost btn-sm min-h-10 gap-1 text-base-content/70"
+            aria-label={`แจ้งข้อมูลไม่ตรงของ ${label}`}
+            onClick={onReport}
+          >
+            <Flag aria-hidden className="h-4 w-4" /> แจ้งข้อมูลผิด
+          </button>
+          <button
+            type="button"
+            className="btn btn-outline btn-sm min-h-10 gap-1"
+            aria-label={`เส้นทางไปหา ${label}`}
+            onClick={onRoute}
+          >
+            <RouteIcon aria-hidden className="h-4 w-4" /> เส้นทาง
+          </button>
+        </div>
       </div>
 
       {!atOnce && (
@@ -492,6 +523,11 @@ function SpawnRow({ mvpName, spawn, mapName, death, now, onDeath, onRoute }: Spa
                 <p className="font-mono text-sm font-semibold tabular-nums text-base-content">
                   {countdown(respawn, now)}
                 </p>
+                {death !== undefined && (
+                  <p className="text-xs text-base-content/70">
+                    ตาย {thaiDeathDay(death, now)} {thaiClock(death)}
+                  </p>
+                )}
               </div>
             )}
           </div>

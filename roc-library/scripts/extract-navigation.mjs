@@ -47,6 +47,15 @@ const GATE_WARP = {
   ],
 };
 
+/**
+ * Warps the game's Warp list leaves out, walked onto like any other. Edit by hand.
+ * Each: [map, x, y, to, x, y where the player lands].
+ */
+const EXTRA_WARPS = [
+  ["gef_fild10", 27, 219, "gef_fild14", 367, 219],
+  ["gef_fild14", 371, 219, "gef_fild10", 31, 219],
+];
+
 /** Kinds of Warp in Navi_Link that are an NPC to talk to; the rest are walked onto. */
 const NPC_WARP_TYPES = [201, 204];
 const MINIMAP_SIZE = 512;
@@ -322,6 +331,9 @@ async function main() {
   }
   for (const [choice, to, toX, toY] of GATE_WARP.choices) {
     links.push([GATE_WARP.map, GATE_WARP.x, GATE_WARP.y, to, toX, toY, GATE_WARP.npc, choice, GATE_WARP.zeny]);
+  }
+  for (const [from, x, y, to, toX, toY] of EXTRA_WARPS) {
+    if (!seen.has([from, x, y, to, toX, toY].join(","))) links.push([from, x, y, to, toX, toY, ""]);
   }
   const linksByMap = new Map();
   for (const link of links) linksByMap.set(link[0], [...(linksByMap.get(link[0]) ?? []), link]);

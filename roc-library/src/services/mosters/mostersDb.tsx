@@ -20,7 +20,7 @@ export default function MonstersDb(): Monster[] {
       jobUp: 0,
       map: "Endless Tower ",
       mapspawn: [
-        { map: "gef_fild14", cooldown: [60, 70], routeVia: "gef_fild10", routeNote: "เดินเข้า Warp ซ้ายกลางของ Orc Village เพื่อไป West Orc Village" },
+        { map: "gef_fild14", cooldown: [60, 70] },
       ],
       element: {
         neutral: 100,
@@ -53,7 +53,7 @@ export default function MonstersDb(): Monster[] {
       jobUp: 0,
       map: "",
       mapspawn: [
-        { map: "gef_fild10", cooldown: [120, 130] },
+        { map: "orcsdun01", cooldown: [120, 130] },
       ],
       element: {
         neutral: 100,
@@ -7247,7 +7247,7 @@ export default function MonstersDb(): Monster[] {
       map: "",
       miniBoss: true,
       mapspawn: [
-        { map: "yuno_fild04", cooldown: [60, 63] },
+        { map: "yuno_fild02", cooldown: [60, 63] },
       ],
       element: {
         neutral: 100,
