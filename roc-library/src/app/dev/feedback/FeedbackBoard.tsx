@@ -16,7 +16,7 @@ export default function FeedbackBoard() {
       labels={{ open: "ยังไม่อ่าน", done: "อ่านแล้ว" }}
       empty={{ open: "ไม่มีข้อความที่ยังไม่อ่าน", done: "ยังไม่มีข้อความที่อ่านแล้ว", all: "ยังไม่มีใครส่งข้อความเข้ามา" }}
       setupHint="ถ้ายังไม่ได้เพิ่มคอลัมน์ read_at ให้รัน supabase/feedback.sql ใน Supabase ก่อน"
-      renderNote={(row, { busy, onMark }) => <Note row={row} busy={busy} onMark={onMark} />}
+      renderNote={(row, { busy, onMark, showName }) => <Note row={row} busy={busy} onMark={onMark} showName={showName} />}
     />
   );
 }
@@ -25,10 +25,11 @@ interface NoteProps {
   row: FeedbackRow;
   busy: boolean;
   onMark: (done: boolean) => void;
+  showName: (name: string | null) => string;
 }
 
 /** One message as a sticky note: warm while unread, plain and checked once read. */
-function Note({ row, busy, onMark }: NoteProps) {
+function Note({ row, busy, onMark, showName }: NoteProps) {
   const read = row.readAt !== null;
 
   return (
@@ -42,7 +43,7 @@ function Note({ row, busy, onMark }: NoteProps) {
           <UserRound aria-hidden className="h-6 w-6" />
         </div>
         <div className="min-w-0 flex-1">
-          <h2 className="truncate text-xl font-bold leading-tight text-base-content">{row.name ?? "ไม่ระบุชื่อ"}</h2>
+          <h2 className="truncate text-xl font-bold leading-tight text-base-content">{showName(row.name)}</h2>
           <p className="text-sm text-base-content/70">{thaiDateTime(row.createdAt)}</p>
         </div>
         {read && <span className="badge badge-success shrink-0">อ่านแล้ว</span>}

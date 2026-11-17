@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useState, type ReactNode } from "react";
 import Link from "next/link";
-import { ChevronLeft, ChevronRight, RefreshCw } from "lucide-react";
+import { ChevronLeft, ChevronRight, Eye, EyeOff, RefreshCw } from "lucide-react";
 import { DEV_BOARDS, type BoardPage, type BoardStatus } from "@/utils/devBoard";
 
 interface NoteBoardProps<T extends { id: number }> {
@@ -18,8 +18,14 @@ interface NoteBoardProps<T extends { id: number }> {
   /** what to try when the table cannot be read */
   setupHint: string;
   /** one note; call onMark(true) to tick it and onMark(false) to untick */
-  renderNote: (row: T, control: { busy: boolean; onMark: (done: boolean) => void }) => ReactNode;
+  renderNote: (
+    row: T,
+    control: { busy: boolean; onMark: (done: boolean) => void; showName: (name: string | null) => string },
+  ) => ReactNode;
 }
+
+/** What stands in for every sender's name while the Name mask is on, a name or no name alike. */
+const MASKED_NAME = "*****";
 
 type Loaded<T> = { key: string; data?: BoardPage<T>; error?: string };
 
@@ -41,6 +47,9 @@ export default function NoteBoard<T extends { id: number }>({
   const [loaded, setLoaded] = useState<Loaded<T>>();
   const [busy, setBusy] = useState<number>();
   const [saveError, setSaveError] = useState("");
+  // not remembered: every load starts with the names shown
+  const [maskNames, setMaskNames] = useState(false);
+  const showName = (name: string | null) => (maskNames ? MASKED_NAME : (name ?? "ไม่ระบุชื่อ"));
 
   const key = `${status}:${page}:${refresh}`;
   const loading = loaded?.key !== key;
@@ -112,12 +121,23 @@ export default function NoteBoard<T extends { id: number }>({
         ))}
       </nav>
 
-      <header className="space-y-1">
-        <h1 className="flex flex-wrap items-center gap-2 text-2xl font-bold text-base-content sm:text-3xl">
-          {icon} {title}
-          <span className="badge badge-warning">DEV</span>
-        </h1>
-        <p className="text-base-content/70">{description}</p>
+      <header className="flex flex-wrap items-start justify-between gap-x-4 gap-y-3">
+        <div className="min-w-0 space-y-1">
+          <h1 className="flex flex-wrap items-center gap-2 text-2xl font-bold text-base-content sm:text-3xl">
+            {icon} {title}
+            <span className="badge badge-warning">DEV</span>
+          </h1>
+          <p className="text-base-content/70">{description}</p>
+        </div>
+        <button
+          type="button"
+          aria-pressed={maskNames}
+          className={`btn btn-sm min-h-11 shrink-0 gap-2 ${maskNames ? "btn-neutral" : "btn-outline border-base-300"}`}
+          onClick={() => setMaskNames((v) => !v)}
+        >
+          {maskNames ? <EyeOff aria-hidden className="h-4 w-4" /> : <Eye aria-hidden className="h-4 w-4" />}
+          {maskNames ? "ซ่อนชื่ออยู่" : "ซ่อนชื่อ"}
+        </button>
       </header>
 
       <div className="flex flex-wrap items-center gap-3">
@@ -170,7 +190,7 @@ export default function NoteBoard<T extends { id: number }>({
       ) : (
         <ul className={`grid gap-4 md:grid-cols-2 xl:grid-cols-3 ${loading ? "opacity-60" : ""}`} aria-busy={loading}>
           {data.rows.map((row) => (
-            <li key={row.id}>{renderNote(row, { busy: busy === row.id, onMark: (done) => mark(row.id, done) })}</li>
+            <li key={row.id}>{renderNote(row, { busy: busy === row.id, onMark: (done) => mark(row.id, done), showName })}</li>
           ))}
         </ul>
       )}

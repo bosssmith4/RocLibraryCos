@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, useSyncExternalStore } from "react";
-import { ChevronDown, Clock, Flag, MapPin, RotateCcw, Route as RouteIcon, Search, Skull, Trash2, X } from "lucide-react";
+import { ChevronDown, Clock, Flag, MapPin, RotateCcw, Route as RouteIcon, Search, Skull, StickyNote, Trash2, X } from "lucide-react";
 import { MonsterElementLists, Stat } from "@/components/MonsterStats";
 import MonstersDb from "@/services/mosters/mostersDb";
 import type { MapSpawn, Monster } from "@/types/monster";
@@ -21,6 +21,8 @@ import ReportModal from "./components/ReportModal";
 import RouteModal from "./components/RouteModal";
 
 const TIMES_KEY = "roc-mvp-death-times";
+const MEMOS_KEY = "roc-mvp-memos";
+const MEMO_MAX = 100;
 const TOWN_KEY = "roc-mvp-town";
 const KIND_KEY = "roc-mvp-kind";
 const DEFAULT_TOWN = "prontera";
@@ -35,6 +37,8 @@ const KINDS: { id: BossKind; label: string }[] = [
 ];
 /** Death time of each Spawn map, as a moment in milliseconds, by spawnKey. */
 type DeathTimes = Record<string, number>;
+/** Memo of each Spawn map in the Queue, by spawnKey. */
+type Memos = Record<string, string>;
 
 const mvps = MonstersDb().filter((monster): monster is Mvp => !!monster.mapspawn?.length);
 
@@ -86,6 +90,20 @@ function loadTimes(): DeathTimes {
   return {};
 }
 
+function loadMemos(): Memos {
+  try {
+    const saved: unknown = JSON.parse(localStorage.getItem(MEMOS_KEY) ?? "{}");
+    if (saved && typeof saved === "object") {
+      return Object.fromEntries(
+        Object.entries(saved).filter((entry): entry is [string, string] => typeof entry[1] === "string"),
+      );
+    }
+  } catch {
+    // storage unavailable or unreadable: start empty
+  }
+  return {};
+}
+
 function loadTown(): string {
   try {
     return localStorage.getItem(TOWN_KEY) || DEFAULT_TOWN;
@@ -124,6 +142,7 @@ export default function MvpTrackerPage() {
 
 function MvpTracker() {
   const [times, setTimes] = useState(loadTimes);
+  const [memos, setMemos] = useState(loadMemos);
   const [town, setTown] = useState(loadTown);
   const [kind, setKind] = useState(loadKind);
   const [now, setNow] = useState(Date.now);
@@ -150,12 +169,25 @@ function MvpTracker() {
   const updateTimes = (next: DeathTimes) => {
     setTimes(next);
     save(TIMES_KEY, JSON.stringify(next));
+    // a Memo lives only while its Spawn map is in the Queue
+    const kept = Object.fromEntries(Object.entries(memos).filter(([key]) => next[key] !== undefined));
+    if (Object.keys(kept).length !== Object.keys(memos).length) {
+      setMemos(kept);
+      save(MEMOS_KEY, JSON.stringify(kept));
+    }
   };
   const setDeath = (key: string, at: number | undefined) => {
     const next = { ...times };
     if (at === undefined) delete next[key];
     else next[key] = at;
     updateTimes(next);
+  };
+  const setMemo = (key: string, text: string) => {
+    const next = { ...memos };
+    if (text.trim() === "") delete next[key];
+    else next[key] = text.slice(0, MEMO_MAX);
+    setMemos(next);
+    save(MEMOS_KEY, JSON.stringify(next));
   };
   const chooseTown = (next: string) => {
     setTown(next);
@@ -245,13 +277,15 @@ function MvpTracker() {
                 respawn={respawn}
                 now={now}
                 onDeath={(at) => setDeath(spawnKey(mvp, spawn), at)}
+                memo={memos[spawnKey(mvp, spawn)] ?? ""}
+                onMemo={(text) => setMemo(spawnKey(mvp, spawn), text)}
                 onRoute={() => setRoute({ mvp, spawn })}
               />
             ))}
           </ul>
         )}
         <p className="text-sm text-base-content/70">
-          เวลาเกิดเป็นค่าโดยประมาณ (เวลาไทย) หน้านี้ไม่รู้ว่าบอสถูกฆ่าไปแล้วหรือยัง และเวลาที่จับไว้เก็บอยู่ในเครื่องของคุณเท่านั้น
+          เวลาเกิดเป็นค่าโดยประมาณ (เวลาไทย) หน้านี้ไม่รู้ว่าบอสถูกฆ่าไปแล้วหรือยัง และเวลากับ Memo ที่จดไว้เก็บอยู่ในเครื่องของคุณเท่านั้น
         </p>
       </section>
 
@@ -401,12 +435,14 @@ interface TrackedCardProps {
   death: number;
   respawn: RespawnWindow;
   now: number;
+  memo: string;
   onDeath: (at: number | undefined) => void;
+  onMemo: (text: string) => void;
   onRoute: () => void;
 }
 
 /** One timed boss as a row: sprite, who and where, the countdown with its bar, then the actions. */
-function TrackedCard({ mvp, spawn, mapName, death, respawn, now, onDeath, onRoute }: TrackedCardProps) {
+function TrackedCard({ mvp, spawn, mapName, death, respawn, now, memo, onDeath, onMemo, onRoute }: TrackedCardProps) {
   const status = STATUS_STYLE[respawn.status];
   const label = `${mvp.name} ที่ ${spawn.map}`;
   return (
@@ -467,6 +503,20 @@ function TrackedCard({ mvp, spawn, mapName, death, respawn, now, onDeath, onRout
           <X aria-hidden className="h-4 w-4" /> เลิกจับ
         </button>
       </div>
+
+      <label className="col-span-full flex items-center gap-2 border-t border-base-300 pt-3">
+        <StickyNote aria-hidden className="h-4 w-4 shrink-0 text-base-content/70" />
+        <input
+          type="text"
+          maxLength={MEMO_MAX}
+          autoComplete="off"
+          className="input input-bordered min-h-10 w-full min-w-0 flex-1"
+          placeholder="Memo เช่น ปาร์ตี้ A ตี รอเพื่อนมา"
+          aria-label={`Memo ของ ${label}`}
+          value={memo}
+          onChange={(e) => onMemo(e.target.value)}
+        />
+      </label>
     </li>
   );
 }

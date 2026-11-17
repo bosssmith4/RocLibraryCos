@@ -378,6 +378,7 @@ export default function MonstersDb(): Monster[] {
       map: "",
       mapspawn: [
         { map: "prt_maze03", cooldown: [120, 130] },
+        { map: "gl_cas02", cooldown: [120, 130] },
       ],
       element: {
         neutral: 100,

@@ -33,7 +33,9 @@ export default function MvpReportBoard() {
       labels={{ open: "ยังไม่แก้", done: "แก้แล้ว" }}
       empty={{ open: "ไม่มีรายงานที่รอแก้", done: "ยังไม่มีรายงานที่แก้แล้ว", all: "ยังไม่มีใครแจ้งข้อมูลผิดเข้ามา" }}
       setupHint="ถ้ายังไม่ได้สร้างตารางหรือคอลัมน์ fixed_at ให้รัน supabase/boss_reports.sql ใน Supabase ก่อน"
-      renderNote={(row, { busy, onMark }) => <Note row={row} links={links} busy={busy} onMark={onMark} />}
+      renderNote={(row, { busy, onMark, showName }) => (
+        <Note row={row} links={links} busy={busy} onMark={onMark} showName={showName} />
+      )}
     />
   );
 }
@@ -43,10 +45,11 @@ interface NoteProps {
   links: MapLinks | undefined;
   busy: boolean;
   onMark: (done: boolean) => void;
+  showName: (name: string | null) => string;
 }
 
 /** One report as a sticky note: warm while it waits, plain and checked once fixed. */
-function Note({ row, links, busy, onMark }: NoteProps) {
+function Note({ row, links, busy, onMark, showName }: NoteProps) {
   const fixed = row.fixedAt !== null;
   const monster = monsters.find((m) => m.id === row.monsterId);
   const mapName = links?.maps[row.spawnMap]?.name;
@@ -84,7 +87,7 @@ function Note({ row, links, busy, onMark }: NoteProps) {
 
       <div className="mt-auto flex flex-wrap items-center gap-x-3 gap-y-2 border-t border-base-content/10 pt-3">
         <p className="min-w-0 flex-1 text-xs text-base-content/70">
-          {row.name ?? "ไม่ระบุชื่อ"} · {thaiDateTime(row.createdAt)}
+          {showName(row.name)} · {thaiDateTime(row.createdAt)}
           {row.fixedAt && <span className="block">แก้เมื่อ {thaiDateTime(row.fixedAt)}</span>}
         </p>
         {fixed ? (
