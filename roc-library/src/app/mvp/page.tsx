@@ -1,6 +1,6 @@
 "use client";
 import { useEffect, useState, useSyncExternalStore } from "react";
-import { ChevronDown, Clock, Flag, RotateCcw, Route as RouteIcon, Search, Skull, Trash2, X } from "lucide-react";
+import { ChevronDown, Clock, Flag, MapPin, RotateCcw, Route as RouteIcon, Search, Skull, Trash2, X } from "lucide-react";
 import { MonsterElementLists, Stat } from "@/components/MonsterStats";
 import MonstersDb from "@/services/mosters/mostersDb";
 import type { MapSpawn, Monster } from "@/types/monster";
@@ -40,10 +40,37 @@ const mvps = MonstersDb().filter((monster): monster is Mvp => !!monster.mapspawn
 
 const spawnKey = (mvp: Mvp, spawn: MapSpawn) => `${mvp.id}:${spawn.map}`;
 
-const STATUS_STYLE: Record<RespawnStatus, { badge: string; label: string; row: string }> = {
-  waiting: { badge: "badge-info", label: "ยังไม่ถึงเวลาเกิด", row: "" },
-  open: { badge: "badge-success", label: "ถึงช่วงเวลาเกิดแล้ว", row: "bg-success/10" },
-  passed: { badge: "badge-warning", label: "เลยช่วงเวลาเกิดแล้ว", row: "bg-warning/10" },
+const STATUS_STYLE: Record<
+  RespawnStatus,
+  { badge: string; label: string; short: string; bar: string; border: string; panel: string; tile: string }
+> = {
+  waiting: {
+    badge: "badge-info",
+    label: "ยังไม่ถึงเวลาเกิด",
+    short: "รอเกิด",
+    bar: "bg-info",
+    border: "border-info/40",
+    panel: "bg-info/10",
+    tile: "border-info/40 bg-info/10",
+  },
+  open: {
+    badge: "badge-success",
+    label: "ถึงช่วงเวลาเกิดแล้ว",
+    short: "ถึงช่วงเกิด",
+    bar: "bg-success",
+    border: "border-success/50",
+    panel: "bg-success/10",
+    tile: "border-success/50 bg-success/10",
+  },
+  passed: {
+    badge: "badge-warning",
+    label: "เลยช่วงเวลาเกิดแล้ว",
+    short: "เลยช่วงเกิด",
+    bar: "bg-warning",
+    border: "border-warning/50",
+    panel: "bg-warning/10",
+    tile: "border-warning/50 bg-warning/10",
+  },
 };
 
 const HOW_TO = ["หาบอสในรายการด้านล่าง", "พิมพ์เวลาที่บอสตายในช่อง “บอสตายตอน” เช่น 23:40", "ช่วงเวลาเกิดและตัวนับถอยหลังจะขึ้นตรงนี้"];
@@ -157,21 +184,36 @@ function MvpTracker() {
   const ofKind = (id: BossKind) => mvps.filter((mvp) => (mvp.miniBoss ? "mini" : "mvp") === id);
   const shown = ofKind(kind).filter((mvp) => !query || mvp.name.toLowerCase().includes(query));
 
+
+  const counts = {
+    waiting: tracked.filter((t) => t.respawn.status === "waiting").length,
+    open: tracked.filter((t) => t.respawn.status === "open").length,
+    passed: tracked.filter((t) => t.respawn.status === "passed").length,
+  };
+
   return (
-    <div className="mx-auto max-w-7xl space-y-8 px-4 py-6 sm:px-6 sm:py-8">
-      <header className="space-y-1">
-        <h1 className="flex items-center gap-2 text-2xl font-bold text-base-content sm:text-3xl">
-          <Skull aria-hidden className="h-7 w-7 text-primary" /> MVP Hunter
-        </h1>
-        <p className="text-base-content/70">จับเวลาเกิดของบอส และดูเส้นทางไปแมพที่บอสเกิด</p>
+    <div className="mx-auto max-w-7xl space-y-10 px-4 py-6 sm:px-6 sm:py-8">
+      <header className="flex flex-col gap-5 border-l-4 border-primary pl-4 sm:pl-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="space-y-2">
+          <p className="text-sm font-semibold tracking-wide text-primary">Ragnarok Online Classic</p>
+          <h1 className="flex items-center gap-3 text-3xl font-bold leading-tight text-base-content sm:text-4xl">
+            <Skull aria-hidden className="h-8 w-8 shrink-0 text-primary sm:h-9 sm:w-9" /> MVP Hunter
+          </h1>
+          <p className="max-w-xl text-base-content/70">จับเวลาเกิดของบอส และดูเส้นทางไปแมพที่บอสเกิด</p>
+        </div>
+        <dl className="grid grid-cols-3 gap-2 sm:gap-3 lg:w-auto lg:min-w-96" aria-label="สรุปบอสที่จับเวลาอยู่">
+          {(["waiting", "open", "passed"] as const).map((id) => (
+            <div key={id} className={`rounded-xl border px-3 py-2 ${STATUS_STYLE[id].tile}`}>
+              <dd className="text-3xl font-bold tabular-nums leading-none text-base-content">{counts[id]}</dd>
+              <dt className="mt-1 text-xs font-semibold text-base-content/80 sm:text-sm">{STATUS_STYLE[id].short}</dt>
+            </div>
+          ))}
+        </dl>
       </header>
 
-      <section
-        aria-labelledby="mvp-tracked-title"
-        className="rounded-xl border-2 border-primary/40 bg-base-100 shadow-sm"
-      >
-        <div className="flex flex-wrap items-center gap-x-3 gap-y-2 border-b border-base-300 px-4 py-3">
-          <h2 id="mvp-tracked-title" className="flex items-center gap-2 text-lg font-bold text-base-content">
+      <section aria-labelledby="mvp-tracked-title" className="space-y-4">
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+          <h2 id="mvp-tracked-title" className="flex items-center gap-2 text-xl font-bold text-base-content">
             <Clock aria-hidden className="h-5 w-5 text-primary" /> กำลังจับเวลา
             {tracked.length > 0 && <span className="badge badge-primary">{tracked.length}</span>}
           </h2>
@@ -183,23 +225,23 @@ function MvpTracker() {
         </div>
 
         {tracked.length === 0 ? (
-          <div className="space-y-3 p-4">
-            <p className="font-semibold text-base-content">ยังไม่ได้จับเวลาบอสตัวไหน เริ่มได้ใน 3 ขั้น</p>
-            <ol className="grid gap-3 sm:grid-cols-3">
+          <div className="rounded-2xl border-2 border-dashed border-primary/40 bg-base-100 p-5 sm:p-6">
+            <p className="text-lg font-bold text-base-content">ยังไม่ได้จับเวลาบอสตัวไหน เริ่มได้ใน 3 ขั้น</p>
+            <ol className="mt-4 grid gap-3 sm:grid-cols-3">
               {HOW_TO.map((step, i) => (
-                <li key={step} className="flex items-start gap-3 rounded-lg bg-base-200 p-3">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-primary-content">
+                <li key={step} className="flex items-start gap-3 rounded-xl bg-base-200 p-3">
+                  <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-primary text-base font-bold text-primary-content">
                     {i + 1}
                   </span>
-                  <span className="text-sm text-base-content">{step}</span>
+                  <span className="pt-1 text-sm text-base-content">{step}</span>
                 </li>
               ))}
             </ol>
           </div>
         ) : (
-          <ul className="divide-y divide-base-300">
+          <ul className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
             {tracked.map(({ mvp, spawn, death, respawn }) => (
-              <TrackedRow
+              <TrackedCard
                 key={spawnKey(mvp, spawn)}
                 mvp={mvp}
                 spawn={spawn}
@@ -213,23 +255,23 @@ function MvpTracker() {
             ))}
           </ul>
         )}
-        <p className="border-t border-base-300 px-4 py-2 text-xs text-base-content/70">
+        <p className="text-xs text-base-content/70">
           เวลาเกิดเป็นค่าโดยประมาณ (เวลาไทย) หน้านี้ไม่รู้ว่าบอสถูกฆ่าไปแล้วหรือยัง และเวลาที่จับไว้เก็บอยู่ในเครื่องของคุณเท่านั้น
         </p>
       </section>
 
-      <section aria-labelledby="mvp-list-title" className="space-y-4">
-        <h2 id="mvp-list-title" className="text-lg font-bold text-base-content">
-          บอสทั้งหมด
-        </h2>
-        <div className="flex flex-wrap items-center gap-3">
+      <section aria-labelledby="mvp-list-title" className="space-y-5">
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-3 border-b border-base-300 pb-4">
+          <h2 id="mvp-list-title" className="text-xl font-bold text-base-content">
+            บอสทั้งหมด
+          </h2>
           <div className="join" role="group" aria-label="ประเภทบอส">
             {KINDS.map(({ id, label }) => (
               <button
                 key={id}
                 type="button"
                 aria-pressed={kind === id}
-                className={`btn join-item min-h-11 gap-2 ${kind === id ? "btn-primary" : "btn-outline"}`}
+                className={`btn join-item min-h-11 gap-2 ${kind === id ? "btn-primary" : "btn-outline border-base-300"}`}
                 onClick={() => chooseKind(id)}
               >
                 {label}
@@ -237,7 +279,7 @@ function MvpTracker() {
               </button>
             ))}
           </div>
-          <label className="input input-bordered flex min-h-11 min-w-0 flex-1 items-center gap-2 sm:max-w-sm">
+          <label className="input input-bordered flex min-h-11 min-w-0 flex-1 items-center gap-2 sm:ml-auto sm:max-w-xs">
             <Search aria-hidden className="h-4 w-4 shrink-0 text-base-content/60" />
             <input
               type="search"
@@ -256,15 +298,15 @@ function MvpTracker() {
         </div>
 
         {shown.length === 0 ? (
-          <p className="rounded-xl border border-dashed border-base-300 bg-base-100 py-12 text-center text-base-content/70">
+          <p className="rounded-2xl border-2 border-dashed border-base-300 bg-base-100 py-12 text-center text-base-content/70">
             ไม่พบบอสชื่อ “{search.trim()}”
           </p>
         ) : (
-          <ul className="grid grid-cols-1 items-start gap-4 lg:grid-cols-2">
+          <ul className="grid grid-cols-1 items-start gap-5 lg:grid-cols-2">
             {shown.map((mvp) => (
-              <li key={mvp.id} className="min-w-0 rounded-xl border border-base-300 bg-base-100 p-4 shadow-sm">
+              <li key={mvp.id} className="min-w-0 overflow-hidden rounded-2xl border border-base-300 bg-base-100 shadow-sm">
                 <BossHeader mvp={mvp} />
-                <div className="mt-3 divide-y divide-base-300 border-t border-base-300 pt-3">
+                <div className="space-y-3 p-4 sm:p-5">
                   {mvp.mapspawn.map((spawn) => (
                     <SpawnRow
                       key={spawn.map}
@@ -311,7 +353,7 @@ function MvpTracker() {
 
 function Sprite({ src, size }: { src: string; size: string }) {
   return (
-    <div className={`flex shrink-0 items-center justify-center overflow-hidden rounded-lg bg-base-200 ${size}`}>
+    <div className={`flex shrink-0 items-center justify-center overflow-hidden rounded-xl bg-base-200 ${size}`}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={src} alt="" loading="lazy" className="max-h-full max-w-full object-contain" />
     </div>
@@ -338,7 +380,26 @@ const countdown = (respawn: RespawnWindow, now: number) =>
       ? `เหลือ ${formatDuration(respawn.to - now)}`
       : `เลยมา ${formatDuration(now - respawn.to)}`;
 
-interface TrackedRowProps {
+/** How far along the current stretch is, 0–100: the wait until the window, then the window itself. */
+function progressOf(respawn: RespawnWindow, death: number, now: number): number {
+  const [start, end] =
+    respawn.status === "waiting" ? [death, respawn.from] : respawn.status === "open" ? [respawn.from, respawn.to] : [0, 1];
+  if (respawn.status === "passed" || end <= start) return 100;
+  return Math.min(100, Math.max(0, ((now - start) / (end - start)) * 100));
+}
+
+function ProgressBar({ percent, className }: { percent: number; className: string }) {
+  return (
+    <div aria-hidden className="h-2 overflow-hidden rounded-full bg-base-300">
+      <div
+        className={`h-full rounded-full transition-[width] duration-1000 ease-linear motion-reduce:transition-none ${className}`}
+        style={{ width: `${percent}%` }}
+      />
+    </div>
+  );
+}
+
+interface TrackedCardProps {
   mvp: Mvp;
   spawn: MapSpawn;
   mapName: string | undefined;
@@ -349,57 +410,69 @@ interface TrackedRowProps {
   onRoute: () => void;
 }
 
-function TrackedRow({ mvp, spawn, mapName, death, respawn, now, onDeath, onRoute }: TrackedRowProps) {
+/** One timed boss: the countdown leads, coloured by status, with the window and death time under it. */
+function TrackedCard({ mvp, spawn, mapName, death, respawn, now, onDeath, onRoute }: TrackedCardProps) {
   const status = STATUS_STYLE[respawn.status];
   const label = `${mvp.name} ที่ ${spawn.map}`;
   return (
-    <li className={`flex flex-wrap items-center gap-x-4 gap-y-3 px-4 py-3 ${status.row}`}>
-      <div className="flex min-w-0 flex-1 basis-56 items-center gap-3">
-        <Sprite src={mvp.image} size="h-20 w-20" />
-        <div className="min-w-0">
-          <p className="truncate text-xl font-bold text-base-content">{mvp.name}</p>
-          <p className="truncate text-sm text-base-content/70">{mapName ?? spawn.map}</p>
+    <li className={`flex min-w-0 flex-col overflow-hidden rounded-2xl border bg-base-100 shadow-sm ${status.border}`}>
+      <div className={`h-1.5 ${status.bar}`} />
+      <div className="flex flex-1 flex-col gap-4 p-4">
+        <div className="flex items-start gap-3">
+          <Sprite src={mvp.image} size="h-20 w-20" />
+          <div className="min-w-0 flex-1">
+            <p className="truncate text-xl font-bold leading-tight text-base-content">{mvp.name}</p>
+            <p className="mt-0.5 flex items-center gap-1 text-sm text-base-content/70">
+              <MapPin aria-hidden className="h-4 w-4 shrink-0" />
+              <span className="truncate">{mapName ?? spawn.map}</span>
+            </p>
+            <span className={`badge badge-sm mt-2 ${status.badge}`}>{status.label}</span>
+          </div>
+          <button
+            type="button"
+            className="btn btn-circle btn-ghost btn-sm -mr-1 -mt-1 shrink-0"
+            aria-label={`เลิกจับเวลา ${label}`}
+            title="เลิกจับเวลา"
+            onClick={() => onDeath(undefined)}
+          >
+            <X aria-hidden className="h-4 w-4" />
+          </button>
         </div>
-      </div>
-      <div className="flex-1 basis-40 sm:flex-none sm:basis-52">
-        <p className="text-xs text-base-content/70">ช่วงเวลาเกิด</p>
-        <p className="text-xl font-bold tabular-nums text-base-content">
-          <WindowClock respawn={respawn} now={now} />
-        </p>
-        <p className="text-xs text-base-content/70">
-          ตาย {thaiDeathDay(death, now)} {thaiClock(death)}
-        </p>
-      </div>
-      <div className="flex-1 basis-32 sm:flex-none sm:basis-44">
-        <span className={`badge badge-sm ${status.badge}`}>{status.label}</span>
-        <p className="font-mono text-xl font-bold tabular-nums text-base-content">{countdown(respawn, now)}</p>
-      </div>
-      <div className="flex items-center gap-2">
-        <button
-          type="button"
-          className="btn btn-ghost btn-sm min-h-10 gap-1 border-base-300"
-          aria-label={`${label} เพิ่งตายตอนนี้ เริ่มจับเวลาใหม่`}
-          onClick={() => onDeath(Date.now())}
-        >
-          <RotateCcw aria-hidden className="h-4 w-4" /> ตายตอนนี้
-        </button>
-        <button
-          type="button"
-          className="btn btn-primary btn-sm min-h-10 gap-1"
-          aria-label={`เส้นทางไปหา ${label}`}
-          onClick={onRoute}
-        >
-          <RouteIcon aria-hidden className="h-4 w-4" /> เส้นทาง
-        </button>
-        <button
-          type="button"
-          className="btn btn-circle btn-ghost btn-sm"
-          aria-label={`เลิกจับเวลา ${label}`}
-          title="เลิกจับเวลา"
-          onClick={() => onDeath(undefined)}
-        >
-          <X aria-hidden className="h-4 w-4" />
-        </button>
+
+        <div className={`space-y-2 rounded-xl p-3 ${status.panel}`}>
+          <p className="font-mono text-3xl font-bold leading-none tabular-nums text-base-content">
+            {countdown(respawn, now)}
+          </p>
+          <ProgressBar percent={progressOf(respawn, death, now)} className={status.bar} />
+          <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+            <p className="text-xs text-base-content/70">ช่วงเวลาเกิด</p>
+            <p className="text-lg font-bold tabular-nums text-base-content">
+              <WindowClock respawn={respawn} now={now} />
+            </p>
+          </div>
+        </div>
+
+        <div className="mt-auto flex flex-wrap items-center gap-x-3 gap-y-2">
+          <p className="min-w-0 basis-full text-xs text-base-content/70 sm:flex-1 sm:basis-32">
+            ตาย {thaiDeathDay(death, now)} {thaiClock(death)}
+          </p>
+          <button
+            type="button"
+            className="btn btn-ghost btn-sm min-h-10 flex-1 sm:flex-none gap-1 border-base-300"
+            aria-label={`${label} เพิ่งตายตอนนี้ เริ่มจับเวลาใหม่`}
+            onClick={() => onDeath(Date.now())}
+          >
+            <RotateCcw aria-hidden className="h-4 w-4" /> ตายตอนนี้
+          </button>
+          <button
+            type="button"
+            className="btn btn-primary btn-sm min-h-10 flex-1 sm:flex-none gap-1"
+            aria-label={`เส้นทางไปหา ${label}`}
+            onClick={onRoute}
+          >
+            <RouteIcon aria-hidden className="h-4 w-4" /> เส้นทาง
+          </button>
+        </div>
       </div>
     </li>
   );
@@ -410,29 +483,34 @@ function BossHeader({ mvp }: { mvp: Mvp }) {
   const detailsId = `mvp-${mvp.id}-details`;
 
   return (
-    <>
-      <div className="flex items-center gap-3">
-        <Sprite src={mvp.image} size="h-24 w-24 sm:h-28 sm:w-28" />
-        <div className="min-w-0 flex-1">
-          <h3 className="text-2xl font-bold leading-tight text-base-content">{mvp.name}</h3>
-          <p className="text-sm text-base-content/70">
-            Lv {mvp.lv} · {mvp.race} · {mvp.property}
-          </p>
+    <div className="border-b border-base-300 bg-base-200/60 p-4 sm:p-5">
+      <div className="flex items-center gap-4">
+        <div className="flex h-24 w-24 shrink-0 items-center justify-center overflow-hidden rounded-xl bg-base-100 shadow-sm ring-1 ring-base-300 sm:h-28 sm:w-28">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={mvp.image} alt="" loading="lazy" className="max-h-full max-w-full object-contain" />
         </div>
-        <button
-          type="button"
-          className="btn btn-ghost btn-sm min-h-10 shrink-0 gap-1 border-base-300"
-          aria-expanded={open}
-          aria-controls={detailsId}
-          aria-label={`สถานะของ ${mvp.name}`}
-          onClick={() => setOpen((v) => !v)}
-        >
-          {open ? "ซ่อนสถานะ" : "ดูสถานะ"}
-          <ChevronDown aria-hidden className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
-        </button>
+        <div className="min-w-0 flex-1 space-y-2">
+          <h3 className="text-2xl font-bold leading-tight text-base-content">{mvp.name}</h3>
+          <p className="flex flex-wrap gap-1.5 text-sm">
+            <span className="badge badge-primary badge-outline">Lv {mvp.lv}</span>
+            <span className="badge badge-ghost">{mvp.race}</span>
+            <span className="badge badge-ghost">{mvp.property}</span>
+          </p>
+          <button
+            type="button"
+            className="btn btn-ghost btn-sm -ml-2 min-h-10 gap-1 text-base-content/80"
+            aria-expanded={open}
+            aria-controls={detailsId}
+            aria-label={`สถานะของ ${mvp.name}`}
+            onClick={() => setOpen((v) => !v)}
+          >
+            {open ? "ซ่อนสถานะ" : "ดูสถานะ"}
+            <ChevronDown aria-hidden className={`h-4 w-4 transition-transform ${open ? "rotate-180" : ""}`} />
+          </button>
+        </div>
       </div>
       {open && (
-        <div id={detailsId} className="mt-3 space-y-3 rounded-lg border border-base-300 p-3">
+        <div id={detailsId} className="mt-4 space-y-3 rounded-xl border border-base-300 bg-base-100 p-3">
           <p className="flex flex-wrap items-baseline justify-between gap-x-3 text-sm text-base-content/70">
             <span>ขนาด {mvp.scale}</span>
             <span>
@@ -447,7 +525,7 @@ function BossHeader({ mvp }: { mvp: Mvp }) {
           <MonsterElementLists element={mvp.element} />
         </div>
       )}
-    </>
+    </div>
   );
 }
 
@@ -462,6 +540,7 @@ interface SpawnRowProps {
   onReport: () => void;
 }
 
+/** One Spawn map of a boss: where, how long it takes to return, and the timer strip under it. */
 function SpawnRow({ mvpName, spawn, mapName, death, now, onDeath, onRoute, onReport }: SpawnRowProps) {
   // nothing to time when the boss is back within seconds
   const atOnce = respawnsAtOnce(spawn.cooldown);
@@ -469,14 +548,19 @@ function SpawnRow({ mvpName, spawn, mapName, death, now, onDeath, onRoute, onRep
   const label = `${mvpName} ที่ ${spawn.map}`;
 
   return (
-    <div className="space-y-2 py-3 first:pt-0 last:pb-0">
-      <div className="flex flex-wrap items-center gap-x-3 gap-y-2">
+    <div
+      className={`overflow-hidden rounded-xl border ${respawn ? STATUS_STYLE[respawn.status].border : "border-base-300"}`}
+    >
+      <div className="flex flex-wrap items-center gap-x-3 gap-y-2 p-3">
         <div className="min-w-0 flex-1 basis-44">
-          <p className="font-semibold text-base-content">
-            {mapName ?? spawn.map}{" "}
-            {mapName && <span className="font-mono text-sm font-normal text-base-content/70">({spawn.map})</span>}
+          <p className="flex items-start gap-1.5 font-semibold text-base-content">
+            <MapPin aria-hidden className="mt-1 h-4 w-4 shrink-0 text-primary" />
+            <span>
+              {mapName ?? spawn.map}{" "}
+              {mapName && <span className="font-mono text-sm font-normal text-base-content/70">({spawn.map})</span>}
+            </span>
           </p>
-          <p className="flex items-center gap-1 text-sm text-base-content/70">
+          <p className="mt-0.5 flex items-center gap-1.5 pl-[1.375rem] text-sm text-base-content/70">
             <Clock aria-hidden className="h-4 w-4 shrink-0" />
             {atOnce ? "เกิดใหม่ทันที ไม่ต้องจับเวลา" : `เกิดใหม่ใน ${formatCooldown(spawn.cooldown)}`}
           </p>
@@ -492,7 +576,7 @@ function SpawnRow({ mvpName, spawn, mapName, death, now, onDeath, onRoute, onRep
           </button>
           <button
             type="button"
-            className="btn btn-outline btn-sm min-h-10 gap-1"
+            className="btn btn-outline btn-primary btn-sm min-h-10 gap-1"
             aria-label={`เส้นทางไปหา ${label}`}
             onClick={onRoute}
           >
@@ -503,15 +587,15 @@ function SpawnRow({ mvpName, spawn, mapName, death, now, onDeath, onRoute, onRep
 
       {!atOnce && (
         <div
-          className={`flex items-start gap-2 rounded-lg px-3 py-3 ${
-            respawn ? STATUS_STYLE[respawn.status].row || "bg-base-200" : "bg-base-200"
+          className={`flex items-start gap-2 border-t px-3 py-3 ${
+            respawn ? `${STATUS_STYLE[respawn.status].panel} ${STATUS_STYLE[respawn.status].border}` : "border-base-300 bg-base-200/60"
           }`}
         >
-          <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-4 gap-y-2">
+          <div className="flex min-w-0 flex-1 flex-wrap items-center gap-x-5 gap-y-3">
             {/* remounts when the Death time changes elsewhere, so the box always shows the saved time */}
             <DeathTimeField key={death ?? "none"} label={label} death={death} onDeath={onDeath} />
             {respawn && (
-              <div>
+              <div className="space-y-0.5">
                 <p className="flex flex-wrap items-center gap-x-2 text-lg font-bold tabular-nums text-base-content">
                   <span>
                     เกิด <WindowClock respawn={respawn} now={now} />
@@ -520,7 +604,7 @@ function SpawnRow({ mvpName, spawn, mapName, death, now, onDeath, onRoute, onRep
                     {STATUS_STYLE[respawn.status].label}
                   </span>
                 </p>
-                <p className="font-mono text-sm font-semibold tabular-nums text-base-content">
+                <p className="font-mono text-base font-bold tabular-nums text-base-content">
                   {countdown(respawn, now)}
                 </p>
                 {death !== undefined && (
