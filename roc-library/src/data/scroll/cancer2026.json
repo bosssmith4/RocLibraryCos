@@ -1,0 +1,214 @@
+{
+  "title": "Cancer Scroll",
+  "cover": "107519.bmp",
+  "prizes": [
+    {
+      "id": "401427",
+      "name": "Cancer Crown [1]",
+      "image": null,
+      "quantity": 1,
+      "tier": "SSR",
+      "rate": 0.05
+    },
+    {
+      "id": "400679",
+      "name": "Pink Shampoo Hat [1]",
+      "image": null,
+      "quantity": 1,
+      "tier": "SSR",
+      "rate": 0.05
+    },
+    {
+      "id": "22829",
+      "name": "Sealed Card",
+      "image": null,
+      "quantity": 1,
+      "tier": "SSR",
+      "rate": 0.05
+    },
+    {
+      "id": "23719",
+      "name": "Sealed Card Album II",
+      "image": null,
+      "quantity": 1,
+      "tier": "SSR",
+      "rate": 0.05
+    },
+    {
+      "id": "480644",
+      "name": "Violet Halo [1]",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.1
+    },
+    {
+      "id": "410518",
+      "name": "Crow Tengu Mask",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.15
+    },
+    {
+      "id": "410517",
+      "name": "Karasu Tengu Mask",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.15
+    },
+    {
+      "id": "520067",
+      "name": "Cancer Axe [2]",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.15
+    },
+    {
+      "id": "491058",
+      "name": "Cancer Ring [1]",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.15
+    },
+    {
+      "id": "24258",
+      "name": "Blacksmith Shadow Shoes",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.4
+    },
+    {
+      "id": "24271",
+      "name": "Blacksmith Shadow Armor",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.4
+    },
+    {
+      "id": "20968",
+      "name": "Temporal Luk Manteau [1]",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.4
+    },
+    {
+      "id": "23247",
+      "name": "Status Shadow Item Combiner",
+      "image": null,
+      "quantity": 1,
+      "tier": "R",
+      "rate": 0.5
+    },
+    {
+      "id": "12103",
+      "name": "Blood Twig",
+      "image": null,
+      "quantity": 1,
+      "tier": "B",
+      "rate": 1.25
+    },
+    {
+      "id": "17066",
+      "name": "Poison Bottle Box",
+      "image": null,
+      "quantity": 1,
+      "tier": "B",
+      "rate": 2.0
+    },
+    {
+      "id": "23115",
+      "name": "Class Shadow Cube",
+      "image": null,
+      "quantity": 1,
+      "tier": "B",
+      "rate": 2.0
+    },
+    {
+      "id": "102121",
+      "name": "[Scroll] AGI Biscuit Stick",
+      "image": null,
+      "quantity": 2,
+      "tier": "B",
+      "rate": 5.0
+    },
+    {
+      "id": "101514",
+      "name": "[Scroll] INT Biscuit Stick",
+      "image": null,
+      "quantity": 2,
+      "tier": "B",
+      "rate": 5.0
+    },
+    {
+      "id": "101513",
+      "name": "[Scroll] STR Biscuit Stick",
+      "image": null,
+      "quantity": 2,
+      "tier": "B",
+      "rate": 5.0
+    },
+    {
+      "id": "101337",
+      "name": "[Scroll] VIT Biscuit Stick",
+      "image": null,
+      "quantity": 2,
+      "tier": "B",
+      "rate": 5.0
+    },
+    {
+      "id": "101336",
+      "name": "[Scroll] DEX Biscuit Stick",
+      "image": null,
+      "quantity": 2,
+      "tier": "B",
+      "rate": 5.0
+    },
+    {
+      "id": "102120",
+      "name": "[Scroll] LUK Biscuit Stick",
+      "image": null,
+      "quantity": 2,
+      "tier": "B",
+      "rate": 5.0
+    },
+    {
+      "id": "14846",
+      "name": "[Scroll] Inc Agi Lv.10 Scroll",
+      "image": null,
+      "quantity": 10,
+      "tier": "C",
+      "rate": 11.0
+    },
+    {
+      "id": "14845",
+      "name": "[Scroll] Blessing Lv.10",
+      "image": null,
+      "quantity": 10,
+      "tier": "C",
+      "rate": 11.15
+    },
+    {
+      "id": "14844",
+      "name": "[Scroll] Kafra Card",
+      "image": null,
+      "quantity": 5,
+      "tier": "E",
+      "rate": 20.0
+    },
+    {
+      "id": "9909",
+      "name": "[Scroll] Ex Def Potion",
+      "image": null,
+      "quantity": 5,
+      "tier": "E",
+      "rate": 20.0
+    }
+  ]
+}

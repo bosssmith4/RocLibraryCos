@@ -25,6 +25,13 @@ export function expService(): RateSource {
         DateTo: new Date("2027-01-13T05:59:00+07:00"),
         description: "5th Anniversary Boost: EXP Bonus +125% (Additional)",
       },
+      {
+        name: "รางวัลชดเชยเลื่อนเปิด EXP +50%",
+        ratePercent: 50,
+        DateFrom: new Date("2026-11-18T00:00:00+07:00"),
+        DateTo: new Date("2026-11-20T12:00:00+07:00"),
+        description: "รางวัลชดเชยเลื่อนเปิด: EXP เพิ่ม +50% (Additional) รวมกับ 5th Anniversary Boost +125% เป็น +175% ตามในเกม",
+      },
     ],
   };
 }

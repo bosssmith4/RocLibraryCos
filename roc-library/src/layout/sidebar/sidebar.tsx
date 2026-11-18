@@ -90,6 +90,13 @@ const fileTree: FileTreeItem[] = [
         icon: "https://api.iconify.design/famicons/flash.svg?color=%23f4fb00",
         href: "/aspd-calc",
       },
+      // {
+      //   id: "cast-calc",
+      //   name: "Cast Calculator",
+      //   type: "file",
+      //   icon: "https://api.iconify.design/fluent-emoji-flat/hourglass-not-done.svg",
+      //   href: "/cast-calc",
+      // },
     ],
   },
   // {
@@ -179,13 +186,6 @@ const fileTree: FileTreeItem[] = [
     href: "https://drive.google.com/drive/u/0/folders/1pbN2d8I4M2cYRcuzhxrsn21nrMiX9pPw",
     link_target: true,
   },
-  // {
-  //   id: "vct-calc",
-  //   name: "VCT Calculator",
-  //   type: "file",
-  //   icon: "⌛",
-  //   href: "/vct-calc",
-  // },
   // {
   //   id: "aspd",
   //   name: "The Flash Calc (ASPD)",
