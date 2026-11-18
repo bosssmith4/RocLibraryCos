@@ -7,6 +7,62 @@ import { createMapObjects } from "./mapObjects";
 
 export type ColorMode = "map" | "texture";
 
+export type PinKind = "warp" | "chest" | "miniBoss" | "mvp";
+
+export interface MapPin {
+  x: number;
+  y: number;
+  kind: PinKind;
+  /** short text on the pin, such as a chest number */
+  label?: string;
+  /** A picture standing on the cell instead of the coloured pin (a gif shows its first frame). */
+  image?: string;
+}
+
+export interface MapRoute {
+  /** cells to pass through, in order */
+  points: { x: number; y: number }[];
+}
+
+/**
+ * How far up a picture its anchor sits, as a share of the picture's height: the picture is drawn
+ * that much below the cell so it looks planted in the ground instead of floating. It is a share,
+ * so it holds on a small map and a large one. The warp's ring and the boss's tail are drawn near
+ * the picture's bottom, so they sink less than a standing boss's body.
+ */
+/** How big each kind's picture stands, against a 22-unit-tall base; the boss keeps its full size. */
+const PIN_SIZE: Record<PinKind, number> = {
+  warp: 0.6,
+  chest: 0.6,
+  miniBoss: 0.6,
+  mvp: 1.4,
+};
+
+/**
+ * Where across a picture its anchor sits (0 left, 1 right): the middle of the part that is drawn,
+ * measured from each file's see-through margins, since the chest's file has a wide empty left side.
+ */
+const PIN_CENTER_X: Record<PinKind, number> = {
+  warp: 0.5,
+  chest: 0.565,
+  miniBoss: 0.49,
+  mvp: 0.52,
+};
+
+const PIN_SINK: Record<PinKind, number> = {
+  warp: 0.12,
+  chest: 0.29,
+  miniBoss: 0.14,
+  mvp: 0.3,
+};
+
+const PIN_COLORS: Record<PinKind, string> = {
+  warp: "#2f8cff",
+  chest: "#f5b301",
+  miniBoss: "#fd6c01",
+  mvp: "#e5232b",
+};
+
 export interface MapScene {
   setMode: (mode: ColorMode) => void;
   setShowWalkable: (show: boolean) => void;
@@ -16,6 +72,13 @@ export interface MapScene {
    * number. The camera flies to the cell at `focus`, or fits them all when `focus` is left out.
    */
   setMarkers: (cells: { x: number; y: number }[], focus?: number) => void;
+  /**
+   * Pins of different kinds, each with its own colour and an optional short label. They stay
+   * where they are and never move the camera. Replaces the previous set.
+   */
+  setPins: (pins: MapPin[]) => void;
+  /** Lines laid along the ground between cells (x and y as the game shows). Replaces the previous set. */
+  setRoutes: (routes: MapRoute[]) => void;
   resize: () => void;
   /** Resolves with how many ground pictures were found next to the map files. */
   texturesLoaded: Promise<number>;
@@ -466,6 +529,164 @@ export function createMapScene(
     }
   };
 
+  // Pins by kind and routes: static, never move the camera.
+  let pinGroup: THREE.Group | null = null;
+  let routeGroup: THREE.Group | null = null;
+
+  const disposeGroup = (group: THREE.Group | null) => {
+    if (!group) return;
+    scene.remove(group);
+    group.traverse((object) => {
+      if (object instanceof THREE.Mesh) {
+        object.geometry.dispose();
+        (object.material as THREE.Material).dispose();
+      } else if (object instanceof THREE.Sprite) {
+        object.material.map?.dispose();
+        object.material.dispose();
+      }
+    });
+  };
+
+  const labelSprite = (text: string, scale: number) => {
+    const canvas = document.createElement("canvas");
+    canvas.width = 192;
+    canvas.height = 96;
+    const ctx = canvas.getContext("2d");
+    if (ctx) {
+      ctx.fillStyle = "rgba(0,0,0,0.75)";
+      ctx.beginPath();
+      ctx.arc(48, 48, 36, Math.PI / 2, (Math.PI * 3) / 2);
+      ctx.arc(144, 48, 36, (Math.PI * 3) / 2, Math.PI / 2);
+      ctx.closePath();
+      ctx.fill();
+      ctx.fillStyle = "#ffffff";
+      ctx.font = "800 52px sans-serif";
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillText(text, 96, 52);
+    }
+    const sprite = new THREE.Sprite(
+      new THREE.SpriteMaterial({ map: new THREE.CanvasTexture(canvas), depthTest: false, transparent: true }),
+    );
+    sprite.scale.set(18 * scale, 9 * scale, 1);
+    sprite.position.y = 26 * scale;
+    sprite.renderOrder = 6;
+    return sprite;
+  };
+
+  const setPins = (pins: MapPin[]) => {
+    disposeGroup(pinGroup);
+    pinGroup = null;
+    const placed = pins.flatMap((pin) => {
+      const point = cellPoint(pin);
+      return point ? [{ pin, point }] : [];
+    });
+    if (placed.length) {
+      const s = markerScale * 1.4;
+      pinGroup = new THREE.Group();
+      scene.add(pinGroup);
+      for (const { pin, point } of placed) {
+        const group = new THREE.Group();
+        group.position.copy(point);
+        const big = pin.kind === "mvp" ? 1.4 : 1;
+        if (pin.image) {
+          // the picture stands on the cell, its bottom edge at the ground
+          const sprite = new THREE.Sprite(new THREE.SpriteMaterial({ depthTest: false, transparent: true }));
+          sprite.center.set(PIN_CENTER_X[pin.kind], PIN_SINK[pin.kind]);
+          sprite.renderOrder = 6;
+          sprite.visible = false;
+          group.add(sprite);
+          const owner = pinGroup;
+          new THREE.TextureLoader().load(pin.image, (texture) => {
+            if (disposed || owner !== pinGroup) {
+              texture.dispose();
+              return;
+            }
+            texture.colorSpace = THREE.SRGBColorSpace;
+            const { width, height } = texture.image as { width: number; height: number };
+            const h = 22 * s * PIN_SIZE[pin.kind];
+            sprite.scale.set((h * width) / height, h, 1);
+            sprite.material.map = texture;
+            sprite.material.needsUpdate = true;
+            sprite.visible = true;
+            render();
+          });
+          pinGroup.add(group);
+          continue;
+        }
+        const solid = new THREE.MeshBasicMaterial({ color: new THREE.Color(PIN_COLORS[pin.kind]), depthTest: false });
+        const cone = new THREE.Mesh(new THREE.ConeGeometry(3 * s * big, 9 * s * big, 24).rotateX(Math.PI), solid);
+        cone.position.y = 4.5 * s * big;
+        const ball = new THREE.Mesh(new THREE.SphereGeometry(4.2 * s * big, 24, 16), solid);
+        ball.position.y = 11 * s * big;
+        const dot = new THREE.Mesh(
+          new THREE.SphereGeometry(1.6 * s * big, 16, 12),
+          new THREE.MeshBasicMaterial({ color: 0xffffff, depthTest: false }),
+        );
+        dot.position.set(0, 11 * s * big, 3 * s * big);
+        for (const part of [cone, ball, dot]) part.renderOrder = 4;
+        group.add(cone, ball, dot);
+        if (pin.label) group.add(labelSprite(pin.label, s * big));
+        pinGroup.add(group);
+      }
+    }
+    render();
+  };
+
+  const setRoutes = (routes: MapRoute[]) => {
+    disposeGroup(routeGroup);
+    routeGroup = null;
+    const half = (gnd.zoom / 2) * 0.35;
+    const positions: number[] = [];
+    for (const route of routes) {
+      // sample every cell so the line follows the ground
+      const samples: THREE.Vector3[] = [];
+      for (let i = 0; i < route.points.length - 1; i++) {
+        const a = route.points[i];
+        const b = route.points[i + 1];
+        const steps = Math.max(1, Math.ceil(Math.max(Math.abs(b.x - a.x), Math.abs(b.y - a.y))));
+        for (let k = 0; k < steps; k++) {
+          const p = cellPoint({
+            x: Math.round(a.x + ((b.x - a.x) * k) / steps),
+            y: Math.round(a.y + ((b.y - a.y) * k) / steps),
+          });
+          if (p) samples.push(p);
+        }
+      }
+      const last = route.points[route.points.length - 1];
+      const end = last && cellPoint(last);
+      if (end) samples.push(end);
+      for (let i = 0; i < samples.length - 1; i++) {
+        const p = samples[i];
+        const q = samples[i + 1];
+        const dx = q.x - p.x;
+        const dz = q.z - p.z;
+        const len = Math.hypot(dx, dz) || 1;
+        const nx = (-dz / len) * half;
+        const nz = (dx / len) * half;
+        const y1 = p.y + 0.8;
+        const y2 = q.y + 0.8;
+        positions.push(
+          p.x - nx, y1, p.z - nz, p.x + nx, y1, p.z + nz, q.x - nx, y2, q.z - nz,
+          p.x + nx, y1, p.z + nz, q.x + nx, y2, q.z + nz, q.x - nx, y2, q.z - nz,
+        );
+      }
+    }
+    if (positions.length) {
+      const geometry = new THREE.BufferGeometry();
+      geometry.setAttribute("position", new THREE.Float32BufferAttribute(positions, 3));
+      const mesh = new THREE.Mesh(
+        geometry,
+        new THREE.MeshBasicMaterial({ color: 0xef4444, side: THREE.DoubleSide, depthTest: false, transparent: true, opacity: 0.9 }),
+      );
+      mesh.renderOrder = 2;
+      routeGroup = new THREE.Group();
+      routeGroup.add(mesh);
+      scene.add(routeGroup);
+    }
+    render();
+  };
+
   const resize = () => {
     const { clientWidth, clientHeight } = container;
     if (!clientWidth || !clientHeight) return;
@@ -488,6 +709,8 @@ export function createMapScene(
     },
     setShowEdges: setEdges,
     setMarkers,
+    setPins,
+    setRoutes,
     resize,
     texturesLoaded,
     objectsLoaded: mapObjects ? mapObjects.ready : Promise.resolve(0),
@@ -497,6 +720,8 @@ export function createMapScene(
       mapObjects?.dispose();
       disposed = true;
       clearMarkers();
+      disposeGroup(pinGroup);
+      disposeGroup(routeGroup);
       controls.dispose();
       edges?.children.forEach((line) => (line as THREE.LineSegments).geometry.dispose());
       edgeMaterial.dispose();

@@ -2,7 +2,7 @@ export interface MapMarker {
   id: string;
   name: string;
   type: 'property' | 'mini_boss' | 'boss';
-  coordinates: [number, number]; // [lat, lng]
+  coordinates: [number, number]; // [x, y]: the cell the game shows
   description: string;
   imagePath?: string;
   level?: number;
