@@ -10,7 +10,7 @@ import * as htmlToImage from "html-to-image";
 import ImageConvertPage from "./image-convert";
 import ItemCard from "./ItemCard";
 import { InlineImageProvider, loadInlineImages } from "./inlineImages";
-import ItemPicker from "./ItemPicker";
+import ItemPicker, { type ItemKind } from "./ItemPicker";
 import { NewMapsButton, NewMapsModal, useNewMaps } from "./NewMaps";
 import {
   CostumePreviewButton,
@@ -286,7 +286,22 @@ export default function PatchConvertClient() {
   const maps = useNewMaps();
   const [mapsOpen, setMapsOpen] = useState(false);
 
-  const entries = Object.entries(items || {});
+  const [kind, setKind] = useState<ItemKind>("new");
+
+  const allEntries = Object.entries(items || {});
+  // An item without a patchType counts as New.
+  const isModified = (item: PatchItemsDto) => item.patchType === "modified";
+  const counts: Record<ItemKind, number> = {
+    all: allEntries.length,
+    new: allEntries.filter(([, item]) => !isModified(item)).length,
+    modified: allEntries.filter(([, item]) => isModified(item)).length,
+  };
+  const entries =
+    kind === "all"
+      ? allEntries
+      : allEntries.filter(([, item]) =>
+          kind === "modified" ? isModified(item) : !isModified(item),
+        );
   const needle = query.trim().toLowerCase();
   const visible = needle
     ? entries.filter(([, item]) =>
@@ -338,6 +353,9 @@ export default function PatchConvertClient() {
             query={query}
             onQueryChange={setQuery}
             cards={cards}
+            kind={kind}
+            onKindChange={setKind}
+            counts={counts}
           />
 
           {current ? (
@@ -350,7 +368,7 @@ export default function PatchConvertClient() {
           ) : (
             <p className="rounded-box border border-dashed border-base-300 p-10 text-center text-base-content/70">
               {entries.length === 0
-                ? "ยังไม่มีข้อมูลไอเทมในแพตช์นี้"
+                ? "ไม่มีไอเทมในหมวดนี้"
                 : "ไม่พบไอเทมที่ตรงกับคำค้นหา"}
             </p>
           )}

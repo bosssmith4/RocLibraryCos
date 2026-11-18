@@ -7,10 +7,23 @@ const FALLBACK_IMAGE = "/assets/images/GuildImage/dog.jpg";
 
 type Entry = [string, PatchItemsDto];
 
+/** Which items the list shows: every one, only New items, or only Modified items. */
+export type ItemKind = "all" | "new" | "modified";
+
+const KIND_OPTIONS: { value: ItemKind; label: string }[] = [
+  { value: "all", label: "ทั้งหมด" },
+  { value: "new", label: "ใหม่" },
+  { value: "modified", label: "แก้ไข" },
+];
+
 interface ItemPickerProps {
   entries: Entry[];
-  /** How many items the patch holds before the search narrows the list. */
+  /** How many items the chosen kind holds before the search narrows the list. */
   total: number;
+  kind: ItemKind;
+  onKindChange: (kind: ItemKind) => void;
+  /** How many items each kind holds. */
+  counts: Record<ItemKind, number>;
   selectedKey: string | undefined;
   onSelect: (key: string) => void;
   query: string;
@@ -174,11 +187,34 @@ export default function ItemPicker({
   query,
   onQueryChange,
   cards,
+  kind,
+  onKindChange,
+  counts,
 }: ItemPickerProps) {
   const searching = query.trim() !== "";
 
   return (
     <div className="space-y-3 lg:sticky lg:top-20">
+      <div
+        role="group"
+        aria-label="ชนิดไอเทมในแพตช์"
+        className="join grid w-full grid-cols-3"
+      >
+        {KIND_OPTIONS.map(({ value, label }) => (
+          <button
+            key={value}
+            type="button"
+            onClick={() => onKindChange(value)}
+            aria-pressed={kind === value}
+            className={`btn join-item min-h-11 px-2 ${
+              kind === value ? "btn-primary" : ""
+            }`}
+          >
+            {label} ({counts[value]})
+          </button>
+        ))}
+      </div>
+
       <div className="flex items-center gap-2">
         <label className="input input-bordered flex min-h-11 w-full items-center gap-2">
           <Search aria-hidden="true" className="h-4 w-4 shrink-0 opacity-60" />
@@ -212,7 +248,7 @@ export default function ItemPicker({
       {entries.length === 0 ? (
         <p className="rounded-box border border-dashed border-base-300 p-4 text-center text-sm text-base-content/70">
           {total === 0
-            ? "ยังไม่มีข้อมูลไอเทมในแพตช์นี้"
+            ? "ไม่มีไอเทมในหมวดนี้"
             : "ไม่พบไอเทมที่ตรงกับคำค้นหา"}
         </p>
       ) : (

@@ -8,4 +8,6 @@ export interface PatchItemsDto {
   slotCount: number;
   ClassNum: number;
   costume: boolean;
+  /** Whether the patch brings the item for the first time or changes an existing one. */
+  patchType?: "new" | "modified";
 }
