@@ -88,8 +88,12 @@ export async function buildHomeSlides(): Promise<HomeSlide[]> {
 
   const libra = scrolls.find((s) => s.id === "libra2026");
   const festa = scrolls.find((s) => s.id === "festa2026");
+  const capricorn = scrolls.find((s) => s.id === "capricorn2026");
+  const taurus = scrolls.find((s) => s.id === "taurus2026");
   if (libra) slides.push(scrollSlide(libra, "libra", "SCROLL SIMULATOR"));
   if (festa) slides.push(scrollSlide(festa, "festa", "SCROLL SIMULATOR"));
+  if (capricorn) slides.push(scrollSlide(capricorn, "festa", "SCROLL SIMULATOR"));
+  if (taurus) slides.push(scrollSlide(taurus, "libra", "SCROLL SIMULATOR"));
 
   return slides;
 }

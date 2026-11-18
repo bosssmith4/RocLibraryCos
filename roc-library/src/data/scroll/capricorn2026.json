@@ -1,0 +1,216 @@
+{
+  "title": "Zodiac Capricorn Scroll",
+  "cover": "106278.bmp",
+  "source": "https://roc.gnjoy.in.th/promotion/baphomet-flash-sale-promotion-november-2026/",
+  "prizes": [
+    {
+      "id": "23719",
+      "name": "Sealed Card Album II",
+      "image": null,
+      "quantity": 1,
+      "tier": "SSR",
+      "rate": 0.05
+    },
+    {
+      "id": "22829",
+      "name": "Sealed Card",
+      "image": null,
+      "quantity": 1,
+      "tier": "SSR",
+      "rate": 0.05
+    },
+    {
+      "id": "410491",
+      "name": "Costume Viloet Starlight",
+      "image": null,
+      "quantity": 1,
+      "tier": "SSR",
+      "rate": 0.05,
+      "announce": true
+    },
+    {
+      "id": "490819",
+      "name": "Ring of Hunter [1]",
+      "image": null,
+      "quantity": 1,
+      "tier": "SSR",
+      "rate": 0.1
+    },
+    {
+      "id": "490898",
+      "name": "Capricon Ring [1]",
+      "image": null,
+      "quantity": 1,
+      "tier": "SSR",
+      "rate": 0.05
+    },
+    {
+      "id": "700128",
+      "name": "Capricorn Thief Bow [2]",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.15
+    },
+    {
+      "id": "401198",
+      "name": "Capricorn Crown [1]",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.15
+    },
+    {
+      "id": "500125",
+      "name": "Gladius Daemonicus [3]",
+      "image": null,
+      "quantity": 1,
+      "tier": "SR",
+      "rate": 0.15
+    },
+    {
+      "id": "24279",
+      "name": "Hunter Shadow Armor",
+      "image": null,
+      "quantity": 1,
+      "tier": "R",
+      "rate": 0.4
+    },
+    {
+      "id": "24266",
+      "name": "Hunter Shadow Shoes",
+      "image": null,
+      "quantity": 1,
+      "tier": "R",
+      "rate": 0.4
+    },
+    {
+      "id": "24276",
+      "name": "Rogue Shadow Armor",
+      "image": null,
+      "quantity": 1,
+      "tier": "R",
+      "rate": 0.4
+    },
+    {
+      "id": "24263",
+      "name": "Rogue Shadow Shoes",
+      "image": null,
+      "quantity": 1,
+      "tier": "R",
+      "rate": 0.4
+    },
+    {
+      "id": "23247",
+      "name": "Status Shadow Item Combiner",
+      "image": null,
+      "quantity": 1,
+      "tier": "R",
+      "rate": 0.5
+    },
+    {
+      "id": "12103",
+      "name": "Blood Twig",
+      "image": null,
+      "quantity": 1,
+      "tier": "A",
+      "rate": 1
+    },
+    {
+      "id": "23115",
+      "name": "Class Shadow Cube",
+      "image": null,
+      "quantity": 1,
+      "tier": "B",
+      "rate": 2
+    },
+    {
+      "id": "17066",
+      "name": "Poison Bottle Box",
+      "image": null,
+      "quantity": 1,
+      "tier": "B",
+      "rate": 2
+    },
+    {
+      "id": "9908",
+      "name": "[Scroll] Mental Potion",
+      "image": null,
+      "quantity": 5,
+      "tier": "B",
+      "rate": 5
+    },
+    {
+      "id": "23715",
+      "name": "Thai Perfume ASPD",
+      "image": null,
+      "quantity": 5,
+      "tier": "B",
+      "rate": 5
+    },
+    {
+      "id": "23714",
+      "name": "Thai Perfume MATK",
+      "image": null,
+      "quantity": 5,
+      "tier": "B",
+      "rate": 5
+    },
+    {
+      "id": "23713",
+      "name": "Thai Perfume ATK",
+      "image": null,
+      "quantity": 5,
+      "tier": "B",
+      "rate": 5
+    },
+    {
+      "id": "9894",
+      "name": "[Scroll] Adrenaline Lv.5 Scroll",
+      "image": null,
+      "quantity": 5,
+      "tier": "B",
+      "rate": 5
+    },
+    {
+      "id": "12645",
+      "name": "LV5 Aspersio Scroll",
+      "image": null,
+      "quantity": 15,
+      "tier": "B",
+      "rate": 5
+    },
+    {
+      "id": "14845",
+      "name": "[Scroll] Blessing Lv.10 Scroll",
+      "image": null,
+      "quantity": 10,
+      "tier": "C",
+      "rate": 11.15
+    },
+    {
+      "id": "14846",
+      "name": "[Scroll] Increase Agility Lv.10 Scroll",
+      "image": null,
+      "quantity": 10,
+      "tier": "C",
+      "rate": 11
+    },
+    {
+      "id": "9909",
+      "name": "[Scroll] Ex Def Potion",
+      "image": null,
+      "quantity": 5,
+      "tier": "E",
+      "rate": 20
+    },
+    {
+      "id": "14844",
+      "name": "[Scroll] Kafra Card",
+      "image": null,
+      "quantity": 5,
+      "tier": "E",
+      "rate": 20
+    }
+  ]
+}
