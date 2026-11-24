@@ -386,6 +386,21 @@ export function isHeldPose(body: SpriteAsset, action: number) {
   return frames.every((f) => picture(f) === picture(frames[0]))
 }
 
+/**
+ * How long a headgear's own animation runs before it repeats, in milliseconds; 0 when it has
+ * none (no headgear, a robe, or a headgear that only follows the body's frames). Unlike the
+ * body, it keeps playing in a held pose.
+ */
+export function gearLoopMs(character: Character, action: number) {
+  const { gear, body } = character
+  if (!gear || gear.kind !== "headgear") return 0
+  const { frames, delay } = gear.asset.act.actions[gearActionFor(gear.asset, action)]
+  if (!followsPose(gear.asset)) return frames.length > 1 ? frames.length * delay : 0
+  const bodyFrames = body.act.actions[action]?.frames.length || 1
+  const run = Math.floor(frames.length / bodyFrames)
+  return run > 1 ? run * delay : 0
+}
+
 /** Draws body, head and the worn item, in the game's order, for one moment. */
 export function drawCharacter(
   ctx: CanvasRenderingContext2D,

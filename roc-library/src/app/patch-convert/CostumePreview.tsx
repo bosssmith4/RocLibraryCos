@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   ChevronLeft,
   ChevronRight,
+  Download,
   Loader2,
   Pause,
   Play,
@@ -21,11 +22,14 @@ import {
   Character,
   drawCharacter,
   Gear,
+  gearLoopMs,
   isHeldPose,
   loadSpriteAsset,
   loadSpriteFiles,
   measureCharacter,
 } from "@/utils/spriteComposer";
+import { applyPalette, GIFEncoder, quantize } from "gifenc";
+import { LOGO_SRC } from "./inlineImages";
 import {
   createStrRenderer,
   loadStrEffect,
@@ -51,9 +55,9 @@ const GENDERS: { value: PreviewGender; label: string }[] = [
 const IDLE = 0;
 const WALK = 1;
 const POSES = [
-  { type: IDLE, label: "ยืน (Idle)" },
-  { type: 2, label: "นั่ง (Sit)" },
-  { type: WALK, label: "เดิน (Walk)" },
+  { type: IDLE, label: "ยืน (Idle)", slug: "Idle" },
+  { type: 2, label: "นั่ง (Sit)", slug: "Sit" },
+  { type: WALK, label: "เดิน (Walk)", slug: "Walk" },
 ];
 
 /** Direction 0 faces the viewer; each step turns the character towards the viewer's left. */
@@ -241,19 +245,324 @@ const union = (a: Bounds | null, b: Bounds | null): Bounds | null =>
       }
     : (a ?? b);
 
+/**
+ * Draws the scene at a moment into the given canvases. The picture depends only on the
+ * moment, so the screen and the GIF export share it.
+ */
+function createPainter(
+  scene: Scene,
+  action: number,
+  ctx: CanvasRenderingContext2D,
+  back: StrRenderer | null,
+  front: StrRenderer | null,
+) {
+  const { character, effect, footprint } = scene;
+  const effectRenderer = effect?.behind ? back : front;
+
+  // Fit everything any pose and direction paints, effects included, inside the
+  // canvas, so turning or changing pose never rescales the picture.
+  const fit = (b: Bounds | null) =>
+    Math.min(
+      MAX_SCALE,
+      (CANVAS_WIDTH - PADDING * 2) / (b ? b.maxX - b.minX : 1),
+      (CANVAS_HEIGHT - PADDING * 2) / (b ? b.maxY - b.minY : 1),
+    );
+  const characterBounds = measureCharacter(character, ALL_ACTIONS);
+  const allBounds = union(
+    characterBounds,
+    effect ? measureStr(effect) : null,
+  );
+  // An effect may spread wider than the window, as it does on the game's screen; it never
+  // shrinks the character below its size in the game, and the window crops the rest.
+  const scale = Math.max(fit(allBounds), Math.min(1, fit(characterBounds)));
+  const bounds = scale > fit(allBounds) ? characterBounds : allBounds;
+  const centreX = ((bounds?.minX ?? 0) + (bounds?.maxX ?? 0)) / 2;
+  const centreY = ((bounds?.minY ?? 0) + (bounds?.maxY ?? 0)) / 2;
+  const originX = CANVAS_WIDTH / 2 - scale * centreX;
+  const originY = CANVAS_HEIGHT / 2 - scale * centreY;
+
+  const bodyAction = character.body.act.actions[action];
+  const held = isHeldPose(character.body, action);
+  // Footprints are left only while walking.
+  const walking = Math.floor(action / 8) === WALK;
+
+  return (elapsed: number) => {
+    const bodyFrame = held
+      ? 0
+      : Math.floor(elapsed / bodyAction.delay) % bodyAction.frames.length;
+    drawCharacter(
+      ctx,
+      character,
+      { action, bodyFrame, elapsed },
+      originX,
+      originY,
+      scale,
+    );
+    back?.clear();
+    front?.clear();
+    if (back && footprint && walking) {
+      paintFootprint(
+        back,
+        footprint,
+        {
+          direction: action % 8,
+          cycle: bodyAction.delay * bodyAction.frames.length,
+          elapsed,
+        },
+        originX,
+        originY,
+        scale,
+      );
+    }
+    if (effectRenderer && effect) {
+      effectRenderer.paint(effect, strFrameAt(effect, elapsed), originX, originY, scale);
+    }
+  };
+}
+
+/** Longest a GIF runs before it loops. */
+const GIF_MAX_MS = 6000;
+const GIF_FRAME_MS = 40;
+/** The logo in the GIF's bottom-left corner, in pixels. */
+const GIF_LOGO_SIZE = 36;
+const GIF_LOGO_MARGIN = 8;
+
+const gcd = (a: number, b: number): number => (b ? gcd(b, a % b) : a);
+
+/**
+ * What moves in this Pose and how long one loop is. Three things can move: the walk cycle,
+ * the effect and the headgear's own animation (which plays even in a held Pose). One loop is
+ * the shortest time they all repeat together; past the limit it is the longest of them, made
+ * a whole number of walk cycles so the body at least joins. Null when nothing moves.
+ */
+function gifLoop(scene: Scene, action: number) {
+  const { character, effect, footprint } = scene;
+  const bodyAction = character.body.act.actions[action];
+  const cycle = isHeldPose(character.body, action)
+    ? 0
+    : bodyAction.delay * bodyAction.frames.length;
+  const walking = Math.floor(action / 8) === WALK;
+  const steps = footprint && walking && cycle > 0 ? footprint : null;
+  const effectMs = effect ? Math.round(strDuration(effect)) : 0;
+  const gearMs = Math.round(gearLoopMs(character, action));
+  const periods = [cycle, effectMs, gearMs].filter((ms) => ms > 0);
+  if (periods.length === 0 && !steps) return null;
+
+  const together = periods.reduce((a, b) => (a / gcd(a, b)) * b, 1);
+  let loopMs = together;
+  if (loopMs > GIF_MAX_MS) {
+    loopMs = Math.max(...periods);
+    if (cycle > 0) {
+      loopMs = Math.ceil(loopMs / cycle) * cycle;
+      if (loopMs > GIF_MAX_MS) loopMs = Math.max(cycle, Math.floor(GIF_MAX_MS / cycle) * cycle);
+    } else {
+      loopMs = Math.min(loopMs, GIF_MAX_MS);
+    }
+  }
+  // Footprint marks fade over their own lifetime; start once the ground is full of them.
+  const lifetime = steps
+    ? Math.max(0, ...[...steps.top, ...steps.bottom].map((e) => (e ? strDuration(e) : 0)))
+    : 0;
+  const warmupMs = steps ? Math.ceil(lifetime / cycle) * cycle : 0;
+  return { loopMs, warmupMs };
+}
+
+const nextTask = () => new Promise<void>((resolve) => setTimeout(resolve, 0));
+
+/** Records one loop of the scene, as it looks on the stage, as a GIF with the logo in a corner. */
+async function exportGif(
+  scene: Scene,
+  action: number,
+  stageColor: string,
+  onProgress: (done: number) => void,
+): Promise<Blob> {
+  const loop = gifLoop(scene, action);
+  if (!loop) throw new Error("nothing moves");
+
+  const make = () => {
+    const canvas = document.createElement("canvas");
+    canvas.width = CANVAS_WIDTH;
+    canvas.height = CANVAS_HEIGHT;
+    return canvas;
+  };
+  const characterCanvas = make();
+  const backCanvas = make();
+  const frontCanvas = make();
+  const composite = make();
+  const ctx = characterCanvas.getContext("2d")!;
+  const out = composite.getContext("2d", { willReadFrequently: true })!;
+  const back = createStrRenderer(backCanvas);
+  const front = createStrRenderer(frontCanvas);
+  const hasBack = Boolean(scene.footprint || scene.effect?.behind);
+  const hasFront = Boolean(scene.effect && !scene.effect.behind);
+
+  const logo = new Image();
+  logo.src = LOGO_SRC;
+  const logoLoaded = await logo.decode().then(
+    () => true,
+    () => false,
+  );
+
+  try {
+    const paint = createPainter(scene, action, ctx, back, front);
+    const count = Math.max(1, Math.round(loop.loopMs / GIF_FRAME_MS));
+    const frames: Uint8ClampedArray[] = [];
+    for (let i = 0; i < count; i++) {
+      paint(loop.warmupMs + i * GIF_FRAME_MS);
+      // Copy the WebGL canvases in the same task they were drawn in, before they are cleared.
+      out.fillStyle = stageColor;
+      out.fillRect(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT);
+      if (hasBack) out.drawImage(backCanvas, 0, 0);
+      out.drawImage(characterCanvas, 0, 0);
+      if (hasFront) out.drawImage(frontCanvas, 0, 0);
+      if (logoLoaded) {
+        const size = GIF_LOGO_SIZE;
+        const x = GIF_LOGO_MARGIN;
+        const y = CANVAS_HEIGHT - GIF_LOGO_MARGIN - size;
+        out.save();
+        out.beginPath();
+        out.arc(x + size / 2, y + size / 2, size / 2, 0, Math.PI * 2);
+        out.clip();
+        out.drawImage(logo, x, y, size, size);
+        out.restore();
+        out.beginPath();
+        out.arc(x + size / 2, y + size / 2, size / 2 - 1, 0, Math.PI * 2);
+        out.lineWidth = 2;
+        out.strokeStyle = "#ffffff";
+        out.stroke();
+      }
+      frames.push(out.getImageData(0, 0, CANVAS_WIDTH, CANVAS_HEIGHT).data);
+      onProgress((i + 1) / count);
+      await nextTask();
+    }
+
+    // One palette for the whole loop, taken from every few frames, so colours do not flicker.
+    const stride = Math.max(1, Math.floor(frames.length / 8));
+    const sample = frames.filter((_, i) => i % stride === 0);
+    const joined = new Uint8Array(sample.reduce((n, f) => n + f.length, 0));
+    sample.reduce((at, f) => (joined.set(f, at), at + f.length), 0);
+    const palette = quantize(joined, 256);
+
+    const gif = GIFEncoder();
+    frames.forEach((data, i) => {
+      gif.writeFrame(applyPalette(data, palette), CANVAS_WIDTH, CANVAS_HEIGHT, {
+        palette: i === 0 ? palette : undefined,
+        delay: GIF_FRAME_MS,
+      });
+    });
+    gif.finish();
+    return new Blob([gif.bytes() as BlobPart], { type: "image/gif" });
+  } finally {
+    back?.dispose();
+    front?.dispose();
+  }
+}
+
+function GifButton({
+  scene,
+  action,
+  stageRef,
+  fileName,
+}: {
+  scene: Scene | null;
+  action: number;
+  stageRef: React.RefObject<HTMLDivElement | null>;
+  fileName: string;
+}) {
+  const [progress, setProgress] = useState<number | null>(null);
+  const [failed, setFailed] = useState(false);
+  const busy = progress !== null;
+  const loop = scene ? gifLoop(scene, action) : null;
+  const canExport = loop !== null;
+
+  const save = async () => {
+    if (!scene || !stageRef.current) return;
+    setFailed(false);
+    setProgress(0);
+    try {
+      const stageColor = getComputedStyle(stageRef.current).backgroundColor;
+      const blob = await exportGif(scene, action, stageColor, setProgress);
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      // No spaces in the file name: each run of them becomes one underscore.
+      link.download = `${fileName.replace(/[\\/:*?"<>|]/g, "").replace(/\s+/g, "_")}.gif`;
+      link.click();
+      setTimeout(() => URL.revokeObjectURL(url), 1000);
+    } catch {
+      setFailed(true);
+    } finally {
+      setProgress(null);
+    }
+  };
+
+  const seconds = loop ? (loop.loopMs / 1000).toFixed(1) : null;
+
+  return (
+    <div className="space-y-1.5">
+      <button
+        type="button"
+        onClick={save}
+        disabled={!canExport || busy}
+        aria-busy={busy}
+        className="btn btn-primary min-h-12 w-full justify-between gap-3 px-4 disabled:border-base-300 disabled:bg-base-200 disabled:text-base-content/50"
+      >
+        <span className="flex items-center gap-2 font-semibold">
+          {busy ? (
+            <Loader2 aria-hidden="true" className="h-5 w-5 animate-spin" />
+          ) : (
+            <Download aria-hidden="true" className="h-5 w-5" />
+          )}
+          {busy ? `กำลังสร้าง GIF… ${Math.round(progress * 100)}%` : "บันทึกเป็น GIF"}
+        </span>
+        <span className="rounded-field bg-primary-content/15 px-2 py-0.5 text-xs font-bold tracking-wide">
+          GIF
+        </span>
+      </button>
+      {busy && (
+        <progress
+          className="progress progress-primary h-1 w-full"
+          value={Math.round(progress * 100)}
+          max={100}
+          aria-hidden="true"
+        />
+      )}
+      {!busy && canExport && (
+        <p className="text-center text-xs text-base-content/60">
+          ภาพเคลื่อนไหววนซ้ำ ยาว {seconds} วินาที · 300×340
+        </p>
+      )}
+      {scene && !canExport && (
+        <p className="text-center text-xs text-base-content/60">
+          ท่านี้ไม่มีอะไรขยับ ลองเลือกท่าเดิน หรือไอเทมที่มีเอฟเฟกต์
+        </p>
+      )}
+      {failed && (
+        <p role="alert" className="text-center text-xs text-error">
+          สร้าง GIF ไม่สำเร็จ
+        </p>
+      )}
+    </div>
+  );
+}
+
 function PreviewCanvas({
   patchKey,
+  name,
   gender,
   action,
   playing,
   onTogglePlay,
 }: {
   patchKey: string;
+  /** Names the GIF file together with the Pose and direction. */
+  name: string;
   gender: PreviewGender;
   action: number;
   playing: boolean;
   onTogglePlay: () => void;
 }) {
+  const stageRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
   /** WebGL canvases for effects: under the character (Footprints, effects drawn behind) and over it. */
   const backRef = useRef<HTMLCanvasElement>(null);
@@ -287,74 +596,13 @@ function PreviewCanvas({
   useEffect(() => {
     const ctx = canvasRef.current?.getContext("2d");
     if (!ctx || !scene) return;
-    const { character, effect, footprint } = scene;
     const back = backRef.current ? createStrRenderer(backRef.current) : null;
     const front = frontRef.current ? createStrRenderer(frontRef.current) : null;
-    const effectRenderer = effect?.behind ? back : front;
     const dispose = () => {
       back?.dispose();
       front?.dispose();
     };
-
-    // Fit everything any pose and direction paints, effects included, inside the
-    // canvas, so turning or changing pose never rescales the picture.
-    const fit = (b: Bounds | null) =>
-      Math.min(
-        MAX_SCALE,
-        (CANVAS_WIDTH - PADDING * 2) / (b ? b.maxX - b.minX : 1),
-        (CANVAS_HEIGHT - PADDING * 2) / (b ? b.maxY - b.minY : 1),
-      );
-    const characterBounds = measureCharacter(character, ALL_ACTIONS);
-    const allBounds = union(
-      characterBounds,
-      effect ? measureStr(effect) : null,
-    );
-    // An effect may spread wider than the window, as it does on the game's screen; it never
-    // shrinks the character below its size in the game, and the window crops the rest.
-    const scale = Math.max(fit(allBounds), Math.min(1, fit(characterBounds)));
-    const bounds = scale > fit(allBounds) ? characterBounds : allBounds;
-    const centreX = ((bounds?.minX ?? 0) + (bounds?.maxX ?? 0)) / 2;
-    const centreY = ((bounds?.minY ?? 0) + (bounds?.maxY ?? 0)) / 2;
-    const originX = CANVAS_WIDTH / 2 - scale * centreX;
-    const originY = CANVAS_HEIGHT / 2 - scale * centreY;
-
-    const bodyAction = character.body.act.actions[action];
-    const held = isHeldPose(character.body, action);
-    // Footprints are left only while walking.
-    const walking = Math.floor(action / 8) === WALK;
-
-    const paint = (elapsed: number) => {
-      const bodyFrame = held
-        ? 0
-        : Math.floor(elapsed / bodyAction.delay) % bodyAction.frames.length;
-      drawCharacter(
-        ctx,
-        character,
-        { action, bodyFrame, elapsed },
-        originX,
-        originY,
-        scale,
-      );
-      back?.clear();
-      front?.clear();
-      if (back && footprint && walking) {
-        paintFootprint(
-          back,
-          footprint,
-          {
-            direction: action % 8,
-            cycle: bodyAction.delay * bodyAction.frames.length,
-            elapsed,
-          },
-          originX,
-          originY,
-          scale,
-        );
-      }
-      if (effectRenderer && effect) {
-        effectRenderer.paint(effect, strFrameAt(effect, elapsed), originX, originY, scale);
-      }
-    };
+    const paint = createPainter(scene, action, ctx, back, front);
 
     // Paused: hold the moment it stopped at.
     if (!playing) {
@@ -382,9 +630,11 @@ function PreviewCanvas({
   const hasFront = Boolean(scene?.effect && !scene.effect.behind);
 
   return (
-    // An effect or a Footprint adds light onto the scene, as in the game, so it plays on a
-    // dark stage; on a pale one it would wash out to white.
+    <>
+    {/* An effect or a Footprint adds light onto the scene, as in the game, so it plays on a
+        dark stage; on a pale one it would wash out to white. */}
     <div
+      ref={stageRef}
       // A phone gets a smaller stage, so the window leaves the page visible around it.
       className={`relative mx-auto w-60 max-w-full overflow-hidden rounded-box sm:w-[300px] ${
         lit ? "bg-neutral" : "bg-base-200"
@@ -445,6 +695,13 @@ function PreviewCanvas({
         </p>
       )}
     </div>
+    <GifButton
+      scene={scene}
+      action={action}
+      stageRef={stageRef}
+      fileName={`${name}_${POSES.find((p) => p.type === Math.floor(action / 8))?.slug}`}
+    />
+    </>
   );
 }
 
@@ -541,6 +798,7 @@ export function CostumePreviewModal({
 
         <PreviewCanvas
           patchKey={patchKey}
+          name={name}
           gender={gender}
           action={poseType * 8 + direction}
           playing={playing}
