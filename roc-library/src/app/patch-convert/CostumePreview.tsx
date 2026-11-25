@@ -95,12 +95,6 @@ const HEADINGS = [
 });
 const GROUND_SLANT = 0.7;
 
-/**
- * Footprint values the game's table does not always give, in sprite pixels. The table's own
- * values are taken in the same unit; what they mean is a best guess, checked against the game.
- */
-const FOOTPRINT_DEFAULTS = { stride: 30, gap: 10, scale: 0.15, lift: 10 };
-
 interface Footprint {
   info: FootprintInfo;
   /** Left foot, right foot. */
@@ -175,6 +169,37 @@ async function loadScene(
 }
 
 /**
+ * The share of a step's life, counted from its start, that the stage keeps in view. A mark
+ * fades away towards its end, so framing all of it shrinks the character for nothing; the
+ * last, faintest part of the trail may leave the window. 1 frames the whole life.
+ */
+const FOOTPRINT_VISIBLE = 0.4;
+/**
+ * Footprint values the game's table does not always give, in sprite pixels. The table's own
+ * values are taken in the same unit; what they mean is a best guess, checked against the game.
+ */
+const FOOTPRINT_DEFAULTS = { stride: 60, gap: 0, scale: 0.15, lift: 0 };
+
+
+/**
+ * How far from the character a Footprint step slides over the part of its life that the
+ * stage keeps in view, in sprite pixels, at the game's own stride and walking pace.
+ */
+function footprintReach(character: Character, footprint: Footprint): number {
+  const walk = character.body.act.actions[WALK * 8];
+  const cycle = walk ? walk.delay * walk.frames.length : 0;
+  if (cycle <= 0) return 0;
+  const { info, top, bottom } = footprint;
+  const lifetime = Math.max(
+    0,
+    ...[...top, ...bottom].map((e) => (e ? strDuration(e) : 0)),
+  );
+  const stride = info.Stride ?? FOOTPRINT_DEFAULTS.stride;
+  const gap = info.Gap ?? FOOTPRINT_DEFAULTS.gap;
+  return (stride / (cycle / 2)) * lifetime * FOOTPRINT_VISIBLE + gap / 2;
+}
+
+/**
  * Paints the steps of a Footprint left so far while walking on the spot. A step is taken at
  * the start and the middle of each walk cycle, left foot first; each plays its effect once
  * and slides back the way the character came, as if the character walked on.
@@ -192,13 +217,14 @@ function paintFootprint(
   const gap = info.Gap ?? FOOTPRINT_DEFAULTS.gap;
   const lift = (info.Height_Top ?? 0) * FOOTPRINT_DEFAULTS.lift;
   const step = cycle / 2;
-  const speed = stride / step;
   const [hx, hy] = HEADINGS[direction];
   const angle = (Math.atan2(hx, -hy * GROUND_SLANT) * 180) / Math.PI;
   const lifetime = Math.max(
     0,
     ...[...top, ...bottom].map((e) => (e ? strDuration(e) : 0)),
   );
+
+  const speed = stride / step;
 
   const first = Math.max(0, Math.ceil((elapsed - lifetime) / step));
   for (let k = first; k * step <= elapsed; k++) {
@@ -268,13 +294,27 @@ function createPainter(
       (CANVAS_HEIGHT - PADDING * 2) / (b ? b.maxY - b.minY : 1),
     );
   const characterBounds = measureCharacter(character, ALL_ACTIONS);
+  // A Footprint trail is the ground sliding away behind the character in any heading, so the
+  // stage reaches that far on every side (the ground is drawn flattened by GROUND_SLANT).
+  const trail = footprint ? footprintReach(character, footprint) : 0;
+  const trailBounds: Bounds | null = trail
+    ? {
+        minX: -trail,
+        maxX: trail,
+        minY: -trail * GROUND_SLANT,
+        maxY: trail * GROUND_SLANT,
+      }
+    : null;
   const allBounds = union(
-    characterBounds,
-    effect ? measureStr(effect) : null,
+    union(characterBounds, effect ? measureStr(effect) : null),
+    trailBounds,
   );
   // An effect may spread wider than the window, as it does on the game's screen; it never
   // shrinks the character below its size in the game, and the window crops the rest.
-  const scale = Math.max(fit(allBounds), Math.min(1, fit(characterBounds)));
+  // A Footprint trail is the exception: the stage steps back until the whole trail is in view.
+  const scale = trail
+    ? fit(allBounds)
+    : Math.max(fit(allBounds), Math.min(1, fit(characterBounds)));
   const bounds = scale > fit(allBounds) ? characterBounds : allBounds;
   const centreX = ((bounds?.minX ?? 0) + (bounds?.maxX ?? 0)) / 2;
   const centreY = ((bounds?.minY ?? 0) + (bounds?.maxY ?? 0)) / 2;

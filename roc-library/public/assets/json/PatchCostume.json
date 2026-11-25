@@ -668,6 +668,18 @@
       }
     }
   },
+  "315944": {
+    "footprint": {
+      "Type": "STR",
+      "StrFile_Bottom_Left": "footprint_dice_bottom.str",
+      "StrFile_Bottom_Right": "footprint_dice_bottom.str",
+      "StrFile_Top_Left": "footprint_dice.str",
+      "StrFile_Top_Right": "footprint_dice.str",
+      "Stride": 100,
+      "Gap": 0,
+      "IsAdjustAngle": false
+    }
+  },
   "410490": {
     "sprite": {
       "kind": "headgear",
@@ -755,6 +767,18 @@
         "spr": "여_doram/여_C_CLB_Dice_Rose.spr",
         "act": "여_doram/여_C_CLB_Dice_Rose.act"
       }
+    }
+  },
+  "1003382": {
+    "footprint": {
+      "Type": "STR",
+      "StrFile_Bottom_Left": "footprint_dice_bottom.str",
+      "StrFile_Bottom_Right": "footprint_dice_bottom.str",
+      "StrFile_Top_Left": "footprint_dice.str",
+      "StrFile_Top_Right": "footprint_dice.str",
+      "Stride": 100,
+      "Gap": 0,
+      "IsAdjustAngle": false
     }
   }
 }
