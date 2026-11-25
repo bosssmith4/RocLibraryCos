@@ -8,7 +8,9 @@ import { useItemDb } from "@/services/patchData/itemsService";
 import { PatchItemsDto } from "@/types/patch";
 import * as htmlToImage from "html-to-image";
 import ImageConvertPage from "./image-convert";
+import ChangeNote, { descriptionChange, useItemChanges } from "./ChangeNote";
 import ItemCard from "./ItemCard";
+import type { ItemChange } from "@/utils/itemChanges";
 import { InlineImageProvider, loadInlineImages } from "./inlineImages";
 import ItemPicker, { type ItemKind } from "./ItemPicker";
 import { NewMapsButton, NewMapsModal, useNewMaps } from "./NewMaps";
@@ -95,9 +97,12 @@ function ExportableItem({
   patchKey,
   item,
   illustration,
+  change,
 }: {
   patchKey: string;
   item: PatchItemsDto;
+  /** What the patch changed in this item, if anything. */
+  change?: ItemChange;
   /** The Card illustration, when the item is a card: it takes the place of the item's picture. */
   illustration?: string;
 }) {
@@ -237,8 +242,10 @@ function ExportableItem({
             <ImageConvertPage patchKey={patchKey} illustration={illustration} />
           }
           showSponsor
+          change={descriptionChange(change)}
         />
       </div>
+      <ChangeNote item={item} change={change} />
 
       {canPreview && previewOpen && (
         <CostumePreviewModal
@@ -270,6 +277,7 @@ function ExportableItem({
             <ImageConvertPage patchKey={patchKey} illustration={illustration} />
           }
               showSponsor
+              change={descriptionChange(change)}
             />
           </InlineImageProvider>
         </div>
@@ -284,6 +292,7 @@ export default function PatchConvertClient() {
   const [selected, setSelected] = useState<string>();
   const cards = useCardIllustrations();
   const maps = useNewMaps();
+  const itemChanges = useItemChanges();
   const [mapsOpen, setMapsOpen] = useState(false);
 
   const [kind, setKind] = useState<ItemKind>("new");
@@ -364,6 +373,7 @@ export default function PatchConvertClient() {
               patchKey={current[0]}
               item={current[1]}
               illustration={cards[current[0]]}
+              change={itemChanges[current[0]]}
             />
           ) : (
             <p className="rounded-box border border-dashed border-base-300 p-10 text-center text-base-content/70">

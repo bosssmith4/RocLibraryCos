@@ -1,3 +1,12 @@
+import {
+  diffLine,
+  diffToHtml,
+  readableLine,
+  removedToHtml,
+  stripColors,
+  type FieldChange,
+} from "@/utils/itemChanges";
+
 // RO colour codes are written for the game's dark tooltip. The card is light,
 // so each one maps to a darker shade of the same hue that stays readable.
 const RO_COLOR_CLASS: Record<string, string> = {
@@ -12,11 +21,40 @@ const RO_COLOR_CLASS: Record<string, string> = {
   "ffffff_": "text-base-content",
 };
 
-function parseDetail(text: string[]): string {
+/**
+ * The new lines of a change that the description cannot mark, because the card draws
+ * them elsewhere (below "ประเภท :") or not at all. The Change note lists these.
+ */
+export function unmarkedAfter(text: string[], change: FieldChange): string[] {
+  const marked = new Set<number>();
+  for (const f of text ?? []) {
+    if (f.includes("ประเภท :")) break;
+    const at = change.after.indexOf(stripColors(f).trim());
+    if (at >= 0) marked.add(at);
+  }
+  return change.after.filter((_, i) => !marked.has(i));
+}
+
+/**
+ * The card's lines with the patch's changes marked: old text struck through, new text
+ * highlighted. A line is matched to its change by its text without colour codes; old
+ * lines the patch removed outright come last.
+ */
+function parseDetail(text: string[], change?: FieldChange): string {
   if (!text) return "";
   const textDesc: string[] = [];
 
   for (let f of text) {
+    const at = change ? change.after.indexOf(stripColors(f).trim()) : -1;
+    if (change && at >= 0) {
+      const before = change.before[at] ?? "";
+      textDesc.push(
+        diffToHtml(diffLine(readableLine(before), readableLine(change.after[at]))) +
+          "<br>",
+      );
+      continue;
+    }
+
     // A grey segment keeps only the text after its marker.
     const gray = f.split("^b4b4b4");
     if (gray.length > 1) {
@@ -46,13 +84,22 @@ function parseDetail(text: string[]): string {
     }
     textDesc.push(f + "<br>");
   }
+  // Old lines with no new line to pair with were removed by the patch.
+  if (change) {
+    for (const line of change.before.slice(change.after.length)) {
+      textDesc.push(removedToHtml(line));
+    }
+  }
   return textDesc.join("");
 }
 
 export default function DetailConvertPage({
   identifiedDescription,
+  change,
 }: {
   identifiedDescription: string[];
+  /** The patch's change to this description, drawn as marks in the text. */
+  change?: FieldChange;
 }) {
   return (
     <section className="rounded-2xl border border-base-300 bg-base-100 p-4 text-left text-base-content shadow-md @lg:p-6">
@@ -63,7 +110,7 @@ export default function DetailConvertPage({
       <div
         className="wrap-break-word text-sm leading-7 text-base-content"
         dangerouslySetInnerHTML={{
-          __html: parseDetail(identifiedDescription),
+          __html: parseDetail(identifiedDescription, change),
         }}
       />
     </section>

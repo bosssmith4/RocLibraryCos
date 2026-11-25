@@ -3,6 +3,7 @@ import { PatchItemsDto } from "@/types/patch";
 import HeaderConvertPage from "./header-convert";
 import OptionConvertPage from "./option-convert";
 import DetailConvertPage from "./detail-convert";
+import type { FieldChange } from "@/utils/itemChanges";
 import SponserConvert from "./sponser-convert";
 
 interface ItemCardProps {
@@ -11,6 +12,8 @@ interface ItemCardProps {
   item: PatchItemsDto;
   image: ReactNode;
   showSponsor?: boolean;
+  /** The patch's change to the description, drawn as marks in its text. */
+  change?: FieldChange;
 }
 
 /**
@@ -23,6 +26,7 @@ export default function ItemCard({
   item,
   image,
   showSponsor = false,
+  change,
 }: ItemCardProps) {
   return (
     <div className="@container mx-auto w-full max-w-5xl">
@@ -43,6 +47,7 @@ export default function ItemCard({
 
         <DetailConvertPage
           identifiedDescription={item.identifiedDescriptionName}
+          change={change}
         />
       </div>
 

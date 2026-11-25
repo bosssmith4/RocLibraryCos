@@ -1,0 +1,251 @@
+{
+  "592": {
+    "name": "Jam Pancake",
+    "changes": [
+      {
+        "field": "unidentifiedDescriptionName",
+        "before": [
+          "น้ำหนัก : 15"
+        ],
+        "after": [
+          "น้ำหนัก : 1"
+        ]
+      },
+      {
+        "field": "identifiedDescriptionName",
+        "before": [
+          "น้ำหนัก : 15"
+        ],
+        "after": [
+          "น้ำหนัก : 1"
+        ]
+      }
+    ]
+  },
+  "18833": {
+    "name": "5th Anniversary Marin Crown",
+    "changes": [
+      {
+        "field": "identifiedDescriptionName",
+        "before": [
+          "เมื่อสังหารมอนสเตอร์มีโอกาศเล็กน้อยได้รับ Aquamarine"
+        ],
+        "after": [
+          "เมื่อสังหารมอนสเตอร์มีโอกาสเล็กน้อยได้รับ Aquamarine"
+        ]
+      }
+    ]
+  },
+  "20102": {
+    "name": "Costume Horse King",
+    "changes": [
+      {
+        "field": "identifiedDescriptionName",
+        "before": [
+          "<NAVI>[Designer Heidam]<INFO>mal_in01,20,124,0,100,0,0</INFO></NAVI>"
+        ],
+        "after": []
+      }
+    ]
+  },
+  "20591": {
+    "name": "Costume Bow on Back",
+    "changes": [
+      {
+        "field": "identifiedDescriptionName",
+        "before": [
+          "<NAVI>[Designer Heidam]<INFO>mal_in01,20,124,0,100,0,0</INFO></NAVI>"
+        ],
+        "after": []
+      }
+    ]
+  },
+  "21206": {
+    "name": "Costume Nut Cracker",
+    "changes": [
+      {
+        "field": "identifiedDescriptionName",
+        "before": [
+          "<NAVI>[Designer Heidam]<INFO>mal_in01,20,124,0,100,0,0</INFO></NAVI>"
+        ],
+        "after": []
+      }
+    ]
+  },
+  "25138": {
+    "name": "Shrink Effect (Middle)",
+    "changes": [
+      {
+        "field": "unidentifiedDescriptionName",
+        "before": [
+          "จะไม่แสดงผลใน WoE และ PvP"
+        ],
+        "after": [
+          "จะไม่แสดงผลใน GVG และ PvP"
+        ]
+      },
+      {
+        "field": "identifiedDescriptionName",
+        "before": [
+          "จะไม่แสดงผลใน WoE และ PvP"
+        ],
+        "after": [
+          "จะไม่แสดงผลใน GVG และ PvP"
+        ]
+      }
+    ]
+  },
+  "25205": {
+    "name": "Shrink Effect (Lower)",
+    "changes": [
+      {
+        "field": "unidentifiedDescriptionName",
+        "before": [
+          "ติดตั้ง Effect เมื่อ Enchant ใส่ Slot ช่องที่ 4 ของ Lower Costume",
+          "ไม่สามารถใช้ได้ในพื้นที่ WOE และ PvP",
+          "ทำให้ร่างกายเล็กลงเท่านั้น แต่ขนาดของเอฟเฟกต์และ Cart จะไม่เปลี่ยนแปลง",
+          "<NAVI>[Gurgio Gulmani]<INFO>mal_in01,24,121,0,100,0,0</INFO></NAVI>"
+        ],
+        "after": [
+          "Lower Enchant ที่ Slot ช่องที่ 4 ของอุปกรณ์ Costume แล้วติดตั้งเอฟเฟกต์เข้าไป",
+          "ไม่แสดงผลใน GVG และ PvP",
+          "เป็นเพียงการปรับเปลี่ยนรูปลักษณ์ภายนอกให้เล็กลง แต่ขนาดเอฟเฟกต์หรือรถเข็นจะไม่ถูกเปลี่ยนแปลง",
+          "<NAVI>[Aver De Dosh]<INFO>mal_in01,22,113,0,100,0,0</INFO></NAVI>"
+        ]
+      },
+      {
+        "field": "identifiedDescriptionName",
+        "before": [
+          "ติดตั้ง Effect เมื่อ Enchant ใส่ Slot ช่องที่ 4 ของ Lower Costume",
+          "ไม่สามารถใช้ได้ในพื้นที่ WOE และ PvP",
+          "ทำให้ร่างกายเล็กลงเท่านั้น แต่ขนาดของเอฟเฟกต์และ Cart จะไม่เปลี่ยนแปลง",
+          "<NAVI>[Gurgio Gulmani]<INFO>mal_in01,24,121,0,100,0,0</INFO></NAVI>"
+        ],
+        "after": [
+          "Lower Enchant ที่ Slot ช่องที่ 4 ของอุปกรณ์ Costume แล้วติดตั้งเอฟเฟกต์เข้าไป",
+          "ไม่แสดงผลใน GVG และ PvP",
+          "เป็นเพียงการปรับเปลี่ยนรูปลักษณ์ภายนอกให้เล็กลง แต่ขนาดเอฟเฟกต์หรือรถเข็นจะไม่ถูกเปลี่ยนแปลง",
+          "<NAVI>[Aver De Dosh]<INFO>mal_in01,22,113,0,100,0,0</INFO></NAVI>"
+        ]
+      },
+      {
+        "field": "costume",
+        "before": [],
+        "after": [
+          "false"
+        ]
+      }
+    ]
+  },
+  "29144": {
+    "name": "Shrink Effect",
+    "changes": [
+      {
+        "field": "unidentifiedDescriptionName",
+        "before": [
+          "จะไม่แสดงผลใน WoE และ PvP"
+        ],
+        "after": [
+          "จะไม่แสดงผลใน GVG และ PvP"
+        ]
+      },
+      {
+        "field": "identifiedDescriptionName",
+        "before": [
+          "จะไม่แสดงผลใน WoE และ PvP"
+        ],
+        "after": [
+          "จะไม่แสดงผลใน GVG และ PvP"
+        ]
+      }
+    ]
+  },
+  "31028": {
+    "name": "Costume Black Cat Hoodie",
+    "changes": [
+      {
+        "field": "identifiedDescriptionName",
+        "before": [
+          "<NAVI>[Designer Heidam]<INFO>mal_in01,20,124,0,100,0,0</INFO></NAVI>"
+        ],
+        "after": []
+      }
+    ]
+  },
+  "31252": {
+    "name": "Costume White Cat Ears Hat",
+    "changes": [
+      {
+        "field": "identifiedDescriptionName",
+        "before": [
+          "<NAVI>[Designer Heidam]<INFO>mal_in01,20,124,0,100,0,0</INFO></NAVI>"
+        ],
+        "after": []
+      }
+    ]
+  },
+  "31473": {
+    "name": "Costume Tipsy",
+    "changes": [
+      {
+        "field": "identifiedDescriptionName",
+        "before": [
+          "<NAVI>[Designer Heidam]<INFO>mal_in01,20,124,0,100,0,0</INFO></NAVI>",
+          "สามารถแลกเปลี่ยนเป็น Costume Enchant Stone Box12 ได้"
+        ],
+        "after": [
+          "สามารถแลกเปลี่ยนเป็น Costume Enchant Stone Box11 ได้"
+        ]
+      }
+    ]
+  },
+  "410490": {
+    "name": "Costume Avenger",
+    "changes": [
+      {
+        "field": "identifiedDescriptionName",
+        "before": [
+          "[Designer Heidam]"
+        ],
+        "after": []
+      }
+    ]
+  },
+  "420628": {
+    "name": "Costume Durumagi",
+    "changes": [
+      {
+        "field": "unidentifiedDisplayName",
+        "before": [
+          "Costume Durumagi"
+        ],
+        "after": [
+          "Cap"
+        ]
+      },
+      {
+        "field": "unidentifiedResourceName",
+        "before": [
+          "Durumagi"
+        ],
+        "after": [
+          "캡"
+        ]
+      }
+    ]
+  },
+  "590000": {
+    "name": "Boosting Mace",
+    "changes": [
+      {
+        "field": "identifiedDescriptionName",
+        "before": [
+          "เมื่อทำการโจมตีกายภาพมีโอกาศร่าย Holy Cross ขึ้นอีก 15%"
+        ],
+        "after": [
+          "เมื่อทำการโจมตีกายภาพมีโอกาสร่าย Holy Cross ขึ้นอีก 15%"
+        ]
+      }
+    ]
+  }
+}
